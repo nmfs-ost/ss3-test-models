@@ -131,8 +131,8 @@ compare_ss_summary <- function(sum_file, ref_file, new_file) {
   sum <- SS_read_summary(sum_file)
   ref <- SS_read_summary(ref_file)
   
-  if(all(colnames(sum$likelihoods) == colnames(ref$likelihoods))) {
-    compare_df <- data.frame(component = colnames(sum$likelihoods),
+  if(all(rownames(sum$likelihoods) == rownames(ref$likelihoods))) {
+    compare_df <- data.frame(component = rownames(sum$likelihoods),
                              sum_like = sum$likelihoods$`logL*Lambda`,
                              ref_like = ref$likelihoods$`logL*Lambda`,
                              stringsAsFactors = FALSE)
@@ -140,11 +140,12 @@ compare_ss_summary <- function(sum_file, ref_file, new_file) {
     compare_df$perc_change <- ifelse(compare_df$ref_like != 0, 
                                      100* compare_df$diff / compare_df$ref_like,
                                      0)
+    message("Likelihoods and their differences:")
     print(compare_df)
-    print("try using print")
-    message("try using message")
     if (any(compare_df$diff> 2)) {
       message("There has been a change greater than 2 in likelihood components")
+      #todo: may want to be able to manipulate the result later on so that the
+      # build fails if there is an issue.
     } else {
       message("No changes greater than 2 units in likelihood components")
     }
