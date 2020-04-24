@@ -144,7 +144,7 @@ compare_ss_summary <- function(sum_file, ref_file, new_file) {
     message("Likelihoods and their differences:")
     compare_df <- format(compare_df, digits = 6, nsmall = 5, justify = "left")
     print(compare_df)
-    if (any(compare_df$diff > tol)) {
+    if (any(abs(compare_df$diff) > tol)) {
       message("There has been a change greater than ", tol, 
               " in likelihood components")
       #todo: may want to be able to manipulate the result later on so that the
