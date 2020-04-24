@@ -130,6 +130,7 @@ SS_read_summary <- function(file="ss_summary.sso") {
 compare_ss_summary <- function(sum_file, ref_file, new_file) {
   sum <- SS_read_summary(sum_file)
   ref <- SS_read_summary(ref_file)
+  tol <- 0.001
   
   if(all(rownames(sum$likelihoods) == rownames(ref$likelihoods))) {
     compare_df <- data.frame(component = rownames(sum$likelihoods),
@@ -141,19 +142,22 @@ compare_ss_summary <- function(sum_file, ref_file, new_file) {
                                      100* compare_df$diff / compare_df$ref_like,
                                      0)
     message("Likelihoods and their differences:")
+    compare_df <- format(compare_df, digits = 6, nsmall = 5, justify = "left")
     print(compare_df)
-    if (any(compare_df$diff> 2)) {
-      message("There has been a change greater than 2 in likelihood components")
+    if (any(compare_df$diff > tol)) {
+      message("There has been a change greater than ", tol, 
+              " in likelihood components")
       #todo: may want to be able to manipulate the result later on so that the
       # build fails if there is an issue.
     } else {
-      message("No changes greater than 2 units in likelihood components")
+      message("No changes greater than ", tol,
+              " units in likelihood components")
     }
   } else {
     # sanity check
     stop("colnames of likelihoods did not match. need to account for this ", 
          "situation")
   }
-  write.table(compare_df, new_file)
+  write.table(compare_df, new_file, row.names = FALSE, )
   invisible(new_file)
 }
