@@ -142,8 +142,8 @@ compare_ss_summary <- function(sum_file, ref_file, new_file) {
                                      100* compare_df$diff / compare_df$ref_like,
                                      0)
     message("Likelihoods and their differences:")
-    compare_df <- format(compare_df, digits = 6, nsmall = 5, justify = "left")
-    print(compare_df)
+    compare_df_print <- format(compare_df, digits = 6, nsmall = 5, justify = "left")
+    print(compare_df_print)
     if (any(abs(compare_df$diff) > tol)) {
       message("There has been a change greater than ", tol, 
               " in likelihood components")
@@ -158,6 +158,6 @@ compare_ss_summary <- function(sum_file, ref_file, new_file) {
     stop("colnames of likelihoods did not match. need to account for this ", 
          "situation")
   }
-  write.table(compare_df, new_file, row.names = FALSE, )
+  write.table(compare_df_print, new_file, row.names = FALSE, )
   invisible(new_file)
 }
