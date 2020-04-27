@@ -125,11 +125,22 @@ SS_read_summary <- function(file="ss_summary.sso") {
 #' Compare ss_summary.sso files
 #'
 #'@param sum_file path to the ss_summary.sso file
-#'@param ref_file path to the reference ss_summary_ref.sso file
+#'@param ref_sum_file path to the reference ss_summary_ref.sso file
+#'@param par_file path to the par file
+#'@param ref_par_file path to the reference par file
+#'@param warn_file path to the warning file
+#'@param ref_warn_file path to the warning reference file
 #'@param newfile path to write output to.
-compare_ss_summary <- function(sum_file, ref_file, new_file) {
+compare_ss_runs <- function(sum_file = "ss_summary.sso",
+                            ref_sum_file = "ss_summary_ref.sso",
+                            par_file = "ss.par",
+                            ref_par_file = "ss_ref.par",
+                            warn_file = "warning.sso",
+                            ref_warn_file = "warning_ref.sso", 
+                            new_file = "compare_test.txt") {
+  
   sum <- SS_read_summary(sum_file)
-  ref <- SS_read_summary(ref_file)
+  ref <- SS_read_summary(ref_sum_file)
   tol <- 0.001
   
   if(all(rownames(sum$likelihoods) == rownames(ref$likelihoods))) {
@@ -141,9 +152,9 @@ compare_ss_summary <- function(sum_file, ref_file, new_file) {
     compare_df$perc_change <- ifelse(compare_df$ref_like != 0, 
                                      100* compare_df$diff / compare_df$ref_like,
                                      0)
-    message("Likelihoods and their differences:")
-    compare_df_print <- format(compare_df, digits = 6, nsmall = 5, justify = "left")
-    print(compare_df_print)
+    # change colnames to make more general:
+    colnames(compare_df) <- c("quantity", "value", "ref_value", "diff", "perc_change")
+    compare_df$quantity <- paste0(compare_df$quantity, "_like")
     if (any(abs(compare_df$diff) > tol)) {
       message("There has been a change greater than ", tol, 
               " in likelihood components")
@@ -158,6 +169,45 @@ compare_ss_summary <- function(sum_file, ref_file, new_file) {
     stop("colnames of likelihoods did not match. need to account for this ", 
          "situation")
   }
-  write.table(compare_df_print, new_file, row.names = FALSE, )
-  invisible(new_file)
+  # add onto table: changes in number of warnings and max gradient
+  # get info from the par file
+  extract_max_grad <- function(par_file){
+    parhdr <- readLines(par_file, n = 1)
+    maxgrad <- as.numeric(strsplit(
+                           parhdr,
+                           split = " Maximum gradient component = ")[[1]][2])
+  }
+  maxgrad <- extract_max_grad(par_file)
+  ref_maxgrad <- extract_max_grad(ref_par_file)
+  
+  # get infor from the warning file
+  extract_nwarn <- function(warn_file) {
+    warn <- readLines(warn_file)
+    warnstring <- grep("N warnings: ", warn, value = TRUE)
+    if(length(warnstring) > 0) {
+      nwarn <- as.numeric(strsplit(warnstring, "N warnings: ")[[1]][2])
+    } else {
+      nwarn <- NA
+    }
+  }
+  nwarn <- extract_nwarn(warn_file)
+  ref_nwarn <- extract_nwarn(ref_warn_file)
+  # contstruct temp df for max grad and nwarn
+  grad_warn_df <- data.frame(quantity = c("maxgrad", "nwarn"), 
+                             value = c(maxgrad, nwarn), 
+                             ref_value = c(ref_maxgrad, ref_nwarn), 
+                             diff = c(maxgrad-ref_maxgrad, nwarn-ref_nwarn),
+                             stringsAsFactors = FALSE)
+  grad_warn_df$perc_change <- ifelse(grad_warn_df$ref_value != 0, 
+                                100* grad_warn_df$diff / grad_warn_df$ref_val,
+                                0)
+  # bind nwarn and gradient info to the data frame
+  compare_df <- rbind(compare_df, grad_warn_df)
+  compare_df_print <- format(compare_df, digits = 6, nsmall = 3,
+                             justify = "left")
+  message("values and their differences:")
+  print(compare_df_print)
+  
+  write.table(compare_df_print, new_file, row.names = FALSE)
+  invisible(compare_df)
 }
