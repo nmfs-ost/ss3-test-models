@@ -130,14 +130,16 @@ SS_read_summary <- function(file="ss_summary.sso") {
 #'@param ref_par_file path to the reference par file
 #'@param warn_file path to the warning file
 #'@param ref_warn_file path to the warning reference file
-#'@param newfile path to write output to.
+#'@param new_file path to write output to.
+#'@param fail_file
 compare_ss_runs <- function(sum_file = "ss_summary.sso",
                             ref_sum_file = "ss_summary_ref.sso",
                             par_file = "ss.par",
                             ref_par_file = "ss_ref.par",
                             warn_file = "warning.sso",
                             ref_warn_file = "warning_ref.sso", 
-                            new_file = "compare_test.txt") {
+                            new_file = "compare_test.txt",
+                            fail_file = "test_failed.txt") {
   
   sum <- SS_read_summary(sum_file)
   ref <- SS_read_summary(ref_sum_file)
@@ -158,8 +160,8 @@ compare_ss_runs <- function(sum_file = "ss_summary.sso",
     if (any(abs(compare_df$diff) > tol)) {
       message("There has been a change greater than ", tol, 
               " in likelihood components")
-      #todo: may want to be able to manipulate the result later on so that the
-      # build fails if there is an issue.
+      # write to the fail file to record that the test failed.
+      write.table(compare_df, fail_file, row.names = FALSE)
     } else {
       message("No changes greater than ", tol,
               " units in likelihood components")
