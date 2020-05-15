@@ -205,6 +205,106 @@ compare_ss_runs <- function(sum_file = "ss_summary.sso",
                                 0)
   # bind nwarn and gradient info to the data frame
   compare_df <- rbind(compare_df, grad_warn_df)
+  
+  
+  get_yrs <- function(name_vec) {
+    tmp_val <- strsplit(name_vec, split = "_")
+    yrs <- as.integer(unlist(lapply(tmp_val, function(x) x[2])))
+  }
+  #Find model years - last year of model
+  forecatch_names <- grep("^ForeCatch_", row.names(sum$derived_quants), value = TRUE)
+  if(length(forecatch_names) > 0) {
+    fore_yrs <- get_yrs(forecatch_names)
+    lyr_mod <- min(fore_yrs) - 1
+    lyr_fcast <- max(fore_yrs)
+    nyrs_fcast <- max(fore_yrs) - min(fore_yrs) + 1
+  } else {
+    F_rate_names <- grep("^F_", row.names(sum$derived_quants), value = TRUE)
+    F_rates <- get_yrs(F_rate_names)
+    lyr_mod <- max(F_rates)
+    lyr_fcast <- NA
+    nyrs_fcast <- 0
+  }
+  
+  # other quantites
+  
+  # End depletion
+  end_depl_ind <- grep(paste0("Bratio_", lyr_mod), row.names(sum$derived_quants))
+  end_depl_ind_ref <- grep(paste0("Bratio_", lyr_mod), row.names(ref$derived_quants))
+  if(length(end_depl_ind) != 1) {
+    stop("Could not find Bratio_", lyr_mod, " in the derived_quants table of summary.")
+  }
+  end_depl_sum <- sum$derived_quants[end_depl_ind, "Value"]
+  end_depl_ref <- ref$derived_quants[end_depl_ind_ref, "Value"]
+  
+  # R0 val and se
+  r0_ind <- grep("SR_LN(R0)", row.names(sum$parameters), fixed = TRUE)
+  r0_ind_ref <- grep("SR_LN(R0)", row.names(ref$parameters), fixed = TRUE)
+  r0_sum <- sum$parameters [r0_ind, c("Value", "SE")]
+  r0_ref <- ref$parameters[r0_ind_ref, c("Value", "SE")]
+  
+  # SSB unfished (Bo) se
+  B0_se_sum <- sum$derived_quants[row.names(sum$derived_quants) == "SSB_unfished", "SE"]
+  B0_se_ref <- ref$derived_quants[row.names(ref$derived_quants) == "SSB_unfished", "SE"]
+  
+  # construct new df rows
+  tmp_df <- data.frame(
+    quantity = c(paste0("Bratio_", lyr_mod), "SR_LN(R0)_val", "SR_LN(R0)_se", 
+                 "SSB_unfished_se"), 
+    value = c(end_depl_sum, r0_sum[, "Value"], r0_sum[, "SE"], B0_se_sum),
+    ref_value = c(end_depl_ref, r0_ref[, "Value"], r0_ref[, "SE"], B0_se_ref)
+  )
+  
+  # Fore catch last (val and se) if valid
+  if(!is.na(lyr_fcast)) {
+    fore_catch_last_sum <- sum$derived_quants[row.names(sum$derived_quants) == paste0("ForeCatch_", lyr_fcast), ]
+    fore_catch_last_ref <- ref$derived_quants[row.names(ref$derived_quants) == paste0("ForeCatch_", lyr_fcast), ]
+    tmp_df_flast <- data.frame(
+      quantity = paste0("ForeCatch_", lyr_fcast, c("_val", "_se")), 
+      value = c(fore_catch_last_sum[1,"Value"], fore_catch_last_sum[1,"SE"]),
+      ref_value = c(fore_catch_last_ref[1, "Value"], fore_catch_last_ref[1, "SE"])
+    )
+    tmp_df <- rbind(tmp_df, tmp_df_flast)
+  }
+  
+  # get diff and percent change
+  tmp_df$diff <- tmp_df$value - tmp_df$ref_value
+  tmp_df$perc_change <- ifelse(tmp_df$ref_value != 0, 
+                                   100* tmp_df$diff / tmp_df$ref_value,
+                                   0)
+  tmp_df$ratio <- ifelse(tmp_df$ref_value != 0, 
+                         tmp_df$value/tmp_df$ref_value, NA)
+  # do comparisons
+  write_fail <- FALSE
+  if(tmp_df[tmp_df$quantity == paste0("Bratio_", lyr_mod), "diff"] > 0.001 ) {
+    write_fail <- TRUE
+  }
+  if(tmp_df[tmp_df$quantity == "SR_LN(R0)_val", "diff"] > 0.01 ) {
+    write_fail <- TRUE
+  }
+  if(tmp_df[tmp_df$quantity == "SR_LN(R0)_se", "ratio"] > 1.01 |
+     tmp_df[tmp_df$quantity == "SR_LN(R0)_se", "ratio"] < 0.99) {
+    write_fail <- TRUE
+  }
+  if(tmp_df[tmp_df$quantity == "SSB_unfished_se", "ratio"] > 1.01 |
+     tmp_df[tmp_df$quantity == "SSB_unfished_se", "ratio"] < 0.99) {
+    write_fail <- TRUE
+  }
+  if(!is.na(lyr_fcast)) {
+    if(tmp_df[tmp_df$quantity == paste0("ForeCatch_", lyr_fcast, "_val"), "ratio"] > 1.01 |
+       tmp_df[tmp_df$quantity == paste0("ForeCatch_", lyr_fcast, "_val"), "ratio"] < 0.99) {
+      write_fail <- TRUE
+    }
+    if(tmp_df[tmp_df$quantity == paste0("ForeCatch_", lyr_fcast, "_se"), "ratio"] > 1.01 |
+       tmp_df[tmp_df$quantity == paste0("ForeCatch_", lyr_fcast, "_se"), "ratio"] < 0.99) {
+      write_fail <- TRUE
+    }
+  }
+
+  compare_df$ratio <- ifelse(compare_df$ref_value != 0, 
+                         compare_df$value/compare_df$ref_value, NA)
+  compare_df <- rbind(compare_df, tmp_df)
+  #print the msg
   compare_df_print <- format(compare_df, digits = 6, nsmall = 3,
                              justify = "left")
   message("values and their differences:")
