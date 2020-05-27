@@ -16,15 +16,18 @@ for(i in mod_names) {
   warn_file <- file.path("run_R", "models", i, "warning.sso")
   ref_warn_file <- file.path("ss_example_files", "models", i, "warning_ref.sso")
   
-  new_file <- file.path("run_R", paste0("compare_test_", i, ".txt"))
   fail_file <- file.path("run_R", "test_failed.txt")
   
   compare_list[[pos]] <- compare_ss_runs(mod_name = i, 
                   sum_file = sum_file, ref_sum_file = ref_sum_file,
                   par_file = par_file, ref_par_file = ref_par_file, 
                   warn_file = warn_file, ref_warn_file = ref_warn_file, 
-                  new_file = new_file, fail_file = fail_file)
+                  new_file = NULL, fail_file = fail_file)
 }
 # write out all model results
 compare_df <- do.call("rbind", compare_list)
-write.table(compare_df, "run_R/compare_test.txt", row.names = FALSE)
+compare_df_print <- format(compare_df, digits = 6, nsmall = 3,
+                           justify = "left")
+message("values and their differences:")
+print(compare_df_print)
+write.table(compare_df_print, "run_R/compare_test.txt", row.names = FALSE)

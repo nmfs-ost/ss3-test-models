@@ -140,7 +140,7 @@ compare_ss_runs <- function(mod_name = "ss_mod",
                             ref_par_file = "ss_ref.par",
                             warn_file = "warning.sso",
                             ref_warn_file = "warning_ref.sso", 
-                            new_file = "compare_test.txt",
+                            new_file = NULL,
                             fail_file = "test_failed.txt") {
   
   sum <- SS_read_summary(sum_file)
@@ -310,9 +310,10 @@ compare_ss_runs <- function(mod_name = "ss_mod",
   #print the msg
   compare_df_print <- format(compare_df, digits = 6, nsmall = 3,
                              justify = "left")
-  message("values and their differences:")
-  print(compare_df_print)
-  
-  write.table(compare_df_print, new_file, row.names = FALSE)
+  # message("values and their differences:")
+  # print(compare_df_print)
+  if(!is.null(new_file)) {
+    write.table(compare_df_print, new_file, row.names = FALSE)
+  }
   invisible(compare_df)
 }
