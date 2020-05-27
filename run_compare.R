@@ -1,20 +1,20 @@
 source("compare.R")
 
 # get model folder names
-mod_names <- list.dirs("run_R", full.names = FALSE)
+mod_names <- list.dirs("run_R/models", full.names = FALSE)
 print(mod_names)
 
 compare_list <- vector(mode = "list", length = length(mod_names))
 for(i in mod_names) {
   pos <- which(mod_names == i)
-  sum_file <- file.path("run_R", i, "ss_summary.sso")
-  ref_sum_file <- file.path("ss_example_files", i, "ss_summary_ref.sso")
+  sum_file <- file.path("run_R", "models", i, "ss_summary.sso")
+  ref_sum_file <- file.path("ss_example_files", "models", i, "ss_summary_ref.sso")
   
-  par_file <- file.path("run_R", i, "ss.par")
-  ref_par_file <- file.path("ss_example_files", i, "ss_ref.par")
+  par_file <- file.path("run_R", "models", i, "ss.par")
+  ref_par_file <- file.path("ss_example_files", "models", i, "ss_ref.par")
   
-  warn_file <- file.path("run_R", i, "warning.sso")
-  ref_warn_file <- file.path("ss_example_files", i, "warning_ref.sso")
+  warn_file <- file.path("run_R", "models", i, "warning.sso")
+  ref_warn_file <- file.path("ss_example_files", "models", i, "warning_ref.sso")
   
   new_file <- file.path("run_R", paste0("compare_test_", i, ".txt"))
   fail_file <- file.path("run_R", "test_failed.txt")
