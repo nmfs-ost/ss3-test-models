@@ -1,7 +1,8 @@
 source("compare.R")
 
 # get model folder names
-mod_names <- list.dirs("run_R/models", full.names = FALSE)
+mod_names <- list.dirs("run_R/models", full.names = FALSE, recursive = FALSE)
+mod_names <- mod_names[-grep("^$", mod_names)] # get rid of blanks
 print(mod_names)
 
 compare_list <- vector(mode = "list", length = length(mod_names))
