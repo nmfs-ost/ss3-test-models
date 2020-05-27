@@ -124,6 +124,7 @@ SS_read_summary <- function(file="ss_summary.sso") {
 
 #' Compare ss_summary.sso files
 #'
+#'@param mod_name name of model to include as a col in new_file
 #'@param sum_file path to the ss_summary.sso file
 #'@param ref_sum_file path to the reference ss_summary_ref.sso file
 #'@param par_file path to the par file
@@ -132,7 +133,8 @@ SS_read_summary <- function(file="ss_summary.sso") {
 #'@param ref_warn_file path to the warning reference file
 #'@param new_file path to write output to.
 #'@param fail_file
-compare_ss_runs <- function(sum_file = "ss_summary.sso",
+compare_ss_runs <- function(mod_name = "ss_mod",
+                            sum_file = "ss_summary.sso",
                             ref_sum_file = "ss_summary_ref.sso",
                             par_file = "ss.par",
                             ref_par_file = "ss_ref.par",
@@ -304,6 +306,7 @@ compare_ss_runs <- function(sum_file = "ss_summary.sso",
   compare_df$ratio <- ifelse(compare_df$ref_value != 0, 
                          compare_df$value/compare_df$ref_value, NA)
   compare_df <- rbind(compare_df, tmp_df)
+  compare_df$mod_name <- mod_name # add the model name
   #print the msg
   compare_df_print <- format(compare_df, digits = 6, nsmall = 3,
                              justify = "left")
