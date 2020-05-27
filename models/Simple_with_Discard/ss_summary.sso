@@ -7,7 +7,7 @@ Run_Date: Tue May 26 13:26:14 2020
 Final_phase: 6  N_iterations: 398
 #_LIKELIHOOD 
 Label logL*Lambda
-TOTAL_LogL 1600
+TOTAL_LogL 1590.9
 Catch 1.30175e-012
 Survey -4.187
 Discard 8.52725
