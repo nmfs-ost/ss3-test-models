@@ -1,9 +1,9 @@
-#V3.30.14.21-safe;_2020_03_19;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.0
+#V3.30.15.00-safe;_2020_03_26;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.0
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
 growth_morphs_dat.ss #_DataFile 
 growth_morphs_ctl.ss #_Control 
-Run_Date: Mon Mar 23 14:04:05 2020
+Run_Date: Fri Jun 12 13:51:59 2020
 Final_phase: 6  N_iterations: 570
 #_LIKELIHOOD 
 Label logL*Lambda
@@ -164,6 +164,9 @@ SSB_1998 17423.5 4298.8
 SSB_1999 17566.7 4714.8
 SSB_2000 17814.5 5198.55
 SSB_2001 18069.6 5732.65
+SSB_2002 18321 6311.03
+SSB_2003 19232.2 6381.64
+SSB_2004 20031.1 6425.48
 #_Recruitment
 Recr_Virgin 39642.3 3646.76
 Recr_Initial 39642.3 3646.76
@@ -198,6 +201,9 @@ Recr_1998 46371.9 21991
 Recr_1999 33155.5 17808.1
 Recr_2000 32308 18028.9
 Recr_2001 31715 18811.8
+Recr_2002 32459.5 19136.8
+Recr_2003 32868.8 19072.8
+Recr_2004 33204.5 19028.2
 #_SPR Basis=  1-SPR
 SPRratio_1971 0.0902006 0.00780061
 SPRratio_1972 0.168692 0.0131879
@@ -230,6 +236,9 @@ SPRratio_1998 0.644552 0.0687884
 SPRratio_1999 0.640225 0.0750662
 SPRratio_2000 0.636486 0.0818155
 SPRratio_2001 0.633014 0.089045
+SPRratio_2002 0.491362 0.052164
+SPRratio_2003 0.49756 0.0489674
+SPRratio_2004 0.502441 0.0466823
 #_F Basis= _abs_F;_with_F=Exploit(bio)
 F_1971 0.00647246 0.000565328
 F_1972 0.0129973 0.00110725
@@ -262,6 +271,9 @@ F_1998 0.0831009 0.0203651
 F_1999 0.0816327 0.0218465
 F_2000 0.0810108 0.0234892
 F_2001 0.080597 0.0252117
+F_2002 0.0497282 0.00928835
+F_2003 0.0513359 0.00893559
+F_2004 0.0525714 0.00870181
 #_Depletion Basis=  100%*Virgin_Biomass
 Bratio_1972 0.988248 0.0595397
 Bratio_1973 0.977268 0.0587669
@@ -293,6 +305,9 @@ Bratio_1998 0.295444 0.0655321
 Bratio_1999 0.297873 0.072659
 Bratio_2000 0.302075 0.080937
 Bratio_2001 0.306401 0.0900923
+Bratio_2002 0.310663 0.100028
+Bratio_2003 0.326113 0.101313
+Bratio_2004 0.33966 0.102279
 #_Mgmt_Quantity
 SSB_unfished 58973.9 5425.11
 Totbio_unfished 154549 12923.3
