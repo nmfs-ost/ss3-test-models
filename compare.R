@@ -159,15 +159,7 @@ compare_ss_runs <- function(mod_name = "ss_mod",
     # change colnames to make more general:
     colnames(compare_df) <- c("quantity", "value", "ref_value", "diff", "perc_change")
     compare_df$quantity <- paste0(compare_df$quantity, "_like")
-    if (any(abs(compare_df$diff) > tol)) {
-      message("There has been a change greater than ", tol, 
-              " in likelihood components")
-      # write to the fail file to record that the test failed.
-      write.table(compare_df, fail_file, row.names = FALSE)
-    } else {
-      message("No changes greater than ", tol,
-              " units in likelihood components")
-    }
+    like_quantities <- compare_df$quantity
   } else {
     # sanity check
     stop("colnames of likelihoods did not match. need to account for this ", 
@@ -276,12 +268,27 @@ compare_ss_runs <- function(mod_name = "ss_mod",
                                    0)
   tmp_df$ratio <- ifelse(tmp_df$ref_value != 0, 
                          tmp_df$value/tmp_df$ref_value, NA)
-  # do comparisons
+  # do comparisons  ----
   write_fail <- FALSE
-  if(tmp_df[tmp_df$quantity == paste0("Bratio_", lyr_mod), "diff"] > 0.001 ) {
+  # likelihoods
+  if (any(abs(compare_df[compare_df$quantity ==  like_quantities, "diff"]) > tol)) {
+    message(mod_name, ": There has been a change greater than ", tol, 
+            " in likelihood components")
+    write_fail <- TRUE
+  } else {
+    message(mod_name, ": No changes greater than ", tol,
+            " units in likelihood components")
+  }
+  if(abs(compare_df[compare_df$quantity ==  "maxgrad", "diff"]) > 0.001) {
     write_fail <- TRUE
   }
-  if(tmp_df[tmp_df$quantity == "SR_LN(R0)_val", "diff"] > 0.01 ) {
+  if(abs(compare_df[compare_df$quantity ==  "nwarn", "diff"]) > 0) {
+    write_fail <- TRUE
+  }
+  if(abs(tmp_df[tmp_df$quantity == paste0("Bratio_", lyr_mod), "diff"]) > 0.001 ) {
+    write_fail <- TRUE
+  }
+  if(abs(tmp_df[tmp_df$quantity == "SR_LN(R0)_val", "diff"]) > 0.01 ) {
     write_fail <- TRUE
   }
   if(tmp_df[tmp_df$quantity == "SR_LN(R0)_se", "ratio"] > 1.01 |
@@ -302,7 +309,6 @@ compare_ss_runs <- function(mod_name = "ss_mod",
       write_fail <- TRUE
     }
   }
-
   compare_df$ratio <- ifelse(compare_df$ref_value != 0, 
                          compare_df$value/compare_df$ref_value, NA)
   compare_df <- rbind(compare_df, tmp_df)
@@ -311,7 +317,15 @@ compare_ss_runs <- function(mod_name = "ss_mod",
   compare_df_print <- format(compare_df, digits = 6, nsmall = 3,
                              justify = "left")
   # message("values and their differences:")
-  # print(compare_df_print)
+  if(write_fail == TRUE) {
+    if(file.exists(fail_file)) {
+      hdr <- FALSE
+    } else {
+      hdr  <- TRUE
+    }
+    write.table(compare_df_print, fail_file, row.names = FALSE, append = TRUE,
+                col.names = hdr)
+  }
   if(!is.null(new_file)) {
     write.table(compare_df_print, new_file, row.names = FALSE)
   }
