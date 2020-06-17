@@ -5,8 +5,8 @@
 boc1.dat
 boc1.ctl
 0 # 0=use init values in control file; 1=use ss.par
-1 # run display detail (0,1,2)
-2 # detailed age-structured reports in REPORT.SSO (0=low,1=high,2=low for data-limited) 
+0 # run display detail (0,1,2)
+1 # detailed age-structured reports in REPORT.SSO (0=low,1=high,2=low for data-limited) 
 0 # write detailed checkup.sso file (0,1) 
 0 # write parm values to ParmTrace.sso (0=no,1=good,active; 2=good,all; 3=every_iter,all_parms; 4=every,active)
 1 # write to cumreport.sso (0=no,1=like&timeseries; 2=add survey fits)
@@ -16,7 +16,7 @@ boc1.ctl
 7 # Turn off estimation for parameters entering after this phase
 10 # MCeval burn interval
 2 # MCeval thin interval
-0 # jitter initial parm value by this fraction
+0.0 # jitter initial parm value by this fraction
 1890 # min yr for sdreport outputs (-1 for styr)
 2024 # max yr for sdreport outputs (-1 for endyr; -2 for endyr+Nforecastyrs
 0 # N individual STD years 
