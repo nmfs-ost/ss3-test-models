@@ -292,15 +292,15 @@
             -5             9             9             5            99             0      3  # SizeSel_P6_Shoreside(1)_BLK1repl_2011
             15            70            27            35            99             0      2  # Retain_P1_Shoreside(1)_BLK2repl_2011
            0.1            10             2             1            99             0      2  # Retain_P2_Shoreside(1)_BLK2repl_2011
-             0             1          0.44          0.44            99             0      3  # Retain_P3_Shoreside(1)_BLK3repl_2002
-             0             1           0.4           0.4            99             0      3  # Retain_P3_Shoreside(1)_BLK3repl_2003
-             0             1          0.82          0.82            99             0      3  # Retain_P3_Shoreside(1)_BLK3repl_2004
-             0             1          0.76          0.76            99             0      3  # Retain_P3_Shoreside(1)_BLK3repl_2005
-             0             1          0.52          0.52            99             0      3  # Retain_P3_Shoreside(1)_BLK3repl_2006
-             0             1          0.51          0.51            99             0      3  # Retain_P3_Shoreside(1)_BLK3repl_2007
-             0             1          0.46          0.46            99             0      3  # Retain_P3_Shoreside(1)_BLK3repl_2008
-             0             1          0.45          0.45            99             0      3  # Retain_P3_Shoreside(1)_BLK3repl_2009
-             0             1          0.51          0.51            99             0      3  # Retain_P3_Shoreside(1)_BLK3repl_2010
+           -10            10          0.44          0.44            99             0      3  # Retain_P3_Shoreside(1)_BLK3repl_2002
+           -10            10           0.4           0.4            99             0      3  # Retain_P3_Shoreside(1)_BLK3repl_2003
+           -10            10          0.82          0.82            99             0      3  # Retain_P3_Shoreside(1)_BLK3repl_2004
+           -10            10          0.76          0.76            99             0      3  # Retain_P3_Shoreside(1)_BLK3repl_2005
+           -10            10          0.52          0.52            99             0      3  # Retain_P3_Shoreside(1)_BLK3repl_2006
+           -10            10          0.51          0.51            99             0      3  # Retain_P3_Shoreside(1)_BLK3repl_2007
+           -10            10          0.46          0.46            99             0      3  # Retain_P3_Shoreside(1)_BLK3repl_2008
+           -10            10          0.45          0.45            99             0      3  # Retain_P3_Shoreside(1)_BLK3repl_2009
+           -10            10          0.51          0.51            99             0      3  # Retain_P3_Shoreside(1)_BLK3repl_2010
             -1             9             5             5            99             0      4  # SizeSel_P4_AKSHLF(4)_BLK4repl_1995
 # info on dev vectors created for selex parms are reported with other devs after tag parameter section 
 #
