@@ -271,7 +271,7 @@ compare_ss_runs <- function(mod_name = "ss_mod",
   # do comparisons  ----
   write_fail <- FALSE
   # likelihoods
-  if (any(abs(compare_df[compare_df$quantity ==  like_quantities, "diff"]) > tol)) {
+  if (abs(compare_df[compare_df$quantity ==  "TOTAL_LogL_like", "diff"]) > tol) {
     message(mod_name, ": There has been a change greater than ", tol, 
             " in likelihood components")
     write_fail <- TRUE
@@ -282,7 +282,12 @@ compare_ss_runs <- function(mod_name = "ss_mod",
   if(abs(compare_df[compare_df$quantity ==  "maxgrad", "diff"]) > 0.001) {
     write_fail <- TRUE
   }
-  if(abs(compare_df[compare_df$quantity ==  "nwarn", "diff"]) > 0) {
+  if(!is.na(compare_df[compare_df$quantity ==  "nwarn", "diff"])) {
+    if(abs(compare_df[compare_df$quantity ==  "nwarn", "diff"]) > 0) {
+      write_fail <- TRUE
+    }
+  } else {
+    message(mod_name, ": N warnings was not written")
     write_fail <- TRUE
   }
   if(abs(tmp_df[tmp_df$quantity == paste0("Bratio_", lyr_mod), "diff"]) > 0.001 ) {
