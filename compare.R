@@ -304,7 +304,7 @@ compare_ss_runs <- function(mod_name = "ss_mod",
      tmp_df[tmp_df$quantity == "SSB_unfished_se", "ratio"] < 0.99) {
     write_fail <- TRUE
   }
-  if(!is.na(lyr_fcast)) {
+  if(!is.na(lyr_fcast) && !is.na(tmp_df[tmp_df$quantity == paste0("ForeCatch_", lyr_fcast, "_val"), "value"])) {
     if(tmp_df[tmp_df$quantity == paste0("ForeCatch_", lyr_fcast, "_val"), "ratio"] > 1.01 |
        tmp_df[tmp_df$quantity == paste0("ForeCatch_", lyr_fcast, "_val"), "ratio"] < 0.99) {
       write_fail <- TRUE
@@ -312,6 +312,13 @@ compare_ss_runs <- function(mod_name = "ss_mod",
     if(tmp_df[tmp_df$quantity == paste0("ForeCatch_", lyr_fcast, "_se"), "ratio"] > 1.01 |
        tmp_df[tmp_df$quantity == paste0("ForeCatch_", lyr_fcast, "_se"), "ratio"] < 0.99) {
       write_fail <- TRUE
+    }
+  } else {
+    if(!is.na(lyr_fcast) && 
+       is.na(tmp_df[tmp_df$quantity == paste0("ForeCatch_", lyr_fcast, "_val"),  
+                    "value"])) {
+      write_fail <- TRUE
+      message(mod_name, ": ForeCatch_", lyr_fcast, "_val is NA.")
     }
   }
   compare_df$ratio <- ifelse(compare_df$ref_value != 0, 
