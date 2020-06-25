@@ -17,7 +17,7 @@
 10 # Turn off estimation for parameters entering after this phase
 1 # MCeval burn interval
 1 # MCeval thin interval
-0.0005 # jitter initial parm value by this fraction
+0 # jitter initial parm value by this fraction
 1914 # min yr for sdreport outputs (-1 for styr)
 2026 # max yr for sdreport outputs (-1 for endyr; -2 for endyr+Nforecastyrs
 0 # N individual STD years 
