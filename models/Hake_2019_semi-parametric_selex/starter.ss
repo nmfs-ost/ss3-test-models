@@ -1,6 +1,6 @@
 #C Hake starter file
-hake_data.SS
-hake_control.SS
+hake_data.ss
+hake_control.ss
 0 # 0=use init values in control file; 1=use ss.par
 1 # run display detail (0,1,2)
 1 # detailed age-structured reports in REPORT.SSO (0=low,1=high,2=low for data-limited)
