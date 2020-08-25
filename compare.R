@@ -275,15 +275,12 @@ compare_ss_runs <- function(mod_name = "ss_mod",
     message(mod_name, ": There has been a change greater than ", tol, 
             " in likelihood components")
     write_fail <- TRUE
-  } else {
-    message(mod_name, ": No changes greater than ", tol,
-            " units in likelihood components")
   }
   if(abs(compare_df[compare_df$quantity ==  "maxgrad", "diff"]) > 0.001) {
     tmp_old_val <- compare_df[compare_df$quantity ==  "maxgrad", "ref_value"]
     tmp_new_val <- compare_df[compare_df$quantity ==  "maxgrad", "value"]
     # don't write to fail, but just print message to inform.
-    message("Max gradient changed for ", mod_name, " from ", tmp_old_val, " to ", 
+    message(mod_name, ": Max gradient changed from ", tmp_old_val, " to ", 
             tmp_new_val)
   }
   if(!is.na(compare_df[compare_df$quantity ==  "nwarn", "diff"])) {
@@ -291,7 +288,7 @@ compare_ss_runs <- function(mod_name = "ss_mod",
       # dont'write to fail, but just print the message to inform.
       tmp_old_val <- compare_df[compare_df$quantity ==  "nwarn", "ref_value"]
       tmp_new_val <- compare_df[compare_df$quantity ==  "nwarn", "value"]
-      message("Nwarnings changed for ", mod_name, " from ",tmp_old_val," to ",
+      message(mod_name, ": Nwarnings changed from ", tmp_old_val," to ",
               tmp_new_val)
     }
   } else {
