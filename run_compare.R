@@ -7,6 +7,7 @@ mod_names <- list.dirs("run_R/models", full.names = FALSE, recursive = FALSE)
 to_rm_mod_names <- c("CanaryRf_2015", "CanaryRf_2015_recrdist")
 to_rm <- which(mod_names %in% to_rm_mod_names)
 mod_names <- mod_names[-to_rm]
+message("Will compare ref runs to new results for these models:")
 print(mod_names)
 
 compare_list <- vector(mode = "list", length = length(mod_names))
@@ -33,6 +34,5 @@ for(i in mod_names) {
 compare_df <- do.call("rbind", compare_list)
 compare_df_print <- format(compare_df, digits = 6, nsmall = 3,
                            justify = "left")
-message("values and their differences:")
-print(compare_df_print)
+message("see saved artifact compare_test.txt for values and their differences.")
 write.table(compare_df_print, "run_R/compare_test.txt", row.names = FALSE)
