@@ -145,7 +145,7 @@ compare_ss_runs <- function(mod_name = "ss_mod",
   
   sum <- SS_read_summary(sum_file)
   ref <- SS_read_summary(ref_sum_file)
-  tol <- 0.001
+  tol <- 0.01
   
   if(all(rownames(sum$likelihoods) == rownames(ref$likelihoods))) {
     compare_df <- data.frame(component = rownames(sum$likelihoods),
