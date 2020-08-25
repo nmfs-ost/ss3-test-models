@@ -5,7 +5,8 @@ mod_names <- list.dirs("run_R/models", full.names = FALSE, recursive = FALSE)
 # remove 2 models b/c the results often shift and the models are likely 
 # overparameterized
 to_rm_mod_names <- c("CanaryRf_2015", "CanaryRf_2015_recrdist")
-mod_names <- mod_names[-(mod_names %in% to_rm_mod_names)]
+to_rm <- which(mod_names %in% to_rm_mod_names)
+mod_names <- mod_names[-to_rm]
 print(mod_names)
 
 compare_list <- vector(mode = "list", length = length(mod_names))
