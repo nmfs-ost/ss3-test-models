@@ -280,14 +280,23 @@ compare_ss_runs <- function(mod_name = "ss_mod",
             " units in likelihood components")
   }
   if(abs(compare_df[compare_df$quantity ==  "maxgrad", "diff"]) > 0.001) {
-    write_fail <- TRUE
+    tmp_old_val <- compare_df[compare_df$quantity ==  "maxgrad", "ref_value"]
+    tmp_new_val <- compare_df[compare_df$quantity ==  "maxgrad", "value"]
+    # don't write to fail, but just print message to inform.
+    message("Max gradient changed for ", mod_name, " from ", tmp_old_val, " to ", 
+            tmp_new_val)
   }
   if(!is.na(compare_df[compare_df$quantity ==  "nwarn", "diff"])) {
     if(abs(compare_df[compare_df$quantity ==  "nwarn", "diff"]) > 0) {
-      write_fail <- TRUE
+      # dont'write to fail, but just print the message to inform.
+      tmp_old_val <- compare_df[compare_df$quantity ==  "nwarn", "ref_value"]
+      tmp_new_val <- compare_df[compare_df$quantity ==  "nwarn", "value"]
+      message("Nwarnings changed for ", mod_name, " from ",tmp_old_val," to ",
+              tmp_new_val)
     }
   } else {
-    message(mod_name, ": N warnings was not written")
+    message(mod_name, ": N warnings was not written. This may indicate that", 
+            " the model did not run all the way through.")
     write_fail <- TRUE
   }
   if(abs(tmp_df[tmp_df$quantity == paste0("Bratio_", lyr_mod), "diff"]) > 0.001 ) {
