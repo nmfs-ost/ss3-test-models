@@ -269,8 +269,6 @@ compare_ss_runs <- function(mod_name = "ss_mod",
   tmp_df$ratio <- ifelse(tmp_df$ref_value != 0, 
                          tmp_df$value/tmp_df$ref_value, NA)
   # do comparisons  ----
-  message("Notable changes in total likelihood, max gradients, ",
-         " and number of warnings:")
   write_fail <- FALSE
   # likelihoods
   if (abs(compare_df[compare_df$quantity ==  "TOTAL_LogL_like", "diff"]) > tol) {

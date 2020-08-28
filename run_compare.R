@@ -9,7 +9,8 @@ to_rm <- which(mod_names %in% to_rm_mod_names)
 mod_names <- mod_names[-to_rm]
 message("Will compare ref runs to new results for these models:")
 print(mod_names)
-
+message("Notable changes in total likelihood, max gradients, ",
+        " and number of warnings:")
 compare_list <- vector(mode = "list", length = length(mod_names))
 for(i in mod_names) {
   pos <- which(mod_names == i)
