@@ -11,7 +11,7 @@ B17.ctl
 1 # write to cumreport.sso (0=no,1=like&timeseries; 2=add survey fits)
 1 # Include prior_like for non-estimated parameters (0,1) 
 1 # Use Soft Boundaries to aid convergence (0,1) (recommended)
-0 # Number of datafiles to produce: 1st is input, 2nd is estimates, 3rd and higher are bootstrap
+1 # Number of datafiles to produce: 1st is input, 2nd is estimates, 3rd and higher are bootstrap
 10 # Turn off estimation for parameters entering after this phase
 1000 # MCeval burn interval
 10 # MCeval thin interval
