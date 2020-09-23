@@ -1,15 +1,14 @@
-#V3.30.14.21-safe;_2020_03_19;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.0
+#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
-Mon Mar 23 14:31:44 2020
+Wed Sep  2 03:18:23 2020
 
 fishing fleet: 4 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
 fishing fleet: 5 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
 fishing fleet: 6 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
 fishing fleet: 7 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
 fishing fleet: 8 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-You have just one settlement event; recommend changing to recr_dist_method 4 which takes no recr_dist parameters
-Final gradient: 0.00148103 is larger than final_conv: 0.0001
+This model has just one settlement event; recommend changing to recr_dist_method 4 which takes no recr_dist parameters
 Reminder: Number of lamdas !=0.0 and !=1.0:  9
 Number_of_active_parameters_on_or_near_bounds: 1
- N warnings: 9
+ N warnings: 8

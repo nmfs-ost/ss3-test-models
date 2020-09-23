@@ -1,9 +1,9 @@
-#V3.30.14.21-safe;_2020_03_19;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.0
+#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
-Mon Mar 23 12:49:23 2020
+Tue Sep  1 22:45:28 2020
 
-You have just one settlement event; recommend changing to recr_dist_method 4 which takes no recr_dist parameters
+This model has just one settlement event; recommend changing to recr_dist_method 4 which takes no recr_dist parameters
 bias adjustment ramp extends into forecast; biasadj set to 0.0 internally for forecast years
 fleet: 1  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 18
 fleet: 1  agecomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 156
@@ -13,5 +13,5 @@ fleet: 3  agecomp has obs with partition==2; will treat as partition=0 because r
 fleet: 4  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 14
 fleet: 5  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 23
 fleet: 10  agecomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 23
-Final gradient: 0.000113885 is larger than final_conv: 0.0001
+Final gradient: 0.000190918 is larger than final_conv: 0.0001
  N warnings: 11

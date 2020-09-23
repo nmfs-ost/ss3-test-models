@@ -1,20 +1,20 @@
-#V3.30.14.21-safe;_2020_03_19;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.0
+#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
 simple.dat #_DataFile 
 simple.ctl #_Control 
-Run_Date: Mon Mar 23 12:18:14 2020
+Run_Date: Wed Sep  2 06:23:05 2020
 Final_phase: 5  N_iterations: 409
 #_LIKELIHOOD 
 Label logL*Lambda
 TOTAL_LogL 1308.69
-Catch 2.45742e-011
+Catch 2.45742e-11
 Length_comp 651.433
 Age_comp 586.251
 Size_at_age 79.3351
 Recruitment -9.37385
 InitEQ_regime 0
-Sum_recdevs -4.51028e-016
+Sum_recdevs -2.15106e-16
 Forecast_Recruitment 0
 Parm_priors 1.04528
 Parm_softbounds 0.00118162
@@ -30,7 +30,7 @@ L_at_Amax_Fem_GP_1 71.6688 0.310564 Act 0.633377
 VonBert_K_Fem_GP_1 0.146747 0.00371089 Act 0.483733
 CV_young_Fem_GP_1 0.1 0 Fix 0.249999
 CV_old_Fem_GP_1 0.1 0 Fix 0.249999
-Wtlen_1_Fem_GP_1 2.44e-006 0 Fix 0.5
+Wtlen_1_Fem_GP_1 2.44e-06 0 Fix 0.5
 Wtlen_2_Fem_GP_1 3.34694 0 Fix 0.906706
 Mat50%_Fem_GP_1 55 0 Fix 0.5
 Mat_slope_Fem_GP_1 -0.25 0 Fix 0.458333
@@ -42,7 +42,7 @@ L_at_Amax_Mal_GP_1 69.5615 0.292925 Act 0.59123
 VonBert_K_Mal_GP_1 0.162771 0.00412112 Act 0.563853
 CV_young_Mal_GP_1 0.1 0 Fix 0.249999
 CV_old_Mal_GP_1 0.1 0 Fix 0.249999
-Wtlen_1_Mal_GP_1 2.44e-006 0 Fix 0.5
+Wtlen_1_Mal_GP_1 2.44e-06 0 Fix 0.5
 Wtlen_2_Mal_GP_1 3.34694 0 Fix 0.906706
 RecrDist_GP_1 0 0 Fix 0
 RecrDist_Area_1 0 0 Fix 0

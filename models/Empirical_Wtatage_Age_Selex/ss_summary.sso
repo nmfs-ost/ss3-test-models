@@ -1,19 +1,19 @@
-#V3.30.14.21-safe;_2020_03_19;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.0
+#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
 data.ss #_DataFile 
 control.ss #_Control 
-Run_Date: Mon Mar 23 12:59:55 2020
+Run_Date: Wed Sep  2 02:24:02 2020
 Final_phase: 5  N_iterations: 470
 #_LIKELIHOOD 
 Label logL*Lambda
 TOTAL_LogL 566.287
-Catch 4.76545e-012
+Catch 4.76545e-12
 Survey -3.30526
 Age_comp 574.331
 Recruitment -6.56983
 InitEQ_regime 0
-Sum_recdevs -8.60423e-016
+Sum_recdevs -3.60822e-16
 Forecast_Recruitment 0
 Parm_priors 1.82918
 Parm_softbounds 0.00204566
@@ -29,7 +29,7 @@ L_at_Amax_Fem_GP_1 71.6492 0 Fix 0.632984
 VonBert_K_Fem_GP_1 0.147282 0 Fix 0.486408
 CV_young_Fem_GP_1 0.1 0 Fix 0.249999
 CV_old_Fem_GP_1 0.1 0 Fix 0.249999
-Wtlen_1_Fem_GP_1 2.44e-006 0 Fix 0.5
+Wtlen_1_Fem_GP_1 2.44e-06 0 Fix 0.5
 Wtlen_2_Fem_GP_1 3.34694 0 Fix 0.906706
 Mat50%_Fem_GP_1 55 0 Fix 0.5
 Mat_slope_Fem_GP_1 -0.25 0 Fix 0.458333
@@ -41,7 +41,7 @@ L_at_Amax_Mal_GP_1 69.5361 0 Fix 0.590722
 VonBert_K_Mal_GP_1 0.163516 0 Fix 0.567577
 CV_young_Mal_GP_1 0.1 0 Fix 0.249999
 CV_old_Mal_GP_1 0.1 0 Fix 0.249999
-Wtlen_1_Mal_GP_1 2.44e-006 0 Fix 0.5
+Wtlen_1_Mal_GP_1 2.44e-06 0 Fix 0.5
 Wtlen_2_Mal_GP_1 3.34694 0 Fix 0.906706
 RecrDist_GP_1 0 0 Fix 0
 RecrDist_Area_1 0 0 Fix 0
@@ -254,7 +254,7 @@ SPRratio_1998 1.34868 0.051527
 SPRratio_1999 1.35108 0.0607768
 SPRratio_2000 1.36583 0.0696331
 SPRratio_2001 1.36223 0.0828896
-SPRratio_2002 0.00015302 4.42626e-005
+SPRratio_2002 0.00015302 4.42626e-05
 SPRratio_2003 0.251585 0.391555
 SPRratio_2004 0.41317 0.257473
 SPRratio_2005 0.503888 0.192854
@@ -295,7 +295,7 @@ F_1998 2.39615 0.386682
 F_1999 2.41429 0.459657
 F_2000 2.53095 0.570932
 F_2001 2.50161 0.666032
-F_2002 7.26662e-005 2.09347e-005
+F_2002 7.26662e-05 2.09347e-05
 F_2003 0.136876 0.244211
 F_2004 0.248405 0.196432
 F_2005 0.322171 0.166653

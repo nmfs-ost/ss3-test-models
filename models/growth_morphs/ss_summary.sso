@@ -1,20 +1,20 @@
-#V3.30.15.00-safe;_2020_03_26;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.0
+#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
 growth_morphs_dat.ss #_DataFile 
 growth_morphs_ctl.ss #_Control 
-Run_Date: Fri Jun 12 13:51:59 2020
+Run_Date: Wed Sep  2 08:36:41 2020
 Final_phase: 6  N_iterations: 570
 #_LIKELIHOOD 
 Label logL*Lambda
 TOTAL_LogL 1121.78
-Catch 6.14695e-013
+Catch 6.14695e-13
 Survey -5.79973
 Length_comp 761.55
 Age_comp 364.511
 Recruitment 1.5023
 InitEQ_regime 0
-Sum_recdevs -6.32307e-016
+Sum_recdevs 2.76688e-16
 Forecast_Recruitment 0
 Parm_priors 0.0183217
 Parm_softbounds 0.00142719
@@ -31,7 +31,7 @@ L_at_Amax_Fem_GP_1 70.2172 0.834399 Act 0.604345
 VonBert_K_Fem_GP_1 0.163605 0.0183775 Act 0.568022
 CV_young_Fem_GP_1 0.1 0 Fix 0.249999
 CV_old_Fem_GP_1 0.25 0 Fix 0.541667
-Wtlen_1_Fem_GP_1 2e-006 0 Fix 0.5
+Wtlen_1_Fem_GP_1 2e-06 0 Fix 0.5
 Wtlen_2_Fem_GP_1 3 0 Fix 0.857143
 Mat50%_Fem_GP_1 55 0 Fix 0.5
 Mat_slope_Fem_GP_1 -0.25 0 Fix 0.458333
@@ -44,7 +44,7 @@ L_at_Amax_Mal_GP_1 0 0 Fix 0.5
 VonBert_K_Mal_GP_1 0 0 Fix 0.5
 CV_young_Mal_GP_1 0 0 Fix 0.5
 CV_old_Mal_GP_1 0.25 0 Fix 0.541667
-Wtlen_1_Mal_GP_1 2e-006 0 Fix 0.5
+Wtlen_1_Mal_GP_1 2e-06 0 Fix 0.5
 Wtlen_2_Mal_GP_1 3 0 Fix 0.857143
 RecrDist_GP_1 1 0 Fix 0.001001
 RecrDist_Area_1 1 0 Fix 0.001001
@@ -321,7 +321,7 @@ SSB_SPR 19669.9 5659.39
 annF_SPR 0.0733244 0.00109235
 Dead_Catch_SPR 4690.34 1343.09
 SSB_MSY 19669.9 5659.39
-SPR_MSY 0.4 3.55702e-016
+SPR_MSY 0.4 3.49028e-16
 annF_MSY 0.0733244 0.00109235
 Dead_Catch_MSY 4690.34 1343.09
 Ret_Catch_MSY 4690.34 1343.09
