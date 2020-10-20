@@ -1,7 +1,7 @@
-#V3.30.14.21-safe;_2020_03_19;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.0
+#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
-Mon Mar 23 15:37:37 2020
+Wed Sep  2 01:30:16 2020
 
 fishing fleet: 1 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
 fishing fleet: 2 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
@@ -14,7 +14,7 @@ fishing fleet: 8 surveytime read as: 1 normally is -1 for fishing fleet; can ove
 fishing fleet: 9 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
 fishing fleet: 10 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
 fishing fleet: 11 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-You have just one settlement event; recommend changing to recr_dist_method 4 which takes no recr_dist parameters
+This model has just one settlement event; recommend changing to recr_dist_method 4 which takes no recr_dist parameters
 fleet: 1  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 9
 fleet: 2  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 11
 fleet: 3  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 16

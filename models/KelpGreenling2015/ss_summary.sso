@@ -1,10 +1,10 @@
-#V3.30.14.21-safe;_2020_03_19;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.0
+#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
 BC_dat.ss #_DataFile 
 BC_ctl.ss #_Control 
-Run_Date: Mon Mar 23 14:13:17 2020
-Final_phase: 6  N_iterations: 818
+Run_Date: Wed Sep  2 03:13:03 2020
+Final_phase: 6  N_iterations: 820
 #_LIKELIHOOD 
 Label logL*Lambda
 TOTAL_LogL 1305.43
@@ -30,7 +30,7 @@ L_at_Amax_Fem_GP_1 36.4388 0.288882 Act 0.41097
 VonBert_K_Fem_GP_1 0.261353 0.0203032 Act 0.179281
 CV_young_Fem_GP_1 0.105097 0.00199041 Act 0.550965
 CV_old_Fem_GP_1 0 0 Fix 0.499999
-Wtlen_1_Fem_GP_1 6.81e-006 0 Fix 6.80999e-006
+Wtlen_1_Fem_GP_1 6.81e-06 0 Fix 6.80999e-06
 Wtlen_2_Fem_GP_1 3.2114 0 Fix 0.55285
 Mat50%_Fem_GP_1 29.34 0 Fix 0.480339
 Mat_slope_Fem_GP_1 -1 0 Fix 0.333333
@@ -42,7 +42,7 @@ L_at_Amax_Mal_GP_1 -0.0191201 0.00533563 Act 0.249761
 VonBert_K_Mal_GP_1 0 0 Fix 0.5
 CV_young_Mal_GP_1 0 0 Fix 0.499999
 CV_old_Mal_GP_1 0 0 Fix 0.499999
-Wtlen_1_Mal_GP_1 9.76e-006 0 Fix 9.75999e-006
+Wtlen_1_Mal_GP_1 9.76e-06 0 Fix 9.75999e-06
 Wtlen_2_Mal_GP_1 3.1164 0 Fix 0.5291
 RecrDist_GP_1 1 0 Fix 0.999999
 RecrDist_Area_1 1 0 Fix 0.999999
@@ -130,9 +130,9 @@ Size_DblN_ascend_se_Ocean(2) 3.62312 0.0830677 Act 0.402569
 Size_DblN_descend_se_Ocean(2) 8 0 Fix 0.888889
 Size_DblN_start_logit_Ocean(2) -8 0 Fix 0.0555556
 Size_DblN_end_logit_Ocean(2) 8 0 Fix 0.944444
-Size_DblN_peak_Estuary(3) 12.2822 22.2212 Act 0.0652047
-Size_DblN_top_logit_Estuary(3) -5.15562 75.9902 Act 0.322958
-Size_DblN_ascend_se_Estuary(3) 4.50309 100.31 Act 0.500343
+Size_DblN_peak_Estuary(3) 12.2822 22.221 Act 0.0652049
+Size_DblN_top_logit_Estuary(3) -5.15565 75.9912 Act 0.322957
+Size_DblN_ascend_se_Estuary(3) 4.50307 100.31 Act 0.500341
 Size_DblN_descend_se_Estuary(3) 3.57606 1.22719 Act 0.69867
 Size_DblN_start_logit_Estuary(3) -8 0 Fix 0.0555556
 Size_DblN_end_logit_Estuary(3) -1.59162 2.33851 Act 0.411577
@@ -202,7 +202,7 @@ SSB_1964 373.854 91.4685
 SSB_1965 373.126 91.4639
 SSB_1966 372.348 91.4589
 SSB_1967 371.475 91.4532
-SSB_1968 370.738 91.4495
+SSB_1968 370.738 91.4496
 SSB_1969 370.509 91.4526
 SSB_1970 370.004 91.4525
 SSB_1971 369.173 91.4478
@@ -584,16 +584,16 @@ F_2011 0.139635 0.0398176
 F_2012 0.149373 0.043261
 F_2013 0.19397 0.0571026
 F_2014 0.161413 0.0494298
-F_2015 1.0328 0.0993946
-F_2016 0.946307 0.119308
-F_2017 0.886772 0.137162
-F_2018 0.85769 0.152907
-F_2019 0.845929 0.16375
-F_2020 0.841038 0.170911
-F_2021 0.838342 0.175875
-F_2022 0.836422 0.179401
-F_2023 0.834954 0.181921
-F_2024 0.833859 0.183729
+F_2015 1.0328 0.0766651
+F_2016 0.946307 0.126351
+F_2017 0.886772 0.160581
+F_2018 0.85769 0.187639
+F_2019 0.845929 0.206482
+F_2020 0.841038 0.219214
+F_2021 0.838342 0.227991
+F_2022 0.836422 0.234119
+F_2023 0.834954 0.238431
+F_2024 0.833859 0.241492
 #_Depletion Basis=  100%*Virgin_Biomass
 Bratio_1916 0.997326 0.000589875
 Bratio_1917 0.995 0.00110082
@@ -710,18 +710,18 @@ Totbio_unfished 1426.28 318.069
 SmryBio_unfished 1426.28 318.069
 Recr_unfished 1451.17 312.899
 SSB_Btgt 158.65 34.2079
-SPR_Btgt 0.464286 2.98501e-017
+SPR_Btgt 0.464286 1.9886e-17
 annF_Btgt 0.175439 0.00297838
 Dead_Catch_Btgt 128.704 27.816
 SSB_SPR 152.304 32.8396
 annF_SPR 0.182864 0.00309758
 Dead_Catch_SPR 130.355 28.1781
 SSB_MSY 152.304 32.8396
-SPR_MSY 0.45 2.12792e-010
+SPR_MSY 0.45 2.12792e-10
 annF_MSY 0.182864 0.00309758
 Dead_Catch_MSY 130.355 28.1781
 Ret_Catch_MSY 130.355 28.1781
-B_MSY/SSB_unfished 0.384 2.38327e-010
+B_MSY/SSB_unfished 0.384 2.38327e-10
 ForeCatch_2015 213.656 62.3371
 ForeCatch_2016 173.972 50.172
 ForeCatch_2017 152.049 43.3992
