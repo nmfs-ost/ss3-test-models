@@ -1,43 +1,42 @@
 #C Forecast file Big Skate 2019
-#C with default harvest control rule
 
-#V3.30.13.02-safe;_2019_05_08;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.0
+#V3.30.13-safe;_2019_03_09;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.0
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
 # for all year entries except rebuilder; enter either: actual year, -999 for styr, 0 for endyr, neg number for rel. endyr
 1 # Benchmarks: 0=skip; 1=calc F_spr,F_btgt,F_msy; 2=calc F_spr,F0.1,F_msy 
 2 # MSY: 1= set to F(SPR); 2=calc F(MSY); 3=set to F(Btgt) or F0.1; 4=set to F(endyr) 
-0.7 # SPR target (e.g. 0.40)
+0.5 # SPR target (e.g. 0.40)
 0.4 # Biomass target (e.g. 0.40)
 #_Bmark_years: beg_bio, end_bio, beg_selex, end_selex, beg_relF, end_relF, beg_recr_dist, end_recr_dist, beg_SRparm, end_SRparm (enter actual year, or values of 0 or -integer to be rel. endyr)
 1916 1916 0 0 0 0 0 0 0 0
 1 #Bmark_relF_Basis: 1 = use year range; 2 = set relF same as forecast below
 #
 1 # Forecast: 0=none; 1=F(SPR); 2=F(MSY) 3=F(Btgt) or F0.1; 4=Ave F (uses first-last relF yrs); 5=input annual F scalar
-1000 # 12 # N forecast years 
+12 # N forecast years 
 1 # F scalar (only used for Do_Forecast==5)
 #_Fcast_years:  beg_selex, end_selex, beg_relF, end_relF, beg_mean recruits, end_recruits  (enter actual year, or values of 0 or -integer to be rel. endyr)
  0 0 0 0 -999 0
 0 # Forecast selectivity (0=fcast selex is mean from year range; 1=fcast selectivity from annual time-vary parms)
-3 # Control rule method (1: ramp does catch=f(SSB), buffer on F; 2: ramp does F=f(SSB), buffer on F; 3: ramp does catch=f(SSB), buffer on catch; 4: ramp does F=f(SSB), buffer on catch) 
+1 # Control rule method (1: ramp does catch=f(SSB), buffer on F; 2: ramp does F=f(SSB), buffer on F; 3: ramp does catch=f(SSB), buffer on catch; 4: ramp does F=f(SSB), buffer on catch) 
 0.4 # Control rule Biomass level for constant F (as frac of Bzero, e.g. 0.40); (Must be > the no F level below) 
 0.1 # Control rule Biomass level for no F (as frac of Bzero, e.g. 0.10) 
-1.0 ## -1 # Control rule target as fraction of Flimit (e.g. 0.75), negative value invokes list of [year, scalar] with filling from year to YrMax
-## # buffer values below based on Category 2 Sigma with P* = 0.45
-## #Yr    buffer
-## 2019   1.0
-## 2020   1.0
-## 2021   0.874  
-## 2022   0.865  
-## 2023   0.857  
-## 2024   0.849  
-## 2025   0.841  
-## 2026   0.833  
-## 2027   0.826  
-## 2028   0.818  
-## 2029   0.810  
-## 2030   0.803
-## -9999  0
+-1 # Control rule target as fraction of Flimit (e.g. 0.75), negative value invokes list of [year, scalar] with filling from year to YrMax
+# buffer values below based on Category 2 Sigma with P* = 0.45
+#Yr    buffer
+2019   1.0
+2020   1.0
+2021   0.874  
+2022   0.865  
+2023   0.857  
+2024   0.849  
+2025   0.841  
+2026   0.833  
+2027   0.826  
+2028   0.818  
+2029   0.810  
+2030   0.803
+-9999  0
 #
 3 #_N forecast loops (1=OFL only; 2=ABC; 3=get F from forecast ABC catch with allocations applied)
 3 #_First forecast loop with stochastic recruitment
@@ -67,13 +66,13 @@
 # list sequentially because read values fill to end of N forecast
 # terminate with -9999 in year field 
 # no allocation groups
-2 # basis for input Fcast catch: -1=read basis with each obs; 2=dead catch; 3=retained catch; 99=input Hrate(F)
+3 # basis for input Fcast catch: -1=read basis with each obs; 2=dead catch; 3=retained catch; 99=input Hrate(F)
 #enter list of Fcast catches; terminate with line having year=-9999
- #Year Seas Fleet dead(B)              comment
-  2019    1     1   195.9 #sum_for_2019: 241.3
-  2019    1     4    45.4                     
-  2020    1     1   195.9 #sum_for_2020: 241.3
-  2020    1     4    45.4                     
+#_Yr Seas Fleet Catch(or_F)
+2019 1    1     258.4
+2019 1    4      54.76
+2020 1    1     258.4
+2020 1    4      54.76
 #
 -9999 1    1       0 
 #
