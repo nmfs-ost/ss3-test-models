@@ -1,10 +1,9 @@
-#V3.30.13.02-safe;_2019_05_08;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.0
+#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
-Thu Jun  6 09:43:02 2019
+Thu Oct 22 07:36:43 2020
 
  
 Block:2 13 ends in: 2030 after retroyr+1:  2019
  Minimum size bin is:_20; which is >10cm, which is large for use as size-at-age 0.0 recruitment
  N warnings: 3
-Number_of_active_parameters_on_or_near_bounds: 0
