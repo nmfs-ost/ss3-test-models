@@ -132,7 +132,8 @@ SS_read_summary <- function(file="ss_summary.sso") {
 #'@param warn_file path to the warning file
 #'@param ref_warn_file path to the warning reference file
 #'@param new_file path to write output to.
-#'@param fail_file
+#'@param hessian Was the hessian estimated? Default to TRUE
+#'@param fail_file Name of the file to write information about failed runs.
 compare_ss_runs <- function(mod_name = "ss_mod",
                             sum_file = "ss_summary.sso",
                             ref_sum_file = "ss_summary_ref.sso",
@@ -141,6 +142,7 @@ compare_ss_runs <- function(mod_name = "ss_mod",
                             warn_file = "warning.sso",
                             ref_warn_file = "warning_ref.sso", 
                             new_file = NULL,
+                            hessian = TRUE,
                             fail_file = "test_failed.txt") {
   
   sum <- SS_read_summary(sum_file)
@@ -302,22 +304,26 @@ compare_ss_runs <- function(mod_name = "ss_mod",
   if(abs(tmp_df[tmp_df$quantity == "SR_LN(R0)_val", "diff"]) > 0.01 ) {
     write_fail <- TRUE
   }
-  if(tmp_df[tmp_df$quantity == "SR_LN(R0)_se", "ratio"] > 1.01 |
-     tmp_df[tmp_df$quantity == "SR_LN(R0)_se", "ratio"] < 0.99) {
-    write_fail <- TRUE
-  }
-  if(tmp_df[tmp_df$quantity == "SSB_unfished_se", "ratio"] > 1.01 |
-     tmp_df[tmp_df$quantity == "SSB_unfished_se", "ratio"] < 0.99) {
-    write_fail <- TRUE
+  if (hessian) {
+    if (tmp_df[tmp_df$quantity == "SR_LN(R0)_se", "ratio"] > 1.01 |
+       tmp_df[tmp_df$quantity == "SR_LN(R0)_se", "ratio"] < 0.99) {
+      write_fail <- TRUE
+    }
+    if (tmp_df[tmp_df$quantity == "SSB_unfished_se", "ratio"] > 1.01 |
+       tmp_df[tmp_df$quantity == "SSB_unfished_se", "ratio"] < 0.99) {
+      write_fail <- TRUE
+    }
   }
   if(!is.na(lyr_fcast) && !is.na(tmp_df[tmp_df$quantity == paste0("ForeCatch_", lyr_fcast, "_val"), "value"])) {
     if(tmp_df[tmp_df$quantity == paste0("ForeCatch_", lyr_fcast, "_val"), "ratio"] > 1.01 |
        tmp_df[tmp_df$quantity == paste0("ForeCatch_", lyr_fcast, "_val"), "ratio"] < 0.99) {
       write_fail <- TRUE
     }
-    if(tmp_df[tmp_df$quantity == paste0("ForeCatch_", lyr_fcast, "_se"), "ratio"] > 1.01 |
-       tmp_df[tmp_df$quantity == paste0("ForeCatch_", lyr_fcast, "_se"), "ratio"] < 0.99) {
-      write_fail <- TRUE
+    if(hessian) {
+      if(tmp_df[tmp_df$quantity == paste0("ForeCatch_", lyr_fcast, "_se"), "ratio"] > 1.01 |
+         tmp_df[tmp_df$quantity == paste0("ForeCatch_", lyr_fcast, "_se"), "ratio"] < 0.99) {
+        write_fail <- TRUE
+      }
     }
   } else {
     if(!is.na(lyr_fcast) && 
