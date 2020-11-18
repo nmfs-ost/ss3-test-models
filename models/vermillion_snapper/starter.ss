@@ -4,7 +4,7 @@
 # conversion from SS V3.24f to 3.30 done by hand Matt Smith
 vermilion.dat
 vermilion.ctl
-1 # 0=use init values in control file; 1=use ss.par
+0 # 0=use init values in control file; 1=use ss.par
 1 # run display detail (0,1,2)
 1 # detailed output (0=minimal for data-limited, 1=high, 2=brief) 
 1 # write 1st iteration details to echoinput.sso file (0,1) 
