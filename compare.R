@@ -322,7 +322,10 @@ compare_ss_runs <- function(mod_name = "ss_mod",
     if(hessian) {
       if(tmp_df[tmp_df$quantity == paste0("ForeCatch_", lyr_fcast, "_se"), "ratio"] > 1.01 |
          tmp_df[tmp_df$quantity == paste0("ForeCatch_", lyr_fcast, "_se"), "ratio"] < 0.99) {
+        # only write if fail if ref value for se is not really small. really small indicates it is a fixed value.
+        if (tmp_df[tmp_df$quantity == paste0("ForeCatch_", lyr_fcast, "_se"), "ref_value"] > 0.0001) {
         write_fail <- TRUE
+        }
       }
     }
   } else {
