@@ -1,11 +1,10 @@
-#V3.30.14.05-safe;_2019_09_05;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.0
+#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
-Wed Nov 18 11:03:27 2020
+Wed Nov 18 15:44:24 2020
 
 bias adjustment ramp extends into forecast; biasadj set to 0.0 internally for forecast years
+fleet: 9  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 9
 setting positive forecast relF for bycatch fleet: 4
-Final gradient: 0.000142485 is larger than final_conv: 0.0001
 setting positive forecast relF for bycatch fleet: 4
  N warnings: 2
-Number_of_active_parameters_on_or_near_bounds: 0
