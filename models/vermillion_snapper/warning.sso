@@ -1,7 +1,7 @@
 #V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
-Wed Nov 18 15:44:24 2020
+Tue Dec 29 07:44:58 2020
 
 bias adjustment ramp extends into forecast; biasadj set to 0.0 internally for forecast years
 fleet: 9  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 9
