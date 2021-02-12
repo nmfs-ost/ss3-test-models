@@ -1,9 +1,11 @@
-#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
+0 #V3.30.16.04.beta;_2020_12_18;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
-Wed Sep  2 03:11:43 2020
+Fri Feb 05 14:35:48 2021
 
-This model has just one settlement event; recommend changing to recr_dist_method 4 which takes no recr_dist parameters
-The experimental 2D_AR selectivity smoother option is selected!
-Final gradient: 0.00019843 is larger than final_conv: 1e-05
- N warnings: 3
+1 This model has just one settlement event; recommend changing to recr_dist_method 4 which takes no recr_dist parameters
+2 The experimental 2D_AR selectivity smoother option is selected!
+3 Minimum pop size bin:_10; is > L at Amin for sex: 1; Gpat: 1; L= 5
+4 Final gradient: 2.7383e-005 is larger than final_conv: 1e-005
+5 Forecast F capped by max possible F from control file: 1.5
+5  N warnings: 5
