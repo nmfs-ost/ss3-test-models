@@ -1,7 +1,7 @@
 # code to run the ss_new models
 
-mod_names <- list.dirs("models", full.names = FALSE, recursive = FALSE)
-mod_paths <- list.dirs("models", full.names = TRUE, recursive = FALSE)
+mod_names <- list.dirs("model_runs", full.names = FALSE, recursive = FALSE)
+mod_paths <- list.dirs("model_runs", full.names = TRUE, recursive = FALSE)
 print(mod_names)
 
 run_ss_noest <- function(dir) {

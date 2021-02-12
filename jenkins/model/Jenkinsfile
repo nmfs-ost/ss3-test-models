@@ -8,9 +8,12 @@ pipeline {
 		    steps {
 			    sh label: 'remove an old file (force in case does not exist)', script: 'rm -f run_models.sh'
 		        sh label: 'remove an old dir (force in case does not exist)', script: 'rm -rf ss_bin'
-				sh label: 'remove an old dir (force in case does not exist)', script: 'rm -rf models'
 				sh label: 'remove old files (force in case does not exist)', script: 'rm -f models.zip'
+			    sh label: 'remove old files (force in case does not exist)', script: 'rm -f ss'
+				sh label: 'remove old files (force in case does not exist)', script: 'rm -f models/ss'
+				sh label: 'remove old dir (force in case does not exist)', script: 'rm -rf model_runs'
 				// sh label: 'view folders/files', script: 'ls .'
+				sh label: 'view model files', script: 'ls models/Simple'
 			}
 		}
 	    stage('move shell script') {
@@ -24,6 +27,11 @@ pipeline {
               copyArtifacts filter: 'ss.gz', fingerprintArtifacts: true, projectName: 'stock-synthesis-build', selector: lastSuccessful()
 			}
         }
+	    stage('copy model files to a new directory') {
+		    steps{
+			    sh label: 'Move ss executable', script: 'mv models model_runs'
+			}
+		}
         stage('Unpack ss.gz artifact') {
             steps {
                 sh label: 'Unzip ss', script: 'gunzip ss.gz'
@@ -41,7 +49,7 @@ pipeline {
     }
     post {
 	    always {
-                sh label: 'Zip models folder', script: 'zip -r models.zip models'
+                sh label: 'Zip models folder', script: 'zip -r models.zip model_runs'
                 archiveArtifacts 'models.zip'
 		}
         failure {

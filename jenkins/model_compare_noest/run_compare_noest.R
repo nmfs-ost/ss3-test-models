@@ -1,6 +1,6 @@
-source("compare.R")
+source("jenkins/shared/compare.R")
 # get model folder names
-mod_names <- list.dirs("models", full.names = FALSE, recursive = FALSE)
+mod_names <- list.dirs("model_runs", full.names = FALSE, recursive = FALSE)
 # remove models b/c the results often shift and the models are likely 
 # overparameterized
 # also temporarily add 4 models with NAs to see if job works
@@ -15,14 +15,14 @@ message("Notable changes in total likelihood, max gradients, ",
 compare_list <- vector(mode = "list", length = length(mod_names))
 for(i in mod_names) {
   pos <- which(mod_names == i)
-  sum_file <- file.path("models", i, "ss_summary.sso")
-  ref_sum_file <- file.path("models", i, "ss_summary_ref.sso")
+  sum_file <- file.path("model_runs", i, "ss_summary.sso")
+  ref_sum_file <- file.path("model_runs", i, "ss_summary_ref.sso")
   
-  par_file <- file.path("models", i, "ss.par")
-  ref_par_file <- file.path("models", i, "ss_ref.par")
+  par_file <- file.path("model_runs", i, "ss.par")
+  ref_par_file <- file.path("model_runs", i, "ss_ref.par")
   
-  warn_file <- file.path("models", i, "warning.sso")
-  ref_warn_file <- file.path("models", i, "warning_ref.sso")
+  warn_file <- file.path("model_runs", i, "warning.sso")
+  ref_warn_file <- file.path("model_runs", i, "warning_ref.sso")
   
   fail_file <- file.path("run_R", "test_failed.txt")
   

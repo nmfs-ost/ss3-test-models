@@ -1,7 +1,9 @@
-source("compare.R")
+source("jenkins/shared/compare.R")
 
 # get model folder names
-mod_names <- list.dirs("run_R/models", full.names = FALSE, recursive = FALSE)
+mod_names <- list.dirs("run_R/model_runs", full.names = FALSE, recursive = FALSE)
+ref_file_folder <- file.path("ss_example_files", "models")
+mod_run_folder <- file.path("run_R", "model_runs")
 # remove 2 models b/c the results often shift and the models are likely 
 # overparameterized
 to_rm_mod_names <- c("Bocaccio_2015", "CanaryRf_2015", "CanaryRf_2015_recrdist")
@@ -14,14 +16,14 @@ message("Notable changes in total likelihood, max gradients, ",
 compare_list <- vector(mode = "list", length = length(mod_names))
 for(i in mod_names) {
   pos <- which(mod_names == i)
-  sum_file <- file.path("run_R", "models", i, "ss_summary.sso")
-  ref_sum_file <- file.path("ss_example_files", "models", i, "ss_summary_ref.sso")
+  sum_file <- file.path(mod_run_folder, i, "ss_summary.sso")
+  ref_sum_file <- file.path(ref_file_folder, i, "ss_summary_ref.sso")
   
-  par_file <- file.path("run_R", "models", i, "ss.par")
-  ref_par_file <- file.path("ss_example_files", "models", i, "ss_ref.par")
+  par_file <- file.path(mod_run_folder, i, "ss.par")
+  ref_par_file <- file.path(ref_file_folder, i, "ss_ref.par")
   
-  warn_file <- file.path("run_R", "models", i, "warning.sso")
-  ref_warn_file <- file.path("ss_example_files", "models", i, "warning_ref.sso")
+  warn_file <- file.path(mod_run_folder, i, "warning.sso")
+  ref_warn_file <- file.path(ref_file_folder, i, "warning_ref.sso")
   
   fail_file <- file.path("run_R", "test_failed.txt")
   

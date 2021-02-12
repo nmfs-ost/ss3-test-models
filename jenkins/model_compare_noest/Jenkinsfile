@@ -10,7 +10,10 @@ pipeline {
 			    sh label: 'remove an old file (force in case does not exist)', script: 'rm -f run_models.sh'
 		        sh label: 'remove an old dir (force in case does not exist)', script: 'rm -rf ss_bin'
 				sh label: 'remove old files (force in case does not exist)', script: 'rm -f models.zip'
+				sh label: 'remove old dir (force in case does not exist)', script: 'rm -rf model_runs'
 				sh label: 'remove old files (force in case does not exist)', script: 'rm -f run_from_par.R'
+				sh label: 'remove old files (force in case does not exist)', script: 'rm -f ss'
+				sh label: 'remove old files (force in case does not exist)', script: 'rm -f models/ss'
 				sh label: 'remove old files (force in case does not exist)', script: 'rm -f run_compare_noest.R'
 			    sh label: 'remove an old dir (force in case does not exist)', script: 'rm -rf run_R'
 				// sh label: 'view folders/files', script: 'ls .'
@@ -28,11 +31,16 @@ pipeline {
               copyArtifacts filter: 'ss.gz', fingerprintArtifacts: true, projectName: 'stock-synthesis-build', selector: lastSuccessful()
 			}
         }
+		stage('copy model files to a new directory') {
+		    steps{
+			    sh label: 'Move ss executable', script: 'mv models model_runs'
+			}
+		}
         stage('Unpack ss.gz artifact') {
             steps {
                 sh label: 'Unzip ss', script: 'gunzip ss.gz'
                 sh label: 'Make ss executable', script: 'chmod a+rwx ss'
-				sh label: 'Move ss executable', script: 'mv ss models/ss'
+				sh label: 'Move ss executable', script: 'mv ss model_runs/ss'
                 // sh label: 'Get dir listing', script: 'ls -alh *'
             }
         }
@@ -49,15 +57,15 @@ pipeline {
 		}
 	    stage('Determine results of test') {
 		    steps{
-			    sh label: 'run R code', script: 'Rscript check_failed.R'
+			    sh label: 'run R code', script: 'Rscript jenkins/shared/check_failed.R'
 			}
 		}
     }
     post {
 	    always {
-		        sh label: 'get rid of ss exe', script: 'rm -f models/ss'
-				sh label: 'get rid of ss log', script: 'rm -f models/ss.log'
-                sh label: 'Zip models folder', script: 'zip -r models.zip models'
+		        sh label: 'get rid of ss exe', script: 'rm -f model_runs/ss'
+				sh label: 'get rid of ss log', script: 'rm -f model_runs/ss.log'
+                sh label: 'Zip models folder', script: 'zip -r models.zip model_runs'
                 archiveArtifacts 'models.zip, run_R/test_failed.txt, run_R/compare_test.txt'
 		}
         failure {

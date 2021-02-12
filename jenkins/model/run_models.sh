@@ -4,7 +4,7 @@
 export PATH=$PATH:/var/lib/jenkins/workspace/stock-synthesis-model/ss_bin
 
 # loop through the models
-cd models
+cd model_runs
 for dir in */; do
     echo $dir
 	cd $dir

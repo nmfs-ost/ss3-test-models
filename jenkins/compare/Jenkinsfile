@@ -24,10 +24,9 @@ pipeline {
               copyArtifacts filter: 'models.zip', fingerprintArtifacts: true, projectName: 'stock-synthesis-model', selector: lastCompleted()
               sh label: 'move models.zip', script: 'mv models.zip run_R/models.zip' 
 			  sh label: 'Unzip models.zip', script: 'cd run_R && unzip models.zip'
-			  // sh label: 'view files', script: 'ls -R run_R'
+			  sh label: 'confirm dir name', script: 'ls run_R'
 		   }
         }
-
 		stage('set up stock synthesis reference run files') {
 		    steps {
 				sh label: 'create subfolder to move repo files', script: 'mkdir ss_example_files'
@@ -39,12 +38,13 @@ pipeline {
 		}
 	    stage('Run comparison R script') {
 		    steps{
+			    sh label: 'Move comparison code', script: 'mv jenkins/compare/run_compare.R run_compare.R'
 			    sh label: 'Run comparison R code', script: 'Rscript run_compare.R'
 			}	
 		}
 		stage('Determine results of test') {
 		    steps{
-			    sh label: 'run R code', script: 'Rscript check_failed.R'
+			    sh label: 'run R code', script: 'Rscript jenkins/shared/check_failed.R'
 			}
 		}
 	}
