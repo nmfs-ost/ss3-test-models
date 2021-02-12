@@ -9,12 +9,12 @@ pipeline {
 			    sh label: 'remove an old dir (force in case does not exist)', script: 'rm -rf ss_example_files'
 			    sh label: 'remove an old file (force in case does not exist)', script: 'rm -f run_models.sh'
 		        sh label: 'remove an old dir (force in case does not exist)', script: 'rm -rf ss_bin'
-				sh label: 'remove an old dir (force in case does not exist)', script: 'rm -rf models'
 				sh label: 'remove old files (force in case does not exist)', script: 'rm -f models.zip'
 				sh label: 'remove old files (force in case does not exist)', script: 'rm -f run_from_par.R'
 				sh label: 'remove old files (force in case does not exist)', script: 'rm -f run_compare_noest.R'
 			    sh label: 'remove an old dir (force in case does not exist)', script: 'rm -rf run_R'
 				// sh label: 'view folders/files', script: 'ls .'
+				sh label: 'view model files', script: 'ls models/Simple'
 			}
 		}
 	    stage('move R scripts') {
