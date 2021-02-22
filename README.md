@@ -35,8 +35,22 @@ Most of these models have at least 1 unique feature.
 | Hake_2018 | Empirical weight at age model, Dirichlet Multinomial comps weighting, time varying selectivity using annual deviations |
 | Hake_2019_semi-parametric_selex | Empirical Weight at age model, with empirical (as random walk) age selectivity |
 | KelpGreenling2015 | *to add* |
-
-
+| Petrale2015 | *to add* |
+| POP_2017 | *to add* |
+| Sablefish2015 | cubic spline selectivity with male offset |
+| seasonal_with_size_comp | uses seasons |
+| Simple | Uses sd reporting and mean size-at-age data |
+| Simple_NoCPUE | No index of abundance |
+| Simple_with_Discard | Uses discards |
+| Spinydogfish_2011 | Stock Recruitment option 7 (survival 3 parameter)  |
+| tagging_mirrored_sel | *to add* |
+| three_area | Spatial model with movement |
+| three_area_double_normal_selex | *to add* |
+| three_area_nomove | Spatial model with no movement |
+| vermillion_snapper | *to add* |
+| Widow_2015 | *to add* |
+| YelloweyeRF_2017 | spatial age-structured production model, no movement |
+| YellowtailRF_2017 | *to add* |
 
 ## Disclaimer
 
