@@ -8,7 +8,7 @@ All SS models are in the "models" subfolder. All testing scripts and specificati
 
 ## Why are these models not in the user-examples repository?
 
-This repository houses models used for testing Stock Synthesis. These are often based on stock assessment models, but may not be the final model version or may have been altered for testing purposes.
+This repository houses models used for testing Stock Synthesis. These are often based on stock assessment models, but may not be the final model version or may have been altered for testing purposes. In addition, the data in the model files should not be used as data sources, as the data may have been altered for testing purposes.
 
 ## How is Stock Synthesis tested?
 
