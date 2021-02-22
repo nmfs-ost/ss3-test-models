@@ -1,6 +1,10 @@
 # ss-test-models
 
-Stock Synthesis models used for testing
+Stock Synthesis models and scripts used for testing
+
+## Repository structure
+
+All SS models are in the "models" subfolder. All testing scripts and specifications files are in the "jenkins" subfolder.
 
 ## Why are these models not in the user-examples repository?
 
