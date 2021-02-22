@@ -20,6 +20,24 @@ Most of these models have at least 1 unique feature.
 
 *Model table will be added here, highlighting these features*
 
+| Model | Features |
+| ----- | -------- |
+| BigSkate_2019 | Cessation growth model |
+| BlackRf_2015_WA | *to add* |
+| BlueDeaconRF_2017 | *to add* |
+| Bocaccio_2015 | *to add* |
+| CanaryRf_2015 | spatial model with deviations in recruitment allocation, no movement |
+| China_2015_Central | *to add* |
+| Darkblotched_2015   | *to add* |
+| Empirical_Wtatage_Age_Selex | Empirical Weight at age model, with empirical (as random walk) age selectivity |
+| growth_morphs | Uses growth morphs |
+| growth_timevary | Time-varying growth using time blocks |
+| Hake_2018 | Empirical weight at age model, Dirichlet Multinomial comps weighting, time varying selectivity using annual deviations |
+| Hake_2019_semi-parametric_selex | Empirical Weight at age model, with empirical (as random walk) age selectivity |
+| KelpGreenling2015 | *to add* |
+
+
+
 ## Disclaimer
 
 “The United States Department of Commerce (DOC) GitHub project code is provided on an ‘as is’ basis and the user assumes responsibility for its use. DOC has relinquished control of the information and no longer has responsibility to protect the integrity, confidentiality, or availability of the information. Any claims against the Department of Commerce stemming from the use of its GitHub project will be governed by all applicable Federal law. Any reference to specific commercial products, processes, or services by service mark, trademark, manufacturer, or otherwise, does not constitute or imply their endorsement, recommendation or favoring by the Department of Commerce. The Department of Commerce seal and logo, or the seal and logo of a DOC bureau, shall not be used in any manner to imply endorsement of any commercial product or activity by DOC or the United States Government.”
