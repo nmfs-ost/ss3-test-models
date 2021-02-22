@@ -22,12 +22,12 @@ Most of these models have at least 1 unique feature.
 
 | Model | Features |
 | ----- | -------- |
-| BigSkate_2019 | Cessation growth model |
-| BlackRf_2015_WA | *to add* |
-| BlueDeaconRF_2017 | *to add* |
-| Bocaccio_2015 | *to add* |
+| BigSkate_2019 | Cessation growth model, Catchability time blocks, catchability priors,  discard data |
+| BlackRf_2015_WA | Mirrored selectivity, input variance adjustments |
+| BlueDeaconRF_2017 | Mirrored selectivity, selectivity time blocks, input variance adjustment, ageing error|
+| Bocaccio_2015 | Mirrored selectivity, Selectivity time blocks, input variance adjustment  |
 | CanaryRf_2015 | spatial model with deviations in recruitment allocation, no movement |
-| China_2015_Central | *to add* |
+| China_2015_Central | Mirrored selectivity, input variance adjustment |
 | Darkblotched_2015   | *to add* |
 | Empirical_Wtatage_Age_Selex | Empirical Weight at age model, with empirical (as random walk) age selectivity |
 | growth_morphs | Uses growth morphs |
