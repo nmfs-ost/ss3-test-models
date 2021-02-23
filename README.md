@@ -28,13 +28,13 @@ Most of these models have at least 1 unique feature.
 | Bocaccio_2015 | Mirrored selectivity, Selectivity time blocks, input variance adjustment  |
 | CanaryRf_2015 | spatial model with deviations in recruitment allocation, no movement |
 | China_2015_Central | Mirrored selectivity, input variance adjustment |
-| Darkblotched_2015   | *to add* |
+| Darkblotched_2015   |  Maturity option 6 (read length-maturity) |
 | Empirical_Wtatage_Age_Selex | Empirical Weight at age model, with empirical (as random walk) age selectivity |
 | growth_morphs | Uses growth morphs |
 | growth_timevary | Time-varying growth using time blocks |
 | Hake_2018 | Empirical weight at age model, Dirichlet Multinomial comps weighting, time varying selectivity using annual deviations |
 | Hake_2019_semi-parametric_selex | Empirical Weight at age model, with empirical (as random walk) age selectivity |
-| KelpGreenling2015 | *to add* |
+| KelpGreenling2015 | Maturity option 6 (read length-maturity), Mirrored selectivity, input variance adjustment |
 | Petrale2015 | *to add* |
 | POP_2017 | *to add* |
 | Sablefish2015 | cubic spline selectivity with male offset |
