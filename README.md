@@ -18,12 +18,10 @@ Stock Synthesis is tested by running this set of models and seeing if the same r
 
 Most of these models have at least 1 unique feature.
 
-*Model table will be added here, highlighting these features*
-
 | Model | Features |
 | ----- | -------- |
-| BigSkate_2019 | Cessation growth model, Catchability time blocks, catchability priors,  discard data |
-| BlackRf_2015_WA | Mirrored selectivity, input variance adjustments |
+| BigSkate_2019 | Uses F method 3 (hybrid), Cessation growth model, Catchability time blocks, catchability priors,  discard data |
+| BlackRf_2015_WA | Uses F method 1 (Pope's approximation), Mirrored selectivity, input variance adjustments |
 | BlueDeaconRF_2017 | Mirrored selectivity, selectivity time blocks, input variance adjustment, ageing error|
 | Bocaccio_2015 | Mirrored selectivity, Selectivity time blocks, input variance adjustment  |
 | CanaryRf_2015 | spatial model with deviations in recruitment allocation, no movement |
@@ -33,24 +31,24 @@ Most of these models have at least 1 unique feature.
 | growth_morphs | Uses growth morphs |
 | growth_timevary | Time-varying growth using time blocks |
 | Hake_2018 | Empirical weight at age model, Dirichlet Multinomial comps weighting, time varying selectivity using annual deviations |
-| Hake_2019_semi-parametric_selex | Empirical Weight at age model, with empirical (as random walk) age selectivity |
+| Hake_2019_semi-parametric_selex | Empirical Weight at age model, with semiparametric (2DAR) selectivity |
 | KelpGreenling2015 | Maturity option 6 (read length-maturity), Mirrored selectivity, input variance adjustment |
-| Petrale2015 | *to add* |
-| POP_2017 | *to add* |
+| Petrale2015 | Catchability annual parameter deviations, Selectivity time blocks, Likelihood emphasis factors (lamdas), Discard data, Mean body size data |
+| POP_2017 | Retention selectivity parameters Selectivity time blocks, Logistic selectivity, Likelihood emphasis factors (lamdas)|
 | Sablefish2015 | cubic spline selectivity with male offset |
 | seasonal_with_size_comp | uses seasons |
 | Simple | Uses sd reporting and mean size-at-age data |
 | Simple_NoCPUE | No index of abundance |
 | Simple_with_Discard | Uses discards |
 | Spinydogfish_2011 | Stock Recruitment option 7 (survival 3 parameter)  |
-| tagging_mirrored_sel | *to add* |
+| tagging_mirrored_sel | Time varying growth using annual deviations, Tagging data and movement parameters, selectivity, environmental variable data |
 | three_area | Spatial model with movement |
-| three_area_double_normal_selex | *to add* |
+| three_area_double_normal_selex | Spatial model |
 | three_area_nomove | Spatial model with no movement |
-| vermillion_snapper | *to add* |
-| Widow_2015 | *to add* |
+| vermillion_snapper | Uses F method 2 (estimated parameters) |
+| Widow_2015 | Catchability parameter deviations, Time blocks on selectivity |
 | YelloweyeRF_2017 | spatial age-structured production model, no movement |
-| YellowtailRF_2017 | *to add* |
+| YellowtailRF_2017 | Selectivity time blocks, Dummy observations in indices of abundance (to get expected values), Discard data|
 
 ## Disclaimer
 
