@@ -4,7 +4,11 @@ Stock Synthesis models and scripts used for testing
 
 ## Repository structure
 
-All SS models are in the "models" subfolder. All testing scripts and specifications files are in the "jenkins" subfolder.
+All SS models are in the "models" subfolder. All testing scripts and specifications files used by the SS development team are in the "jenkins" subfolder.
+
+## Can I open a pull request to add my own models to this repository?
+
+It is always helpful to have more examples of Stock Synthesis models! Please open a pull request in the [user-examples repository](https://github.com/nmfs-stock-synthesis/user-examples) to share your own models publicly.
 
 ## Why are these models not in the user-examples repository?
 
