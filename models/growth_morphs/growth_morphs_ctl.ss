@@ -213,13 +213,13 @@
             -4            12             5             5            99             6          3          0          0          0          0        0.5          0          0  #  SizeSel_P3_fishery1(1)
             -2            15            15            15            99             6         -3          0          0          0          0        0.5          0          0  #  SizeSel_P4_fishery1(1)
            -15             0           -15           -15            99             6          3          0          0          0          0        0.5          0          0  #  SizeSel_P5_fishery1(1)
-            -5            15          -999             0            99             6         -3          0          0          0          0        0.5          0          0  #  SizeSel_P6_fishery1(1)
+            -999            15          -999             0            99             6         -3          0          0          0          0        0.5          0          0  #  SizeSel_P6_fishery1(1)
              5            89            55            55            99             6          3          0          0          0          0        0.5          0          0  #  SizeSel_P1_survey1(2)
             -3             3         -0.31         -0.31            99             6         -3          0          0          0          0        0.5          0          0  #  SizeSel_P2_survey1(2)
             -4            12             5             5            99             6          3          0          0          0          0        0.5          0          0  #  SizeSel_P3_survey1(2)
             -2            15            15            15            99             6         -3          0          0          0          0        0.5          0          0  #  SizeSel_P4_survey1(2)
            -15             0           -15           -15            99             6          3          0          0          0          0        0.5          0          0  #  SizeSel_P5_survey1(2)
-            -5            15          -999             0            99             6         -3          0          0          0          0        0.5          0          0  #  SizeSel_P6_survey1(2)
+            -999            15          -999             0            99             6         -3          0          0          0          0        0.5          0          0  #  SizeSel_P6_survey1(2)
 #_no timevary selex parameters
 #
 0   #  use 2D_AR1 selectivity(0/1):  experimental feature

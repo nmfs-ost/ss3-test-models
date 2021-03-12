@@ -187,7 +187,7 @@
            -10            20       1.38557             0             0             0          2          0          0          0          0          0          0          0  #  LnQ_base_SMP_BYC(4)
            -25            25       -9.8828             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_HB_E(5)
            -25            25       -9.8033             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_HB_W(6)
-           -25            25      -26.2164             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_LARVAL(7)
+           -27            25      -26.2164             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_LARVAL(7)
            -25            25      -10.4723             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_VIDEO(8)
            -25            25      -10.5735             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_SEAMAP(9)
 #_no timevary Q parameters

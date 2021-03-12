@@ -164,7 +164,7 @@
            -15            15      -10.9049             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_Surv7(9)
 # timevary Q parameters 
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type     PHASE  #  parm_name
-        0.0001             2            99            99           0.5             6      -5  # LnQ_base_Surv1(3)_dev_se
+        0.0001             2             2            99           0.5             6      -5  # LnQ_base_Surv1(3)_dev_se
          -0.99          0.99             0             0           0.5             6      -6  # LnQ_base_Surv1(3)_dev_autocorr
 # info on dev vectors created for Q parms are reported with other devs after tag parameter section 
 #

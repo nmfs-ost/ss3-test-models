@@ -192,7 +192,7 @@
    1  10         4      4    0.5        0      4        0        0         0         0       0      0        0  #  SizeSel_ASC-WIDTH_Com_Land (1)
    1  10        10     10    0.5        0     -4        0        0         0         0       0      0        0  #  SizeSel_DSC-WIDTH_Com_Land (1)
  -11  -9       -10    -10    0.5        0     -4        0        0         0         0       0      0        0  #  SizeSel_INIT_Com_Land (1)
- -11  -9        10     10    0.5        0     -4        0        0         0         0       0      0        0  #  SizeSel_FINAL_COM_Com_Land (1)
+ -11  10        10     10    0.5        0     -4        0        0         0         0       0      0        0  #  SizeSel_FINAL_COM_Com_Land (1)
 
 # REVISIT MALE SELECTIVITY LATER
  # -20  20        0      0    0.5        0      4        0        0         0         0       0      0        0  #  SizeSel_PEAK_Com_Land Male offset (1)
@@ -206,7 +206,7 @@
    1  10       3.5    3.5    0.5        0      4        0        0         0         0       0      0        0  #  SizeSel_ASC-WIDTH_Com_Disc (2)
    1  10        10     10    0.5        0     -4        0        0         0         0       0      0        0  #  SizeSel_DSC-WIDTH_Com_Disc (2)
  -11  -9       -10    -10    0.5        0     -4        0        0         0         0       0      0        0  #  SizeSel_INIT_Com_Disc (2)
- -11  -9        10     10    0.5        0     -4        0        0         0         0       0      0        0  #  SizeSel_FINAL_Com_Disc (2)
+ -11  10        10     10    0.5        0     -4        0        0         0         0       0      0        0  #  SizeSel_FINAL_Com_Disc (2)
 
 # No gender specific data for commercial discards
 
@@ -215,7 +215,7 @@
    1  10         4      4    0.5        0      4        0        0         0         0       0      0        0  #  SizeSel_ASC-WIDTH_REC_Ocean_Land (3)
    1  10        10     10    0.5        0     -4        0        0         0         0       0      0        0  #  SizeSel_DSC-WIDTH_REC_Ocean_Land (3)
  -11  -9       -10    -10    0.5        0     -4        0        0         0         0       0      0        0  #  SizeSel_INIT_REC_Ocean_Land (3)
- -11  -9        10     10    0.5        0     -4        0        0         0         0       0      0        0  #  SizeSel_FINAL_COM_REC_Ocean_Land (3)
+ -11  10        10     10    0.5        0     -4        0        0         0         0       0      0        0  #  SizeSel_FINAL_COM_REC_Ocean_Land (3)
 
 # REVISIT MALE SELECTIVITY LATER
  # -20  20        0      0    0.5        0      4        0        0         0         0       0      0        0  #  SizeSel_PEAK_REC_Ocean_Land Male offset (3)
@@ -267,7 +267,7 @@
  
  ### AGE SELEX PARAMETERS ###
 # LO  HI      INIT  PRIOR  PR_SD  PR_type  PHASE  env-var  use_dev  dev_mnyr  dev_mxyr  dev_PH  Block  Blk_Fxn  #  parm_name (UPDATE NAMES)
-   0   0         1      0     10        0     -4        0        0         0         0       0      0        0  #  AgeSel_P1_ODFW_Research (10)
+   0   1         1      0     10        0     -4        0        0         0         0       0      0        0  #  AgeSel_P1_ODFW_Research (10)
    9   40       35      0     10        0     -4        0        0         0         0       0      0        0  #  AgeSel_P2_ODFW_Research (10)
 #
 0  #_ 0/1 to request experimental 2D_AR selectivity smoother options.

@@ -175,9 +175,9 @@
            -15            15       14.2224             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_NWFSC(7)
 # timevary Q parameters 
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type     PHASE  #  parm_name
-        0.0001             2            99            99           0.5             6      -5  # LnQ_base_WinterN(1)_dev_se
+        0.0001            2              2            99           0.5             6      -5  # LnQ_base_WinterN(1)_dev_se
          -0.99          0.99             0             0           0.5             6      -6  # LnQ_base_WinterN(1)_dev_autocorr
-        0.0001             2            99            99           0.5             6      -5  # LnQ_base_WinterS(3)_dev_se
+        0.0001            2              2            99           0.5             6      -5  # LnQ_base_WinterS(3)_dev_se
          -0.99          0.99             0             0           0.5             6      -6  # LnQ_base_WinterS(3)_dev_autocorr
 # info on dev vectors created for Q parms are reported with other devs after tag parameter section 
 #

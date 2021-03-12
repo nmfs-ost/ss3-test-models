@@ -170,7 +170,7 @@
            -15            15       1.23155             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_NWSLP(7)
          0.001           0.8     0.0942713             0            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_NWSLP(7)
            -15            15       5.62237             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_NWCBO(8)
-         0.001           0.4             0             0            99             0         -3          0          0          0          0          0          0          0  #  Q_extraSD_NWCBO(8)
+         0           0.4             0             0            99             0         -3          0          0          0          0          0          0          0  #  Q_extraSD_NWCBO(8)
 # timevary Q parameters 
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type     PHASE  #  parm_name
         0.0001             2            99            99           0.5             6      -5  # LnQ_base_AKSHLF(5)_dev_se

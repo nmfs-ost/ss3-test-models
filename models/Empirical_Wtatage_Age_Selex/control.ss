@@ -84,7 +84,7 @@
 # Sex: 2  BioPattern: 1  NatMort
  0.05 0.15 0.1 0.1 0.8 0 -3 0 0 0 0 0 0 0 # NatM_p_1_Mal_GP_1
 # Sex: 2  BioPattern: 1  Growth
- 1 45 0 36 10 0 -3 0 0 0 0 0 0 0 # L_at_Amin_Mal_GP_1
+ 0 45 0 36 10 0 -3 0 0 0 0 0 0 0 # L_at_Amin_Mal_GP_1
  40 90 69.5361 70 10 6 -4 0 0 0 0 0 0 0 # L_at_Amax_Mal_GP_1
  0.05 0.25 0.163516 0.15 0.8 6 -4 0 0 0 0 0 0 0 # VonBert_K_Mal_GP_1
  0.05 0.25 0.1 0.1 0.8 0 -3 0 0 0 0 0 0 0 # CV_young_Mal_GP_1
