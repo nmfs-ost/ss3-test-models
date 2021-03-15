@@ -249,10 +249,10 @@
            0.1            10       6.22218             1            99             6          3          0          0          0          0          0          0          0  #  Retain_L_width_FISHERY(1)
            -10            10       3.73864            10            99             6          3          0          0          0          0          0          0          0  #  Retain_L_asymptote_logit_FISHERY(1)
            -10            10             1             0            99             6         -3          0          0          0          0          0          0          0  #  Retain_L_maleoffset_FISHERY(1)
-           0.1             1            46           0.8            99             6         -3          0          0          0          0          0          0          0  #  DiscMort_L_infl_FISHERY(1)
+           0.1             46            46          0.8            99             0         -3          0          0          0          0          0          0          0  #  DiscMort_L_infl_FISHERY(1)
             -2             2           0.8             0            99             6         -3          0          0          0          0          0          0          0  #  DiscMort_L_width_FISHERY(1)
-            20            70          0.92            40            99             6         -3          0          0          0          0          0          0          0  #  DiscMort_L_level_old_FISHERY(1)
-           0.1            10             0             1            99             6         -3          0          0          0          0          0          0          0  #  DiscMort_L_male_offset_FISHERY(1)
+            0.5            70          0.92            40            99             6         -3          0          0          0          0          0          0          0  #  DiscMort_L_level_old_FISHERY(1)
+           0            10             0             1            99             6         -3          0          0          0          0          0          0          0  #  DiscMort_L_male_offset_FISHERY(1)
 # 2   SURVEY1 LenSelex
             19            70       36.6668            30          0.01             1          2          0          0          0          0          0          0          0  #  Size_inflection_SURVEY1(2)
           0.01            60       6.66793            10          0.01             1          3          0          0          0          0          0          0          0  #  Size_95%width_SURVEY1(2)
