@@ -47,7 +47,6 @@ Most of these models have at least 1 unique feature.
 | Spinydogfish_2011 | Stock Recruitment option 7 (survival 3 parameter)  | 0 hours, 26 minutes, 35 seconds |
 | tagging_mirrored_sel | Time varying growth using annual deviations, Tagging data and movement parameters, selectivity, environmental variable data | 0 hours, 2 minutes, 49 seconds |
 | three_area | Spatial model with movement | 0 hours, 4 minutes, 32 seconds |
-| three_area_double_normal_selex | Spatial model | 1 hours, 1 minutes, 15 seconds |
 | three_area_nomove | Spatial model with no movement | 0 hours, 3 minutes, 32 seconds |
 | vermillion_snapper | Uses F method 2 (estimated parameters) | 0 hours, 3 minutes, 42 seconds |
 | Widow_2015 | Catchability parameter deviations, Time blocks on selectivity | 0 hours, 35 minutes, 47 seconds |
