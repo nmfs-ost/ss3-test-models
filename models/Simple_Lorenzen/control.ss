@@ -278,9 +278,12 @@
 # Like_comp codes:  1=surv; 2=disc; 3=mnwt; 4=length; 5=age; 6=SizeFreq; 7=sizeage; 8=catch; 9=init_equ_catch; 
 # 10=recrdev; 11=parm_prior; 12=parm_dev; 13=CrashPen; 14=Morphcomp; 15=Tag-comp; 16=Tag-negbin; 17=F_ballpark; 18=initEQregime
 #like_comp fleet  phase  value  sizefreq_method
- 1 2 2 1 1
- 4 2 2 1 1
- 4 2 3 1 1
+ 4 1 1 0.1 1 # reduce length comp lambda
+ 4 1 1 0.1 1 # reduce length comp lambda
+ 4 1 1 0.1 1 # reduce length comp lambda
+ 7 1 1 0.0 1 # turn off mean length-at-age
+ 7 2 1 0.0 1 # turn off mean length-at-age
+ 7 3 1 0.0 1 # turn off mean length-at-age
 -9999  1  1  1  1  #  terminator
 #
 # lambdas (for info only; columns are phases)
