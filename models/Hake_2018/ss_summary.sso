@@ -3,7 +3,7 @@
 #Foreign copyrights may apply. See copyright.txt for more information.
 2018hake_data.SS #_DataFile 
 2018hake_control.SS #_Control 
-Run_Date: Fri Apr 09 11:08:35 2021
+Run_Date: Fri Apr 09 13:08:25 2021
 Final_phase: 5  N_iterations: 1581
 #_LIKELIHOOD 
 Label logL*Lambda
@@ -624,6 +624,11 @@ OFLCatch_2018 488103 206495
 OFLCatch_2019 414792 166694
 OFLCatch_2020 389953 157193
 #_Extra_stdev
+AgeSelex_std_2_Fem_A_2 0.35645 0.0481095
+AgeSelex_std_2_Fem_A_3 0.629428 0.0990903
+AgeSelex_std_2_Fem_A_4 0.507066 0.0786431
+AgeSelex_std_2_Fem_A_5 0.688094 0.111003
+NatAge_std_1_Fem_A_20 1305.68 605.424
 ln(SPB)_1966 14.242 0.215501
 ln(SPB)_1991 15.0516 0.113697
 ln(SPB)_2017 14.6426 0.294041
