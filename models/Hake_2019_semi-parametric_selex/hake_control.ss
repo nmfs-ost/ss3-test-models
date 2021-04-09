@@ -286,8 +286,5 @@
 #  1 #_parameter-dev-vectors
 #  1 #_crashPenLambda
 #  0 # F_ballpark_lambda
-1 # (0/1) read specs for more stddev reporting
- 2 2 -1 15 0 0 1 -1 1 # selex type, len/age, year, N selex bins, Growth pattern, N growth ages, NatAge_area(-1 for all), NatAge_yr, N Natages
- 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # vector with selex std bin picks (-1 in first bin to self-generate)
- -1 # vector with NatAge std bin picks (-1 in first bin to self-generate)
+0 # (0/1) read specs for more stddev reporting
 999

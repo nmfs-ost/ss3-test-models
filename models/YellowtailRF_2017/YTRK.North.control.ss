@@ -110,7 +110,7 @@
 0.2     1       0.718   0.718   0.158   0       -6      0       0       0       0       0       0       0       # SR_BH_steep
 ### if estimating steepness, use line below with Type-C prior for Yellowtail
 #0.2     1       0.4     0.715   0.160   0       6       0       0       0       0       0       0       0       # SR_BH_steep
-0.5     1.2     0.4997   0.67     99      0       -6      0       0       0       0       0       0       0       # SR_sigmaR
+0.4     1.2     0.4997   0.67     99      0       -6      0       0       0       0       0       0       0       # SR_sigmaR
 -5      5       0       0       99      0       -50     0       0       0       0       0       0       0       # SR_regime
 0       2       0       1       99      0       -50     0       0       0       0       0       0       0       # SR_autocorr
 #
