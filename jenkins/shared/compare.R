@@ -350,7 +350,7 @@ compare_ss_runs <- function(mod_name = "ss_mod",
     } else {
       hdr  <- TRUE
     }
-    write.csv(compare_df_print, fail_file, row.names = FALSE, append = TRUE,
+    write.table(compare_df_print, fail_file, row.names = FALSE, append = TRUE,
                 col.names = hdr)
   }
   if(!is.null(new_file)) {
