@@ -131,9 +131,9 @@ SS_read_summary <- function(file="ss_summary.sso") {
 #'@param ref_par_file path to the reference par file
 #'@param warn_file path to the warning file
 #'@param ref_warn_file path to the warning reference file
-#'@param new_file path to write output to.
+#'@param new_file path to write output to. Should be NULL or have .csv extension
 #'@param hessian Was the hessian estimated? Default to TRUE
-#'@param fail_file Name of the file to write information about failed runs.
+#'@param fail_file Name of the file to write information about failed runs. Should have .csv extension
 compare_ss_runs <- function(mod_name = "ss_mod",
                             sum_file = "ss_summary.sso",
                             ref_sum_file = "ss_summary_ref.sso",
@@ -143,7 +143,7 @@ compare_ss_runs <- function(mod_name = "ss_mod",
                             ref_warn_file = "warning_ref.sso", 
                             new_file = NULL,
                             hessian = TRUE,
-                            fail_file = "test_failed.txt") {
+                            fail_file = "test_failed.csv") {
   
   sum <- SS_read_summary(sum_file)
   ref <- SS_read_summary(ref_sum_file)
@@ -350,11 +350,11 @@ compare_ss_runs <- function(mod_name = "ss_mod",
     } else {
       hdr  <- TRUE
     }
-    write.table(compare_df_print, fail_file, row.names = FALSE, append = TRUE,
+    write.csv(compare_df_print, fail_file, row.names = FALSE, append = TRUE,
                 col.names = hdr)
   }
   if(!is.null(new_file)) {
-    write.table(compare_df_print, new_file, row.names = FALSE)
+    write.csv(compare_df_print, new_file, row.names = FALSE)
   }
   invisible(compare_df)
 }
