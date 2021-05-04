@@ -45,6 +45,6 @@ filtered_df <- compare_df[compare_df$diff != 0, ]
 expect_change <- unique(grep("se$", filtered_df[["quantity"]], value = TRUE))
 expect_change <- c(expect_change, "maxgrad")
 message("expect change values = ", paste0(expect_change, collapse = ", "))
-filtered_df <- filtered_df[!filtered_df[["quantity"]] %in% expect_change), ]
+filtered_df <- filtered_df[!filtered_df[["quantity"]] %in% expect_change, ]
 filtered_df <- format(filtered_df, digits = 6, nsmall = 3, justify = "left")
 write.csv(filtered_df, "run_R/all_changes.csv", row.names = FALSE)
