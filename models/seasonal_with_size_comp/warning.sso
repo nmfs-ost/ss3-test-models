@@ -1,25 +1,25 @@
-#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
+0 #V3.30.16.06;_2021_03_30;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
-Fri Jan 29 14:14:16 2021
+Tue Apr 27 16:15:21 2021
 
-fishing fleet: 1 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 2 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 3 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 4 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 5 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 6 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 7 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 8 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 9 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 10 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 11 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 12 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 13 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 14 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 15 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 16 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-This model has just one settlement event; recommend changing to recr_dist_method 4 which takes no recr_dist parameters
- Minimum size bin is:_30; which is >10cm, which is large for use as size-at-age 0.0 recruitment
-Final gradient: 0.00170242 is larger than final_conv: 0.0001
- N warnings: 19
+1 fishing fleet: 1 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+2 fishing fleet: 2 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+3 fishing fleet: 3 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+4 fishing fleet: 4 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+5 fishing fleet: 5 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+6 fishing fleet: 6 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+7 fishing fleet: 7 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+8 fishing fleet: 8 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+9 fishing fleet: 9 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+10 fishing fleet: 10 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+11 fishing fleet: 11 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+12 fishing fleet: 12 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+13 fishing fleet: 13 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+14 fishing fleet: 14 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+15 fishing fleet: 15 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+16 fishing fleet: 16 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+17 Data length bins stop before max pop len bins; 320 is < 325; suggest make them same
+18 This model has just one settlement event; recommend changing to recr_dist_method 4 which takes no recr_dist parameters
+19 Final gradient: 0.00346069 is larger than final_conv: 0.0001
+19  N warnings: 19
