@@ -3,4 +3,55 @@
 .RData
 .Ruserdata
 *.Rproj
+
+## plots created by r4ss
 **/plots/
+**/plots_StartTime*/
+
+## files created by SS (or r4ss) that we aren't tracking
+# .sso files
+checkup.sso
+CompReport.sso
+covar.sso
+CumReport.sso
+derived_posteriors.sso
+echoinput.sso
+fmin.log
+Forecast-report.sso
+gradient.*
+ParmTrace.sso
+posterior_obj_func.sso
+posterior_vectors.sso
+posteriors.sso
+rebuild.sso
+Report.sso
+SIS_table.sso
+
+# .ss_new files
+control.ss_new
+data.ss_new
+forecast.ss_new
+starter.ss_new
+wtatage.ss_new
+
+# .ss files
+runnumber.ss
+suggested_tuning.ss
+
+# other files
+admodel.cov
+admodel.dep
+admodel.hes
+ss.b0*
+ss.bar
+ss.cor
+ss.ecm
+ss.eva
+ss.exe
+ss.log
+ss.mc2
+ss.mcm
+ss.p0*
+ss.r0*
+ss.rep
+ss.std
