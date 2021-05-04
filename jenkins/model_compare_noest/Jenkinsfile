@@ -66,7 +66,7 @@ pipeline {
 		        sh label: 'get rid of ss exe', script: 'rm -f model_runs/ss'
 				sh label: 'get rid of ss log', script: 'rm -f model_runs/ss.log'
                 sh label: 'Zip models folder', script: 'zip -r models.zip model_runs'
-                archiveArtifacts 'models.zip, run_R/test_failed.txt, run_R/compare_test.txt'
+                archiveArtifacts 'models.zip, run_R/test_failed.csv, run_R/all_changes.csv, run_R/all_results.csv'
 		}
         failure {
             mail bcc: '', body: 'Stock Synthesis build failed.', cc: '', from: '', replyTo: '', subject: 'stock-synthesis-noest: Jenkins Build Failure', to: 'kathryn.doering@noaa.gov'

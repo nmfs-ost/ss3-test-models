@@ -41,4 +41,6 @@ message("see saved artifact all_results.csv for values and their differences.")
 write.csv(compare_df_print, "run_R/all_results.csv", row.names = FALSE)
 # next: create a filtered table with only values that changed.
 filtered_df <- compare_df[compare_df$diff != 0, ]
+filtered_df <- format(filtered_df, digits = 6, nsmall = 3,
+                                   justify = "left")
 write.csv(filtered_df, "run_R/all_changes.csv", row.names = FALSE)
