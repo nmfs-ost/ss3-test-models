@@ -1,10 +1,11 @@
-#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
+0 #V3.30.16.07;_2021_04_27;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
-Tue Dec 29 07:44:58 2020
+Wed May 05 16:10:31 2021
 
-bias adjustment ramp extends into forecast; biasadj set to 0.0 internally for forecast years
-fleet: 9  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 9
-setting positive forecast relF for bycatch fleet: 4
-setting positive forecast relF for bycatch fleet: 4
- N warnings: 2
+1 bias adjustment ramp extends into forecast; biasadj set to 0.0 internally for forecast years
+2 mean recruitment for forecast is incompatible with pos. phase for forecast rec_devs; set phase to neg. unless using late rec_devs
+3 fleet: 9  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 9
+3 setting positive forecast relF for bycatch fleet: 4
+3 setting positive forecast relF for bycatch fleet: 4
+3  N warnings: 3
