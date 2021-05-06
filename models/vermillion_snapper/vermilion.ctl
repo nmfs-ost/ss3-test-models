@@ -284,18 +284,18 @@
 # 6   HB_W LenSelex
 # 7   LARVAL LenSelex
 # 8   VIDEO LenSelex
-           7.5          52.5       19.2273          42.7          0.05             0          2          0          0          0          0        0.5          0          0  #  Size_DblN_peak_VIDEO(8)
+           7.5          52.5       19.2273          42.7          0.05             0          -2          0          0          0          0        0.5          0          0  #  Size_DblN_peak_VIDEO(8)
            -10             3       -1.5755          -0.4          0.05             0          3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_VIDEO(8)
             -6            12       1.10247           5.5          0.05             0          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_VIDEO(8)
-            -4             6       1.30636           5.1          0.05             0          3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_VIDEO(8)
-           -15             5      -1.47843          -4.2          0.05             0          2          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_VIDEO(8)
+            -4             6       1.30636           5.1          0.05             0          -3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_VIDEO(8)
+           -15             5      -1.47843          -4.2          0.05             0          -2          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_VIDEO(8)
             -8             5      0.592205           0.4          0.05             0          2          0          0          0          0        0.5          0          0  #  Size_DblN_end_logit_VIDEO(8)
 # 9   SEAMAP LenSelex
-           7.5          52.5       14.7632            13          0.05             0          2          0          0          0          0        0.5          0          0  #  Size_DblN_peak_SEAMAP(9)
+           7.5          52.5       14.7632            13          0.05             0          -2          0          0          0          0        0.5          0          0  #  Size_DblN_peak_SEAMAP(9)
            -10             3       -4.1219          -1.1          0.05             0          3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_SEAMAP(9)
             -6            12       1.27177           3.1          0.05             0          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_SEAMAP(9)
-            -4             6       3.14557             5          0.05             0          3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_SEAMAP(9)
-           -15             5      -1.21335          -4.5          0.05             0          2          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_SEAMAP(9)
+            -4             6       3.14557             5          0.05             0          -3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_SEAMAP(9)
+           -15             5      -1.21335          -4.5          0.05             0          -2          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_SEAMAP(9)
             -8             5      -5.29461           0.1          0.05             0          2          0          0          0          0        0.5          0          0  #  Size_DblN_end_logit_SEAMAP(9)
 # 1   CM_E AgeSelex
            0.5            14       2.11997          2.66             0             0          3          0          0          0          0          0          0          0  #  Age_inflection_CM_E(1)
