@@ -1,3 +1,4 @@
+#V3.30
 #C 2019 Hake control file
 1  # 0 means do not read wtatage.ss; 1 means read and use wtatage.ss and also read and use growth parameters
 1  #_N_Growth_Patterns

@@ -2,7 +2,7 @@
 #_data_and_control_files: three_area_nomove_dat.ss // three_area_nomove_ctl.ss
 #V3.30.08.02-trans;_2017_09_26;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_11.6
 #_user_support_available_at:NMFS.Stock.Synthesis@noaa.gov
-#_user_info_available_at:https://vlab.ncep.noaa.gov/group/stock-synthesis
+#_user_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
 0  # 0 means do not read wtatage.ss; 1 means read and use wtatage.ss and also read and use growth parameters
 1  #_N_Growth_Patterns
 1 #_N_platoons_Within_GrowthPattern 

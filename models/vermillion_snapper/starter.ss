@@ -1,5 +1,5 @@
-#C SEDAR 67 Gulf of Mexico Vermilion Snapper Stock Assessment 2019/2020
 #V3.30
+#C SEDAR 67 Gulf of Mexico Vermilion Snapper Stock Assessment 2019/2020
 # Starter file for Vermilion Snapper 2019
 # conversion from SS V3.24f to 3.30 done by hand Matt Smith
 vermilion.dat

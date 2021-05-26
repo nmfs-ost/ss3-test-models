@@ -1,3 +1,4 @@
+#V3.30
 #C Control file Big Skate 2019
 
 0  # 0 means do not read wtatage.ss; 1 means read and use wtatage.ss and also read and use growth parameters

@@ -1,3 +1,4 @@
+#V3.30
 #C Hake starter file
 hake_data.ss
 hake_control.ss

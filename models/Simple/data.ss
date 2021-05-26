@@ -2,7 +2,7 @@
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
 #_user_support_available_at:NMFS.Stock.Synthesis@noaa.gov
-#_user_info_available_at:https://vlab.ncep.noaa.gov/group/stock-synthesis
+#_user_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
 #_Start_time: Mon Jul 22 10:25:12 2019
 #_Number_of_datafiles: 1
 #C data file for simple example

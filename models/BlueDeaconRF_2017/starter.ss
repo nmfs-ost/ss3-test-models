@@ -1,3 +1,4 @@
+#V3.30
 #C 2017 Blue/Deacon Rockfish Assessment for Oregon waters
 #C A.M. Berger, NMFS/NWFSC, aaron.berger@noaa.gov
 #Stock Synthesis V3.30.03.07

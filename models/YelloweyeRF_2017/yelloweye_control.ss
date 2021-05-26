@@ -1,3 +1,4 @@
+#V3.30
 #C Yelloweye 2017 control file
 0  # 0 means do not read wtatage.ss; 1 means read and use wtatage.ss and also read and use growth parameters
 1  #_N_Growth_Patterns

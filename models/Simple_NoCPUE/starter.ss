@@ -1,6 +1,6 @@
 #V3.30.08.02-trans;_2017_09_26;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_11.6
 #_user_support_available_at:NMFS.Stock.Synthesis@noaa.gov
-#_user_info_available_at:https://vlab.ncep.noaa.gov/group/stock-synthesis
+#_user_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
 #C starter comment here
 simple.dat
 simple.ctl

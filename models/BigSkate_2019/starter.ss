@@ -1,10 +1,9 @@
-#C Starter file Big Skate 2019
-
 #V3.30.13.02-safe;_2019_05_08;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.0
+#C Starter file Big Skate 2019
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
 #_user_support_available_at:NMFS.Stock.Synthesis@noaa.gov
-#_user_info_available_at:https://vlab.ncep.noaa.gov/group/stock-synthesis
+#_user_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
 BSKT2019_data.ss
 BSKT2019_control.ss
 0 # 0=use init values in control file; 1=use ss.par
