@@ -310,7 +310,8 @@
  0 0 # Growth: (1) 0 or growth pattern, (2) growth ages; NOTE: does each sex
  0 2001 0 # Numbers-at-age: (1) 0 or area(-1 for all), (2) year, (3) N ages;  NOTE: sums across morphs
  1 14 # Mortality: (1) 0 or growth pattern, (2) N ages for mortality; NOTE: does each sex
- 1 999 # Dyn_Bzero: (1) 0 to skip, 1 to do, 2 w/ recr (2) reserved for future use
+ 1 # Dyn_Bzero: (1) 0 to skip, 1 to do, 2 w/ recr 
+ 0 # Summary Bio
  # -1 # list of bin #'s for selex std (-1 in first bin to self-generate)
  # -1 # list of ages for growth std (-1 in first bin to self-generate)
  # -1 # list of ages for NatAge std (-1 in first bin to self-generate)
