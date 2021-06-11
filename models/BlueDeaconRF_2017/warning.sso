@@ -1,17 +1,20 @@
-#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
+#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
-Tue Sep  1 22:45:28 2020
+Fri Jun 11 15:13:01 2021
 
-This model has just one settlement event; recommend changing to recr_dist_method 4 which takes no recr_dist parameters
-bias adjustment ramp extends into forecast; biasadj set to 0.0 internally for forecast years
-fleet: 1  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 18
-fleet: 1  agecomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 156
-fleet: 2  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 12
-fleet: 3  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 34
-fleet: 3  agecomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 239
-fleet: 4  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 14
-fleet: 5  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 23
-fleet: 10  agecomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 23
-Final gradient: 0.000190918 is larger than final_conv: 0.0001
- N warnings: 11
+This file contains warnings, suggestions and notes generated as files are read and processed
+
+1 NOTE:  Max data length bin: 52  < max pop len bins: 53; so will accumulate larger pop len bins
+2 NOTE: This model has just one settlement event. Changing to recr_dist_method 4 and removing the recruitment distribution parameters at the end of the MG parms section (below growth parameters) will produce identical results and simplify the model.
+3 bias adjustment ramp extends into forecast; biasadj set to 0.0 internally for forecast years
+4 fleet: 1  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 18
+5 fleet: 1  agecomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 156
+6 fleet: 2  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 12
+7 fleet: 3  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 34
+8 fleet: 3  agecomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 239
+9 fleet: 4  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 14
+10 fleet: 5  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 23
+11 fleet: 10  agecomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 23
+12 Final gradient: 0.000190918 is larger than final_conv: 0.0001
+N warnings: 12

@@ -25,7 +25,7 @@ update_ref_files <- function(new_mod_path, ss_examples_folder = getwd()) {
 # get paths to the new input models - this code will need to be changed upon
 # next update, unless using the same folder in the same location to house the
 # new results
-new_mod_runs_folder <- file.path("..", "models_3.30.16_release")
+new_mod_runs_folder <- file.path("model_runs")
 new_mod_path_list <- list.dirs(new_mod_runs_folder, recursive = FALSE,
                                full.names = TRUE)
 run_results <- lapply(new_mod_path_list, update_ref_files)
@@ -34,9 +34,9 @@ run_results <- lapply(new_mod_path_list, update_ref_files)
 git_mods <- list.dirs("models", recursive = FALSE, full.names = TRUE)
 first_line <- lapply(git_mods, function (x) {
    ss_sum <- readLines(file.path(x, "ss_summary.sso"))
-   version <- grep("3.30.16", ss_sum, fixed = TRUE)
+   version <- grep("3.30.17", ss_sum, fixed = TRUE)
    if (!(1 %in% version)) {
-     message("3.30.16 not found on first line for ", x)
+     message("3.30.17 not found on first line for ", x)
    }
    return(ss_sum[1])
  })

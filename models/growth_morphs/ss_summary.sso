@@ -1,9 +1,9 @@
-#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
+#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
 growth_morphs_dat.ss #_DataFile 
 growth_morphs_ctl.ss #_Control 
-Run_Date: Wed Sep  2 08:36:41 2020
+Run_Date: Fri Jun 11 20:04:36 2021
 Final_phase: 6  N_iterations: 570
 #_LIKELIHOOD 
 Label logL*Lambda
@@ -24,8 +24,8 @@ Crash_Pen 0
 #_PARAMETERS
 #label value se active? range
 #_BIOLOGY
-NatM_p_1_Fem_GP_1 0.1 0 Fix 0.499995
-NatM_p_2_Fem_GP_1 0 0 Fix 0.5
+NatM_break_1_Fem_GP_1 0.1 0 Fix 0.499995
+NatM_break_2_Fem_GP_1 0 0 Fix 0.5
 L_at_Amin_Fem_GP_1 34.1862 1.54064 Act 0.691036
 L_at_Amax_Fem_GP_1 70.2172 0.834399 Act 0.604345
 VonBert_K_Fem_GP_1 0.163605 0.0183775 Act 0.568022
@@ -37,8 +37,8 @@ Mat50%_Fem_GP_1 55 0 Fix 0.5
 Mat_slope_Fem_GP_1 -0.25 0 Fix 0.458333
 Eggs/kg_inter_Fem_GP_1 1 0 Fix 0.666667
 Eggs/kg_slope_wt_Fem_GP_1 0 0 Fix 0.5
-NatM_p_1_Mal_GP_1 0 0 Fix 0.5
-NatM_p_2_Mal_GP_1 0 0 Fix 0.5
+NatM_break_1_Mal_GP_1 0 0 Fix 0.5
+NatM_break_2_Mal_GP_1 0 0 Fix 0.5
 L_at_Amin_Mal_GP_1 0 0 Fix 0.5
 L_at_Amax_Mal_GP_1 0 0 Fix 0.5
 VonBert_K_Mal_GP_1 0 0 Fix 0.5
@@ -122,13 +122,13 @@ Size_DblN_top_logit_fishery1(1) -0.75 0 Fix 0.375
 Size_DblN_ascend_se_fishery1(1) 4.9874 0.18781 Act 0.561712
 Size_DblN_descend_se_fishery1(1) 15 0 Fix 1
 Size_DblN_start_logit_fishery1(1) -12.9094 43.7196 Act 0.139374
-Size_DblN_end_logit_fishery1(1) -999 0 Fix -49.7
+Size_DblN_end_logit_fishery1(1) -999 0 Fix 0
 Size_DblN_peak_survey1(2) 55.676 2.17872 Act 0.603286
 Size_DblN_top_logit_survey1(2) -0.31 0 Fix 0.448333
 Size_DblN_ascend_se_survey1(2) 5.08702 0.292078 Act 0.567939
 Size_DblN_descend_se_survey1(2) 15 0 Fix 1
 Size_DblN_start_logit_survey1(2) -12.2562 63.9003 Act 0.18292
-Size_DblN_end_logit_survey1(2) -999 0 Fix -49.7
+Size_DblN_end_logit_survey1(2) -999 0 Fix 0
 #_Derived_Quantities
 #_Spawn_Bio
 SSB_Virgin 58973.9 4715.03
@@ -336,46 +336,8 @@ OFLCatch_2004 4831.37 1551.79
 ln(SPB)_1971 10.978 0.0913993
 ln(SPB)_1986 10.2771 0.100647
 ln(SPB)_2001 9.80199 0.317253
-#_survey_stdev 0
-#_Biomass
-TotBio_Virgin 154549 0.0
-TotBio_Initial 154549 0.0
-TotBio_1971 154501 0.0
-TotBio_1972 153878 0.0
-TotBio_1973 153156 0.0
-TotBio_1974 154589 0.0
-TotBio_1975 155207 0.0
-TotBio_1976 153259 0.0
-TotBio_1977 150734 0.0
-TotBio_1978 147280 0.0
-TotBio_1979 141792 0.0
-TotBio_1980 134606 0.0
-TotBio_1981 125497 0.0
-TotBio_1982 115805 0.0
-TotBio_1983 106217 0.0
-TotBio_1984 96799.1 0.0
-TotBio_1985 90793.8 0.0
-TotBio_1986 86034.4 0.0
-TotBio_1987 80277.1 0.0
-TotBio_1988 75362.2 0.0
-TotBio_1989 71519.3 0.0
-TotBio_1990 68072.7 0.0
-TotBio_1991 65065.9 0.0
-TotBio_1992 62944 0.0
-TotBio_1993 60558.4 0.0
-TotBio_1994 59895.1 0.0
-TotBio_1995 59399.2 0.0
-TotBio_1996 60059.2 0.0
-TotBio_1997 60401.3 0.0
-TotBio_1998 60167.8 0.0
-TotBio_1999 61250 0.0
-TotBio_2000 61720.1 0.0
-TotBio_2001 62037.1 0.0
-TotBio_2002 62174.4 0.0
-TotBio_2003 64044.2 0.0
-TotBio_2004 65618.2 0.0
-SmryBio_Virgin 0 0.0
-SmryBio_Initial 154501 0.0
+SmryBio_Virgin 154547 0.0
+SmryBio_Initial 154547 0.0
 SmryBio_1971 154501 0.0
 SmryBio_1972 153878 0.0
 SmryBio_1973 153156 0.0
@@ -410,6 +372,44 @@ SmryBio_2001 62037.1 0.0
 SmryBio_2002 62174.4 0.0
 SmryBio_2003 64044.2 0.0
 SmryBio_2004 65618.2 0.0
+#_survey_stdev 0
+#_Biomass
+TotBio_Virgin 154549 0.0
+TotBio_Initial 154549 0.0
+TotBio_1971 154503 0.0
+TotBio_1972 153880 0.0
+TotBio_1973 153161 0.0
+TotBio_1974 154593 0.0
+TotBio_1975 155209 0.0
+TotBio_1976 153261 0.0
+TotBio_1977 150736 0.0
+TotBio_1978 147281 0.0
+TotBio_1979 141793 0.0
+TotBio_1980 134607 0.0
+TotBio_1981 125498 0.0
+TotBio_1982 115806 0.0
+TotBio_1983 106219 0.0
+TotBio_1984 96802.8 0.0
+TotBio_1985 90797.2 0.0
+TotBio_1986 86036 0.0
+TotBio_1987 80278.4 0.0
+TotBio_1988 75363.7 0.0
+TotBio_1989 71520.5 0.0
+TotBio_1990 68073.8 0.0
+TotBio_1991 65067.1 0.0
+TotBio_1992 62945.2 0.0
+TotBio_1993 60560.9 0.0
+TotBio_1994 59897.2 0.0
+TotBio_1995 59401.8 0.0
+TotBio_1996 60061.1 0.0
+TotBio_1997 60402.7 0.0
+TotBio_1998 60170.3 0.0
+TotBio_1999 61251.8 0.0
+TotBio_2000 61721.9 0.0
+TotBio_2001 62038.8 0.0
+TotBio_2002 62176.2 0.0
+TotBio_2003 64046 0.0
+TotBio_2004 65620 0.0
 TotCatch_Virgin 0 0.0
 TotCatch_Initial 0 0.0
 TotCatch_1971 1000 0.0

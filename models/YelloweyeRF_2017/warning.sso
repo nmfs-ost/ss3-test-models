@@ -1,10 +1,14 @@
-#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
+#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
-Wed Sep  2 07:26:22 2020
+Fri Jun 11 19:19:44 2021
 
-Note that recr_dist_method 3 is simpler and takes 1 parm for each settlement
-setting in starter does not request all priors, and 4 parameters have priors and are not estimated, so their prior not included in obj_fun.
-Final gradient: 0.0112239 is larger than final_conv: 0.0001
-Number_of_active_parameters_on_or_near_bounds: 1
- N warnings: 4
+This file contains warnings, suggestions and notes generated as files are read and processed
+
+1 NOTE:  Max data length bin: 74  < max pop len bins: 88; so will accumulate larger pop len bins
+2 NOTE: recr_dist_method 3 is simpler and takes 1 parm for each settlement
+3 parameter init value is less than parameter min -16.1653 < -15 for parm: 9 ; search for <now check> in echoinput for parm_type, will exit if prior requested
+4 setting in starter does not request all priors, and 4 parameters have priors and are not estimated, so their prior not included in obj_fun.
+5 Final gradient: 0.00119161 is larger than final_conv: 0.0001
+6  Number_of_active_parameters_on_or_near_bounds: 1
+N warnings: 6

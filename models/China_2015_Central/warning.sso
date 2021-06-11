@@ -1,31 +1,36 @@
-#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
+#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
-Wed Sep  2 01:30:16 2020
+Fri Jun 11 16:12:11 2021
 
-fishing fleet: 1 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 2 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 3 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 4 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 5 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 6 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 7 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 8 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 9 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 10 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 11 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-This model has just one settlement event; recommend changing to recr_dist_method 4 which takes no recr_dist parameters
-fleet: 1  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 9
-fleet: 2  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 11
-fleet: 3  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 16
-fleet: 4  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 29
-fleet: 5  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 19
-fleet: 5  agecomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 102
-fleet: 6  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 17
-fleet: 7  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 28
-fleet: 7  agecomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 74
-fleet: 8  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 32
-fleet: 10  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 32
-fleet: 10  agecomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 9
-fleet: 11  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 28
- N warnings: 25
+This file contains warnings, suggestions and notes generated as files are read and processed
+
+1 fishing fleet: 1 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+2 fishing fleet: 2 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+3 fishing fleet: 3 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+4 fishing fleet: 4 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+5 fishing fleet: 5 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+6 fishing fleet: 6 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+7 fishing fleet: 7 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+8 fishing fleet: 8 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+9 fishing fleet: 9 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+10 fishing fleet: 10 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+11 fishing fleet: 11 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+12 NOTE:  Max data length bin: 46  < max pop len bins: 50; so will accumulate larger pop len bins
+13 NOTE: This model has just one settlement event. Changing to recr_dist_method 4 and removing the recruitment distribution parameters at the end of the MG parms section (below growth parameters) will produce identical results and simplify the model.
+14 fleet: 1  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 9
+15 fleet: 2  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 11
+16 fleet: 3  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 16
+17 fleet: 4  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 29
+18 fleet: 5  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 19
+19 fleet: 5  agecomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 102
+20 fleet: 6  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 17
+21 fleet: 7  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 28
+22 fleet: 7  agecomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 74
+23 fleet: 8  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 32
+24 fleet: 10  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 32
+25 fleet: 10  agecomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 9
+26 fleet: 11  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 28
+27 Minimum pop size bin:_8; is > L at Amin for sex: 1; Gpat: 1; L= 2
+28 Minimum pop size bin:_8; is > L at Amin for sex: 2; Gpat: 1; L= 2
+N warnings: 28

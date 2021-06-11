@@ -1,46 +1,58 @@
-#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
+#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
-Wed Sep  2 06:26:55 2020
+Fri Jun 11 18:39:09 2021
 
-fishing fleet: 1 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 2 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 3 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 4 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 5 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 6 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 7 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 8 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-This model has just one settlement event; recommend changing to recr_dist_method 4 which takes no recr_dist parameters
-fleet: 1 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 1 age selex range max read is: 100; is >nages; SS will convert 
-fleet: 2 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 2 age selex range max read is: 100; is >nages; SS will convert 
-fleet: 3 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 3 age selex range max read is: 100; is >nages; SS will convert 
-fleet: 4 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 4 age selex range max read is: 100; is >nages; SS will convert 
-fleet: 5 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 5 age selex range max read is: 100; is >nages; SS will convert 
-fleet: 6 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 6 age selex range max read is: 100; is >nages; SS will convert 
-fleet: 7 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 7 age selex range max read is: 100; is >nages; SS will convert 
-fleet: 8 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 8 age selex range max read is: 100; is >nages; SS will convert 
-fleet: 9 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 9 age selex range max read is: 100; is >nages; SS will convert 
-fleet: 10 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 10 age selex range max read is: 100; is >nages; SS will convert 
-fleet: 11 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 11 age selex range max read is: 100; is >nages; SS will convert 
-fleet: 12 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 12 age selex range max read is: 100; is >nages; SS will convert 
-fleet: 13 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 13 age selex range max read is: 100; is >nages; SS will convert 
-fleet: 1  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 4
-fleet: 3  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 6
-fleet: 5  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 6
- Fmsy is <1/3 of Fspr are you sure?  check for convergence 
-Number_of_active_parameters_on_or_near_bounds: 1
- N warnings: 40
+This file contains warnings, suggestions and notes generated as files are read and processed
+
+1 fishing fleet: 1 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+2 fishing fleet: 2 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+3 fishing fleet: 3 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+4 fishing fleet: 4 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+5 fishing fleet: 5 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+6 fishing fleet: 6 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+7 fishing fleet: 7 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+8 fishing fleet: 8 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+9 NOTE:  Max data length bin: 132  < max pop len bins: 136; so will accumulate larger pop len bins
+10 NOTE: This model has just one settlement event. Changing to recr_dist_method 4 and removing the recruitment distribution parameters at the end of the MG parms section (below growth parameters) will produce identical results and simplify the model.
+11 fleet: 1 age selex range min read is: 0.1; SS expected an integer and will convert 
+12 fleet: 1 age selex range max read is: 100; is >nages; SS will convert 
+13 fleet: 2 age selex range min read is: 0.1; SS expected an integer and will convert 
+14 fleet: 2 age selex range max read is: 100; is >nages; SS will convert 
+15 fleet: 3 age selex range min read is: 0.1; SS expected an integer and will convert 
+16 fleet: 3 age selex range max read is: 100; is >nages; SS will convert 
+17 fleet: 4 age selex range min read is: 0.1; SS expected an integer and will convert 
+18 fleet: 4 age selex range max read is: 100; is >nages; SS will convert 
+19 fleet: 5 age selex range min read is: 0.1; SS expected an integer and will convert 
+20 fleet: 5 age selex range max read is: 100; is >nages; SS will convert 
+21 fleet: 6 age selex range min read is: 0.1; SS expected an integer and will convert 
+22 fleet: 6 age selex range max read is: 100; is >nages; SS will convert 
+23 fleet: 7 age selex range min read is: 0.1; SS expected an integer and will convert 
+24 fleet: 7 age selex range max read is: 100; is >nages; SS will convert 
+25 fleet: 8 age selex range min read is: 0.1; SS expected an integer and will convert 
+26 fleet: 8 age selex range max read is: 100; is >nages; SS will convert 
+27 fleet: 9 age selex range min read is: 0.1; SS expected an integer and will convert 
+28 fleet: 9 age selex range max read is: 100; is >nages; SS will convert 
+29 fleet: 10 age selex range min read is: 0.1; SS expected an integer and will convert 
+30 fleet: 10 age selex range max read is: 100; is >nages; SS will convert 
+31 fleet: 11 age selex range min read is: 0.1; SS expected an integer and will convert 
+32 fleet: 11 age selex range max read is: 100; is >nages; SS will convert 
+33 fleet: 12 age selex range min read is: 0.1; SS expected an integer and will convert 
+34 fleet: 12 age selex range max read is: 100; is >nages; SS will convert 
+35 fleet: 13 age selex range min read is: 0.1; SS expected an integer and will convert 
+36 fleet: 13 age selex range max read is: 100; is >nages; SS will convert 
+37 parameter init value is less than parameter min -15.3714 < -15 for parm: 9 ; search for <now check> in echoinput for parm_type, will exit if prior requested
+38 parameter init value is greater than parameter max 1 > 0 for parm: 19 ; search for <now check> echoinput for parm_type, will exit if prior requested
+39 parameter init value is less than parameter min -1 < 0 for parm: 20 ; search for <now check> in echoinput for parm_type, will exit if prior requested
+40 parameter init value is greater than parameter max 1 > 0 for parm: 33 ; search for <now check> echoinput for parm_type, will exit if prior requested
+41 parameter init value is less than parameter min -1 < 0 for parm: 34 ; search for <now check> in echoinput for parm_type, will exit if prior requested
+42 parameter init value is greater than parameter max 1 > 0 for parm: 59 ; search for <now check> echoinput for parm_type, will exit if prior requested
+43 parameter init value is less than parameter min -1 < 0 for parm: 60 ; search for <now check> in echoinput for parm_type, will exit if prior requested
+44 parameter init value is greater than parameter max 1 > 0 for parm: 61 ; search for <now check> echoinput for parm_type, will exit if prior requested
+45 parameter init value is less than parameter min -1 < 0 for parm: 62 ; search for <now check> in echoinput for parm_type, will exit if prior requested
+46 fleet: 1  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 4
+47 fleet: 3  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 6
+48 fleet: 5  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 6
+49 Fmsy is <1/3 of Fspr are you sure?  check for convergence 
+50  Number_of_active_parameters_on_or_near_bounds: 1
+N warnings: 50

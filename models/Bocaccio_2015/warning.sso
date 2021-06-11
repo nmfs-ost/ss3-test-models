@@ -1,81 +1,109 @@
-#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
+#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
-Tue Sep  1 23:00:08 2020
+Fri Jun 11 15:22:22 2021
 
-fishing fleet: 1 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 2 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 3 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 4 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 5 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 6 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-This model has just one settlement event; recommend changing to recr_dist_method 4 which takes no recr_dist parameters
-fleet: 1 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 1 age selex range max read is: 34; is >nages; SS will convert 
-fleet: 2 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 2 age selex range max read is: 34; is >nages; SS will convert 
-fleet: 3 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 3 age selex range max read is: 34; is >nages; SS will convert 
-fleet: 4 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 4 age selex range max read is: 34; is >nages; SS will convert 
-fleet: 5 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 5 age selex range max read is: 34; is >nages; SS will convert 
-fleet: 6 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 6 age selex range max read is: 34; is >nages; SS will convert 
-fleet: 7 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 7 age selex range max read is: 34; is >nages; SS will convert 
-fleet: 8 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 8 age selex range max read is: 34; is >nages; SS will convert 
-fleet: 9 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 9 age selex range max read is: 34; is >nages; SS will convert 
-fleet: 10 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 10 age selex range max read is: 34; is >nages; SS will convert 
-fleet: 11 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 11 age selex range max read is: 34; is >nages; SS will convert 
-fleet: 15 age selex range max read is: 40; is >nages; SS will convert 
-fleet: 16 age selex range max read is: 40; is >nages; SS will convert 
-fleet: 17 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 17 age selex range max read is: 34; is >nages; SS will convert 
-fleet: 18 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 18 age selex range max read is: 34; is >nages; SS will convert 
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 1 1 1 2003 16 60 44.3593 62.5426
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2003 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2004 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2005 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2006 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2007 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2008 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2009 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2010 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2011 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2012 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2013 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2014 16 60 43.6904 61.1827
-setting positive forecast relF for forecast only fleet: 3
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2003 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2004 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2005 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2006 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2007 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2008 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2009 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2010 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2011 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2012 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2013 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2014 16 60 43.6904 61.1827
-setting positive forecast relF for forecast only fleet: 3
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2003 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2004 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2005 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2006 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2007 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2008 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2009 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2010 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2011 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2012 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2013 16 60 43.6904 61.1827
- adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2014 16 60 43.6904 61.1827
-Number_of_active_parameters_on_or_near_bounds: 2
- N warnings: 73
+This file contains warnings, suggestions and notes generated as files are read and processed
+
+1 fishing fleet: 1 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+2 fishing fleet: 2 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+3 fishing fleet: 3 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+4 fishing fleet: 4 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+5 fishing fleet: 5 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+6 fishing fleet: 6 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+7 NOTE: This model has just one settlement event. Changing to recr_dist_method 4 and removing the recruitment distribution parameters at the end of the MG parms section (below growth parameters) will produce identical results and simplify the model.
+8 fleet: 1 age selex range min read is: 0.1; SS expected an integer and will convert 
+9 fleet: 1 age selex range max read is: 34; is >nages; SS will convert 
+10 fleet: 2 age selex range min read is: 0.1; SS expected an integer and will convert 
+11 fleet: 2 age selex range max read is: 34; is >nages; SS will convert 
+12 fleet: 3 age selex range min read is: 0.1; SS expected an integer and will convert 
+13 fleet: 3 age selex range max read is: 34; is >nages; SS will convert 
+14 fleet: 4 age selex range min read is: 0.1; SS expected an integer and will convert 
+15 fleet: 4 age selex range max read is: 34; is >nages; SS will convert 
+16 fleet: 5 age selex range min read is: 0.1; SS expected an integer and will convert 
+17 fleet: 5 age selex range max read is: 34; is >nages; SS will convert 
+18 fleet: 6 age selex range min read is: 0.1; SS expected an integer and will convert 
+19 fleet: 6 age selex range max read is: 34; is >nages; SS will convert 
+20 fleet: 7 age selex range min read is: 0.1; SS expected an integer and will convert 
+21 fleet: 7 age selex range max read is: 34; is >nages; SS will convert 
+22 fleet: 8 age selex range min read is: 0.1; SS expected an integer and will convert 
+23 fleet: 8 age selex range max read is: 34; is >nages; SS will convert 
+24 fleet: 9 age selex range min read is: 0.1; SS expected an integer and will convert 
+25 fleet: 9 age selex range max read is: 34; is >nages; SS will convert 
+26 fleet: 10 age selex range min read is: 0.1; SS expected an integer and will convert 
+27 fleet: 10 age selex range max read is: 34; is >nages; SS will convert 
+28 fleet: 11 age selex range min read is: 0.1; SS expected an integer and will convert 
+29 fleet: 11 age selex range max read is: 34; is >nages; SS will convert 
+30 fleet: 15 age selex range max read is: 40; is >nages; SS will convert 
+31 fleet: 16 age selex range max read is: 40; is >nages; SS will convert 
+32 fleet: 17 age selex range min read is: 0.1; SS expected an integer and will convert 
+33 fleet: 17 age selex range max read is: 34; is >nages; SS will convert 
+34 fleet: 18 age selex range min read is: 0.1; SS expected an integer and will convert 
+35 fleet: 18 age selex range max read is: 34; is >nages; SS will convert 
+36  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 1 1 1 2003 16 60 44.3593 62.5426
+37 1st iteration warning: ssb(endyr)/ssb(styr)= 1.04571e-10; suggest start with larger R0 to get near 0.4; or use depletion fleet option
+38 1st iteration warning: catch logL > 50% total logL; check configuration; suggest start with larger R0
+39  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2003 16 60 43.6904 61.1827
+40  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2004 16 60 43.6904 61.1827
+41  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2005 16 60 43.6904 61.1827
+42  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2006 16 60 43.6904 61.1827
+43  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2007 16 60 43.6904 61.1827
+44  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2008 16 60 43.6904 61.1827
+45  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2009 16 60 43.6904 61.1827
+46  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2010 16 60 43.6904 61.1827
+47  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2011 16 60 43.6904 61.1827
+48  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2012 16 60 43.6904 61.1827
+49  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2013 16 60 43.6904 61.1827
+50  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1397 1 2014 16 60 43.6904 61.1827
+50 setting positive forecast relF for forecast only fleet: 3
+51  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2003 16 60 43.6904 61.1827
+52  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2004 16 60 43.6904 61.1827
+53  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2005 16 60 43.6904 61.1827
+54  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2006 16 60 43.6904 61.1827
+55  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2007 16 60 43.6904 61.1827
+56  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2008 16 60 43.6904 61.1827
+57  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2009 16 60 43.6904 61.1827
+58  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2010 16 60 43.6904 61.1827
+59  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2011 16 60 43.6904 61.1827
+60  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2012 16 60 43.6904 61.1827
+61  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2013 16 60 43.6904 61.1827
+62  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2014 16 60 43.6904 61.1827
+62 setting positive forecast relF for forecast only fleet: 3
+63  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2003 16 60 43.6904 61.1827
+64  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2004 16 60 43.6904 61.1827
+65  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2005 16 60 43.6904 61.1827
+66  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2006 16 60 43.6904 61.1827
+67  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2007 16 60 43.6904 61.1827
+68  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2008 16 60 43.6904 61.1827
+69  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2009 16 60 43.6904 61.1827
+70  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2010 16 60 43.6904 61.1827
+71  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2011 16 60 43.6904 61.1827
+72  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2012 16 60 43.6904 61.1827
+73  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2013 16 60 43.6904 61.1827
+74  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2014 16 60 43.6904 61.1827
+75  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2003 16 60 43.6904 61.1827
+76  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2004 16 60 43.6904 61.1827
+77  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2005 16 60 43.6904 61.1827
+78  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2006 16 60 43.6904 61.1827
+79  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2007 16 60 43.6904 61.1827
+80  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2008 16 60 43.6904 61.1827
+81  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2009 16 60 43.6904 61.1827
+82  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2010 16 60 43.6904 61.1827
+83  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2011 16 60 43.6904 61.1827
+84  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2012 16 60 43.6904 61.1827
+85  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2013 16 60 43.6904 61.1827
+86  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2014 16 60 43.6904 61.1827
+87  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2003 16 60 43.6904 61.1827
+88  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2004 16 60 43.6904 61.1827
+89  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2005 16 60 43.6904 61.1827
+90  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2006 16 60 43.6904 61.1827
+91  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2007 16 60 43.6904 61.1827
+92  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2008 16 60 43.6904 61.1827
+93  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2009 16 60 43.6904 61.1827
+94  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2010 16 60 43.6904 61.1827
+95  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2011 16 60 43.6904 61.1827
+96  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2012 16 60 43.6904 61.1827
+97  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2013 16 60 43.6904 61.1827
+98  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2067 1 2014 16 60 43.6904 61.1827
+99  Number_of_active_parameters_on_or_near_bounds: 2
+N warnings: 99

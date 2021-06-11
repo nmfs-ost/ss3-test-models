@@ -1,28 +1,30 @@
-#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
+#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
-Wed Sep  2 01:54:21 2020
+Fri Jun 11 16:27:46 2021
 
-fishing fleet: 1 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 2 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-fishing fleet: 3 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-This model has just one settlement event; recommend changing to recr_dist_method 4 which takes no recr_dist parameters
-fleet: 1 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 1 age selex range max read is: 100; is >nages; SS will convert 
-fleet: 2 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 2 age selex range max read is: 100; is >nages; SS will convert 
-fleet: 3 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 3 age selex range max read is: 100; is >nages; SS will convert 
-fleet: 4 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 4 age selex range max read is: 100; is >nages; SS will convert 
-fleet: 5 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 5 age selex range max read is: 100; is >nages; SS will convert 
-fleet: 6 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 6 age selex range max read is: 100; is >nages; SS will convert 
-fleet: 7 age selex range min read is: 0.1; SS expected an integer and will convert 
-fleet: 7 age selex range max read is: 100; is >nages; SS will convert 
-setting in starter does not request all priors, and 3 parameters have priors and are not estimated, so their prior not included in obj_fun.
-Final gradient: 0.000504482 is larger than final_conv: 0.0001
-Reminder: Number of lamdas !=0.0 and !=1.0:  4
-Number_of_active_parameters_on_or_near_bounds: 3
- N warnings: 22
+This file contains warnings, suggestions and notes generated as files are read and processed
+
+1 fishing fleet: 1 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+2 fishing fleet: 2 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+3 fishing fleet: 3 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+4 NOTE: This model has just one settlement event. Changing to recr_dist_method 4 and removing the recruitment distribution parameters at the end of the MG parms section (below growth parameters) will produce identical results and simplify the model.
+5 fleet: 1 age selex range min read is: 0.1; SS expected an integer and will convert 
+6 fleet: 1 age selex range max read is: 100; is >nages; SS will convert 
+7 fleet: 2 age selex range min read is: 0.1; SS expected an integer and will convert 
+8 fleet: 2 age selex range max read is: 100; is >nages; SS will convert 
+9 fleet: 3 age selex range min read is: 0.1; SS expected an integer and will convert 
+10 fleet: 3 age selex range max read is: 100; is >nages; SS will convert 
+11 fleet: 4 age selex range min read is: 0.1; SS expected an integer and will convert 
+12 fleet: 4 age selex range max read is: 100; is >nages; SS will convert 
+13 fleet: 5 age selex range min read is: 0.1; SS expected an integer and will convert 
+14 fleet: 5 age selex range max read is: 100; is >nages; SS will convert 
+15 fleet: 6 age selex range min read is: 0.1; SS expected an integer and will convert 
+16 fleet: 6 age selex range max read is: 100; is >nages; SS will convert 
+17 fleet: 7 age selex range min read is: 0.1; SS expected an integer and will convert 
+18 fleet: 7 age selex range max read is: 100; is >nages; SS will convert 
+19 setting in starter does not request all priors, and 1 parameters have priors and are not estimated, so their prior not included in obj_fun.
+20 Final gradient: 0.000504482 is larger than final_conv: 0.0001
+21 Reminder: Number of lamdas !=0.0 and !=1.0:  4
+22  Number_of_active_parameters_on_or_near_bounds: 3
+N warnings: 22
