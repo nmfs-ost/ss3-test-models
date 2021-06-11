@@ -1,4 +1,4 @@
-#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
+#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
 #C  generic forecast file converted imperfectly from Andre's file to SSv3.22
@@ -10,6 +10,7 @@
 #_Bmark_years: beg_bio, end_bio, beg_selex, end_selex, beg_relF, end_relF, beg_recr_dist, end_recr_dist, beg_SRparm, end_SRparm (enter actual year, or values of 0 or -integer to be rel. endyr)
  2006 2006 2006 2006 2006 2006 1927 2006 1927 2006
 #  2006 2006 2006 2006 2006 2006 1927 2006 1927 2006
+# value <0 convert to endyr-value; except -999 converts to start_yr; must be >=start_yr and <=endyr
 1 #Bmark_relF_Basis: 1 = use year range; 2 = set relF same as forecast below
 #
 1 # Forecast: -1=none; 0=simple_1yr; 1=F(SPR); 2=F(MSY) 3=F(Btgt) or F0.1; 4=Ave F (uses first-last relF yrs); 5=input annual F scalar
@@ -20,7 +21,8 @@
  0 0 -10 0 -999 0
 #  2006 2006 1996 2006 1927 2006
 0 # Forecast selectivity (0=fcast selex is mean from year range; 1=fcast selectivity from annual time-vary parms)
-1 # Control rule method (1: ramp does catch=f(SSB), buffer on F; 2: ramp does F=f(SSB), buffer on F; 3: ramp does catch=f(SSB), buffer on catch; 4: ramp does F=f(SSB), buffer on catch) 
+1 # Control rule method (0: none; 1: ramp does catch=f(SSB), buffer on F; 2: ramp does F=f(SSB), buffer on F; 3: ramp does catch=f(SSB), buffer on catch; 4: ramp does F=f(SSB), buffer on catch) 
+# values for top, bottom and buffer exist, but not used when Policy=0
 0.4 # Control rule Biomass level for constant F (as frac of Bzero, e.g. 0.40); (Must be > the no F level below) 
 0.1 # Control rule Biomass level for no F (as frac of Bzero, e.g. 0.10) 
 1 # Buffer:  enter Control rule target as fraction of Flimit (e.g. 0.75), negative value invokes list of [year, scalar] with filling from year to YrMax 
@@ -39,11 +41,11 @@
 2 # basis for fcast catch tuning and for fcast catch caps and allocation  (2=deadbio; 3=retainbio; 5=deadnum; 6=retainnum); NOTE: same units for all fleets
 # Conditional input if relative F choice = 2
 # enter list of:  season,  fleet, relF; if used, terminate with season=-9999
-# 1 1 0.0407015
-# 1 2 0.918014
-# 1 3 0.0344074
-# 1 4 0.00321707
-# 1 5 0.00366038
+# 1 1 0.037475
+# 1 2 0.921156
+# 1 3 0.0345304
+# 1 4 0.00327684
+# 1 5 0.00356149
 # -9999 0 0  # terminator for list of relF
 # enter list of: fleet number, max annual catch for fleets with a max; terminate with fleet=-9999
 -9999 -1

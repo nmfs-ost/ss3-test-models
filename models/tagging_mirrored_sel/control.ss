@@ -1,4 +1,4 @@
-#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
+#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
 #_user_support_available_at:NMFS.Stock.Synthesis@noaa.gov
@@ -43,8 +43,8 @@
 #_Prior_codes:  0=none; 6=normal; 1=symmetric beta; 2=CASAL's beta; 3=lognormal; 4=lognormal with biascorr; 5=gamma
 #
 # setup for M, growth, wt-len, maturity, fecundity, (hermaphro), recr_distr, cohort_grow, (movement), (age error), (catch_mult), sex ratio 
-#
-0 #_natM_type:_0=1Parm; 1=N_breakpoints;_2=Lorenzen;_3=agespecific;_4=agespec_withseasinterpolate
+#_NATMORT
+0 #_natM_type:_0=1Parm; 1=N_breakpoints;_2=Lorenzen;_3=agespecific;_4=agespec_withseasinterpolate;_5=BETA:_Maunder_link_to_maturity
   #_no additional input for selected M option; read 1P per morph
 #
 1 # GrowthModel: 1=vonBert with L1&L2; 2=Richards with L1&L2; 3=age_specific_K_incr; 4=age_specific_K_decr; 5=age_specific_K_each; 6=NA; 7=NA; 8=growth cessation
@@ -62,12 +62,13 @@
 1 #_First_Mature_Age
 1 #_fecundity option:(1)eggs=Wt*(a+b*Wt);(2)eggs=a*L^b;(3)eggs=a*Wt^b; (4)eggs=a+b*L; (5)eggs=a+b*W
 0 #_hermaphroditism option:  0=none; 1=female-to-male age-specific fxn; -1=male-to-female age-specific fxn
-1 #_parameter_offset_approach for M, G, CV_G:  1- direct, no offset; 2- male=fem_parm*exp(male_parm); 3: male=female*exp(parm) then old=young*exp(parm)
+1 #_parameter_offset_approach for M, G, CV_G:  1- direct, no offset**; 2- male=fem_parm*exp(male_parm); 3: male=female*exp(parm) then old=young*exp(parm)
+#_** in option 1, any male parameter with value = 0.0 and phase <0 is set equal to female parameter
 #
 #_growth_parms
 #_ LO HI INIT PRIOR PR_SD PR_type PHASE env_var&link dev_link dev_minyr dev_maxyr dev_PH Block Block_Fxn
 # Sex: 1  BioPattern: 1  NatMort
- 0.15 0.3 0.15 0.2446 0.8 6 5 0 0 0 0 0.5 0 0 # NatM_p_1_Fem_GP_1
+ 0.15 0.3 0.15 0.2446 0.8 6 5 0 0 0 0 0.5 0 0 # NatM_uniform_Fem_GP_1
 # Sex: 1  BioPattern: 1  Growth
  5 100 54.4 42 10 6 -3 0 0 1979 2006 0.5 0 0 # L_at_Amin_Fem_GP_1
  80 430 201.9 100 10 6 -2 0 0 1979 2006 0.5 0 0 # L_at_Amax_Fem_GP_1
@@ -83,7 +84,7 @@
  -3 3 1 1 0.8 6 -3 0 0 0 0 0.5 0 0 # Eggs/kg_inter_Fem_GP_1
  -3 3 0 0 0.8 6 -3 0 0 0 0 0.5 0 0 # Eggs/kg_slope_wt_Fem_GP_1
 # Sex: 2  BioPattern: 1  NatMort
- 0.15 0.3 0.176352 0.2446 0.8 6 5 0 0 0 0 0.5 0 0 # NatM_p_1_Mal_GP_1
+ 0.15 0.3 0.176352 0.2446 0.8 6 5 0 0 0 0 0.5 0 0 # NatM_uniform_Mal_GP_1
 # Sex: 2  BioPattern: 1  Growth
  5 100 52.9 42 10 6 -3 0 0 1979 2006 0.5 0 0 # L_at_Amin_Mal_GP_1
  80 430 138.7 100 10 6 -2 0 0 1979 2006 0.5 0 0 # L_at_Amax_Mal_GP_1
@@ -150,7 +151,6 @@
 # all recruitment deviations
 #  1964R 1965R 1966R 1967R 1968R 1969R 1970R 1971R 1972R 1973R 1974R 1975R 1976R 1977R 1978R 1979R 1980R 1981R 1982R 1983R 1984R 1985R 1986R 1987R 1988R 1989R 1990R 1991R 1992R 1993R 1994R 1995R 1996R 1997R 1998R 1999R 2000R 2001R 2002R 2003F 2004F 2005F 2006F 2007F 2008F
 #  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-# implementation error by year in forecast:  0 0
 #
 #Fishing Mortality info 
 0.1 # F ballpark value in units of annual_F
@@ -162,17 +162,18 @@
 # if Fmethod=3; read N iterations for tuning for Fmethod 3
 4  # N iterations for tuning F in hybrid method (recommend 3 to 7)
 #
-#_initial_F_parms; count = 0
+#_initial_F_parms; for each fleet x season that has init_catch; nest season in fleet; count = 0
+#_for unconstrained init_F, use an arbitrary initial catch and set lambda=0 for its logL
 #_ LO HI INIT PRIOR PR_SD  PR_type  PHASE
-#2008 2057
-# F rates by fleet
+#
+# F rates by fleet x season
 # Yr:  1927 1928 1929 1930 1931 1932 1933 1934 1935 1936 1937 1938 1939 1940 1941 1942 1943 1944 1945 1946 1947 1948 1949 1950 1951 1952 1953 1954 1955 1956 1957 1958 1959 1960 1961 1962 1963 1964 1965 1966 1967 1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008
 # seas:  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-# cpue1 0.000284592 0.00028463 0.0011388 0.000569705 0.000569752 0.000854789 0.00856278 0.00486564 0.00860384 0.0139617 0.0166344 0.0186109 0.0222224 0.0246996 0.0355698 0.0342401 0.0460375 0.0445363 0.0428866 0.0448606 0.0505021 0.059813 0.0700255 0.0632573 0.0453412 0.0569077 0.0727687 0.0412082 0.049627 0.0476527 0.032806 0.0312978 0.0325966 0.0484281 0.0525998 0.0585023 0.0727651 0.0788414 0.0615696 0.0624895 0.0686888 0.0635086 0.0598751 0.0669963 0.0311157 0.0162184 0.0140353 0.024961 0.0284796 0.0182613 0.0258198 0.0244563 0.0261177 0.03252 0.0252817 0.0157924 0.0206167 0.0309935 0.0398326 0.0360983 0.0296656 0.0250757 0.0515713 0.0284056 0.0563342 0.0771203 0.0865603 0.0414833 0.0223095 0.0320362 0.0328422 0.030889 0.0374216 0.0657054 0.047677 0.0424145 0.043045 0.0356193 0.032 0.0308215 0.00256201 0.00260178
-# cpue2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.00440891 0.00531993 0.0105108 0.018921 0.032391 0.0122458 0.0217541 0.0521971 0.0778815 0.273058 0.313818 0.340656 0.435905 0.407426 0.327991 0.363244 0.415093 0.558403 0.596161 0.564203 0.564142 0.643957 0.601485 0.548544 0.677162 0.592558 0.622029 0.709221 0.943489 0.77544 0.978159 0.757496 0.541873 0.6133 0.818904 0.833746 1.12163 1.01317 1.06183 1.04902 0.973332 0.924902 0.0577856 0.0586825
-# cpue3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4.7671e-05 5.94708e-05 0.000112755 0.00022603 0.000399802 0.000124691 0.000199044 0.000446267 0.000858959 0 0 0 0 0.00146088 0.00241724 0.00450267 0.00460879 5.90766e-05 0.000841355 0.000810055 0.00466883 0.0104659 0.00470299 0.00402995 0.00465014 0 0.013044 0.00245727 0.000375575 0.00221569 0.0410476 0.0111217 0.0709469 0.0277589 0.00714636 0.0453253 0.0469746 0.0493045 0.0217657 0.0308548 0.026907 0.025798 0.00216582 0.00219944
-# cpue4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.0326532 0.0395282 0.0790403 0.14087 0.241189 0.0941642 0.172365 0.422549 0.623322 0.220235 0.0863324 0.0539914 0.00575687 0.00513388 0.0184464 0.0194187 0.048867 0.0376806 0.0402592 0.0269565 0.00732255 0.00644608 0.0130543 0.00338616 0.00798549 0.00756787 0.0067775 0.0108717 0.018074 0.0197443 0.0581258 0.0277744 0 0 0 0 5.9404e-06 0 5.86346e-05 0.00618576 0 0 0.000202503 0.000205646
-# Cpue5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.00117043 0.00146 0.00280989 0.00583341 0.0138567 0.00787707 0.0109284 0.0216756 0.0334682 0.00135294 0.00025916 0.00491452 0.000757472 0.000201243 0.000187311 0 0 0.000258111 1.46273e-06 0 0 1.25946e-05 0.00938822 0.000502753 0.00172958 0 0.000239923 5.64917e-05 0.0544211 0.0247201 0 0 0.0387133 0 0 0 0 0 0 0 0 0 0.000230408 0.000233984
+# cpue1 0.00024977 0.000285562 0.00121078 0.000588907 0.000476867 0.00079932 0.00829498 0.00508479 0.00898582 0.0162546 0.0165547 0.0162179 0.0214773 0.0231943 0.037604 0.0312243 0.044137 0.0468248 0.04201 0.0440729 0.0449848 0.0628545 0.0757249 0.0662759 0.0380423 0.0530055 0.0753843 0.0407643 0.0499704 0.0537005 0.0327171 0.0295224 0.0354369 0.0525913 0.056768 0.0645282 0.0597805 0.083044 0.0615166 0.0630509 0.0746411 0.0610857 0.0647538 0.0692164 0.0283346 0.0178724 0.0137752 0.0223394 0.0236025 0.018361 0.023518 0.0291353 0.0243481 0.032994 0.0313732 0.0170734 0.0183149 0.028753 0.0387142 0.0384333 0.0288192 0.0284963 0.0565576 0.0339292 0.0600388 0.0874456 0.0861904 0.0364666 0.0262401 0.0334173 0.0354875 0.0329246 0.0374303 0.0776923 0.0549421 0.0452886 0.0564001 0.0375906 0.0375158 0.0353209 9.89991e-07 9.73421e-07
+# cpue2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.00371234 0.0050802 0.00989794 0.0201509 0.0292307 0.0128682 0.0222701 0.0469303 0.0681594 0.257402 0.295277 0.350942 0.433622 0.39182 0.311797 0.377858 0.451548 0.598223 0.578848 0.678543 0.651223 0.674776 0.655146 0.625753 0.972418 0.557543 0.756508 0.725137 1.06649 0.828657 1.38797 0.818276 0.749663 0.628938 0.832806 0.898265 1.17506 1.02127 1.37859 1.31284 1.61665 1.46488 2.43345e-05 2.39272e-05
+# cpue3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4.96103e-05 5.73342e-05 0.000113141 0.000198452 0.000349874 0.000126051 0.00020077 0.000470841 0.00096894 0 0 0 0 0.0014172 0.00231843 0.00401274 0.00466936 6.22947e-05 0.000960518 0.0008409 0.00497117 0.0109883 0.00475154 0.00435546 0.00463389 0 0.0152207 0.00273826 0.000428344 0.00213611 0.0560531 0.0140253 0.0938657 0.0305755 0.00825604 0.0532085 0.0534637 0.0594594 0.0294156 0.0330626 0.033728 0.0369182 9.12201e-07 8.96934e-07
+# cpue4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.0298004 0.0340386 0.0780567 0.153707 0.229279 0.104756 0.172753 0.411708 0.568276 0.203766 0.0783277 0.0656218 0.00491187 0.00485066 0.0192961 0.0220512 0.0474891 0.0385735 0.0438017 0.0265099 0.00800116 0.00733519 0.0130792 0.00286702 0.00993718 0.00943929 0.00787354 0.0126013 0.0188017 0.026302 0.0757665 0.0336968 0 0 0 0 6.09196e-06 0 6.60486e-05 0.0085532 0 0 8.65654e-08 8.51166e-08
+# Cpue5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.00135381 0.00146264 0.00243916 0.00605407 0.0136219 0.00873453 0.0122531 0.0199255 0.0292711 0.001607 0.000271706 0.00494602 0.000838128 0.000251136 0.000190106 0 0 0.000253841 1.30938e-06 0 0 1.43201e-05 0.00905034 0.000542539 0.00214818 0 0.000286452 6.63182e-05 0.0499737 0.0270061 0 0 0.0459986 0 0 0 0 0 0 0 0 0 9.40852e-08 9.25105e-08
 #
 #_Q_setup for fleets with cpue or survey data
 #_1:  fleet number
@@ -187,12 +188,13 @@
 #
 #_Q_parms(if_any);Qunits_are_ln(q)
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn  #  parm_name
-           -15            15      -2.95405             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_cpue2(2)
+           -15            15      -2.88249             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_cpue2(2)
 #_no timevary Q parameters
 #
 #_size_selex_patterns
 #Pattern:_0;  parm=0; selex=1.0 for all sizes
 #Pattern:_1;  parm=2; logistic; with 95% width specification
+#Pattern:_2;  parm=6; modification of pattern 24 with improved sex-specific offset
 #Pattern:_5;  parm=2; mirror another size selex; PARMS pick the min-max bin to mirror
 #Pattern:_11; parm=2; selex=1.0  for specified min-max population length bin range
 #Pattern:_15; parm=0; mirror another age or length selex
@@ -204,9 +206,9 @@
 #Pattern:_22; parm=4; double_normal as in CASAL
 #Pattern:_23; parm=6; double_normal where final value is directly equal to sp(6) so can be >1.0
 #Pattern:_24; parm=6; double_normal with sel(minL) and sel(maxL), using joiners
-#Pattern:_25; parm=3; exponential-logistic in size
-#Pattern:_27; parm=3+special; cubic spline 
-#Pattern:_42; parm=2+special+3; // like 27, with 2 additional param for scaling (average over bin range)
+#Pattern:_25; parm=3; exponential-logistic in length
+#Pattern:_27; parm=special+3; cubic spline in length; parm1==1 resets knots; parm1==2 resets all 
+#Pattern:_42; parm=special+3+2; cubic spline; like 27, with 2 additional param for scaling (average over bin range)
 #_discard_options:_0=none;_1=define_retention;_2=retention&mortality;_3=all_discarded_dead;_4=define_dome-shaped_retention
 #_Pattern Discard Male Special
  6 0 0 44 # 1 cpue1
@@ -230,7 +232,7 @@
 #Pattern:_19; parm=6; simple 4-parm double logistic with starting age
 #Pattern:_20; parm=6; double_normal,using joiners
 #Pattern:_26; parm=3; exponential-logistic in age
-#Pattern:_27; parm=3+special; cubic spline in age
+#Pattern:_27; parm=3+special; cubic spline in age; parm1==1 resets knots; parm1==2 resets all 
 #Pattern:_42; parm=2+special+3; // cubic spline; with 2 additional param for scaling (average over bin range)
 #Age patterns entered with value >100 create Min_selage from first digit and pattern from remainder
 #_Pattern Discard Male Special
@@ -291,8 +293,8 @@
 # 2   cpue2 LenSelex
              1           500          32.5          32.5            99             0         -3          0          0          0          0        0.5          0          0  #  SizeSel_P1_cpue2(2)
              1           500         247.5         247.5            99             0         -3          0          0          0          0        0.5          0          0  #  SizeSel_P2_cpue2(2)
-            -27           50      -26.9451             5            99             0         -3          0          0          0          0        0.5          0          0  #  SizeSel_P3_cpue2(2)
-            -27            50      -21.8171             5            99            0         -3          0          0          0          0        0.5          0          0  # 0SizeSel_P4_cpue2(2)
+           -27            50      -26.9451             5            99             0         -3          0          0          0          0        0.5          0          0  #  SizeSel_P3_cpue2(2)
+           -27            50      -21.8171             5            99             0         -3          0          0          0          0        0.5          0          0  #  SizeSel_P4_cpue2(2)
             -1            50      -17.6973             5            99             0         -3          0          0          0          0        0.5          0          0  #  SizeSel_P5_cpue2(2)
             -1            50      -14.3325             5            99             0         -3          0          0          0          0        0.5          0          0  #  SizeSel_P6_cpue2(2)
             -1            50      -11.5543             5            99             0         -3          0          0          0          0        0.5          0          0  #  SizeSel_P7_cpue2(2)
@@ -487,6 +489,7 @@
 # 3   cpue3 AgeSelex
 # 4   cpue4 AgeSelex
 # 5   Cpue5 AgeSelex
+#_No_Dirichlet parameters
 #_no timevary selex parameters
 #
 0   #  use 2D_AR1 selectivity(0/1)
@@ -783,7 +786,7 @@
 #  1 1 1 1 1 1 #_TG-negbin_group:_38
 #  1 1 1 1 1 1 #_crashPenLambda
 #  0 0 0 0 0 0 # F_ballpark_lambda
-0 # (0/1/2) read specs for more stddev reporting: 0 = skip, 1 = read specs for reporting stdev for selectivity, size, and numbers, 2 = add options for M and Dyn Bzero
+0 # (0/1/2) read specs for more stddev reporting: 0 = skip, 1 = read specs for reporting stdev for selectivity, size, and numbers, 2 = add options for M,Dyn. Bzero, SmryBio
  # 0 2 0 0 # Selectivity: (1) fleet, (2) 1=len/2=age/3=both, (3) year, (4) N selex bins
  # 0 0 # Growth: (1) growth pattern, (2) growth ages
  # 0 0 0 # Numbers-at-age: (1) area(-1 for all), (2) year, (3) N ages

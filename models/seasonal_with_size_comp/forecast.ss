@@ -1,4 +1,4 @@
-#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
+#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
 #C  generic forecast file
@@ -10,6 +10,7 @@
 #_Bmark_years: beg_bio, end_bio, beg_selex, end_selex, beg_relF, end_relF, beg_recr_dist, end_recr_dist, beg_SRparm, end_SRparm (enter actual year, or values of 0 or -integer to be rel. endyr)
  2011 2011 2011 2011 2011 2011 1971 2011 1971 2011
 #  2011 2011 2011 2011 2011 2011 1971 2011 1971 2011
+# value <0 convert to endyr-value; except -999 converts to start_yr; must be >=start_yr and <=endyr
 1 #Bmark_relF_Basis: 1 = use year range; 2 = set relF same as forecast below
 #
 4 # Forecast: -1=none; 0=simple_1yr; 1=F(SPR); 2=F(MSY) 3=F(Btgt) or F0.1; 4=Ave F (uses first-last relF yrs); 5=input annual F scalar
@@ -20,7 +21,8 @@
  2011 2011 2011 2011 1971 2011
 #  2011 2011 2011 2011 1971 2011
 0 # Forecast selectivity (0=fcast selex is mean from year range; 1=fcast selectivity from annual time-vary parms)
-2 # Control rule method (1: ramp does catch=f(SSB), buffer on F; 2: ramp does F=f(SSB), buffer on F; 3: ramp does catch=f(SSB), buffer on catch; 4: ramp does F=f(SSB), buffer on catch) 
+2 # Control rule method (0: none; 1: ramp does catch=f(SSB), buffer on F; 2: ramp does F=f(SSB), buffer on F; 3: ramp does catch=f(SSB), buffer on catch; 4: ramp does F=f(SSB), buffer on catch) 
+# values for top, bottom and buffer exist, but not used when Policy=0
 0.4 # Control rule Biomass level for constant F (as frac of Bzero, e.g. 0.40); (Must be > the no F level below) 
 0.01 # Control rule Biomass level for no F (as frac of Bzero, e.g. 0.10) 
 1 # Buffer:  enter Control rule target as fraction of Flimit (e.g. 0.75), negative value invokes list of [year, scalar] with filling from year to YrMax 
@@ -39,66 +41,66 @@
 2 # basis for fcast catch tuning and for fcast catch caps and allocation  (2=deadbio; 3=retainbio; 5=deadnum; 6=retainnum); NOTE: same units for all fleets
 # Conditional input if relative F choice = 2
 # enter list of:  season,  fleet, relF; if used, terminate with season=-9999
-# 1 2 0.0268068
-# 1 3 0.0101759
-# 1 4 0.00569053
-# 1 5 0.0165064
-# 1 6 0.000380208
-# 1 7 0.00258544
-# 1 8 0.00127055
-# 1 9 0.00274385
-# 1 10 0.0160288
-# 1 11 0.0660029
-# 1 12 0.0739673
-# 1 13 0.00304899
-# 1 14 0.00340857
-# 1 15 0.029575
-# 1 16 0.00401671
-# 2 2 0.021739
-# 2 3 0.00969511
-# 2 4 0.00637699
-# 2 5 0.0141341
-# 2 6 0.000367741
-# 2 7 0.00533113
-# 2 8 0.00157919
-# 2 9 0.00274569
-# 2 10 0.0149185
-# 2 11 0.0525352
-# 2 12 0.0666119
-# 2 13 0.00280911
-# 2 14 0.00577106
-# 2 15 0.0279954
-# 2 16 0.00424106
-# 3 2 0.0188789
-# 3 3 0.0104179
-# 3 4 0.0059462
-# 3 5 0.0137393
-# 3 6 0.000375448
-# 3 7 0.00544123
-# 3 8 0.00114861
-# 3 9 0.00314948
-# 3 10 0.0174428
-# 3 11 0.0635014
-# 3 12 0.0725575
-# 3 13 0.00300766
-# 3 14 0.00541907
-# 3 15 0.0272002
-# 3 16 0.00403535
-# 4 2 0.0124255
-# 4 3 0.0107549
-# 4 4 0.00583331
-# 4 5 0.0152501
-# 4 6 0.000424009
-# 4 7 0.00427947
-# 4 8 0.00170404
-# 4 9 0.00300019
-# 4 10 0.0177102
-# 4 11 0.0629588
-# 4 12 0.0765919
-# 4 13 0.00299617
-# 4 14 0.00288454
-# 4 15 0.0279313
-# 4 16 0.00393534
+# 1 2 0.026754
+# 1 3 0.0101559
+# 1 4 0.0057262
+# 1 5 0.0166098
+# 1 6 0.000379459
+# 1 7 0.00257529
+# 1 8 0.00126275
+# 1 9 0.00273308
+# 1 10 0.0159906
+# 1 11 0.0658454
+# 1 12 0.0738855
+# 1 13 0.00304815
+# 1 14 0.00341574
+# 1 15 0.0297055
+# 1 16 0.00403443
+# 2 2 0.0216841
+# 2 3 0.00967061
+# 2 4 0.00641826
+# 2 5 0.0142256
+# 2 6 0.000366812
+# 2 7 0.00530842
+# 2 8 0.00156956
+# 2 9 0.00273399
+# 2 10 0.0148736
+# 2 11 0.0523773
+# 2 12 0.0664851
+# 2 13 0.0028061
+# 2 14 0.00577968
+# 2 15 0.0281085
+# 2 16 0.00425819
+# 3 2 0.0188516
+# 3 3 0.0104028
+# 3 4 0.00598779
+# 3 5 0.0138354
+# 3 6 0.000374904
+# 3 7 0.00542426
+# 3 8 0.00114289
+# 3 9 0.00313966
+# 3 10 0.0174075
+# 3 11 0.063373
+# 3 12 0.0724896
+# 3 13 0.00300728
+# 3 14 0.00543104
+# 3 15 0.0273279
+# 3 16 0.0040543
+# 4 2 0.0124233
+# 4 3 0.0107531
+# 4 4 0.00587827
+# 4 5 0.0153676
+# 4 6 0.000423936
+# 4 7 0.00427129
+# 4 8 0.00169711
+# 4 9 0.00299445
+# 4 10 0.0176951
+# 4 11 0.0629053
+# 4 12 0.0766145
+# 4 13 0.00299941
+# 4 14 0.00289373
+# 4 15 0.0280879
+# 4 16 0.00395739
 # -9999 0 0  # terminator for list of relF
 # enter list of: fleet number, max annual catch for fleets with a max; terminate with fleet=-9999
 -9999 -1

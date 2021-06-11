@@ -1,41 +1,53 @@
-#V3.30.08.02-trans;_2017_09_26;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_11.6
+#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
+#Foreign copyrights may apply. See copyright.txt for more information.
 #_user_support_available_at:NMFS.Stock.Synthesis@noaa.gov
 #_user_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
-#_Start_time: Tue Sep 26 16:19:06 2017
+#_Start_time: Fri Jun 11 15:02:00 2021
 #_Number_of_datafiles: 3
 
 #_observed data: 
-#V3.30.08.02-trans;_2017_09_26;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_11.6
+#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
+#Foreign copyrights may apply. See copyright.txt for more information.
 1916 #_StartYr
 2010 #_EndYr
 1 #_Nseas
  12 #_months/season
 2 #_Nsubseasons (even number, minimum is 2)
 1 #_spawn_month
-2 #_Ngenders
-95 #_Nages=accumulator age
+2 #_Ngenders: 1, 2, -1  (use -1 for 1 sex setup with SSB multiplied by female_frac parameter)
+95 #_Nages=accumulator age, first age is always age 0
 1 #_Nareas
 13 #_Nfleets (including surveys)
 #_fleet_type: 1=catch fleet; 2=bycatch only fleet; 3=survey; 4=ignore 
-#_survey_timing: -1=for use of catch-at-age to override the month value associated with a datum 
+#_sample_timing: -1 for fishing fleet to use season-long catch-at-age for observations, or 1 to use observation month;  (always 1 for surveys)
 #_fleet_area:  area the fleet/survey operates in 
 #_units of catch:  1=bio; 2=num (ignored for surveys; their units read later)
 #_catch_mult: 0=no; 1=yes
 #_rows are fleets
-#_fleet_type timing area units need_catch_mult fleetname
- 1 0.5 1 1 0 TRAWL  # 1
- 1 0.5 1 1 0 Trawl_Discard  # 2
- 1 0.5 1 1 0 MIDWATER  # 3
- 1 0.5 1 1 0 A-SHOP  # 4
- 1 0.5 1 1 0 HKL  # 5
- 1 0.5 1 1 0 Hkl_Discard  # 6
- 1 0.5 1 1 0 OTHERS  # 7
- 1 0.5 1 1 0 RECREATIONAL  # 8
- 3 0.5 1 2 0 AFSC_triennial  # 9
- 3 0.5 1 2 0 AFSC_slope  # 10
- 3 0.5 1 2 0 NWFSC_shelf_slope  # 11
- 3 0.5 1 2 0 NWFSC_slope  # 12
- 3 0.5 1 2 0 IPHC  # 13
+#_fleet_type fishery_timing area catch_units need_catch_mult fleetname
+ 1 1 1 1 0 TRAWL  # 1
+ 1 1 1 1 0 Trawl_Discard  # 2
+ 1 1 1 1 0 MIDWATER  # 3
+ 1 1 1 1 0 A-SHOP  # 4
+ 1 1 1 1 0 HKL  # 5
+ 1 1 1 1 0 Hkl_Discard  # 6
+ 1 1 1 1 0 OTHERS  # 7
+ 1 1 1 1 0 RECREATIONAL  # 8
+ 3 1 1 2 0 AFSC_triennial  # 9
+ 3 1 1 2 0 AFSC_slope  # 10
+ 3 1 1 2 0 NWFSC_shelf_slope  # 11
+ 3 1 1 2 0 NWFSC_slope  # 12
+ 3 1 1 2 0 IPHC  # 13
+#Bycatch_fleet_input_goes_next
+#a:  fleet index
+#b:  1=include dead bycatch in total dead catch for F0.1 and MSY optimizations and forecast ABC; 2=omit from total catch for these purposes (but still include the mortality)
+#c:  1=Fmult scales with other fleets; 2=bycatch F constant at input value; 3=bycatch F from range of years
+#d:  F or first year of range
+#e:  last year of range
+#f:  not used
+# a   b   c   d   e   f 
 #_Catch data: yr, seas, fleet, catch, catch_se
 #_catch_se:  standard error of log(catch)
 #_NOTE:  catch data is ignored for survey fleets
@@ -810,7 +822,7 @@
 -9999 0 0 0 0
 #
  #_CPUE_and_surveyabundance_observations
-#_Units:  0=numbers; 1=biomass; 2=F; >=30 for special types
+#_Units:  0=numbers; 1=biomass; 2=F; 30=spawnbio; 31=recdev; 32=spawnbio*recdev; 33=recruitment; 34=depletion(&see Qsetup); 35=parm_dev(&see Qsetup)
 #_Errtype:  -1=normal; 0=lognormal; >0=T
 #_SD_Report: 0=no sdreport; 1=enable sdreport
 #_Fleet Units Errtype SD_Report
@@ -870,15 +882,15 @@
 0 #_N_fleets_with_discard
 #_discard_units (1=same_as_catchunits(bio/num); 2=fraction; 3=numbers)
 #_discard_errtype:  >0 for DF of T-dist(read CV below); 0 for normal with CV; -1 for normal with se; -2 for lognormal; -3 for trunc normal with CV
-# note, only have units and errtype for fleets with discard 
+# note: only enter units and errtype for fleets with discard 
+# note: discard data is the total for an entire season, so input of month here must be to a month in that season
 #_Fleet units errtype
 # -9999 0 0 0.0 0.0 # terminator for discard data 
 #
 1 #_use meanbodysize_data (0/1)
 30 #_DF_for_meanbodysize_T-distribution_like
-# note:  use positive partition value for mean body wt, negative partition for mean body length 
+# note:  type=1 for mean length; type=2 for mean body weight 
 #_yr month fleet part type obs stderr
-#_yr month fleet part obs stderr
 2002 7 2 0 2 1.17 0.5 #_ Trawl_Discard
 2003 7 2 0 2 1.19 0.5 #_ Trawl_Discard
 2004 7 2 0 2 1.11 0.5 #_ Trawl_Discard
@@ -897,11 +909,12 @@
 1 # use length composition data (0/1)
 #_mintailcomp: upper and lower distribution for females and males separately are accumulated until exceeding this level.
 #_addtocomp:  after accumulation of tails; this value added to all bins
-#_males and females treated as combined gender below this bin number 
+#_combM+F: males and females treated as combined gender below this bin number 
 #_compressbins: accumulate upper tail by this number of bins; acts simultaneous with mintailcomp; set=0 for no forced accumulation
 #_Comp_Error:  0=multinomial, 1=dirichlet
-#_Comp_Error2:  parm number  for dirichlet
+#_ParmSelect:  parm number for dirichlet
 #_minsamplesize: minimum sample size; set to 1 to match 3.24, minimum value is 0.001
+#
 #_mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
 -1 1e-05 0 0 0 0 1 #_fleet:1_TRAWL
 -1 1e-05 0 0 0 0 1 #_fleet:2_Trawl_Discard
@@ -993,11 +1006,12 @@
  0.0986548 0.0986548 0.197731 0.297273 0.397333 0.497964 0.599228 0.70119 0.803922 0.907503 1.01202 1.11757 1.22425 1.33217 1.44147 1.55226 1.66471 1.77897 1.89521 2.01363 2.13443 2.25783 2.3841 2.51348 2.64629 2.78282 2.92344 3.06851 3.21845 3.3737 3.53476 3.70214 3.87642 4.05823 4.24823 4.44718 4.65587 4.87516 5.10601 5.34944 5.60656 5.87858 6.16681 6.47267 6.79772 7.14362 7.51219 7.90541 8.32542 8.77452 9.25525 9.77031 10.3227 10.9155 11.5524 12.237 12.9734 13.766 14.6196 15.5394 16.531 17.6005 18.7545 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20
 #_mintailcomp: upper and lower distribution for females and males separately are accumulated until exceeding this level.
 #_addtocomp:  after accumulation of tails; this value added to all bins
-#_males and females treated as combined gender below this bin number 
+#_combM+F: males and females treated as combined gender below this bin number 
 #_compressbins: accumulate upper tail by this number of bins; acts simultaneous with mintailcomp; set=0 for no forced accumulation
 #_Comp_Error:  0=multinomial, 1=dirichlet
-#_Comp_Error2:  parm number  for dirichlet
+#_ParmSelect:  parm number for dirichlet
 #_minsamplesize: minimum sample size; set to 1 to match 3.24, minimum value is 0.001
+#
 #_mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
 -1 1e-05 0 0 0 0 1 #_fleet:1_TRAWL
 -1 1e-05 0 0 0 0 1 #_fleet:2_Trawl_Discard
@@ -1021,6 +1035,7 @@
 0 #_Use_MeanSize-at-Age_obs (0/1)
 #
 0 #_N_environ_variables
+# -2 in yr will subtract mean for that env_var; -1 will subtract mean and divide by stddev (e.g. Z-score)
 #Yr Variable Value
 #
 0 # N sizefreq methods to read 
@@ -1038,37 +1053,47 @@
 999
 
 #_expected values with no error added 
-#V3.30.08.02-trans;_2017_09_26;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_11.6
+#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
+#Foreign copyrights may apply. See copyright.txt for more information.
 1916 #_StartYr
 2010 #_EndYr
 1 #_Nseas
  12 #_months/season
 2 #_Nsubseasons (even number, minimum is 2)
 1 #_spawn_month
-2 #_Ngenders
-95 #_Nages=accumulator age
+2 #_Ngenders: 1, 2, -1  (use -1 for 1 sex setup with SSB multiplied by female_frac parameter)
+95 #_Nages=accumulator age, first age is always age 0
 1 #_Nareas
 13 #_Nfleets (including surveys)
 #_fleet_type: 1=catch fleet; 2=bycatch only fleet; 3=survey; 4=ignore 
-#_survey_timing: -1=for use of catch-at-age to override the month value associated with a datum 
+#_sample_timing: -1 for fishing fleet to use season-long catch-at-age for observations, or 1 to use observation month;  (always 1 for surveys)
 #_fleet_area:  area the fleet/survey operates in 
 #_units of catch:  1=bio; 2=num (ignored for surveys; their units read later)
 #_catch_mult: 0=no; 1=yes
 #_rows are fleets
-#_fleet_type timing area units need_catch_mult fleetname
- 1 0.5 1 1 0 TRAWL  # 1
- 1 0.5 1 1 0 Trawl_Discard  # 2
- 1 0.5 1 1 0 MIDWATER  # 3
- 1 0.5 1 1 0 A-SHOP  # 4
- 1 0.5 1 1 0 HKL  # 5
- 1 0.5 1 1 0 Hkl_Discard  # 6
- 1 0.5 1 1 0 OTHERS  # 7
- 1 0.5 1 1 0 RECREATIONAL  # 8
- 3 0.5 1 2 0 AFSC_triennial  # 9
- 3 0.5 1 2 0 AFSC_slope  # 10
- 3 0.5 1 2 0 NWFSC_shelf_slope  # 11
- 3 0.5 1 2 0 NWFSC_slope  # 12
- 3 0.5 1 2 0 IPHC  # 13
+#_fleet_type fishery_timing area catch_units need_catch_mult fleetname
+ 1 1 1 1 0 TRAWL  # 1
+ 1 1 1 1 0 Trawl_Discard  # 2
+ 1 1 1 1 0 MIDWATER  # 3
+ 1 1 1 1 0 A-SHOP  # 4
+ 1 1 1 1 0 HKL  # 5
+ 1 1 1 1 0 Hkl_Discard  # 6
+ 1 1 1 1 0 OTHERS  # 7
+ 1 1 1 1 0 RECREATIONAL  # 8
+ 3 1 1 2 0 AFSC_triennial  # 9
+ 3 1 1 2 0 AFSC_slope  # 10
+ 3 1 1 2 0 NWFSC_shelf_slope  # 11
+ 3 1 1 2 0 NWFSC_slope  # 12
+ 3 1 1 2 0 IPHC  # 13
+#Bycatch_fleet_input_goes_next
+#a:  fleet index
+#b:  1=include dead bycatch in total dead catch for F0.1 and MSY optimizations and forecast ABC; 2=omit from total catch for these purposes (but still include the mortality)
+#c:  1=Fmult scales with other fleets; 2=bycatch F constant at input value; 3=bycatch F from range of years
+#d:  F or first year of range
+#e:  last year of range
+#f:  not used
+# a   b   c   d   e   f 
 #_catch:_columns_are_year,season,fleet,catch,catch_se
 #_Catch data: yr, seas, fleet, catch, catch_se
 -999 1 1 0 0.05
@@ -1133,7 +1158,7 @@
 1974 1 1 12.4729 0.05
 1975 1 1 21.6483 0.05
 1976 1 1 61.992 0.05
-1977 1 1 200.386 0.05
+1977 1 1 200.387 0.05
 1978 1 1 173.738 0.05
 1979 1 1 167.46 0.05
 1980 1 1 93.3401 0.05
@@ -1198,7 +1223,7 @@
 1943 1 2 3035.88 0.05
 1944 1 2 9643.79 0.05
 1945 1 2 5766.47 0.05
-1946 1 2 4503.25 0.05
+1946 1 2 4503.26 0.05
 1947 1 2 4144.59 0.05
 1948 1 2 4452.28 0.05
 1949 1 2 3946.46 0.05
@@ -1843,7 +1868,7 @@
 #
 #
  #_CPUE_and_surveyabundance_observations
-#_Units:  0=numbers; 1=biomass; 2=F; >=30 for special types
+#_Units:  0=numbers; 1=biomass; 2=F; 30=spawnbio; 31=recdev; 32=spawnbio*recdev; 33=recruitment; 34=depletion(&see Qsetup); 35=parm_dev(&see Qsetup)
 #_Errtype:  -1=normal; 0=lognormal; >0=T
 #_SD_Report: 0=no sdreport; 1=enable sdreport
 #_Fleet Units Errtype SD_Report
@@ -1870,23 +1895,23 @@
 1998 7 9 220342 0.0884319 #_orig_obs: 36857 AFSC_triennial
 2001 7 9 219361 0.130304 #_orig_obs: 19207.1 AFSC_triennial
 2004 7 9 218186 0.130246 #_orig_obs: 19591.5 AFSC_triennial
-1997 7 10 92073.9 0.208844 #_orig_obs: 170735 AFSC_slope
-1999 7 10 91814.4 0.225988 #_orig_obs: 95279 AFSC_slope
-2000 7 10 91665.1 0.305577 #_orig_obs: 151996 AFSC_slope
-2001 7 10 91531.7 0.274456 #_orig_obs: 25888.8 AFSC_slope
+1997 7 10 92073.8 0.208844 #_orig_obs: 170735 AFSC_slope
+1999 7 10 91814.3 0.225988 #_orig_obs: 95279 AFSC_slope
+2000 7 10 91665 0.305577 #_orig_obs: 151996 AFSC_slope
+2001 7 10 91531.6 0.274456 #_orig_obs: 25888.8 AFSC_slope
 2003 7 11 57692.1 0.160463 #_orig_obs: 381759 NWFSC_shelf_slope
 2004 7 11 57565.5 0.108161 #_orig_obs: 159889 NWFSC_shelf_slope
 2005 7 11 57378.6 0.085744 #_orig_obs: 69961.2 NWFSC_shelf_slope
 2006 7 11 57243.1 0.0986847 #_orig_obs: 52321 NWFSC_shelf_slope
 2007 7 11 57181.2 0.106461 #_orig_obs: 45088.5 NWFSC_shelf_slope
 2008 7 11 57060.8 0.0895469 #_orig_obs: 38536.2 NWFSC_shelf_slope
-2009 7 11 56953.8 0.0960376 #_orig_obs: 12661.3 NWFSC_shelf_slope
+2009 7 11 56953.9 0.0960376 #_orig_obs: 12661.3 NWFSC_shelf_slope
 2010 7 11 56924.1 0.0974445 #_orig_obs: 36687.7 NWFSC_shelf_slope
-1998 7 12 5849.91 0.294833 #_orig_obs: 18304 NWFSC_slope
-1999 7 12 5841.04 0.373825 #_orig_obs: 30482.3 NWFSC_slope
-2000 7 12 5831.54 0.263906 #_orig_obs: 4836.28 NWFSC_slope
-2001 7 12 5823.05 0.289792 #_orig_obs: 1338.67 NWFSC_slope
-2002 7 12 5812.56 0.224642 #_orig_obs: 3104.27 NWFSC_slope
+1998 7 12 5849.92 0.294833 #_orig_obs: 18304 NWFSC_slope
+1999 7 12 5841.05 0.373825 #_orig_obs: 30482.3 NWFSC_slope
+2000 7 12 5831.55 0.263906 #_orig_obs: 4836.28 NWFSC_slope
+2001 7 12 5823.06 0.289792 #_orig_obs: 1338.67 NWFSC_slope
+2002 7 12 5812.57 0.224642 #_orig_obs: 3104.27 NWFSC_slope
 1999 7 13 0.0362857 0.0404267 #_orig_obs: 0.0466089 IPHC
 2001 7 13 0.036169 0.06015 #_orig_obs: 0.0315406 IPHC
 2002 7 13 0.0361013 0.0638011 #_orig_obs: 0.0304644 IPHC
@@ -1903,23 +1928,24 @@
 0 #_N_fleets_with_discard
 #_discard_units (1=same_as_catchunits(bio/num); 2=fraction; 3=numbers)
 #_discard_errtype:  >0 for DF of T-dist(read CV below); 0 for normal with CV; -1 for normal with se; -2 for lognormal; -3 for trunc normal with CV
-# note, only have units and errtype for fleets with discard 
+# note: only enter units and errtype for fleets with discard 
+# note: discard data is the total for an entire season, so input of month here must be to a month in that season
 #_Fleet units errtype
 # -9999 0 0 0.0 0.0 # terminator for discard data 
 #
 1 #_use meanbodysize_data (0/1)
 30 #_DF_for_meanbodysize_T-distribution_like
-# note:  use positive partition value for mean body wt, negative partition for mean body length 
-#_yr month fleet part obs stderr
-2002 7 2 0 1.64522 0.5 #_orig_obs: 1.17  #_ Trawl_Discard
-2003 7 2 0 1.64479 0.5 #_orig_obs: 1.19  #_ Trawl_Discard
-2004 7 2 0 1.6447 0.5 #_orig_obs: 1.11  #_ Trawl_Discard
-2005 7 2 0 1.64445 0.5 #_orig_obs: 1.17  #_ Trawl_Discard
-2002 7 6 0 1.6785 0.5 #_orig_obs: 1.36  #_ Hkl_Discard
-2003 7 6 0 1.67804 0.5 #_orig_obs: 1.14  #_ Hkl_Discard
-2004 7 6 0 1.67789 0.5 #_orig_obs: 1.55  #_ Hkl_Discard
-2005 7 6 0 1.67758 0.5 #_orig_obs: 2.06  #_ Hkl_Discard
- -9999 0 0 0 0 0 # terminator for mean body size data 
+# note:  type=1 for mean length; type=2 for mean body weight 
+#_yr month fleet part type obs stderr
+2002 7 2 0 2 1.64522 0.5 #_orig_obs: 1.17  #_ Trawl_Discard
+2003 7 2 0 2 1.64479 0.5 #_orig_obs: 1.19  #_ Trawl_Discard
+2004 7 2 0 2 1.6447 0.5 #_orig_obs: 1.11  #_ Trawl_Discard
+2005 7 2 0 2 1.64445 0.5 #_orig_obs: 1.17  #_ Trawl_Discard
+2002 7 6 0 2 1.6785 0.5 #_orig_obs: 1.36  #_ Hkl_Discard
+2003 7 6 0 2 1.67804 0.5 #_orig_obs: 1.14  #_ Hkl_Discard
+2004 7 6 0 2 1.67789 0.5 #_orig_obs: 1.55  #_ Hkl_Discard
+2005 7 6 0 2 1.67758 0.5 #_orig_obs: 2.06  #_ Hkl_Discard
+ -9999 0 0 0 0 0 0 # terminator for mean body size data 
 #
 # set up population length bin structure (note - irrelevant if not using size data and using empirical wtatage
 2 # length bin method: 1=use databins; 2=generate from binwidth,min,max below; 3=read vector
@@ -1929,11 +1955,12 @@
 1 # use length composition data (0/1)
 #_mintailcomp: upper and lower distribution for females and males separately are accumulated until exceeding this level.
 #_addtocomp:  after accumulation of tails; this value added to all bins
-#_males and females treated as combined gender below this bin number 
+#_combM+F: males and females treated as combined gender below this bin number 
 #_compressbins: accumulate upper tail by this number of bins; acts simultaneous with mintailcomp; set=0 for no forced accumulation
 #_Comp_Error:  0=multinomial, 1=dirichlet
-#_Comp_Error2:  parm number  for dirichlet
+#_ParmSelect:  parm number for dirichlet
 #_minsamplesize: minimum sample size; set to 1 to match 3.24, minimum value is 0.001
+#
 #_mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
 -1 1e-05 0 0 0 0 1 #_fleet:1_TRAWL
 -1 1e-05 0 0 0 0 1 #_fleet:2_Trawl_Discard
@@ -1965,7 +1992,7 @@
  2005 7 3 3 2 21  0.000211455 0.000260487 0.000978455 0.00682536 0.0318852 0.101153 0.253629 0.51276 0.831968 1.08097 1.12344 0.996159 0.860849 0.735086 0.620305 0.517352 0.426521 0.34764 0.28016 0.223256 0.175921 0.133791 0.0850453 0.043252 0.0176463 0.0058462 0.00166267 0.000508252 0.000258666 0.00021622 0.000210746 0.000234289 0.000348745 0.00094443 0.00444243 0.0209637 0.0746321 0.203319 0.441966 0.775549 1.09888 1.25579 1.2347 1.18999 1.13556 1.06671 0.975131 0.843014 0.64469 0.391557 0.16834 0.046896 0.00799352 0.00086806 0.000236038 0.000210354 0.000209874 0.00020987 0.00020987 0.00020987 0.00020987 0.00020987
  2006 7 3 3 2 56  0.000563879 0.000694592 0.00260869 0.0181983 0.0850245 0.26974 0.676323 1.36725 2.21817 2.88184 2.99523 2.65635 2.29611 1.96116 1.65528 1.38076 1.13843 0.927885 0.747691 0.595693 0.469243 0.356724 0.226657 0.115222 0.046991 0.0155635 0.00442603 0.00135363 0.000689492 0.000576549 0.000561985 0.000624749 0.000929881 0.00251805 0.0118449 0.0559007 0.199022 0.542199 1.17857 2.06788 2.92937 3.34693 3.2905 3.1718 3.02774 2.84548 2.60211 2.24933 1.7192 1.04352 0.448454 0.124909 0.0212908 0.00231271 0.000629351 0.000560942 0.000559664 0.000559653 0.000559653 0.000559653 0.000559653 0.000559653
  2007 7 3 3 2 106  0.00106734 0.00131469 0.00493631 0.0344262 0.160807 0.510135 1.27914 2.58611 4.19589 5.45165 5.66699 5.02715 4.34689 3.7141 3.13582 2.61643 2.15762 1.75872 1.41715 1.1289 0.889047 0.675641 0.429126 0.21806 0.0888973 0.0294337 0.00836925 0.0025602 0.00130476 0.00109128 0.00106375 0.00118253 0.00175991 0.00476469 0.0224082 0.105735 0.376417 1.0255 2.22926 3.91158 5.54106 6.33059 6.22413 6.00106 5.73111 5.3893 4.93088 4.26271 3.2567 1.97566 0.848711 0.23635 0.0402842 0.00437627 0.00119122 0.00106178 0.00105936 0.00105934 0.00105934 0.00105934 0.00105934 0.00105934
- 2008 7 3 3 2 21  0.000211456 0.00026052 0.000978836 0.00682586 0.0318686 0.101059 0.253361 0.512192 0.83096 1.0796 1.12227 0.9957 0.861181 0.736047 0.621637 0.51881 0.427916 0.348841 0.281094 0.2239 0.176294 0.133939 0.0850404 0.0431969 0.0176037 0.00582669 0.00165649 0.00050683 0.000258422 0.000216188 0.000210742 0.000234309 0.00034884 0.000944768 0.00444298 0.020958 0.0745836 0.203141 0.441533 0.774658 1.09722 1.25337 1.23219 1.18816 1.13513 1.06803 0.9777 0.845347 0.645628 0.391463 0.1681 0.0468032 0.00797677 0.000866643 0.000235982 0.000210353 0.000209874 0.00020987 0.00020987 0.00020987 0.00020987 0.00020987
+ 2008 7 3 3 2 21  0.000211456 0.00026052 0.000978836 0.00682586 0.0318686 0.101059 0.253361 0.512192 0.83096 1.0796 1.12227 0.9957 0.861181 0.736047 0.621637 0.51881 0.427916 0.348841 0.281094 0.2239 0.176294 0.133939 0.0850404 0.0431969 0.0176037 0.00582669 0.00165649 0.00050683 0.000258422 0.000216188 0.000210742 0.000234309 0.00034884 0.000944768 0.00444298 0.020958 0.0745836 0.203141 0.441533 0.774658 1.09722 1.25337 1.23219 1.18816 1.13513 1.06803 0.9777 0.845347 0.645628 0.391463 0.1681 0.0468032 0.00797677 0.000866642 0.000235982 0.000210353 0.000209874 0.00020987 0.00020987 0.00020987 0.00020987 0.00020987
  2009 7 3 3 2 28  0.000281942 0.00034738 0.00130548 0.00910511 0.0425068 0.134749 0.337743 0.682712 1.10754 1.43889 1.49577 1.32721 1.14816 0.981617 0.829308 0.69234 0.571186 0.465717 0.375303 0.298935 0.235349 0.178768 0.113472 0.0576202 0.0234736 0.0077672 0.00220769 0.000675495 0.00034451 0.000288244 0.000280989 0.000312421 0.000465184 0.0012601 0.00592667 0.0279562 0.0994702 0.270854 0.588592 1.03254 1.46231 1.67016 1.64174 1.58316 1.51296 1.42428 1.30457 1.12826 0.861511 0.522128 0.224126 0.0623892 0.0106323 0.00115522 0.00031463 0.00028047 0.000279832 0.000279827 0.000279827 0.000279827 0.000279827 0.000279827
  2010 7 3 3 2 78  0.000785413 0.000967805 0.00363791 0.0253672 0.118378 0.375127 0.940019 1.90008 3.08267 4.00539 4.16433 3.69581 3.19815 2.73529 2.31184 1.9308 1.59349 1.29962 1.04752 0.834449 0.656949 0.49896 0.316652 0.160754 0.0654705 0.0216572 0.00615386 0.00188232 0.00095978 0.000802973 0.000782757 0.000870376 0.00129616 0.00351139 0.0165128 0.0778708 0.276992 0.754048 1.63835 2.87396 4.07025 4.64887 4.56989 4.40746 4.21356 3.96903 3.63794 3.14758 2.4033 1.45606 0.624825 0.173897 0.0296326 0.00321923 0.000876514 0.000781311 0.000779532 0.000779517 0.000779517 0.000779517 0.000779517 0.000779517
  2007 7 4 3 0 80.724  0.00081283 0.0010012 0.00375923 0.0262172 0.122462 0.388492 0.974126 1.96945 3.19537 4.15169 4.31568 3.82841 3.31036 2.82846 2.38808 1.99254 1.64313 1.33935 1.07922 0.859711 0.677051 0.514533 0.3268 0.166063 0.0676995 0.0224151 0.00637358 0.00194971 0.000993635 0.000831061 0.000810098 0.000900554 0.00134026 0.00362854 0.0170649 0.0805224 0.28666 0.780967 1.69769 2.97885 4.21978 4.82105 4.73997 4.57009 4.36451 4.10421 3.7551 3.24626 2.48013 1.50455 0.646334 0.179992 0.0306783 0.00333273 0.000907168 0.000808597 0.000806756 0.00080674 0.00080674 0.00080674 0.00080674 0.00080674
@@ -1984,7 +2011,7 @@
  2007 7 6 3 0 411.995  0.00669523 0.0766874 0.667968 2.05561 2.87506 2.84305 2.67421 2.64766 3.08951 4.61131 7.8883 12.889 18.0844 20.8797 19.6026 16.4101 13.5321 11.0298 8.88711 7.07897 5.57429 4.33896 3.33801 2.53731 1.90494 1.41193 1.03268 0.744974 0.529881 0.371526 0.739709 0.0439304 0.205986 0.658562 1.33336 1.86862 2.08249 2.13582 2.27683 2.87883 4.69617 8.84551 16.0182 25.0358 32.2654 33.6941 30.9285 26.7371 20.4265 12.3906 5.32136 1.48006 0.25381 0.0289769 0.00554694 0.00416453 0.00411829 0.00411741 0.0041174 0.0041174 0.0041174 0.0041174
  2008 7 6 3 0 18.995  0.000308783 0.00353897 0.0308238 0.0948303 0.132569 0.131038 0.123235 0.122001 0.142352 0.21246 0.363451 0.593944 0.833566 0.962703 0.904096 0.757055 0.6244 0.508995 0.410122 0.326651 0.257169 0.20012 0.153901 0.116939 0.0877613 0.0650262 0.0475467 0.0342936 0.0243898 0.0171009 0.034061 0.00202742 0.00950635 0.0303887 0.0615115 0.086175 0.0960023 0.0984346 0.104918 0.132645 0.216351 0.407446 0.737779 1.15326 1.48683 1.55353 1.42678 1.23361 0.942138 0.5712 0.245215 0.0681888 0.0116927 0.00133505 0.000255688 0.000192004 0.000189873 0.000189833 0.000189832 0.000189832 0.000189832 0.000189832
  2009 7 6 3 0 28.82  0.000468498 0.00536954 0.0467711 0.143905 0.20116 0.198773 0.186889 0.184998 0.215844 0.322134 0.551077 0.900653 1.26429 1.46059 1.37212 1.14931 0.948156 0.773046 0.622933 0.496141 0.390562 0.303859 0.233614 0.17745 0.133129 0.0986093 0.0720832 0.0519806 0.0369649 0.0259173 0.0516396 0.00307613 0.0144245 0.0461137 0.0933466 0.130771 0.145659 0.14931 0.159111 0.201134 0.32802 0.617651 1.11828 1.74814 2.25446 2.35684 2.16578 1.87305 1.43018 0.866705 0.371936 0.103406 0.0177302 0.00202451 0.000387878 0.000291314 0.000288084 0.000288022 0.000288021 0.000288021 0.000288021 0.000288021
- 1993 7 8 0 0 11.85  0.00160383 0.00973617 0.0463289 0.118668 0.166185 0.172042 0.164924 0.155713 0.146547 0.138561 0.133978 0.137683 0.15941 0.216225 0.333538 0.539942 0.841277 1.15385 1.28342 1.14536 0.930787 0.804458 0.72295 0.617539 0.484498 0.359921 0.262997 0.1892 0.133968 0.0933538 0.18534 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1993 7 8 0 0 11.85  0.00160383 0.00973617 0.0463289 0.118668 0.166185 0.172042 0.164924 0.155713 0.146547 0.138561 0.133978 0.137683 0.15941 0.216225 0.333538 0.539942 0.841277 1.15385 1.28342 1.14536 0.930787 0.804458 0.72295 0.617538 0.484498 0.359921 0.262997 0.1892 0.133968 0.0933538 0.18534 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
  1994 7 8 0 0 11.06  0.00149714 0.00908899 0.0432527 0.110809 0.155241 0.160811 0.154251 0.145707 0.137186 0.129759 0.125518 0.129045 0.149471 0.202783 0.312692 0.505658 0.786717 1.07776 1.19803 1.06864 0.867763 0.749327 0.673022 0.574731 0.450879 0.334973 0.244813 0.176162 0.12477 0.0869651 0.172675 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
  1995 7 8 0 0 12.64  0.00170992 0.0103805 0.0493998 0.126568 0.177363 0.183817 0.176422 0.166734 0.157048 0.148599 0.143795 0.147899 0.171387 0.232592 0.358619 0.579483 0.900501 1.23241 1.36927 1.22103 0.990993 0.855169 0.767734 0.655471 0.514204 0.382065 0.279296 0.201037 0.142435 0.0993089 0.197255 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
  1996 7 8 0 0 14.22  0.00192372 0.0116773 0.0555631 0.142324 0.199394 0.206663 0.198425 0.18761 0.176772 0.167309 0.161944 0.166622 0.193166 0.262253 0.404393 0.653145 1.01407 1.38679 1.54033 1.37346 1.11442 0.961259 0.862704 0.736463 0.577765 0.429371 0.31397 0.226078 0.160241 0.111769 0.22214 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -2025,11 +2052,12 @@
  0.0986548 0.0986548 0.197731 0.297273 0.397333 0.497964 0.599228 0.70119 0.803922 0.907503 1.01202 1.11757 1.22425 1.33217 1.44147 1.55226 1.66471 1.77897 1.89521 2.01363 2.13443 2.25783 2.3841 2.51348 2.64629 2.78282 2.92344 3.06851 3.21845 3.3737 3.53476 3.70214 3.87642 4.05823 4.24823 4.44718 4.65587 4.87516 5.10601 5.34944 5.60656 5.87858 6.16681 6.47267 6.79772 7.14362 7.51219 7.90541 8.32542 8.77452 9.25525 9.77031 10.3227 10.9155 11.5524 12.237 12.9734 13.766 14.6196 15.5394 16.531 17.6005 18.7545 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20
 #_mintailcomp: upper and lower distribution for females and males separately are accumulated until exceeding this level.
 #_addtocomp:  after accumulation of tails; this value added to all bins
-#_males and females treated as combined gender below this bin number 
+#_combM+F: males and females treated as combined gender below this bin number 
 #_compressbins: accumulate upper tail by this number of bins; acts simultaneous with mintailcomp; set=0 for no forced accumulation
 #_Comp_Error:  0=multinomial, 1=dirichlet
-#_Comp_Error2:  parm number  for dirichlet
+#_ParmSelect:  parm number for dirichlet
 #_minsamplesize: minimum sample size; set to 1 to match 3.24, minimum value is 0.001
+#
 #_mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
 -1 1e-05 0 0 0 0 1 #_fleet:1_TRAWL
 -1 1e-05 0 0 0 0 1 #_fleet:2_Trawl_Discard
@@ -2053,6 +2081,7 @@
 0 #_Use_MeanSize-at-Age_obs (0/1)
 #
 0 #_N_environ_variables
+# -2 in yr will subtract mean for that env_var; -1 will subtract mean and divide by stddev (e.g. Z-score)
 #Yr Variable Value
 #
 0 # N sizefreq methods to read 
@@ -2069,38 +2098,48 @@
 #
 999
 
-#_bootstrap file: 1
-#V3.30.08.02-trans;_2017_09_26;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_11.6
+#_bootstrap file: 1  irand_seed: 1623448920 first rand#: -0.0786267
+#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
+#Foreign copyrights may apply. See copyright.txt for more information.
 1916 #_StartYr
 2010 #_EndYr
 1 #_Nseas
  12 #_months/season
 2 #_Nsubseasons (even number, minimum is 2)
 1 #_spawn_month
-2 #_Ngenders
-95 #_Nages=accumulator age
+2 #_Ngenders: 1, 2, -1  (use -1 for 1 sex setup with SSB multiplied by female_frac parameter)
+95 #_Nages=accumulator age, first age is always age 0
 1 #_Nareas
 13 #_Nfleets (including surveys)
 #_fleet_type: 1=catch fleet; 2=bycatch only fleet; 3=survey; 4=ignore 
-#_survey_timing: -1=for use of catch-at-age to override the month value associated with a datum 
+#_sample_timing: -1 for fishing fleet to use season-long catch-at-age for observations, or 1 to use observation month;  (always 1 for surveys)
 #_fleet_area:  area the fleet/survey operates in 
 #_units of catch:  1=bio; 2=num (ignored for surveys; their units read later)
 #_catch_mult: 0=no; 1=yes
 #_rows are fleets
-#_fleet_type timing area units need_catch_mult fleetname
- 1 0.5 1 1 0 TRAWL  # 1
- 1 0.5 1 1 0 Trawl_Discard  # 2
- 1 0.5 1 1 0 MIDWATER  # 3
- 1 0.5 1 1 0 A-SHOP  # 4
- 1 0.5 1 1 0 HKL  # 5
- 1 0.5 1 1 0 Hkl_Discard  # 6
- 1 0.5 1 1 0 OTHERS  # 7
- 1 0.5 1 1 0 RECREATIONAL  # 8
- 3 0.5 1 2 0 AFSC_triennial  # 9
- 3 0.5 1 2 0 AFSC_slope  # 10
- 3 0.5 1 2 0 NWFSC_shelf_slope  # 11
- 3 0.5 1 2 0 NWFSC_slope  # 12
- 3 0.5 1 2 0 IPHC  # 13
+#_fleet_type fishery_timing area catch_units need_catch_mult fleetname
+ 1 1 1 1 0 TRAWL  # 1
+ 1 1 1 1 0 Trawl_Discard  # 2
+ 1 1 1 1 0 MIDWATER  # 3
+ 1 1 1 1 0 A-SHOP  # 4
+ 1 1 1 1 0 HKL  # 5
+ 1 1 1 1 0 Hkl_Discard  # 6
+ 1 1 1 1 0 OTHERS  # 7
+ 1 1 1 1 0 RECREATIONAL  # 8
+ 3 1 1 2 0 AFSC_triennial  # 9
+ 3 1 1 2 0 AFSC_slope  # 10
+ 3 1 1 2 0 NWFSC_shelf_slope  # 11
+ 3 1 1 2 0 NWFSC_slope  # 12
+ 3 1 1 2 0 IPHC  # 13
+#Bycatch_fleet_input_goes_next
+#a:  fleet index
+#b:  1=include dead bycatch in total dead catch for F0.1 and MSY optimizations and forecast ABC; 2=omit from total catch for these purposes (but still include the mortality)
+#c:  1=Fmult scales with other fleets; 2=bycatch F constant at input value; 3=bycatch F from range of years
+#d:  F or first year of range
+#e:  last year of range
+#f:  not used
+# a   b   c   d   e   f 
 #_catch_biomass(mtons):_columns_are_fisheries,year,season
 #_catch:_columns_are_year,season,fleet,catch,catch_se
 #_Catch data: yr, seas, fleet, catch, catch_se
@@ -2139,163 +2178,163 @@
 1947 1 1 0 0.05
 1948 1 1 0 0.05
 1949 1 1 0 0.05
-1950 1 1 369.536 0.05
-1951 1 1 436.387 0.05
-1952 1 1 838.372 0.05
-1953 1 1 361.624 0.05
-1954 1 1 348.043 0.05
-1955 1 1 379.826 0.05
-1956 1 1 234.94 0.05
-1957 1 1 824.489 0.05
-1958 1 1 201.31 0.05
-1959 1 1 164.523 0.05
-1960 1 1 73.4277 0.05
-1961 1 1 39.2822 0.05
-1962 1 1 16.2141 0.05
-1963 1 1 18.0976 0.05
-1964 1 1 18.9893 0.05
-1965 1 1 18.6254 0.05
-1966 1 1 19.8129 0.05
-1967 1 1 13.804 0.05
-1968 1 1 20.1376 0.05
-1969 1 1 31.8035 0.05
-1970 1 1 12.4956 0.05
-1971 1 1 3.52219 0.05
-1972 1 1 3.1302 0.05
-1973 1 1 2.12216 0.05
-1974 1 1 13.4964 0.05
-1975 1 1 23.2409 0.05
-1976 1 1 64.8509 0.05
-1977 1 1 194.417 0.05
-1978 1 1 174.623 0.05
-1979 1 1 170.352 0.05
-1980 1 1 101.644 0.05
-1981 1 1 242.139 0.05
-1982 1 1 99.1953 0.05
-1983 1 1 24.6 0.05
-1984 1 1 233.876 0.05
-1985 1 1 190.474 0.05
-1986 1 1 76.2355 0.05
-1987 1 1 95.1557 0.05
-1988 1 1 136.082 0.05
-1989 1 1 84.1125 0.05
-1990 1 1 347.566 0.05
-1991 1 1 712.052 0.05
-1992 1 1 857.451 0.05
-1993 1 1 795.633 0.05
-1994 1 1 1004.31 0.05
-1995 1 1 373.11 0.05
-1996 1 1 201.498 0.05
-1997 1 1 326.468 0.05
-1998 1 1 395.355 0.05
-1999 1 1 450.867 0.05
-2000 1 1 281.828 0.05
-2001 1 1 316.862 0.05
-2002 1 1 434.892 0.05
-2003 1 1 189.304 0.05
-2004 1 1 129.011 0.05
-2005 1 1 141.225 0.05
-2006 1 1 106.354 0.05
-2007 1 1 70.8248 0.05
-2008 1 1 43.267 0.05
-2009 1 1 80.4255 0.05
-2010 1 1 39.8515 0.05
+1950 1 1 373.793 0.05
+1951 1 1 470.145 0.05
+1952 1 1 875.892 0.05
+1953 1 1 374.703 0.05
+1954 1 1 351.083 0.05
+1955 1 1 370.483 0.05
+1956 1 1 227.452 0.05
+1957 1 1 968.592 0.05
+1958 1 1 218.148 0.05
+1959 1 1 159.041 0.05
+1960 1 1 70.2278 0.05
+1961 1 1 39.4707 0.05
+1962 1 1 15.8986 0.05
+1963 1 1 16.2112 0.05
+1964 1 1 20.3146 0.05
+1965 1 1 18.3602 0.05
+1966 1 1 20.3774 0.05
+1967 1 1 12.6177 0.05
+1968 1 1 21.8614 0.05
+1969 1 1 27.7746 0.05
+1970 1 1 11.0328 0.05
+1971 1 1 3.50393 0.05
+1972 1 1 3.30174 0.05
+1973 1 1 2.37275 0.05
+1974 1 1 13.055 0.05
+1975 1 1 20.3978 0.05
+1976 1 1 65.3888 0.05
+1977 1 1 203.117 0.05
+1978 1 1 176.011 0.05
+1979 1 1 166.387 0.05
+1980 1 1 87.5316 0.05
+1981 1 1 218.514 0.05
+1982 1 1 88.6184 0.05
+1983 1 1 25.3741 0.05
+1984 1 1 261.442 0.05
+1985 1 1 179.756 0.05
+1986 1 1 79.8789 0.05
+1987 1 1 96.9674 0.05
+1988 1 1 136.014 0.05
+1989 1 1 84.4774 0.05
+1990 1 1 348.183 0.05
+1991 1 1 679.184 0.05
+1992 1 1 894.376 0.05
+1993 1 1 795.951 0.05
+1994 1 1 1032.71 0.05
+1995 1 1 363.538 0.05
+1996 1 1 204.541 0.05
+1997 1 1 339.258 0.05
+1998 1 1 391.112 0.05
+1999 1 1 425.971 0.05
+2000 1 1 293.592 0.05
+2001 1 1 354.108 0.05
+2002 1 1 436.519 0.05
+2003 1 1 185.141 0.05
+2004 1 1 122.132 0.05
+2005 1 1 125.334 0.05
+2006 1 1 115.621 0.05
+2007 1 1 63.6114 0.05
+2008 1 1 41.734 0.05
+2009 1 1 84.6549 0.05
+2010 1 1 39.6068 0.05
 -999 1 2 0 0.05
 1916 1 2 0 0.05
-1917 1 2 0.571644 0.05
-1918 1 2 1.13913 0.05
-1919 1 2 1.92426 0.05
-1920 1 2 2.54201 0.05
-1921 1 2 3.03511 0.05
-1922 1 2 3.58119 0.05
-1923 1 2 4.21059 0.05
-1924 1 2 4.46693 0.05
-1925 1 2 5.63885 0.05
-1926 1 2 6.28797 0.05
-1927 1 2 6.62489 0.05
-1928 1 2 6.92968 0.05
-1929 1 2 7.04741 0.05
-1930 1 2 8.1721 0.05
-1931 1 2 8.95777 0.05
-1932 1 2 18.7542 0.05
-1933 1 2 19.5167 0.05
-1934 1 2 20.2764 0.05
-1935 1 2 38.3073 0.05
-1936 1 2 19.3378 0.05
-1937 1 2 59.2275 0.05
-1938 1 2 322.075 0.05
-1939 1 2 617.714 0.05
-1940 1 2 922.645 0.05
-1941 1 2 5347.37 0.05
-1942 1 2 4624.59 0.05
-1943 1 2 3209.2 0.05
-1944 1 2 9469.26 0.05
-1945 1 2 5594.79 0.05
-1946 1 2 4226.16 0.05
-1947 1 2 4166.31 0.05
-1948 1 2 4459.87 0.05
-1949 1 2 4181.47 0.05
-1950 1 2 937.897 0.05
-1951 1 2 840.708 0.05
-1952 1 2 533.543 0.05
-1953 1 2 966.273 0.05
-1954 1 2 896.414 0.05
-1955 1 2 1032.02 0.05
-1956 1 2 961.282 0.05
-1957 1 2 560.7 0.05
-1958 1 2 965.496 0.05
-1959 1 2 949.068 0.05
-1960 1 2 829.069 0.05
-1961 1 2 618.086 0.05
-1962 1 2 405.685 0.05
-1963 1 2 404.965 0.05
-1964 1 2 455.249 0.05
-1965 1 2 436.276 0.05
-1966 1 2 444.179 0.05
-1967 1 2 321.222 0.05
-1968 1 2 488.707 0.05
-1969 1 2 595.331 0.05
-1970 1 2 291.288 0.05
-1971 1 2 96.526 0.05
-1972 1 2 106.17 0.05
-1973 1 2 73.7275 0.05
-1974 1 2 310.779 0.05
-1975 1 2 495.51 0.05
-1976 1 2 846.757 0.05
-1977 1 2 895.355 0.05
-1978 1 2 966.735 0.05
-1979 1 2 1031.85 0.05
-1980 1 2 900.908 0.05
-1981 1 2 977.411 0.05
-1982 1 2 947.923 0.05
-1983 1 2 554.864 0.05
-1984 1 2 954.981 0.05
-1985 1 2 1028.46 0.05
-1986 1 2 804.96 0.05
-1987 1 2 861.869 0.05
-1988 1 2 971.454 0.05
-1989 1 2 916.001 0.05
-1990 1 2 962.299 0.05
-1991 1 2 652.218 0.05
-1992 1 2 484.232 0.05
-1993 1 2 613.703 0.05
-1994 1 2 366.149 0.05
-1995 1 2 868.719 0.05
-1996 1 2 1072.47 0.05
-1997 1 2 1022.52 0.05
-1998 1 2 840.618 0.05
-1999 1 2 908.604 0.05
-2000 1 2 987.781 0.05
-2001 1 2 948.495 0.05
-2002 1 2 822.837 0.05
-2003 1 2 782.744 0.05
-2004 1 2 1042.92 0.05
-2005 1 2 1649.51 0.05
-2006 1 2 973.553 0.05
-2007 1 2 670.864 0.05
-2008 1 2 1060.81 0.05
-2009 1 2 588.878 0.05
-2010 1 2 650.695 0.05
+1917 1 2 0.599387 0.05
+1918 1 2 1.20162 0.05
+1919 1 2 1.93089 0.05
+1920 1 2 2.28016 0.05
+1921 1 2 2.81204 0.05
+1922 1 2 3.61058 0.05
+1923 1 2 4.10357 0.05
+1924 1 2 4.52137 0.05
+1925 1 2 5.60294 0.05
+1926 1 2 5.76365 0.05
+1927 1 2 6.56039 0.05
+1928 1 2 7.73495 0.05
+1929 1 2 7.74429 0.05
+1930 1 2 7.72774 0.05
+1931 1 2 9.56712 0.05
+1932 1 2 20.4874 0.05
+1933 1 2 18.4179 0.05
+1934 1 2 19.729 0.05
+1935 1 2 38.4888 0.05
+1936 1 2 21.0794 0.05
+1937 1 2 57.1286 0.05
+1938 1 2 300.968 0.05
+1939 1 2 619.955 0.05
+1940 1 2 1026.79 0.05
+1941 1 2 4883.33 0.05
+1942 1 2 4381.15 0.05
+1943 1 2 3013.06 0.05
+1944 1 2 9368 0.05
+1945 1 2 5970.64 0.05
+1946 1 2 4524.09 0.05
+1947 1 2 4241.12 0.05
+1948 1 2 4748.1 0.05
+1949 1 2 4134.04 0.05
+1950 1 2 888.056 0.05
+1951 1 2 820.981 0.05
+1952 1 2 578.763 0.05
+1953 1 2 929.818 0.05
+1954 1 2 947.851 0.05
+1955 1 2 902.608 0.05
+1956 1 2 1046.59 0.05
+1957 1 2 553.096 0.05
+1958 1 2 991.348 0.05
+1959 1 2 914.698 0.05
+1960 1 2 841.871 0.05
+1961 1 2 614.447 0.05
+1962 1 2 407.535 0.05
+1963 1 2 419.599 0.05
+1964 1 2 422.519 0.05
+1965 1 2 411.427 0.05
+1966 1 2 437.214 0.05
+1967 1 2 341.414 0.05
+1968 1 2 506.255 0.05
+1969 1 2 575.365 0.05
+1970 1 2 306.855 0.05
+1971 1 2 105.069 0.05
+1972 1 2 105.731 0.05
+1973 1 2 72.5727 0.05
+1974 1 2 326.285 0.05
+1975 1 2 468.524 0.05
+1976 1 2 860.779 0.05
+1977 1 2 931.706 0.05
+1978 1 2 992.247 0.05
+1979 1 2 957.436 0.05
+1980 1 2 832.071 0.05
+1981 1 2 1030.37 0.05
+1982 1 2 967.192 0.05
+1983 1 2 519.301 0.05
+1984 1 2 1062.24 0.05
+1985 1 2 1039.96 0.05
+1986 1 2 869.347 0.05
+1987 1 2 824.437 0.05
+1988 1 2 984.614 0.05
+1989 1 2 830.107 0.05
+1990 1 2 929.598 0.05
+1991 1 2 645.515 0.05
+1992 1 2 493.037 0.05
+1993 1 2 540.245 0.05
+1994 1 2 373.548 0.05
+1995 1 2 848.709 0.05
+1996 1 2 976.028 0.05
+1997 1 2 937.898 0.05
+1998 1 2 918.394 0.05
+1999 1 2 856.221 0.05
+2000 1 2 969.631 0.05
+2001 1 2 899.864 0.05
+2002 1 2 848.523 0.05
+2003 1 2 805.579 0.05
+2004 1 2 1216.59 0.05
+2005 1 2 1567.96 0.05
+2006 1 2 874.641 0.05
+2007 1 2 622.057 0.05
+2008 1 2 1057.42 0.05
+2009 1 2 572.323 0.05
+2010 1 2 693.854 0.05
 -999 1 3 0 0.05
 1916 1 3 0 0.05
 1917 1 3 0 0.05
@@ -2373,25 +2412,25 @@
 1989 1 3 0 0.05
 1990 1 3 0 0.05
 1991 1 3 0 0.05
-1992 1 3 44.2632 0.05
-1993 1 3 8.60456 0.05
-1994 1 3 22.0133 0.05
-1995 1 3 0.130158 0.05
-1996 1 3 3.79846 0.05
-1997 1 3 3.4992 0.05
-1998 1 3 47.9552 0.05
-1999 1 3 34.9809 0.05
-2000 1 3 33.6523 0.05
-2001 1 3 11.8218 0.05
-2002 1 3 31.4703 0.05
-2003 1 3 7.64096 0.05
-2004 1 3 37.0471 0.05
-2005 1 3 70.9568 0.05
-2006 1 3 102.251 0.05
-2007 1 3 90.6759 0.05
-2008 1 3 155.983 0.05
-2009 1 3 74.5596 0.05
-2010 1 3 106.855 0.05
+1992 1 3 45.5879 0.05
+1993 1 3 8.46615 0.05
+1994 1 3 23.8856 0.05
+1995 1 3 0.135029 0.05
+1996 1 3 3.87747 0.05
+1997 1 3 3.01491 0.05
+1998 1 3 45.9904 0.05
+1999 1 3 33.1395 0.05
+2000 1 3 36.6762 0.05
+2001 1 3 13.0836 0.05
+2002 1 3 28.5882 0.05
+2003 1 3 7.86579 0.05
+2004 1 3 38.0277 0.05
+2005 1 3 66.4301 0.05
+2006 1 3 113.348 0.05
+2007 1 3 91.3325 0.05
+2008 1 3 158.234 0.05
+2009 1 3 74.9005 0.05
+2010 1 3 123.54 0.05
 -999 1 4 0 0.05
 1916 1 4 0 0.05
 1917 1 4 0 0.05
@@ -2454,40 +2493,40 @@
 1974 1 4 0 0.05
 1975 1 4 0 0.05
 1976 1 4 0 0.05
-1977 1 4 11.7001 0.05
-1978 1 4 8.38963 0.05
-1979 1 4 20.8856 0.05
-1980 1 4 77.7141 0.05
-1981 1 4 173.236 0.05
-1982 1 4 128.473 0.05
-1983 1 4 62.153 0.05
-1984 1 4 62.6758 0.05
-1985 1 4 22.1795 0.05
-1986 1 4 128.356 0.05
-1987 1 4 124.46 0.05
-1988 1 4 111.291 0.05
-1989 1 4 50.0439 0.05
-1990 1 4 110.874 0.05
-1991 1 4 162.662 0.05
-1992 1 4 398.444 0.05
-1993 1 4 77.0802 0.05
-1994 1 4 56.6309 0.05
-1995 1 4 204.591 0.05
-1996 1 4 408.267 0.05
-1997 1 4 306.825 0.05
-1998 1 4 285.366 0.05
-1999 1 4 451.684 0.05
-2000 1 4 116.448 0.05
-2001 1 4 240.058 0.05
-2002 1 4 307.803 0.05
-2003 1 4 261.263 0.05
-2004 1 4 602.695 0.05
-2005 1 4 362.27 0.05
-2006 1 4 55.5042 0.05
-2007 1 4 150.105 0.05
-2008 1 4 633.021 0.05
-2009 1 4 168.02 0.05
-2010 1 4 278.889 0.05
+1977 1 4 13.2116 0.05
+1978 1 4 7.4848 0.05
+1979 1 4 18.9463 0.05
+1980 1 4 75.2133 0.05
+1981 1 4 160.967 0.05
+1982 1 4 125.796 0.05
+1983 1 4 65.8319 0.05
+1984 1 4 60.9215 0.05
+1985 1 4 22.9386 0.05
+1986 1 4 130.722 0.05
+1987 1 4 136.394 0.05
+1988 1 4 110.804 0.05
+1989 1 4 53.0567 0.05
+1990 1 4 105.001 0.05
+1991 1 4 163.956 0.05
+1992 1 4 421.81 0.05
+1993 1 4 74.2378 0.05
+1994 1 4 55.1223 0.05
+1995 1 4 207.988 0.05
+1996 1 4 394.5 0.05
+1997 1 4 301.842 0.05
+1998 1 4 238.329 0.05
+1999 1 4 480.614 0.05
+2000 1 4 114.089 0.05
+2001 1 4 224.893 0.05
+2002 1 4 288.599 0.05
+2003 1 4 261.875 0.05
+2004 1 4 609.833 0.05
+2005 1 4 323.819 0.05
+2006 1 4 59.6233 0.05
+2007 1 4 155.265 0.05
+2008 1 4 652.64 0.05
+2009 1 4 167.422 0.05
+2010 1 4 309.193 0.05
 -999 1 5 0 0.05
 1916 1 5 0 0.05
 1917 1 5 0 0.05
@@ -2542,84 +2581,84 @@
 1966 1 5 0 0.05
 1967 1 5 0 0.05
 1968 1 5 0 0.05
-1969 1 5 0.0440152 0.05
+1969 1 5 0.0422874 0.05
 1970 1 5 0 0.05
-1971 1 5 1.3949 0.05
-1972 1 5 0.517449 0.05
-1973 1 5 0.787091 0.05
+1971 1 5 1.25976 0.05
+1972 1 5 0.519165 0.05
+1973 1 5 0.849485 0.05
 1974 1 5 0 0.05
-1975 1 5 0.0100562 0.05
-1976 1 5 0.0434007 0.05
-1977 1 5 1.84304 0.05
-1978 1 5 32.4419 0.05
-1979 1 5 124.461 0.05
-1980 1 5 68.4937 0.05
-1981 1 5 12.0341 0.05
-1982 1 5 24.9725 0.05
-1983 1 5 5.67617 0.05
-1984 1 5 30.954 0.05
-1985 1 5 107.675 0.05
-1986 1 5 28.7128 0.05
-1987 1 5 49.784 0.05
-1988 1 5 61.7023 0.05
-1989 1 5 220.533 0.05
-1990 1 5 136.003 0.05
-1991 1 5 223.203 0.05
-1992 1 5 162.489 0.05
-1993 1 5 439.621 0.05
-1994 1 5 310.423 0.05
-1995 1 5 7.23978 0.05
-1996 1 5 54.6926 0.05
-1997 1 5 86.066 0.05
-1998 1 5 0.800939 0.05
-1999 1 5 40.5911 0.05
-2000 1 5 314.627 0.05
-2001 1 5 217.814 0.05
-2002 1 5 391.804 0.05
-2003 1 5 230.016 0.05
-2004 1 5 217.803 0.05
-2005 1 5 260.99 0.05
-2006 1 5 174.753 0.05
-2007 1 5 234.574 0.05
-2008 1 5 268.529 0.05
-2009 1 5 54.6731 0.05
-2010 1 5 10.4559 0.05
+1975 1 5 0.0095735 0.05
+1976 1 5 0.0454893 0.05
+1977 1 5 1.91671 0.05
+1978 1 5 30.843 0.05
+1979 1 5 127.968 0.05
+1980 1 5 65.0014 0.05
+1981 1 5 12.6438 0.05
+1982 1 5 23.4117 0.05
+1983 1 5 6.15716 0.05
+1984 1 5 32.3367 0.05
+1985 1 5 94.523 0.05
+1986 1 5 28.9257 0.05
+1987 1 5 49.5687 0.05
+1988 1 5 63.3101 0.05
+1989 1 5 224.471 0.05
+1990 1 5 137.758 0.05
+1991 1 5 207.199 0.05
+1992 1 5 173.127 0.05
+1993 1 5 389.424 0.05
+1994 1 5 354.812 0.05
+1995 1 5 7.7681 0.05
+1996 1 5 50.6405 0.05
+1997 1 5 93.7657 0.05
+1998 1 5 0.902893 0.05
+1999 1 5 39.9258 0.05
+2000 1 5 351.418 0.05
+2001 1 5 225.397 0.05
+2002 1 5 445.544 0.05
+2003 1 5 214.606 0.05
+2004 1 5 241.032 0.05
+2005 1 5 228.919 0.05
+2006 1 5 198.962 0.05
+2007 1 5 221.196 0.05
+2008 1 5 289.405 0.05
+2009 1 5 54.4246 0.05
+2010 1 5 9.59117 0.05
 -999 1 6 0 0.05
 1916 1 6 0 0.05
-1917 1 6 0.0761665 0.05
-1918 1 6 0.153513 0.05
-1919 1 6 0.208648 0.05
-1920 1 6 0.294635 0.05
-1921 1 6 0.354359 0.05
-1922 1 6 0.393575 0.05
-1923 1 6 0.505205 0.05
-1924 1 6 0.572369 0.05
-1925 1 6 0.685822 0.05
-1926 1 6 0.726525 0.05
-1927 1 6 0.77771 0.05
-1928 1 6 0.84568 0.05
-1929 1 6 0.958479 0.05
-1930 1 6 1.00155 0.05
-1931 1 6 1.055 0.05
-1932 1 6 2.29691 0.05
-1933 1 6 2.2564 0.05
-1934 1 6 2.23955 0.05
-1935 1 6 4.67593 0.05
-1936 1 6 2.54544 0.05
-1937 1 6 6.08388 0.05
-1938 1 6 43.9898 0.05
-1939 1 6 74.1406 0.05
-1940 1 6 96.6552 0.05
-1941 1 6 689.199 0.05
-1942 1 6 139.578 0.05
-1943 1 6 155.04 0.05
-1944 1 6 2834.29 0.05
-1945 1 6 1014.06 0.05
-1946 1 6 324.612 0.05
-1947 1 6 177.147 0.05
-1948 1 6 9.25447 0.05
-1949 1 6 198.363 0.05
-1950 1 6 81.8704 0.05
+1917 1 6 0.0727599 0.05
+1918 1 6 0.142609 0.05
+1919 1 6 0.211399 0.05
+1920 1 6 0.265403 0.05
+1921 1 6 0.340806 0.05
+1922 1 6 0.431285 0.05
+1923 1 6 0.496623 0.05
+1924 1 6 0.53789 0.05
+1925 1 6 0.627044 0.05
+1926 1 6 0.722173 0.05
+1927 1 6 0.799042 0.05
+1928 1 6 0.835429 0.05
+1929 1 6 1.05106 0.05
+1930 1 6 0.996731 0.05
+1931 1 6 1.0864 0.05
+1932 1 6 2.63589 0.05
+1933 1 6 2.3918 0.05
+1934 1 6 2.49708 0.05
+1935 1 6 4.36962 0.05
+1936 1 6 2.5142 0.05
+1937 1 6 6.63634 0.05
+1938 1 6 43.2438 0.05
+1939 1 6 65.6426 0.05
+1940 1 6 92.5158 0.05
+1941 1 6 727.68 0.05
+1942 1 6 137.589 0.05
+1943 1 6 150.935 0.05
+1944 1 6 2845.02 0.05
+1945 1 6 930.21 0.05
+1946 1 6 323.237 0.05
+1947 1 6 155.569 0.05
+1948 1 6 10.2652 0.05
+1949 1 6 215.506 0.05
+1950 1 6 75.7036 0.05
 1951 1 6 0 0.05
 1952 1 6 0 0.05
 1953 1 6 0 0.05
@@ -2638,48 +2677,48 @@
 1966 1 6 0 0.05
 1967 1 6 0 0.05
 1968 1 6 0 0.05
-1969 1 6 0.130827 0.05
+1969 1 6 0.133006 0.05
 1970 1 6 0 0.05
-1971 1 6 4.1477 0.05
-1972 1 6 1.64547 0.05
-1973 1 6 2.49154 0.05
+1971 1 6 4.13156 0.05
+1972 1 6 1.5809 0.05
+1973 1 6 2.76164 0.05
 1974 1 6 0 0.05
-1975 1 6 0.0316401 0.05
-1976 1 6 0.145883 0.05
-1977 1 6 5.57076 0.05
-1978 1 6 69.6464 0.05
-1979 1 6 116.546 0.05
-1980 1 6 115.21 0.05
-1981 1 6 33.521 0.05
-1982 1 6 60.6265 0.05
-1983 1 6 17.069 0.05
-1984 1 6 76.1852 0.05
-1985 1 6 128.241 0.05
-1986 1 6 65.5648 0.05
-1987 1 6 87.9769 0.05
-1988 1 6 107.562 0.05
-1989 1 6 116.182 0.05
-1990 1 6 136.107 0.05
-1991 1 6 133.407 0.05
-1992 1 6 139.564 0.05
-1993 1 6 65.442 0.05
-1994 1 6 91.2004 0.05
-1995 1 6 22.8863 0.05
-1996 1 6 99.0267 0.05
-1997 1 6 118.245 0.05
-1998 1 6 2.79948 0.05
-1999 1 6 83.2119 0.05
-2000 1 6 102.765 0.05
-2001 1 6 112.296 0.05
-2002 1 6 117.661 0.05
-2003 1 6 50.9263 0.05
-2004 1 6 95.2034 0.05
-2005 1 6 78.2416 0.05
-2006 1 6 179.893 0.05
-2007 1 6 158.825 0.05
-2008 1 6 140.653 0.05
-2009 1 6 197.423 0.05
-2010 1 6 27.6498 0.05
+1975 1 6 0.0347907 0.05
+1976 1 6 0.141274 0.05
+1977 1 6 5.66461 0.05
+1978 1 6 71.8441 0.05
+1979 1 6 128.248 0.05
+1980 1 6 107.1 0.05
+1981 1 6 33.7677 0.05
+1982 1 6 60.8534 0.05
+1983 1 6 17.9554 0.05
+1984 1 6 70.5639 0.05
+1985 1 6 133.094 0.05
+1986 1 6 65.0952 0.05
+1987 1 6 91.0213 0.05
+1988 1 6 99.8369 0.05
+1989 1 6 138.387 0.05
+1990 1 6 139.064 0.05
+1991 1 6 144.791 0.05
+1992 1 6 129.782 0.05
+1993 1 6 58.2649 0.05
+1994 1 6 95.3786 0.05
+1995 1 6 20.6218 0.05
+1996 1 6 104.545 0.05
+1997 1 6 116.059 0.05
+1998 1 6 2.66566 0.05
+1999 1 6 82.6771 0.05
+2000 1 6 106.313 0.05
+2001 1 6 132.92 0.05
+2002 1 6 116.678 0.05
+2003 1 6 59.302 0.05
+2004 1 6 109.412 0.05
+2005 1 6 76.8038 0.05
+2006 1 6 171.055 0.05
+2007 1 6 158.267 0.05
+2008 1 6 127.517 0.05
+2009 1 6 190.287 0.05
+2010 1 6 30.1403 0.05
 -999 1 7 0 0.05
 1916 1 7 0 0.05
 1917 1 7 0 0.05
@@ -2706,19 +2745,19 @@
 1938 1 7 0 0.05
 1939 1 7 0 0.05
 1940 1 7 0 0.05
-1941 1 7 1310.59 0.05
-1942 1 7 1432.37 0.05
-1943 1 7 5281.17 0.05
-1944 1 7 4573.58 0.05
-1945 1 7 2478.07 0.05
-1946 1 7 4359.48 0.05
-1947 1 7 1947.79 0.05
-1948 1 7 987.741 0.05
-1949 1 7 915.851 0.05
-1950 1 7 645.332 0.05
-1951 1 7 471.388 0.05
-1952 1 7 195.048 0.05
-1953 1 7 174.077 0.05
+1941 1 7 1292.09 0.05
+1942 1 7 1413.3 0.05
+1943 1 7 4945.21 0.05
+1944 1 7 4361.93 0.05
+1945 1 7 2650.99 0.05
+1946 1 7 4903.36 0.05
+1947 1 7 2007.28 0.05
+1948 1 7 1123.98 0.05
+1949 1 7 873.96 0.05
+1950 1 7 657.26 0.05
+1951 1 7 461.27 0.05
+1952 1 7 194.446 0.05
+1953 1 7 158.205 0.05
 1954 1 7 0 0.05
 1955 1 7 0 0.05
 1956 1 7 0 0.05
@@ -2734,48 +2773,48 @@
 1966 1 7 0 0.05
 1967 1 7 0 0.05
 1968 1 7 0 0.05
-1969 1 7 0.527009 0.05
-1970 1 7 0.641215 0.05
-1971 1 7 7.7898 0.05
-1972 1 7 0.735851 0.05
-1973 1 7 0.485706 0.05
-1974 1 7 0.504718 0.05
-1975 1 7 6.63875 0.05
-1976 1 7 7.19166 0.05
-1977 1 7 93.8238 0.05
-1978 1 7 166.356 0.05
-1979 1 7 224.111 0.05
-1980 1 7 96.7332 0.05
-1981 1 7 15.3316 0.05
-1982 1 7 11.818 0.05
-1983 1 7 23.2062 0.05
-1984 1 7 7.17057 0.05
-1985 1 7 1.06904 0.05
-1986 1 7 4.72666 0.05
-1987 1 7 23.2921 0.05
-1988 1 7 1.80687 0.05
-1989 1 7 0.909103 0.05
-1990 1 7 2.48804 0.05
-1991 1 7 0.92081 0.05
-1992 1 7 0.849141 0.05
-1993 1 7 2.83298 0.05
-1994 1 7 0.0649399 0.05
-1995 1 7 0.857743 0.05
-1996 1 7 0.31655 0.05
-1997 1 7 0.226007 0.05
-1998 1 7 1.88942 0.05
-1999 1 7 4.94708 0.05
-2000 1 7 4.93043 0.05
-2001 1 7 2.27988 0.05
-2002 1 7 0.394931 0.05
-2003 1 7 8.78068 0.05
-2004 1 7 5.37962 0.05
-2005 1 7 7.03366 0.05
-2006 1 7 6.8261 0.05
-2007 1 7 0.0415276 0.05
-2008 1 7 14.8456 0.05
-2009 1 7 1.28892 0.05
-2010 1 7 0.170908 0.05
+1969 1 7 0.516945 0.05
+1970 1 7 0.671011 0.05
+1971 1 7 8.11578 0.05
+1972 1 7 0.690563 0.05
+1973 1 7 0.480006 0.05
+1974 1 7 0.47125 0.05
+1975 1 7 6.77214 0.05
+1976 1 7 6.90126 0.05
+1977 1 7 91.365 0.05
+1978 1 7 188.142 0.05
+1979 1 7 209.156 0.05
+1980 1 7 98.5265 0.05
+1981 1 7 15.8312 0.05
+1982 1 7 12.2463 0.05
+1983 1 7 23.5672 0.05
+1984 1 7 7.66029 0.05
+1985 1 7 0.94268 0.05
+1986 1 7 4.83871 0.05
+1987 1 7 22.2443 0.05
+1988 1 7 1.77825 0.05
+1989 1 7 0.851864 0.05
+1990 1 7 2.70187 0.05
+1991 1 7 0.993416 0.05
+1992 1 7 0.920015 0.05
+1993 1 7 2.68938 0.05
+1994 1 7 0.0649774 0.05
+1995 1 7 0.843189 0.05
+1996 1 7 0.329358 0.05
+1997 1 7 0.215075 0.05
+1998 1 7 2.02407 0.05
+1999 1 7 3.83335 0.05
+2000 1 7 5.24296 0.05
+2001 1 7 2.38146 0.05
+2002 1 7 0.421357 0.05
+2003 1 7 8.84731 0.05
+2004 1 7 4.7956 0.05
+2005 1 7 7.38837 0.05
+2006 1 7 6.71338 0.05
+2007 1 7 0.0389325 0.05
+2008 1 7 13.9834 0.05
+2009 1 7 1.24104 0.05
+2010 1 7 0.167639 0.05
 -999 1 8 0 0.05
 1916 1 8 0 0.05
 1917 1 8 0 0.05
@@ -2840,42 +2879,42 @@
 1976 1 8 0 0.05
 1977 1 8 0 0.05
 1978 1 8 0 0.05
-1979 1 8 0.68621 0.05
-1980 1 8 0.118018 0.05
-1981 1 8 34.8902 0.05
-1982 1 8 48.1646 0.05
-1983 1 8 17.5573 0.05
-1984 1 8 15.0854 0.05
-1985 1 8 55.8532 0.05
-1986 1 8 59.3966 0.05
-1987 1 8 8.9137 0.05
-1988 1 8 46.1039 0.05
-1989 1 8 23.7459 0.05
-1990 1 8 27.1758 0.05
-1991 1 8 25.0367 0.05
-1992 1 8 24.0682 0.05
-1993 1 8 24.1871 0.05
-1994 1 8 10.8288 0.05
-1995 1 8 21.1125 0.05
-1996 1 8 17.9132 0.05
-1997 1 8 4.12641 0.05
-1998 1 8 0.802785 0.05
-1999 1 8 12.2306 0.05
-2000 1 8 9.45581 0.05
-2001 1 8 10.1092 0.05
-2002 1 8 14.6419 0.05
-2003 1 8 11.1689 0.05
-2004 1 8 2.62759 0.05
-2005 1 8 4.49573 0.05
-2006 1 8 3.42385 0.05
-2007 1 8 5.75947 0.05
-2008 1 8 2.7169 0.05
-2009 1 8 3.95528 0.05
-2010 1 8 2.07451 0.05
+1979 1 8 0.676888 0.05
+1980 1 8 0.119728 0.05
+1981 1 8 30.3833 0.05
+1982 1 8 52.8695 0.05
+1983 1 8 16.7478 0.05
+1984 1 8 17.4506 0.05
+1985 1 8 56.7016 0.05
+1986 1 8 67.5341 0.05
+1987 1 8 8.40306 0.05
+1988 1 8 51.0048 0.05
+1989 1 8 25.2466 0.05
+1990 1 8 26.6954 0.05
+1991 1 8 23.5083 0.05
+1992 1 8 23.6029 0.05
+1993 1 8 25.5975 0.05
+1994 1 8 11.3098 0.05
+1995 1 8 20.6951 0.05
+1996 1 8 18.7596 0.05
+1997 1 8 4.82187 0.05
+1998 1 8 0.934135 0.05
+1999 1 8 10.6775 0.05
+2000 1 8 10.0788 0.05
+2001 1 8 8.57942 0.05
+2002 1 8 15.3085 0.05
+2003 1 8 11.4513 0.05
+2004 1 8 2.5625 0.05
+2005 1 8 4.33131 0.05
+2006 1 8 3.88659 0.05
+2007 1 8 5.37125 0.05
+2008 1 8 2.96667 0.05
+2009 1 8 4.28017 0.05
+2010 1 8 2.38916 0.05
 -9999 0 0 0 0
 #
  #_CPUE_and_surveyabundance_observations
-#_Units:  0=numbers; 1=biomass; 2=F;  >=30 for special types
+#_Units:  0=numbers; 1=biomass; 2=F; 30=spawnbio; 31=recdev; 32=spawnbio*recdev; 33=recruitment; 34=depletion(&see Qsetup); 35=parm_dev(&see Qsetup)
 #_Errtype:  -1=normal; 0=lognormal; >0=T
 #_SD_Report: 0=no sdreport; 1=enable sdreport
 #_Fleet Units Errtype SD_Report
@@ -2893,65 +2932,66 @@
 12 1 0 0 # NWFSC_slope
 13 0 0 0 # IPHC
 #_year month index obs err
-1980 7 9 92642.3 0.151894 #_orig_obs: 18273.5 AFSC_triennial
-1983 7 9 238332 0.118064 #_orig_obs: 47555.4 AFSC_triennial
-1986 7 9 378559 0.0791693 #_orig_obs: 19401.2 AFSC_triennial
-1989 7 9 259876 0.0929376 #_orig_obs: 47852.1 AFSC_triennial
-1992 7 9 223682 0.122436 #_orig_obs: 43344.3 AFSC_triennial
-1995 7 9 425231 0.113045 #_orig_obs: 17029.6 AFSC_triennial
-1998 7 9 181991 0.0884319 #_orig_obs: 36857 AFSC_triennial
-2001 7 9 111171 0.130304 #_orig_obs: 19207.1 AFSC_triennial
-2004 7 9 390875 0.130246 #_orig_obs: 19591.5 AFSC_triennial
-1997 7 10 48224 0.208844 #_orig_obs: 170735 AFSC_slope
-1999 7 10 133585 0.225988 #_orig_obs: 95279 AFSC_slope
-2000 7 10 129487 0.305577 #_orig_obs: 151996 AFSC_slope
-2001 7 10 72135.2 0.274456 #_orig_obs: 25888.8 AFSC_slope
-2003 7 11 21292.9 0.160463 #_orig_obs: 381759 NWFSC_shelf_slope
-2004 7 11 64343.2 0.108161 #_orig_obs: 159889 NWFSC_shelf_slope
-2005 7 11 94826.6 0.085744 #_orig_obs: 69961.2 NWFSC_shelf_slope
-2006 7 11 26561.7 0.0986847 #_orig_obs: 52321 NWFSC_shelf_slope
-2007 7 11 29702 0.106461 #_orig_obs: 45088.5 NWFSC_shelf_slope
-2008 7 11 60691.2 0.0895469 #_orig_obs: 38536.2 NWFSC_shelf_slope
-2009 7 11 46829 0.0960376 #_orig_obs: 12661.3 NWFSC_shelf_slope
-2010 7 11 57350.4 0.0974445 #_orig_obs: 36687.7 NWFSC_shelf_slope
-1998 7 12 7369.86 0.294833 #_orig_obs: 18304 NWFSC_slope
-1999 7 12 21158.4 0.373825 #_orig_obs: 30482.3 NWFSC_slope
-2000 7 12 7265.89 0.263906 #_orig_obs: 4836.28 NWFSC_slope
-2001 7 12 13084.6 0.289792 #_orig_obs: 1338.67 NWFSC_slope
-2002 7 12 6861.19 0.224642 #_orig_obs: 3104.27 NWFSC_slope
-1999 7 13 0.0444028 0.0404267 #_orig_obs: 0.0466089 IPHC
-2001 7 13 0.0362945 0.06015 #_orig_obs: 0.0315406 IPHC
-2002 7 13 0.0366021 0.0638011 #_orig_obs: 0.0304644 IPHC
-2003 7 13 0.0433963 0.0585752 #_orig_obs: 0.0338292 IPHC
-2004 7 13 0.028649 0.0694216 #_orig_obs: 0.0219166 IPHC
-2005 7 13 0.0314615 0.0451848 #_orig_obs: 0.0411536 IPHC
-2006 7 13 0.0423741 0.0608805 #_orig_obs: 0.0276063 IPHC
-2007 7 13 0.0351603 0.0451782 #_orig_obs: 0.0591668 IPHC
-2008 7 13 0.0367671 0.0528482 #_orig_obs: 0.0403427 IPHC
-2009 7 13 0.0378349 0.0484689 #_orig_obs: 0.0350126 IPHC
-2010 7 13 0.0410872 0.0479552 #_orig_obs: 0.0310872 IPHC
+1980 7 9 237347 0.151894 #_orig_obs: 18273.5 AFSC_triennial
+1983 7 9 276138 0.118064 #_orig_obs: 47555.4 AFSC_triennial
+1986 7 9 115148 0.0791693 #_orig_obs: 19401.2 AFSC_triennial
+1989 7 9 234733 0.0929376 #_orig_obs: 47852.1 AFSC_triennial
+1992 7 9 263643 0.122436 #_orig_obs: 43344.3 AFSC_triennial
+1995 7 9 96588.6 0.113045 #_orig_obs: 17029.6 AFSC_triennial
+1998 7 9 225833 0.0884319 #_orig_obs: 36857 AFSC_triennial
+2001 7 9 351781 0.130304 #_orig_obs: 19207.1 AFSC_triennial
+2004 7 9 261282 0.130246 #_orig_obs: 19591.5 AFSC_triennial
+1997 7 10 34739.3 0.208844 #_orig_obs: 170735 AFSC_slope
+1999 7 10 63324.4 0.225988 #_orig_obs: 95279 AFSC_slope
+2000 7 10 158407 0.305577 #_orig_obs: 151996 AFSC_slope
+2001 7 10 133956 0.274456 #_orig_obs: 25888.8 AFSC_slope
+2003 7 11 125334 0.160463 #_orig_obs: 381759 NWFSC_shelf_slope
+2004 7 11 35723.1 0.108161 #_orig_obs: 159889 NWFSC_shelf_slope
+2005 7 11 50704.6 0.085744 #_orig_obs: 69961.2 NWFSC_shelf_slope
+2006 7 11 59638.2 0.0986847 #_orig_obs: 52321 NWFSC_shelf_slope
+2007 7 11 93244.2 0.106461 #_orig_obs: 45088.5 NWFSC_shelf_slope
+2008 7 11 50546 0.0895469 #_orig_obs: 38536.2 NWFSC_shelf_slope
+2009 7 11 45048.7 0.0960376 #_orig_obs: 12661.3 NWFSC_shelf_slope
+2010 7 11 26069.1 0.0974445 #_orig_obs: 36687.7 NWFSC_shelf_slope
+1998 7 12 10002.6 0.294833 #_orig_obs: 18304 NWFSC_slope
+1999 7 12 4029.71 0.373825 #_orig_obs: 30482.3 NWFSC_slope
+2000 7 12 4728.48 0.263906 #_orig_obs: 4836.28 NWFSC_slope
+2001 7 12 10735.5 0.289792 #_orig_obs: 1338.67 NWFSC_slope
+2002 7 12 2125.55 0.224642 #_orig_obs: 3104.27 NWFSC_slope
+1999 7 13 0.041012 0.0404267 #_orig_obs: 0.0466089 IPHC
+2001 7 13 0.0263961 0.06015 #_orig_obs: 0.0315406 IPHC
+2002 7 13 0.0469735 0.0638011 #_orig_obs: 0.0304644 IPHC
+2003 7 13 0.0348577 0.0585752 #_orig_obs: 0.0338292 IPHC
+2004 7 13 0.0289849 0.0694216 #_orig_obs: 0.0219166 IPHC
+2005 7 13 0.0279925 0.0451848 #_orig_obs: 0.0411536 IPHC
+2006 7 13 0.0315069 0.0608805 #_orig_obs: 0.0276063 IPHC
+2007 7 13 0.0313823 0.0451782 #_orig_obs: 0.0591668 IPHC
+2008 7 13 0.0315586 0.0528482 #_orig_obs: 0.0403427 IPHC
+2009 7 13 0.0286235 0.0484689 #_orig_obs: 0.0350126 IPHC
+2010 7 13 0.0417529 0.0479552 #_orig_obs: 0.0310872 IPHC
 -9999 1 1 1 1 # terminator for survey observations 
 #
 0 #_N_fleets_with_discard
 #_discard_units (1=same_as_catchunits(bio/num); 2=fraction; 3=numbers)
 #_discard_errtype:  >0 for DF of T-dist(read CV below); 0 for normal with CV; -1 for normal with se; -2 for lognormal; -3 for trunc normal with CV
-# note, only have units and errtype for fleets with discard 
+# note: only enter units and errtype for fleets with discard 
+# note: discard data is the total for an entire season, so input of month here must be to a month in that season
 #_Fleet units errtype
 # -9999 0 0 0.0 0.0 # terminator for discard data 
 #
 1 #_use meanbodysize_data (0/1)
 30 #_DF_for_meanbodysize_T-distribution_like
-# note:  use positive partition value for mean body wt, negative partition for mean body length 
-#_yr month fleet part obs stderr
-2002 7 2 0 1.49559 0.5 #_orig_obs: 1.17  #_ Trawl_Discard
-2003 7 2 0 1.13081 0.5 #_orig_obs: 1.19  #_ Trawl_Discard
-2004 7 2 0 2.51341 0.5 #_orig_obs: 1.11  #_ Trawl_Discard
-2005 7 2 0 0.314333 0.5 #_orig_obs: 1.17  #_ Trawl_Discard
-2002 7 6 0 3.13745 0.5 #_orig_obs: 1.36  #_ Hkl_Discard
-2003 7 6 0 2.97106 0.5 #_orig_obs: 1.14  #_ Hkl_Discard
-2004 7 6 0 1.92829 0.5 #_orig_obs: 1.55  #_ Hkl_Discard
-2005 7 6 0 1.2725 0.5 #_orig_obs: 2.06  #_ Hkl_Discard
- -9999 0 0 0 0 0 # terminator for mean body size data 
+# note:  type=1 for mean length; type=2 for mean body weight 
+#_yr month fleet part type obs stderr
+2002 7 2 0 2 0.925997 0.5 #_orig_obs: 1.17  #_ Trawl_Discard
+2003 7 2 0 2 1.34891 0.5 #_orig_obs: 1.19  #_ Trawl_Discard
+2004 7 2 0 2 2.27332 0.5 #_orig_obs: 1.11  #_ Trawl_Discard
+2005 7 2 0 2 2.76351 0.5 #_orig_obs: 1.17  #_ Trawl_Discard
+2002 7 6 0 2 1.79525 0.5 #_orig_obs: 1.36  #_ Hkl_Discard
+2003 7 6 0 2 0.268738 0.5 #_orig_obs: 1.14  #_ Hkl_Discard
+2004 7 6 0 2 2.51743 0.5 #_orig_obs: 1.55  #_ Hkl_Discard
+2005 7 6 0 2 2.23831 0.5 #_orig_obs: 2.06  #_ Hkl_Discard
+ -9999 0 0 0 0 0 0 # terminator for mean body size data 
 #
 # set up population length bin structure (note - irrelevant if not using size data and using empirical wtatage
 2 # length bin method: 1=use databins; 2=generate from binwidth,min,max below; 3=read vector
@@ -2961,11 +3001,12 @@
 1 # use length composition data (0/1)
 #_mintailcomp: upper and lower distribution for females and males separately are accumulated until exceeding this level.
 #_addtocomp:  after accumulation of tails; this value added to all bins
-#_males and females treated as combined sex below this bin number 
+#_combM+F: males and females treated as combined gender below this bin number 
 #_compressbins: accumulate upper tail by this number of bins; acts simultaneous with mintailcomp; set=0 for no forced accumulation
 #_Comp_Error:  0=multinomial, 1=dirichlet
-#_Comp_Error2:  parm number  for dirichlet
+#_ParmSelect:  parm number for dirichlet
 #_minsamplesize: minimum sample size; set to 1 to match 3.24, minimum value is 0.001
+#
 #_mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
 -1 1e-05 0 0 0 0 1 #_fleet:1_TRAWL
 -1 1e-05 0 0 0 0 1 #_fleet:2_Trawl_Discard
@@ -2985,69 +3026,69 @@
 # sex codes:  0=combined; 1=use female only; 2=use male only; 3=use both as joint sexxlength distribution
 # partition codes:  (0=combined; 1=discard; 2=retained
 #_yr month fleet sex part Nsamp datavector(female-male)
- 2003 7 1 3 2 2.692  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2006 7 1 3 2 25.574  0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 1 2 0 1 0 1 1 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 2 2 3 1 0 0 0 0 0 0 0 0 0 0 0
- 2007 7 1 3 2 42.399  0 0 0 0 0 0 0 1 0 0 1 1 0 0 2 0 1 0 3 4 1 5 2 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 3 5 3 3 1 0 0 0 0 0 0 0 0 0 0 0
- 2009 7 1 3 2 18.844  0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 2 1 1 0 0 3 2 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2004 7 2 3 0 17.64  0 0 0 0 0 0 0 1 1 1 2 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 4 2 0 2 0 1 0 0 0 0 0 0 0 0 0 0 0 0
- 2006 7 2 3 0 400.869  0 0 0 0 1 1 2 2 5 11 7 11 15 14 18 11 9 12 6 10 4 1 1 3 3 3 3 0 0 0 1 0 0 0 0 1 0 3 2 6 7 12 27 19 35 30 34 26 27 10 4 2 1 0 0 0 0 0 0 0 0 0
- 2007 7 2 3 0 298.998  0 0 0 0 1 0 1 1 6 5 7 18 10 12 4 12 9 7 5 8 2 2 0 2 2 1 0 0 0 0 0 0 0 0 1 1 1 2 4 4 10 12 13 25 22 22 18 20 14 10 2 2 0 0 0 0 0 0 0 0 0 0
- 2008 7 2 3 0 138.474  0 0 0 0 0 1 0 1 0 5 4 7 6 3 5 3 2 1 3 4 5 2 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 1 1 1 3 7 7 9 11 6 9 10 10 4 5 0 0 0 0 0 0 0 0 0 0 0
- 2009 7 2 3 0 565.362  0 0 0 0 2 1 2 1 6 9 19 29 25 23 30 23 15 9 17 14 5 7 6 0 3 3 3 2 0 0 1 0 0 0 0 0 3 2 4 5 10 11 28 31 44 44 41 32 30 13 8 4 0 0 0 0 0 0 0 0 0 0
- 2005 7 3 3 2 21  0 0 0 0 0 0 0 1 0 0 1 2 1 1 0 1 0 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 1 1 0 2 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2006 7 3 3 2 56  0 0 0 0 0 0 1 1 4 3 4 2 1 1 1 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 5 3 2 5 7 3 3 3 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2007 7 3 3 2 106  0 0 0 0 0 0 0 3 4 7 4 4 6 2 3 5 6 3 3 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 2 7 6 5 4 5 9 7 8 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2008 7 3 3 2 21  0 0 0 0 0 0 0 0 1 3 2 0 0 1 2 1 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 2 2 1 0 1 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0
- 2009 7 3 3 2 28  0 0 0 0 0 0 0 0 3 1 4 2 0 2 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0 2 0 2 2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2010 7 3 3 2 78  0 0 0 0 1 1 1 2 2 8 6 3 5 4 2 2 1 2 0 2 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 4 5 3 4 6 1 0 3 4 1 0 0 0 0 0 0 0 0 0 0 0 0
- 2007 7 4 3 0 80.724  0 0 0 0 0 1 0 0 3 7 3 2 1 1 1 1 0 1 0 3 1 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 5 3 6 8 7 6 3 2 7 2 1 1 0 0 0 0 0 0 0 0 0 0 0
- 2008 7 4 3 0 438.396  0 0 0 0 3 1 5 13 26 20 22 25 16 19 11 18 10 9 4 7 2 3 1 2 1 1 0 0 0 0 0 1 0 0 0 1 1 6 9 18 22 26 28 23 14 16 24 12 10 3 4 1 0 0 0 0 0 0 0 0 0 0
- 2009 7 4 3 0 118.608  0 0 0 0 0 0 2 2 4 4 5 6 2 6 4 1 0 2 3 1 2 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 2 6 2 9 7 7 8 4 9 4 3 5 3 2 0 0 0 0 0 0 0 0 0 0 0
- 2010 7 4 3 0 234.752  0 0 0 0 0 1 2 4 13 8 12 18 8 7 10 6 4 1 6 5 3 1 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 1 9 12 12 13 12 17 9 9 12 4 6 3 0 0 0 0 0 0 0 0 0 0 0
- 2003 7 5 3 2 12.6  0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 1 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 2 1 1 0 0 0 0 0 0 0 0 0 0 0 0
- 2004 7 5 3 2 9.8  0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0
- 2006 7 5 3 2 49.7  0 0 0 1 0 0 2 1 1 0 0 1 0 0 1 0 2 2 2 3 0 3 4 2 1 0 2 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 2 3 4 5 2 2 0 0 0 0 0 0 0 0 0 0
- 2007 7 5 3 2 39.2  0 0 0 1 1 0 0 0 1 0 0 1 0 1 0 0 0 1 1 2 1 3 1 2 4 1 3 0 0 0 2 0 0 0 0 1 0 0 0 0 2 0 0 0 0 1 0 1 3 2 1 1 1 0 0 0 0 0 0 0 0 0
- 2008 7 5 3 2 74.2  0 0 0 0 1 1 0 0 1 0 1 0 0 0 0 2 1 3 3 2 3 2 8 9 5 3 3 1 1 0 1 0 0 0 0 0 1 0 2 0 1 0 0 2 0 0 3 0 6 2 2 4 0 0 0 0 0 0 0 0 0 0
- 2009 7 5 3 2 24.5  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 1 2 1 2 1 0 1 0 2 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 1 0 1 0 3 0 1 2 0 0 0 0 0 0 0 0 0 0
- 2003 7 6 0 0 22.925  0 0 0 1 2 0 1 1 0 1 0 2 2 2 3 3 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2004 7 6 0 0 13.755  0 0 0 0 0 0 0 0 0 0 0 1 0 2 2 2 1 1 1 0 1 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2006 7 6 3 0 374.66  0 0 3 1 3 0 2 1 2 3 13 12 15 12 15 6 17 17 2 7 3 1 1 4 1 2 1 0 1 0 0 0 0 0 0 1 3 5 3 4 5 15 14 28 25 23 34 26 26 8 7 1 0 0 0 1 0 0 0 0 0 0
- 2007 7 6 3 0 411.995  0 0 0 1 1 2 1 2 3 7 9 8 22 18 26 16 10 6 11 5 7 7 1 3 5 2 2 1 1 0 0 0 0 0 1 2 0 3 3 0 4 7 19 30 40 25 35 28 17 13 4 3 0 0 0 0 0 0 0 0 0 0
- 2008 7 6 3 0 18.995  0 0 0 0 0 0 0 0 0 0 1 2 1 2 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 1 1 2 2 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0
- 2009 7 6 3 0 28.82  0 0 0 0 0 0 0 1 0 0 0 2 1 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 1 1 2 6 2 6 1 0 0 0 0 0 0 0 0 0 0 0 0 0
- 1993 7 8 0 0 11.85  0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 2 0 0 1 1 1 0 1 2 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 1994 7 8 0 0 11.06  0 0 0 0 0 1 1 0 0 0 0 1 0 0 0 1 1 1 0 2 2 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 1995 7 8 0 0 12.64  0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 2 1 2 0 0 1 2 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 1996 7 8 0 0 14.22  0 0 0 0 0 0 1 1 0 0 0 0 1 1 0 0 1 2 0 3 0 1 2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 1997 7 8 0 0 4.74  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 1999 7 8 0 0 21.33  0 0 0 1 0 0 0 0 0 2 0 1 0 0 0 0 3 2 1 4 0 2 2 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2000 7 8 0 0 9.48  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 2 0 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2001 7 8 0 0 4.74  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2002 7 8 0 0 7.11  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 2 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2003 7 8 0 0 10.27  0 0 0 0 0 0 2 0 0 0 0 0 0 1 0 1 0 0 0 2 0 1 1 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2004 7 8 0 0 13.43  0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 2 0 1 0 0 1 0 3 2 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2005 7 8 0 0 21.33  0 0 0 0 0 0 2 0 0 0 1 1 0 0 2 1 0 1 3 2 4 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2006 7 8 0 0 52.14  0 0 1 1 0 0 2 1 0 0 0 0 0 3 1 7 3 6 4 5 6 2 3 1 0 1 3 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2007 7 8 0 0 36.34  0 0 0 0 1 1 0 0 2 1 1 0 0 0 3 0 0 1 7 1 6 3 1 2 2 1 2 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2008 7 8 0 0 24.49  0 0 1 0 1 0 1 0 0 0 0 1 0 2 1 0 0 0 3 5 0 3 1 1 2 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2009 7 8 0 0 25.28  0 0 0 1 0 0 1 0 0 2 1 0 1 0 2 4 2 1 1 2 1 2 0 0 2 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2010 7 8 0 0 10.27  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 2 0 3 0 0 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 1998 7 9 0 0 50.248  0 0 0 0 2 2 2 3 3 5 8 3 6 8 3 3 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2001 7 9 3 0 149.031  0 0 0 0 1 5 5 4 5 6 5 12 3 3 2 4 2 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 3 3 6 8 4 12 13 11 8 9 4 3 2 1 0 0 0 0 0 0 0 0 0 0 0 0
- 2004 7 9 3 0 169.016  0 0 0 1 2 2 6 8 2 6 10 9 13 11 3 5 3 2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 2 1 4 7 13 5 10 15 8 5 5 2 5 1 0 0 0 0 0 0 0 0 0 0 0 0
- 1997 7 10 0 0 140.525  0 0 0 0 0 1 0 3 7 16 18 17 15 12 15 10 13 7 4 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 1999 7 10 3 0 111.909  0 0 0 0 1 0 2 3 2 3 8 2 6 4 7 2 1 2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 4 3 8 7 7 9 6 9 7 3 2 1 0 0 0 0 0 0 0 0 0 0 0
- 2000 7 10 3 0 71.029  0 0 0 0 0 0 0 0 0 2 7 5 1 5 0 2 1 2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 2 4 5 7 5 3 4 8 2 1 1 1 0 0 0 0 0 0 0 0 0 0 0
- 2001 7 10 3 0 42.924  0 0 0 0 0 0 0 0 0 0 4 2 2 3 2 1 1 2 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 4 5 3 5 1 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2003 7 11 3 0 132.756  0 0 0 4 2 3 3 5 5 5 2 9 2 6 3 6 2 1 2 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 2 2 4 1 4 6 5 5 8 8 6 5 4 4 4 1 0 0 0 0 0 0 0 0 0 0 0
- 2004 7 11 3 0 99.866  0 0 0 1 2 3 1 1 4 2 4 6 3 3 0 2 0 1 4 0 0 2 0 0 0 1 0 0 0 0 0 0 0 0 0 1 1 3 0 5 5 4 5 9 3 5 8 4 3 0 2 1 0 0 0 0 0 0 0 0 0 0
- 2005 7 11 3 0 149.5  0 0 0 0 1 4 3 6 4 6 6 6 6 4 5 9 2 3 3 1 0 0 1 0 0 0 1 0 1 0 0 0 0 0 0 1 3 5 5 6 6 4 7 9 5 6 5 6 3 4 1 1 0 0 0 0 0 0 0 0 0 0
- 2006 7 11 3 0 148.603  0 0 0 0 2 3 2 7 5 6 7 9 6 3 5 3 1 1 0 0 2 1 0 0 0 0 0 1 1 0 0 0 0 0 0 0 2 5 4 10 8 7 5 5 8 12 9 3 4 0 0 0 1 0 0 0 0 0 0 0 0 0
- 2007 7 11 3 0 119.002  0 0 0 1 0 3 5 6 9 7 8 4 8 7 3 2 2 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 3 0 1 4 4 3 1 6 5 6 10 5 4 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2008 7 11 3 0 133.653  0 0 0 1 0 3 4 5 7 10 9 4 4 5 1 5 3 1 1 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 1 3 0 5 8 6 7 4 5 4 5 8 1 2 5 3 0 0 0 0 0 0 0 0 0 0 0
- 2009 7 11 3 0 95.68  0 0 1 0 2 0 0 1 3 5 8 8 3 4 0 0 2 2 2 1 1 0 0 1 0 0 0 2 0 0 0 0 0 0 0 0 1 2 2 4 4 5 4 8 4 2 3 8 2 0 0 0 0 0 0 0 0 0 0 0 0 0
- 2010 7 11 3 0 103.753  0 0 1 0 1 1 3 0 2 4 4 4 2 4 3 1 4 3 0 1 2 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 3 4 4 3 6 12 6 9 3 2 4 4 1 0 0 0 0 0 0 0 0 0 0 0 0
+ 2003 7 1 3 2 2  0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2006 7 1 3 2 25  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0 3 0 0 1 1 4 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 4 1 2 1 1 0 0 0 0 0 0 0 0 0 0 0
+ 2007 7 1 3 2 42  0 0 0 0 0 0 0 0 0 0 0 0 1 0 4 1 2 1 4 2 3 2 0 2 0 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 0 1 4 5 2 1 0 0 0 0 0 0 0 0 0 0 0
+ 2009 7 1 3 2 18  0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 2 1 2 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 2 0 1 2 1 0 0 0 0 0 0 0 0 0 0 0 0
+ 2004 7 2 3 0 17  0 0 0 0 0 0 0 0 0 0 1 2 1 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 1 1 0 3 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0
+ 2006 7 2 3 0 400  0 0 0 1 0 0 2 1 3 10 10 17 16 17 14 23 13 10 6 8 6 2 2 3 4 0 0 0 0 0 0 0 0 0 1 1 1 1 4 4 8 14 15 23 33 32 18 24 25 11 9 8 0 0 0 0 0 0 0 0 0 0
+ 2007 7 2 3 0 298  0 0 0 0 0 0 0 2 4 7 9 5 16 18 9 9 7 12 5 2 6 3 5 1 1 0 1 0 0 1 0 0 0 0 0 1 1 4 5 4 5 12 12 5 24 22 30 22 20 6 2 0 0 0 0 0 0 0 0 0 0 0
+ 2008 7 2 3 0 138  0 0 0 1 1 1 0 0 3 2 3 4 5 6 8 8 6 3 2 4 1 3 2 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 3 4 8 3 7 6 17 13 8 1 3 0 0 0 0 0 0 0 0 0 0 0
+ 2009 7 2 3 0 565  0 0 0 1 2 1 1 3 11 11 18 11 20 25 26 20 18 24 8 11 10 8 7 5 1 3 1 3 0 0 4 0 0 0 0 4 1 2 3 5 13 18 25 28 43 49 39 32 22 19 7 2 0 0 0 0 0 0 0 0 0 0
+ 2005 7 3 3 2 21  0 0 0 0 0 0 0 0 0 2 4 0 2 0 0 1 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 3 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2006 7 3 3 2 56  0 0 0 0 0 0 0 1 2 3 2 2 5 1 1 3 3 1 0 1 2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 4 3 3 3 3 1 2 3 2 2 0 0 0 0 0 0 0 0 0 0 0 0
+ 2007 7 3 3 2 106  0 0 0 0 0 0 2 2 2 8 9 4 3 3 3 3 3 1 1 1 2 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 4 5 6 6 5 8 2 0 7 6 4 3 0 0 0 0 0 0 0 0 0 0 0 0
+ 2008 7 3 3 2 21  0 0 0 0 0 0 0 2 3 1 1 0 1 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 2 0 1 3 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0
+ 2009 7 3 3 2 28  0 0 0 0 0 0 0 1 2 0 2 1 1 0 0 2 1 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 3 0 2 3 3 2 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2010 7 3 3 2 78  0 0 0 0 0 0 1 3 6 3 4 3 3 3 0 2 1 3 1 3 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 1 2 5 5 5 2 6 2 5 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0
+ 2007 7 4 3 0 80  0 0 0 0 0 0 1 2 5 5 1 3 2 2 2 2 3 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 2 8 3 8 6 8 0 6 2 2 1 0 0 0 0 0 0 0 0 0 0 0
+ 2008 7 4 3 0 438  0 0 0 0 0 1 9 10 17 20 23 20 23 20 20 10 9 4 6 4 6 1 2 1 0 0 0 0 0 0 0 0 0 0 0 0 1 5 14 21 20 22 22 30 24 16 15 16 17 5 4 0 0 0 0 0 0 0 0 0 0 0
+ 2009 7 4 3 0 118  0 0 0 0 0 0 0 0 2 3 5 3 9 5 3 4 1 0 0 2 0 1 2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6 3 8 7 12 8 5 5 10 4 6 2 1 0 0 0 0 0 0 0 0 0 0 0
+ 2010 7 4 3 0 234  0 0 0 0 0 0 3 13 12 17 13 9 9 5 3 8 1 7 3 1 3 3 4 0 0 0 0 0 0 0 0 0 0 0 0 1 0 2 1 7 16 11 14 7 11 9 16 7 8 5 5 0 0 0 0 0 0 0 0 0 0 0
+ 2003 7 5 3 2 12  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 3 3 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 2 0 0 0 0 0 0 0 0 0 0 0
+ 2004 7 5 3 2 9  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 2 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2006 7 5 3 2 49  0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 3 2 1 3 3 2 3 4 5 2 3 0 1 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 3 2 4 3 1 0 0 0 0 0 0 0 0 0 0
+ 2007 7 5 3 2 39  0 0 0 1 0 1 1 1 1 0 0 0 0 0 1 0 1 3 0 1 3 0 1 1 0 2 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 2 3 5 6 1 0 0 0 0 0 0 0 0 0 0 0
+ 2008 7 5 3 2 74  0 0 0 0 0 0 3 0 1 2 0 0 1 0 3 3 0 0 5 4 0 7 1 6 3 4 0 1 0 1 3 0 1 0 0 0 1 2 0 0 0 1 0 0 2 0 1 7 4 3 3 1 0 0 0 0 0 0 0 0 0 0
+ 2009 7 5 3 2 24  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 3 1 0 3 2 3 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 3 0 2 2 0 0 0 0 0 0 0 0 0 0 0
+ 2003 7 6 0 0 22  0 0 1 0 0 0 0 0 0 0 0 1 1 5 5 2 3 1 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2004 7 6 0 0 13  0 0 0 0 0 1 0 0 0 1 1 0 1 0 2 2 1 2 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2006 7 6 3 0 374  0 0 0 0 2 1 0 4 0 5 6 18 16 18 19 17 13 10 5 7 8 7 4 5 0 4 3 0 0 0 3 0 0 1 0 4 1 0 1 5 5 7 12 26 34 26 22 23 17 12 3 0 0 0 0 0 0 0 0 0 0 0
+ 2007 7 6 3 0 411  0 0 0 1 3 2 5 2 5 6 3 14 17 28 15 18 13 8 14 6 4 3 1 4 1 4 1 1 0 0 0 1 0 0 0 1 3 4 3 5 6 6 14 20 35 39 32 28 20 9 6 0 0 0 0 0 0 0 0 0 0 0
+ 2008 7 6 3 0 18  0 0 0 0 1 0 0 0 0 1 1 1 1 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 4 1 1 1 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2009 7 6 3 0 28  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 3 1 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 2 2 2 0 2 3 2 1 3 0 1 0 0 0 0 0 0 0 0 0 0 0
+ 1993 7 8 0 0 11  0 0 0 0 0 0 1 0 0 0 1 2 0 0 0 1 0 1 2 0 0 0 2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1994 7 8 0 0 11  0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 1 2 1 0 3 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1995 7 8 0 0 12  0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 1 1 0 1 1 0 0 2 1 1 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1996 7 8 0 0 14  0 0 0 0 0 0 0 2 1 0 1 0 1 0 0 0 1 0 1 0 2 0 3 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1997 7 8 0 0 4  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1999 7 8 0 0 21  0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 3 0 1 9 1 1 0 1 1 1 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2000 7 8 0 0 9  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 3 1 0 3 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2001 7 8 0 0 4  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2002 7 8 0 0 7  0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 1 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2003 7 8 0 0 10  0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0 3 1 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2004 7 8 0 0 13  0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 2 2 1 1 0 1 1 0 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2005 7 8 0 0 21  0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 2 0 2 3 2 1 1 2 3 1 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2006 7 8 0 0 52  0 0 0 0 0 1 0 1 0 0 0 0 4 1 0 0 2 6 4 11 1 4 2 6 0 5 1 2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2007 7 8 0 0 36  0 0 0 0 1 0 0 1 0 0 1 0 0 0 2 3 5 5 3 5 2 4 1 2 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2008 7 8 0 0 24  0 0 0 0 0 0 0 0 1 1 1 1 0 1 0 0 0 1 4 3 4 1 2 2 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2009 7 8 0 0 25  0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 1 4 4 4 1 0 2 0 1 1 1 2 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2010 7 8 0 0 10  0 0 0 0 0 0 1 0 0 0 0 1 1 1 0 1 1 0 0 1 1 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1998 7 9 0 0 50  0 0 0 0 1 5 5 0 7 3 5 13 3 3 2 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2001 7 9 3 0 149  0 0 0 1 2 1 7 7 7 6 6 10 6 10 7 3 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 4 8 10 7 5 14 4 7 4 2 1 0 0 0 0 0 0 0 0 0 0 0 0
+ 2004 7 9 3 0 169  0 0 1 0 1 7 4 6 8 7 9 7 6 6 2 4 3 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 3 1 7 12 9 7 7 12 10 12 3 5 2 1 0 0 0 0 0 0 0 0 0 0 0 0
+ 1997 7 10 0 0 140  0 0 0 0 1 1 0 3 7 8 15 18 14 9 9 16 14 18 5 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1999 7 10 3 0 111  0 0 0 0 0 1 2 2 2 6 6 5 5 4 4 8 4 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 4 1 6 8 6 8 8 11 2 2 1 0 1 0 0 0 0 0 0 0 0 0 0
+ 2000 7 10 3 0 71  0 0 0 1 1 0 1 1 0 4 4 6 2 1 5 1 1 3 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 2 5 9 4 2 4 4 4 3 0 0 0 0 0 0 0 0 0 0 0 0
+ 2001 7 10 3 0 42  0 0 0 0 0 0 0 0 0 1 1 3 7 4 2 2 2 2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 3 1 1 1 4 3 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2003 7 11 3 0 132  0 0 0 1 0 2 3 2 3 7 8 5 5 5 0 4 2 3 0 1 1 1 1 0 1 0 1 0 0 0 0 0 0 0 0 1 2 6 4 8 9 5 7 6 6 4 4 8 3 2 1 0 0 0 0 0 0 0 0 0 0 0
+ 2004 7 11 3 0 99  0 0 0 1 0 1 0 4 2 1 9 4 6 2 2 4 1 2 5 2 2 1 1 0 1 1 0 0 0 0 1 0 0 0 0 0 1 3 0 3 3 2 6 3 1 8 2 8 3 3 0 0 0 0 0 0 0 0 0 0 0 0
+ 2005 7 11 3 0 149  0 0 1 0 2 0 1 5 5 6 6 11 5 5 7 5 7 2 1 0 1 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 6 4 10 6 5 5 7 6 9 8 5 4 1 0 0 0 0 0 0 0 0 0 0 0
+ 2006 7 11 3 0 148  0 0 0 0 0 0 3 3 6 8 6 5 6 3 1 5 3 2 1 0 4 0 0 0 0 0 0 1 0 1 0 0 0 0 1 1 4 3 2 2 6 9 8 8 8 12 8 11 1 5 1 0 0 0 0 0 0 0 0 0 0 0
+ 2007 7 11 3 0 119  0 0 0 0 0 2 1 8 2 4 3 4 9 1 3 2 5 2 1 3 0 0 2 1 1 2 0 0 0 0 0 0 0 0 0 1 2 3 3 5 4 6 3 8 8 4 5 9 1 1 0 0 0 0 0 0 0 0 0 0 0 0
+ 2008 7 11 3 0 133  0 0 0 1 1 3 5 7 7 5 4 4 8 6 2 4 3 3 0 2 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 2 1 2 4 3 8 12 8 3 3 5 7 1 0 7 0 0 0 0 0 0 0 0 0 0 0 0
+ 2009 7 11 3 0 95  0 0 0 0 1 3 1 2 6 3 1 4 5 3 0 5 1 1 4 1 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 3 1 3 3 6 2 5 4 6 4 5 3 3 2 0 0 0 0 0 0 0 0 0 0 0
+ 2010 7 11 3 0 103  0 0 0 0 0 4 5 4 5 8 3 3 2 2 4 2 0 2 0 1 0 2 1 0 0 0 0 1 0 0 0 0 0 0 1 0 4 1 3 5 5 2 2 3 5 7 9 3 1 2 1 0 0 0 0 0 0 0 0 0 0 0
 -9999 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 #
 91 #_N_age_bins
@@ -3057,11 +3098,12 @@
  0.0986548 0.0986548 0.197731 0.297273 0.397333 0.497964 0.599228 0.70119 0.803922 0.907503 1.01202 1.11757 1.22425 1.33217 1.44147 1.55226 1.66471 1.77897 1.89521 2.01363 2.13443 2.25783 2.3841 2.51348 2.64629 2.78282 2.92344 3.06851 3.21845 3.3737 3.53476 3.70214 3.87642 4.05823 4.24823 4.44718 4.65587 4.87516 5.10601 5.34944 5.60656 5.87858 6.16681 6.47267 6.79772 7.14362 7.51219 7.90541 8.32542 8.77452 9.25525 9.77031 10.3227 10.9155 11.5524 12.237 12.9734 13.766 14.6196 15.5394 16.531 17.6005 18.7545 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20
 #_mintailcomp: upper and lower distribution for females and males separately are accumulated until exceeding this level.
 #_addtocomp:  after accumulation of tails; this value added to all bins
-#_males and females treated as combined sex below this bin number 
+#_combM+F: males and females treated as combined gender below this bin number 
 #_compressbins: accumulate upper tail by this number of bins; acts simultaneous with mintailcomp; set=0 for no forced accumulation
 #_Comp_Error:  0=multinomial, 1=dirichlet
-#_Comp_Error2:  parm number  for dirichlet
+#_ParmSelect:  parm number for dirichlet
 #_minsamplesize: minimum sample size; set to 1 to match 3.24, minimum value is 0.001
+#
 #_mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
 -1 1e-05 0 0 0 0 1 #_fleet:1_TRAWL
 -1 1e-05 0 0 0 0 1 #_fleet:2_Trawl_Discard
@@ -3085,6 +3127,7 @@
 0 #_Use_MeanSize-at-Age_obs (0/1)
 #
 0 #_N_environ_variables
+# -2 in yr will subtract mean for that env_var; -1 will subtract mean and divide by stddev (e.g. Z-score)
 #Yr Variable Value
 #
 0 # N sizefreq methods to read 

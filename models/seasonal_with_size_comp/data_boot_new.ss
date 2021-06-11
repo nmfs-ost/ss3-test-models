@@ -1,13 +1,13 @@
-#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
+#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
 #_user_support_available_at:NMFS.Stock.Synthesis@noaa.gov
 #_user_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
-#_Start_time: Fri Jan 29 13:54:46 2021
+#_Start_time: Fri Jun 11 15:01:25 2021
 #_Number_of_datafiles: 1
 
 #_observed data: 
-#V3.30.16.00;_2020_09_03;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.2
+#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
 1971 #_StartYr
@@ -60,10 +60,10 @@
 #_Catch data: yr, seas, fleet, catch, catch_se
 #_catch_se:  standard error of log(catch)
 #_NOTE:  catch data is ignored for survey fleets
--999 1 1 3000    0.2
--999 2 1 3000    0.2
--999 3 1 3000    0.2
--999 4 1 3000    0.2
+-999 1 1 3000 0.2
+-999 2 1 3000 0.2
+-999 3 1 3000 0.2
+-999 4 1 3000 0.2
 1971 1 1 1815.65 0.05
 1971 2 1 1669.42 0.05
 1971 3 1 1968.52 0.05
@@ -2878,7 +2878,8 @@
 0 #_N_fleets_with_discard
 #_discard_units (1=same_as_catchunits(bio/num); 2=fraction; 3=numbers)
 #_discard_errtype:  >0 for DF of T-dist(read CV below); 0 for normal with CV; -1 for normal with se; -2 for lognormal; -3 for trunc normal with CV
-# note, only have units and errtype for fleets with discard 
+# note: only enter units and errtype for fleets with discard 
+# note: discard data is the total for an entire season, so input of month here must be to a month in that season
 #_Fleet units errtype
 # -9999 0 0 0.0 0.0 # terminator for discard data 
 #
@@ -3273,25 +3274,25 @@
 #_mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
 # 0 0 1 1 1 1 0 #_fleet:1_Flt1
 # 0 0 22 22 22 22 0 #_fleet:2_Flt2
-# 0 0 129815952 129814096 129815600 129815280 0 #_fleet:3_Flt3
+# 0 0 126171392 126169568 126170912 126172256 0 #_fleet:3_Flt3
 # 0 0 0 0 0 0 0 #_fleet:4_Flt4
 # 0 0 0 0 0 0 0 #_fleet:5_Flt5
 # 0 0 0 0 0 0 0 #_fleet:6_Flt6
 # 0 0 1 1 1 1 0 #_fleet:7_Flt7
 # 0 0 22 22 22 22 0 #_fleet:8_Flt8
-# 0 0 129815376 129812624 129815088 129814448 0 #_fleet:9_Flt9
+# 0 0 126171416 126169592 126170936 126172280 0 #_fleet:9_Flt9
 # 0 0 0 0 0 0 0 #_fleet:10_Flt10
 # 0 0 0 0 0 0 0 #_fleet:11_Flt11
 # 0 0 0 0 0 0 0 #_fleet:12_Flt12
 # 0 0 1 1 1 1 0 #_fleet:13_Flt13
 # 0 0 22 22 22 22 0 #_fleet:14_Flt14
-# 0 0 129816176 129813264 129815568 129815536 0 #_fleet:15_Flt15
+# 0 0 126171440 126169616 126170960 126172304 0 #_fleet:15_Flt15
 # 0 0 0 0 0 0 0 #_fleet:16_Flt16
 # 0 0 0 0 0 0 0 #_fleet:17_S1
 # 0 0 0 0 0 0 0 #_fleet:18_S2
 # 0 0 1 1 1 1 0 #_fleet:19_S3
 # 0 0 22 22 22 22 0 #_fleet:20_S4
-# 0 0 129815408 129813584 129815856 129816048 0 #_fleet:21_S5
+# 0 0 126171464 126169640 126170984 126172328 0 #_fleet:21_S5
 # 0 0 0 0 0 0 0 #_fleet:22_S6
 # 0 #_Lbin_method_for_Age_Data: 1=poplenbins; 2=datalenbins; 3=lengths
 # sex codes:  0=combined; 1=use female only; 2=use male only; 3=use both as joint sexxlength distribution

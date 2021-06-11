@@ -1,15 +1,15 @@
-#V3.30.12.00-trans;_2018_08_01;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_11.6
+#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
 #_user_support_available_at:NMFS.Stock.Synthesis@noaa.gov
 #_user_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
-#_Start_time: Fri Aug 10 14:29:09 2018
+#_Start_time: Fri Jun 11 15:05:03 2021
 #_Number_of_datafiles: 1
 #C 2015 Widow Rockfish Assessment
 #C Allan C. Hicks and Chantel R. Wetzel
 #C NWFSC, NOAA, Seattle, WA
 #_observed data: 
-#V3.30.12.00-trans;_2018_08_01;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_11.6
+#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
 1916 #_StartYr
@@ -18,12 +18,12 @@
  12 #_months/season
 2 #_Nsubseasons (even number, minimum is 2)
 1 #_spawn_month
-2 #_Ngenders
-40 #_Nages=accumulator age
+2 #_Ngenders: 1, 2, -1  (use -1 for 1 sex setup with SSB multiplied by female_frac parameter)
+40 #_Nages=accumulator age, first age is always age 0
 1 #_Nareas
 9 #_Nfleets (including surveys)
 #_fleet_type: 1=catch fleet; 2=bycatch only fleet; 3=survey; 4=ignore 
-#_survey_timing: -1 for fishing fleet to midseason catch-at-age for observations, or 1 to use observation month;  (always 1 for surveys)
+#_sample_timing: -1 for fishing fleet to use season-long catch-at-age for observations, or 1 to use observation month;  (always 1 for surveys)
 #_fleet_area:  area the fleet/survey operates in 
 #_units of catch:  1=bio; 2=num (ignored for surveys; their units read later)
 #_catch_mult: 0=no; 1=yes
@@ -552,7 +552,7 @@
 -9999 0 0 0 0
 #
  #_CPUE_and_surveyabundance_observations
-#_Units:  0=numbers; 1=biomass; 2=F; >=30 for special types
+#_Units:  0=numbers; 1=biomass; 2=F; 30=spawnbio; 31=recdev; 32=spawnbio*recdev; 33=recruitment; 34=depletion(&see Qsetup); 35=parm_dev(&see Qsetup)
 #_Errtype:  -1=normal; 0=lognormal; >0=T
 #_SD_Report: 0=no sdreport; 1=enable sdreport
 #_Fleet Units Errtype SD_Report
@@ -643,7 +643,8 @@
 3 #_N_fleets_with_discard
 #_discard_units (1=same_as_catchunits(bio/num); 2=fraction; 3=numbers)
 #_discard_errtype:  >0 for DF of T-dist(read CV below); 0 for normal with CV; -1 for normal with se; -2 for lognormal; -3 for trunc normal with CV
-# note, only have units and errtype for fleets with discard 
+# note: only enter units and errtype for fleets with discard 
+# note: discard data is the total for an entire season, so input of month here must be to a month in that season
 #_Fleet units errtype
 1 1 -2 # BottomTrawl
 2 1 -2 # MidwaterTrawl
@@ -689,10 +690,10 @@
 -9999 0 0 0.0 0.0 # terminator for discard data 
 #
 0 #_use meanbodysize_data (0/1)
-#_COND_30 #_DF_for_meanbodysize_T-distribution_like
+#_COND_0 #_DF_for_meanbodysize_T-distribution_like
 # note:  type=1 for mean length; type=2 for mean body weight 
 #_yr month fleet part type obs stderr
-#  -9999 0 0 0 0 0 # terminator for mean body size data 
+#  -9999 0 0 0 0 0 0 # terminator for mean body size data 
 #
 # set up population length bin structure (note - irrelevant if not using size data and using empirical wtatage
 2 # length bin method: 1=use databins; 2=generate from binwidth,min,max below; 3=read vector
@@ -702,11 +703,12 @@
 1 # use length composition data (0/1)
 #_mintailcomp: upper and lower distribution for females and males separately are accumulated until exceeding this level.
 #_addtocomp:  after accumulation of tails; this value added to all bins
-#_males and females treated as combined gender below this bin number 
+#_combM+F: males and females treated as combined gender below this bin number 
 #_compressbins: accumulate upper tail by this number of bins; acts simultaneous with mintailcomp; set=0 for no forced accumulation
 #_Comp_Error:  0=multinomial, 1=dirichlet
-#_Comp_Error2:  parm number  for dirichlet
+#_ParmSelect:  parm number for dirichlet
 #_minsamplesize: minimum sample size; set to 1 to match 3.24, minimum value is 0.001
+#
 #_mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
 -1 0.0001 7 0 0 0 1 #_fleet:1_BottomTrawl
 -1 0.0001 7 0 0 0 1 #_fleet:2_MidwaterTrawl
@@ -930,11 +932,12 @@
  0.111336 0.111336 0.147152 0.187437 0.232748 0.283712 0.341034 0.405507 0.478023 0.559587 0.651326 0.75451 0.870568 1.0011 1.14793 1.31306 1.49881 1.70772 1.9427 2.20699 2.50425 2.8386 3.21467 3.63764 4.11339 4.6485 5.25036 5.9273 6.6887 7.54509 8.50833 9.59173 10.8103 12.1809 13.7225 15.4564 17.4066 19.6001 22.0673 24.8423 27.9635
 #_mintailcomp: upper and lower distribution for females and males separately are accumulated until exceeding this level.
 #_addtocomp:  after accumulation of tails; this value added to all bins
-#_males and females treated as combined gender below this bin number 
+#_combM+F: males and females treated as combined gender below this bin number 
 #_compressbins: accumulate upper tail by this number of bins; acts simultaneous with mintailcomp; set=0 for no forced accumulation
 #_Comp_Error:  0=multinomial, 1=dirichlet
-#_Comp_Error2:  parm number  for dirichlet
+#_ParmSelect:  parm number for dirichlet
 #_minsamplesize: minimum sample size; set to 1 to match 3.24, minimum value is 0.001
+#
 #_mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
 -1 0.0001 2 0 0 0 1 #_fleet:1_BottomTrawl
 -1 0.0001 2 0 0 0 1 #_fleet:2_MidwaterTrawl
@@ -1342,6 +1345,7 @@
 0 #_Use_MeanSize-at-Age_obs (0/1)
 #
 0 #_N_environ_variables
+# -2 in yr will subtract mean for that env_var; -1 will subtract mean and divide by stddev (e.g. Z-score)
 #Yr Variable Value
 #
 0 # N sizefreq methods to read 

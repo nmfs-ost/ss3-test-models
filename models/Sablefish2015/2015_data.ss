@@ -1,38 +1,50 @@
-#V3.30.08.02-trans;_2017_09_26;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_11.6
+#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
+#Foreign copyrights may apply. See copyright.txt for more information.
 #_user_support_available_at:NMFS.Stock.Synthesis@noaa.gov
 #_user_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
-#_Start_time: Tue Sep 26 16:18:40 2017
+#_Start_time: Fri Jun 11 15:01:15 2021
 #_Number_of_datafiles: 1
 #C data file created using the SS_writedat function in the R package r4ss
 #C should work with SS version: 
 #C file write time: 2015-05-13 13:24:55
 #_observed data: 
-#V3.30.08.02-trans;_2017_09_26;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_11.6
+#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
+#Foreign copyrights may apply. See copyright.txt for more information.
 1900 #_StartYr
 2014 #_EndYr
 1 #_Nseas
  12 #_months/season
 2 #_Nsubseasons (even number, minimum is 2)
 1 #_spawn_month
-2 #_Ngenders
-50 #_Nages=accumulator age
+2 #_Ngenders: 1, 2, -1  (use -1 for 1 sex setup with SSB multiplied by female_frac parameter)
+50 #_Nages=accumulator age, first age is always age 0
 1 #_Nareas
 8 #_Nfleets (including surveys)
 #_fleet_type: 1=catch fleet; 2=bycatch only fleet; 3=survey; 4=ignore 
-#_survey_timing: -1=for use of catch-at-age to override the month value associated with a datum 
+#_sample_timing: -1 for fishing fleet to use season-long catch-at-age for observations, or 1 to use observation month;  (always 1 for surveys)
 #_fleet_area:  area the fleet/survey operates in 
 #_units of catch:  1=bio; 2=num (ignored for surveys; their units read later)
 #_catch_mult: 0=no; 1=yes
 #_rows are fleets
-#_fleet_type timing area units need_catch_mult fleetname
- 1 0.5 1 1 0 HKL  # 1
- 1 0.5 1 1 0 POT  # 2
- 1 0.5 1 1 0 TWL  # 3
- 3 0.5 1 2 0 ENV  # 4
- 3 0.5 1 2 0 AKSHLF  # 5
- 3 0.666 1 2 0 AKSLP  # 6
- 3 0.5 1 2 0 NWSLP  # 7
- 3 0.5 1 2 0 NWCBO  # 8
+#_fleet_type fishery_timing area catch_units need_catch_mult fleetname
+ 1 1 1 1 0 HKL  # 1
+ 1 1 1 1 0 POT  # 2
+ 1 1 1 1 0 TWL  # 3
+ 3 1 1 2 0 ENV  # 4
+ 3 1 1 2 0 AKSHLF  # 5
+ 3 1 1 2 0 AKSLP  # 6
+ 3 1 1 2 0 NWSLP  # 7
+ 3 1 1 2 0 NWCBO  # 8
+#Bycatch_fleet_input_goes_next
+#a:  fleet index
+#b:  1=include dead bycatch in total dead catch for F0.1 and MSY optimizations and forecast ABC; 2=omit from total catch for these purposes (but still include the mortality)
+#c:  1=Fmult scales with other fleets; 2=bycatch F constant at input value; 3=bycatch F from range of years
+#d:  F or first year of range
+#e:  last year of range
+#f:  not used
+# a   b   c   d   e   f 
 #_Catch data: yr, seas, fleet, catch, catch_se
 #_catch_se:  standard error of log(catch)
 #_NOTE:  catch data is ignored for survey fleets
@@ -387,7 +399,7 @@
 -9999 0 0 0 0
 #
  #_CPUE_and_surveyabundance_observations
-#_Units:  0=numbers; 1=biomass; 2=F; >=30 for special types
+#_Units:  0=numbers; 1=biomass; 2=F; 30=spawnbio; 31=recdev; 32=spawnbio*recdev; 33=recruitment; 34=depletion(&see Qsetup); 35=parm_dev(&see Qsetup)
 #_Errtype:  -1=normal; 0=lognormal; >0=T
 #_SD_Report: 0=no sdreport; 1=enable sdreport
 #_Fleet Units Errtype SD_Report
@@ -476,7 +488,8 @@
 3 #_N_fleets_with_discard
 #_discard_units (1=same_as_catchunits(bio/num); 2=fraction; 3=numbers)
 #_discard_errtype:  >0 for DF of T-dist(read CV below); 0 for normal with CV; -1 for normal with se; -2 for lognormal; -3 for trunc normal with CV
-# note, only have units and errtype for fleets with discard 
+# note: only enter units and errtype for fleets with discard 
+# note: discard data is the total for an entire season, so input of month here must be to a month in that season
 #_Fleet units errtype
 1 2 -1 # HKL
 2 2 -1 # POT
@@ -525,7 +538,7 @@
 #
 1 #_use meanbodysize_data (0/1)
 300 #_DF_for_meanbodysize_T-distribution_like
-# note:  use positive partition value for mean body wt, negative partition for mean body length 
+# note:  type=1 for mean length; type=2 for mean body weight 
 #_yr month fleet part type obs stderr
 2002 7 1 1 1 1.73627 0.098133 #_ HKL
 2003 7 1 1 1 1.39569 0.0900418 #_ HKL
@@ -572,11 +585,12 @@
 1 # use length composition data (0/1)
 #_mintailcomp: upper and lower distribution for females and males separately are accumulated until exceeding this level.
 #_addtocomp:  after accumulation of tails; this value added to all bins
-#_males and females treated as combined gender below this bin number 
+#_combM+F: males and females treated as combined gender below this bin number 
 #_compressbins: accumulate upper tail by this number of bins; acts simultaneous with mintailcomp; set=0 for no forced accumulation
 #_Comp_Error:  0=multinomial, 1=dirichlet
-#_Comp_Error2:  parm number  for dirichlet
+#_ParmSelect:  parm number for dirichlet
 #_minsamplesize: minimum sample size; set to 1 to match 3.24, minimum value is 0.001
+#
 #_mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
 -1 0.0001 0 0 0 0 1 #_fleet:1_HKL
 -1 0.0001 0 0 0 0 1 #_fleet:2_POT
@@ -756,11 +770,12 @@
  0.0001 0.1037 0.2075 0.4094 0.6059 0.797 0.9831 1.1642 1.3403 1.5118 1.6786 1.841 1.999 2.1528 2.3024 2.448 2.5897 2.7275 2.8617 2.9923 3.1193 3.243 3.3633 3.4804 3.5943 3.7052 3.8131 3.9181 4.0202 4.1197 4.2164 4.3106 4.4022 4.4914 4.5781 4.6626 4.7447 4.8247 4.9025 4.9782 5.0519 5.1236 5.1934 5.2613 5.3273 5.3916 5.4542 5.5151 5.5743 5.632 5.6881
 #_mintailcomp: upper and lower distribution for females and males separately are accumulated until exceeding this level.
 #_addtocomp:  after accumulation of tails; this value added to all bins
-#_males and females treated as combined gender below this bin number 
+#_combM+F: males and females treated as combined gender below this bin number 
 #_compressbins: accumulate upper tail by this number of bins; acts simultaneous with mintailcomp; set=0 for no forced accumulation
 #_Comp_Error:  0=multinomial, 1=dirichlet
-#_Comp_Error2:  parm number  for dirichlet
+#_ParmSelect:  parm number for dirichlet
 #_minsamplesize: minimum sample size; set to 1 to match 3.24, minimum value is 0.001
+#
 #_mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
 -1 0.0001 0 0 0 0 1 #_fleet:1_HKL
 -1 0.0001 0 0 0 0 1 #_fleet:2_POT
@@ -2226,6 +2241,7 @@
 0 #_Use_MeanSize-at-Age_obs (0/1)
 #
 0 #_N_environ_variables
+# -2 in yr will subtract mean for that env_var; -1 will subtract mean and divide by stddev (e.g. Z-score)
 #Yr Variable Value
 #
 0 # N sizefreq methods to read 

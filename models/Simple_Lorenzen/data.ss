@@ -1,13 +1,13 @@
-#V3.30.14.00-safe;_2019_07_19;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.0
+#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
 #_user_support_available_at:NMFS.Stock.Synthesis@noaa.gov
 #_user_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
-#_Start_time: Mon Jul 22 10:25:12 2019
+#_Start_time: Fri Jun 11 15:01:44 2021
 #_Number_of_datafiles: 1
 #C data file for simple example
 #_observed data: 
-#V3.30.14.00-safe;_2019_07_19;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.0
+#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
 #Foreign copyrights may apply. See copyright.txt for more information.
 1971 #_StartYr
@@ -76,7 +76,7 @@
 -9999 0 0 0 0
 #
  #_CPUE_and_surveyabundance_observations
-#_Units:  0=numbers; 1=biomass; 2=F; >=30 for special types
+#_Units:  0=numbers; 1=biomass; 2=F; 30=spawnbio; 31=recdev; 32=spawnbio*recdev; 33=recruitment; 34=depletion(&see Qsetup); 35=parm_dev(&see Qsetup)
 #_Errtype:  -1=normal; 0=lognormal; >0=T
 #_SD_Report: 0=no sdreport; 1=enable sdreport
 #_Fleet Units Errtype SD_Report
@@ -110,7 +110,8 @@
 0 #_N_fleets_with_discard
 #_discard_units (1=same_as_catchunits(bio/num); 2=fraction; 3=numbers)
 #_discard_errtype:  >0 for DF of T-dist(read CV below); 0 for normal with CV; -1 for normal with se; -2 for lognormal; -3 for trunc normal with CV
-# note, only have units and errtype for fleets with discard 
+# note: only enter units and errtype for fleets with discard 
+# note: discard data is the total for an entire season, so input of month here must be to a month in that season
 #_Fleet units errtype
 # -9999 0 0 0.0 0.0 # terminator for discard data 
 #
@@ -128,15 +129,16 @@
 1 # use length composition data (0/1)
 #_mintailcomp: upper and lower distribution for females and males separately are accumulated until exceeding this level.
 #_addtocomp:  after accumulation of tails; this value added to all bins
-#_males and females treated as combined gender below this bin number 
+#_combM+F: males and females treated as combined gender below this bin number 
 #_compressbins: accumulate upper tail by this number of bins; acts simultaneous with mintailcomp; set=0 for no forced accumulation
 #_Comp_Error:  0=multinomial, 1=dirichlet
-#_Comp_Error2:  parm number  for dirichlet
+#_ParmSelect:  parm number for dirichlet
 #_minsamplesize: minimum sample size; set to 1 to match 3.24, minimum value is 0.001
+#
 #_mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
-0 1e-007 0 0 0 0 1 #_fleet:1_FISHERY
-0 1e-007 0 0 0 0 1 #_fleet:2_SURVEY1
-0 1e-007 0 0 0 0 1 #_fleet:3_SURVEY2
+0 1e-07 0 0 0 0 1 #_fleet:1_FISHERY
+0 1e-07 0 0 0 0 1 #_fleet:2_SURVEY1
+0 1e-07 0 0 0 0 1 #_fleet:3_SURVEY2
 # sex codes:  0=combined; 1=use female only; 2=use male only; 3=use both as joint sexxlength distribution
 # partition codes:  (0=combined; 1=discard; 2=retained
 25 #_N_LengthBins; then enter lower edge of each length bin
@@ -193,15 +195,16 @@
  0.5 0.65 0.67 0.7 0.73 0.76 0.8 0.84 0.88 0.92 0.97 1.03 1.09 1.16 1.23 1.32 1.41 1.51 1.62 1.75 1.89 2.05 2.23 2.45 2.71 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
 #_mintailcomp: upper and lower distribution for females and males separately are accumulated until exceeding this level.
 #_addtocomp:  after accumulation of tails; this value added to all bins
-#_males and females treated as combined gender below this bin number 
+#_combM+F: males and females treated as combined gender below this bin number 
 #_compressbins: accumulate upper tail by this number of bins; acts simultaneous with mintailcomp; set=0 for no forced accumulation
 #_Comp_Error:  0=multinomial, 1=dirichlet
-#_Comp_Error2:  parm number  for dirichlet
+#_ParmSelect:  parm number for dirichlet
 #_minsamplesize: minimum sample size; set to 1 to match 3.24, minimum value is 0.001
+#
 #_mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
-0 1e-007 1 0 0 0 1 #_fleet:1_FISHERY
-0 1e-007 1 0 0 0 1 #_fleet:2_SURVEY1
-0 1e-007 1 0 0 0 1 #_fleet:3_SURVEY2
+0 1e-07 1 0 0 0 1 #_fleet:1_FISHERY
+0 1e-07 1 0 0 0 1 #_fleet:2_SURVEY1
+0 1e-07 1 0 0 0 1 #_fleet:3_SURVEY2
 1 #_Lbin_method_for_Age_Data: 1=poplenbins; 2=datalenbins; 3=lengths
 # sex codes:  0=combined; 1=use female only; 2=use male only; 3=use both as joint sexxlength distribution
 # partition codes:  (0=combined; 1=discard; 2=retained
@@ -261,6 +264,7 @@
 -9999  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 #
 0 #_N_environ_variables
+# -2 in yr will subtract mean for that env_var; -1 will subtract mean and divide by stddev (e.g. Z-score)
 #Yr Variable Value
 #
 0 # N sizefreq methods to read 
