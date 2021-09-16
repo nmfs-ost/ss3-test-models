@@ -50,6 +50,7 @@ Most of these models have at least 1 unique feature.
 | three_area | Spatial model with movement | 0 hours, 4 minutes, 32 seconds |
 | three_area_nomove | Spatial model with no movement | 0 hours, 3 minutes, 32 seconds |
 | vermillion_snapper | Uses F method 2 (estimated parameters) | 0 hours, 3 minutes, 42 seconds |
+| vermillion_snapper_F4 | Uses F method 4 | 0 hours, 2 minutes, 52 seconds |
 | Widow_2015 | Catchability parameter deviations, Time blocks on selectivity | 0 hours, 35 minutes, 47 seconds |
 | YelloweyeRF_2017 | spatial age-structured production model, no movement | 0 hours, 44 minutes, 0 seconds |
 | YellowtailRF_2017 | Selectivity time blocks, Dummy observations in indices of abundance (to get expected values), Discard data | 0 hours, 26 minutes, 22 seconds |
