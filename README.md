@@ -32,7 +32,7 @@ Most of these models have at least 1 unique feature.
 | China_2015_Central | Mirrored selectivity, input variance adjustment | 0 hours, 24 minutes, 9 seconds |
 | Darkblotched_2015   |  Maturity option 6 (read length-maturity) | 0 hours, 29 minutes, 12 seconds |
 | Empirical_Wtatage_Age_Selex | Empirical Weight at age model, with empirical (as random walk) age selectivity | 0 hours, 1 minutes, 18 seconds |
-| growth_morphs | Uses growth morphs | 0 hours, 4 minutes, 38 seconds |
+| growth_morphs | Uses 5 platoons, 1 growth pattern| 0 hours, 4 minutes, 38 seconds |
 | growth_timevary | Time-varying growth using time blocks | 0 hours, 0 minutes, 54 seconds |
 | Hake_2018 | Empirical weight at age model, Dirichlet Multinomial comps weighting, time varying selectivity using annual deviations | 0 hours, 1 minutes, 5 seconds |
 | Hake_2019_semi-parametric_selex | Empirical Weight at age model, with semiparametric (2DAR) selectivity | 0 hours, 1 minutes, 7 seconds |
