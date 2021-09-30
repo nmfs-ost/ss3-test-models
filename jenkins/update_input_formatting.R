@@ -3,7 +3,7 @@
 # replace original input files with .ss_new files
 
 # inputs to change ----
-ss_exe <- "ss_3.30.17" # path to model that is in the computer PATH variable
+ss_exe <- "ss_3.30.18" # path to model that is in the computer PATH variable
 
 # run models without estimation ----
 # without estimation b/c want to use the same initial values.

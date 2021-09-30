@@ -1,8 +1,10 @@
-#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
-#Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
-#Foreign copyrights may apply. See copyright.txt for more information.
-#_user_support_available_at:NMFS.Stock.Synthesis@noaa.gov
-#_user_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
+#V3.30.18.00;_safe;_compile_date:_Sep 30 2021;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
+#_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
+#_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
+#_User_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
+#_Source_code_at:_https://github.com/nmfs-stock-synthesis/stock-synthesis
+
 #C 2018 Hake control file
 #_data_and_control_files: 2018hake_data.SS // 2018hake_control.SS
 1  # 0 means do not read wtatage.ss; 1 means read and use wtatage.ss and also read and use growth parameters
@@ -94,6 +96,7 @@
 #  catch multiplier
 #  fraction female, by GP
  1e-05 0.99999 0.5 0.5 0.5 0 -99 0 0 0 0 0 0 0 # FracFemale_GP_1
+#  M2 parameter for each predator fleet
 #
 #_no timevary MG parameters
 #
@@ -143,12 +146,9 @@
 #Fishing Mortality info 
 0.1 # F ballpark value in units of annual_F
 -1999 # F ballpark year (neg value to disable)
-3 # F_Method:  1=Pope; 2=instan. F; 3=hybrid (hybrid is recommended)
-1.5 # max F or harvest rate, depends on F_Method
-# no additional F input needed for Fmethod 1
-# if Fmethod=2; read overall start F value; overall phase; N detailed inputs to read
-# if Fmethod=3; read N iterations for tuning for Fmethod 3
-5  # N iterations for tuning F in hybrid method (recommend 3 to 7)
+3 # F_Method:  1=Pope midseason rate; 2=F as parameter; 3=F as hybrid; 4=fleet-specific parm/hybrid (#4 is superset of #2 and #3 and is recommended)
+1.5 # max F (methods 2-4) or harvest fraction (method 1)
+5  # N iterations for tuning in hybrid mode; recommend 3 (faster) to 5 (more precise if many fleets)
 #
 #_initial_F_parms; for each fleet x season that has init_catch; nest season in fleet; count = 0
 #_for unconstrained init_F, use an arbitrary initial catch and set lambda=0 for its logL
@@ -269,9 +269,9 @@
             -5             9             0            -1          0.01             0         -2          0          0          0          0          0          0          0  #  AgeSel_P20_Acoustic_Survey(2)
             -5             9             0            -1          0.01             0         -2          0          0          0          0          0          0          0  #  AgeSel_P21_Acoustic_Survey(2)
 #_Dirichlet parameters
+#_multiple_fleets_can_refer_to_same_parm;_but_list_cannot_have_gaps
             -5            20           0.5             0            99             0          2          0          0          0          0          0          0          0  #  ln(DM_theta)_1
             -5            20       2.42702             0            99             0         -2          0          0          0          0          0          0          0  #  ln(DM_theta)_2
-#_No_Dirichlet parameters
 # timevary selex parameters 
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type    PHASE  #  parm_name
         0.0001             2           1.4           0.5           0.5            -1      -5  # AgeSel_P3_Fishery(1)_dev_se

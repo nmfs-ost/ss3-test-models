@@ -1,15 +1,15 @@
-#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
-#Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
-#Foreign copyrights may apply. See copyright.txt for more information.
-#_user_support_available_at:NMFS.Stock.Synthesis@noaa.gov
-#_user_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
-#_Start_time: Fri Jun 11 15:01:25 2021
+#V3.30.18.00;_safe;_compile_date:_Sep 30 2021;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
+#_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
+#_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
+#_User_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
+#_Source_code_at:_https://github.com/nmfs-stock-synthesis/stock-synthesis
+
+#_Start_time: Thu Sep 30 11:07:48 2021
 #_Number_of_datafiles: 1
 
 #_observed data: 
-#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
-#Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
-#Foreign copyrights may apply. See copyright.txt for more information.
+#V3.30.18.00;_safe;_compile_date:_Sep 30 2021;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 1971 #_StartYr
 2011 #_EndYr
 4 #_Nseas
@@ -20,7 +20,7 @@
 26 #_Nages=accumulator age, first age is always age 0
 1 #_Nareas
 22 #_Nfleets (including surveys)
-#_fleet_type: 1=catch fleet; 2=bycatch only fleet; 3=survey; 4=ignore 
+#_fleet_type: 1=catch fleet; 2=bycatch only fleet; 3=survey; 4=predator(M2) 
 #_sample_timing: -1 for fishing fleet to use season-long catch-at-age for observations, or 1 to use observation month;  (always 1 for surveys)
 #_fleet_area:  area the fleet/survey operates in 
 #_units of catch:  1=bio; 2=num (ignored for surveys; their units read later)
@@ -3274,25 +3274,25 @@
 #_mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
 # 0 0 1 1 1 1 0 #_fleet:1_Flt1
 # 0 0 22 22 22 22 0 #_fleet:2_Flt2
-# 0 0 126171392 126169568 126170912 126172256 0 #_fleet:3_Flt3
+# 0 0 127762808 127762328 127761560 127760024 0 #_fleet:3_Flt3
 # 0 0 0 0 0 0 0 #_fleet:4_Flt4
 # 0 0 0 0 0 0 0 #_fleet:5_Flt5
 # 0 0 0 0 0 0 0 #_fleet:6_Flt6
 # 0 0 1 1 1 1 0 #_fleet:7_Flt7
 # 0 0 22 22 22 22 0 #_fleet:8_Flt8
-# 0 0 126171416 126169592 126170936 126172280 0 #_fleet:9_Flt9
+# 0 0 127762832 127762352 127761584 127760048 0 #_fleet:9_Flt9
 # 0 0 0 0 0 0 0 #_fleet:10_Flt10
 # 0 0 0 0 0 0 0 #_fleet:11_Flt11
 # 0 0 0 0 0 0 0 #_fleet:12_Flt12
 # 0 0 1 1 1 1 0 #_fleet:13_Flt13
 # 0 0 22 22 22 22 0 #_fleet:14_Flt14
-# 0 0 126171440 126169616 126170960 126172304 0 #_fleet:15_Flt15
+# 0 0 127762856 127762376 127761608 127760072 0 #_fleet:15_Flt15
 # 0 0 0 0 0 0 0 #_fleet:16_Flt16
 # 0 0 0 0 0 0 0 #_fleet:17_S1
 # 0 0 0 0 0 0 0 #_fleet:18_S2
 # 0 0 1 1 1 1 0 #_fleet:19_S3
 # 0 0 22 22 22 22 0 #_fleet:20_S4
-# 0 0 126171464 126169640 126170984 126172328 0 #_fleet:21_S5
+# 0 0 127762880 127762400 127761632 127760096 0 #_fleet:21_S5
 # 0 0 0 0 0 0 0 #_fleet:22_S6
 # 0 #_Lbin_method_for_Age_Data: 1=poplenbins; 2=datalenbins; 3=lengths
 # sex codes:  0=combined; 1=use female only; 2=use male only; 3=use both as joint sexxlength distribution

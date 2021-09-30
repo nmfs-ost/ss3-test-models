@@ -1,8 +1,10 @@
-#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
-#Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
-#Foreign copyrights may apply. See copyright.txt for more information.
-#_user_support_available_at:NMFS.Stock.Synthesis@noaa.gov
-#_user_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
+#V3.30.18.00;_safe;_compile_date:_Sep 30 2021;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
+#_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
+#_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
+#_User_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
+#_Source_code_at:_https://github.com/nmfs-stock-synthesis/stock-synthesis
+
 #_data_and_control_files: BLK_WA_dat.ss // BLK_WA_ctl.ss
 0  # 0 means do not read wtatage.ss; 1 means read and use wtatage.ss and also read and use growth parameters
 1  #_N_Growth_Patterns (Growth Patterns, Morphs, Bio Patterns, GP are terms used interchangeably in SS)
@@ -104,6 +106,7 @@
 #  catch multiplier
 #  fraction female, by GP
  1e-06 0.999999 0.5 0.5 0.5 0 -99 0 0 0 0 0 0 0 # FracFemale_GP_1
+#  M2 parameter for each predator fleet
 #
 #_no timevary MG parameters
 #
@@ -153,11 +156,9 @@
 #Fishing Mortality info 
 0.3 # F ballpark value in units of annual_F
 -2001 # F ballpark year (neg value to disable)
-1 # F_Method:  1=Pope; 2=instan. F; 3=hybrid (hybrid is recommended)
-0.9 # max F or harvest rate, depends on F_Method
-# no additional F input needed for Fmethod 1
-# if Fmethod=2; read overall start F value; overall phase; N detailed inputs to read
-# if Fmethod=3; read N iterations for tuning for Fmethod 3
+1 # F_Method:  1=Pope midseason rate; 2=F as parameter; 3=F as hybrid; 4=fleet-specific parm/hybrid (#4 is superset of #2 and #3 and is recommended)
+0.9 # max F (methods 2-4) or harvest fraction (method 1)
+# F_Method 1:  no additional input needed
 #
 #_initial_F_parms; for each fleet x season that has init_catch; nest season in fleet; count = 0
 #_for unconstrained init_F, use an arbitrary initial catch and set lambda=0 for its logL
