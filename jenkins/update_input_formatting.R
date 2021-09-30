@@ -24,6 +24,8 @@ r4ss::populate_multiple_folders(outerdir.old = "new_models",
                                 exe.file = NULL, verbose = FALSE, 
                                 use_ss_new = TRUE)
 
+file.remove(list.files("new_models", full.names = TRUE, recursive = TRUE))
+file.remove(list.files("new_models", full.names = TRUE, recursive = FALSE))
 # may need the old code below if populate multiple folders doesn't work correctly
 # # replace old inputs with the .ss_new files 
 # replace_inputs <- function(dir) {
