@@ -1,10 +1,8 @@
-#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
-#Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
-#Foreign copyrights may apply. See copyright.txt for more information.
+#V3.30.18.00;_safe;_compile_date:_Sep 30 2021;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 BC_dat.ss #_DataFile 
 BC_ctl.ss #_Control 
-Run_Date: Fri Jun 11 16:49:01 2021
-Final_phase: 6  N_iterations: 820
+Run_Date: Thu Sep 30 16:13:40 2021
+Final_phase: 6  N_iterations: 761
 #_LIKELIHOOD 
 Label logL*Lambda
 TOTAL_LogL 1305.43
@@ -120,9 +118,9 @@ Size_DblN_ascend_se_Ocean(2) 3.62312 0.0830677 Act 0.402569
 Size_DblN_descend_se_Ocean(2) 8 0 Fix 0.888889
 Size_DblN_start_logit_Ocean(2) -8 0 Fix 0.0555556
 Size_DblN_end_logit_Ocean(2) 8 0 Fix 0.944444
-Size_DblN_peak_Estuary(3) 12.2822 22.221 Act 0.0652049
-Size_DblN_top_logit_Estuary(3) -5.15565 75.9912 Act 0.322957
-Size_DblN_ascend_se_Estuary(3) 4.50307 100.31 Act 0.500341
+Size_DblN_peak_Estuary(3) 12.2821 22.2223 Act 0.0652043
+Size_DblN_top_logit_Estuary(3) -5.15556 75.9901 Act 0.322963
+Size_DblN_ascend_se_Estuary(3) 4.50306 100.31 Act 0.50034
 Size_DblN_descend_se_Estuary(3) 3.57606 1.22719 Act 0.69867
 Size_DblN_start_logit_Estuary(3) -8 0 Fix 0.0555556
 Size_DblN_end_logit_Estuary(3) -1.59162 2.33851 Act 0.411577
@@ -700,17 +698,17 @@ Totbio_unfished 1426.28 318.069
 SmryBio_unfished 1426.28 318.069
 Recr_unfished 1451.17 312.899
 SSB_Btgt 158.65 34.2079
-SPR_Btgt 0.464286 1.9886e-17
+SPR_Btgt 0.464286 2.75185e-17
 annF_Btgt 0.175439 0.00297838
 Dead_Catch_Btgt 128.704 27.816
 SSB_SPR 152.304 32.8396
 annF_SPR 0.182864 0.00309758
-Dead_Catch_SPR 130.355 28.1781
+Dead_Catch_SPR 130.355 28.1782
 SSB_MSY 152.304 32.8396
 SPR_MSY 0.45 2.12792e-10
 annF_MSY 0.182864 0.00309758
-Dead_Catch_MSY 130.355 28.1781
-Ret_Catch_MSY 130.355 28.1781
+Dead_Catch_MSY 130.355 28.1782
+Ret_Catch_MSY 130.355 28.1782
 B_MSY/SSB_unfished 0.384 2.38327e-10
 ForeCatch_2015 96.463 22.8425
 ForeCatch_2016 88.7619 20.961

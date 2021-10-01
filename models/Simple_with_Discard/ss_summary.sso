@@ -1,10 +1,8 @@
-#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
-#Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
-#Foreign copyrights may apply. See copyright.txt for more information.
+#V3.30.18.00;_safe;_compile_date:_Sep 30 2021;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 data.ss #_DataFile 
 control.ss #_Control 
-Run_Date: Fri Jun 11 18:37:47 2021
-Final_phase: 6  N_iterations: 398
+Run_Date: Thu Sep 30 16:12:20 2021
+Final_phase: 6  N_iterations: 397
 #_LIKELIHOOD 
 Label logL*Lambda
 TOTAL_LogL 1590.79
@@ -17,7 +15,7 @@ Age_comp 614.604
 Size_at_age 123.54
 Recruitment -7.16913
 InitEQ_regime 0
-Sum_recdevs -3.33067e-16
+Sum_recdevs 4.44089e-16
 Forecast_Recruitment 0
 Parm_priors 1.10698
 Parm_softbounds 0.00147008
@@ -61,17 +59,17 @@ SR_autocorr 0 0 Fix 0
 Main_RecrDev_1971 0.152049 0.244424 Act 0.515205
 Main_RecrDev_1972 -0.0946753 0.41167 Act 0.490532
 Main_RecrDev_1973 0.110298 0.34726 Act 0.51103
-Main_RecrDev_1974 -0.178095 0.41921 Act 0.48219
-Main_RecrDev_1975 0.0435859 0.384829 Act 0.504359
+Main_RecrDev_1974 -0.178096 0.41921 Act 0.48219
+Main_RecrDev_1975 0.043586 0.384829 Act 0.504359
 Main_RecrDev_1976 0.709985 0.238263 Act 0.570998
-Main_RecrDev_1977 -0.0130969 0.419572 Act 0.49869
-Main_RecrDev_1978 0.00421156 0.387811 Act 0.500421
+Main_RecrDev_1977 -0.0130968 0.419572 Act 0.49869
+Main_RecrDev_1978 0.00421149 0.387811 Act 0.500421
 Main_RecrDev_1979 0.267748 0.327621 Act 0.526775
 Main_RecrDev_1980 0.165904 0.35552 Act 0.51659
 Main_RecrDev_1981 0.132445 0.321954 Act 0.513244
 Main_RecrDev_1982 -0.228699 0.349936 Act 0.47713
 Main_RecrDev_1983 -0.466715 0.365668 Act 0.453328
-Main_RecrDev_1984 -0.30166 0.360967 Act 0.469834
+Main_RecrDev_1984 -0.301659 0.360967 Act 0.469834
 Main_RecrDev_1985 0.402607 0.254633 Act 0.540261
 Main_RecrDev_1986 0.57651 0.247995 Act 0.557651
 Main_RecrDev_1987 0.23602 0.321867 Act 0.523602
@@ -86,7 +84,7 @@ Main_RecrDev_1995 -0.476265 0.285296 Act 0.452373
 Main_RecrDev_1996 0.408171 0.222878 Act 0.540817
 Main_RecrDev_1997 1.1255 0.173467 Act 0.61255
 Main_RecrDev_1998 -0.544831 0.373574 Act 0.445517
-Main_RecrDev_1999 -0.661744 0.380643 Act 0.433826
+Main_RecrDev_1999 -0.661744 0.380642 Act 0.433826
 Main_RecrDev_2000 0.160207 0.323589 Act 0.516021
 Main_RecrDev_2001 -0.307643 0.440988 Act 0.469236
 ForeRecr_2002 0 0.6 Act 0.5
@@ -106,7 +104,7 @@ Q_extraSD_SURVEY1(2) 0 0 Fix 0
 LnQ_base_SURVEY2(3) -6.71531 0 Fix 0.0237238
 LnQ_base_Depletion(4) 0 0 Fix 0.583333
 #_Selectivity
-Size_inflection_FISHERY(1) 53.6664 0.699394 Act 0.568301
+Size_inflection_FISHERY(1) 53.6664 0.699395 Act 0.568301
 Size_95%width_FISHERY(1) 18.8307 0.69995 Act 0.313731
 Retain_L_infl_FISHERY(1) 38.7358 1.67077 Act 0.374715
 Retain_L_width_FISHERY(1) 6.22218 0.648201 Act 0.618402
@@ -181,14 +179,14 @@ Recr_1976 12038.8 2824.65
 Recr_1977 5816.02 2437.99
 Recr_1978 5880.39 2273.3
 Recr_1979 7589.97 2472.73
-Recr_1980 6784.45 2406.53
+Recr_1980 6784.46 2406.53
 Recr_1981 6466.38 2074.34
 Recr_1982 4415.35 1542.94
 Recr_1983 3400.56 1244.11
 Recr_1984 3905.33 1414.19
 Recr_1985 7654.76 1947.94
 Recr_1986 8768.81 2163.83
-Recr_1987 5942.27 1940.73
+Recr_1987 5942.27 1940.72
 Recr_1988 5132.39 1468.67
 Recr_1989 2677.9 1066.07
 Recr_1990 6610.41 1069.21
@@ -326,7 +324,7 @@ Bratio_1999 0.314833 0.0488912
 Bratio_2000 0.300412 0.0547971
 Bratio_2001 0.294607 0.0627495
 Bratio_2002 0.296872 0.0729838
-Bratio_2003 0.347337 0.0786694
+Bratio_2003 0.347337 0.0786693
 Bratio_2004 0.392401 0.0834313
 Bratio_2005 0.429426 0.0869357
 Bratio_2006 0.459059 0.0896934
@@ -363,7 +361,7 @@ ForeCatch_2008 1249.96 465.533
 ForeCatch_2009 1358.69 480.039
 ForeCatch_2010 1469.25 494.072
 ForeCatch_2011 1581.52 506.702
-OFLCatch_2002 1553.52 378.121
+OFLCatch_2002 1553.52 378.12
 OFLCatch_2003 1757.32 399.317
 OFLCatch_2004 1930.64 416.155
 OFLCatch_2005 2075.31 429.92
@@ -377,7 +375,7 @@ ForeCatchret_2002 234.506 362.797
 ForeCatchret_2003 471.603 378.294
 ForeCatchret_2004 671.788 391.263
 ForeCatchret_2005 831.764 401.787
-ForeCatchret_2006 960.518 411.835
+ForeCatchret_2006 960.517 411.835
 ForeCatchret_2007 1070.78 423.146
 ForeCatchret_2008 1173.53 436.037
 ForeCatchret_2009 1275.47 449.698
@@ -406,7 +404,7 @@ Grow_std_GP:_1_Mal_A_26 69.8685 0.278238
 Grow_std_GP:_1_Mal_A_40 70.4914 0.322898
 NatAge_std_1_Fem_A_1 922.588 480.279
 NatAge_std_1_Fem_A_2 1336.22 544.727
-NatAge_std_1_Fem_A_14 122.648 47.8258
+NatAge_std_1_Fem_A_14 122.649 47.8258
 NatAge_std_1_Fem_A_26 5.67115 2.34443
 NatAge_std_1_Fem_A_40 3.73699 1.41143
 NatAge_std_1_Mal_A_1 922.53 480.255

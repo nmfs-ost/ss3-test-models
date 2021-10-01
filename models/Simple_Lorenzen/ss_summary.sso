@@ -1,9 +1,7 @@
-#V3.30.17.00;_2021_06_11;_safe;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
-#Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
-#Foreign copyrights may apply. See copyright.txt for more information.
+#V3.30.18.00;_safe;_compile_date:_Sep 30 2021;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 data.ss #_DataFile 
 control.ss #_Control 
-Run_Date: Fri Jun 11 18:35:03 2021
+Run_Date: Thu Sep 30 16:14:02 2021
 Final_phase: 5  N_iterations: 470
 #_LIKELIHOOD 
 Label logL*Lambda
@@ -15,7 +13,7 @@ Age_comp 610.443
 Size_at_age 0
 Recruitment -3.84818
 InitEQ_regime 0
-Sum_recdevs 1.11022e-16
+Sum_recdevs 7.77156e-16
 Forecast_Recruitment 0
 Parm_priors 1.5638
 Parm_softbounds 0.00125225
@@ -67,7 +65,7 @@ Main_RecrDev_1978 0.242778 0.446776 Act 0.524278
 Main_RecrDev_1979 0.562973 0.378902 Act 0.556297
 Main_RecrDev_1980 0.365661 0.432441 Act 0.536566
 Main_RecrDev_1981 0.285731 0.3832 Act 0.528573
-Main_RecrDev_1982 -0.000490548 0.393619 Act 0.499951
+Main_RecrDev_1982 -0.000490555 0.393619 Act 0.499951
 Main_RecrDev_1983 -0.29382 0.409328 Act 0.470618
 Main_RecrDev_1984 -0.225971 0.411774 Act 0.477403
 Main_RecrDev_1985 0.516518 0.282 Act 0.551652
