@@ -6,7 +6,7 @@ ref_file_folder <- file.path("ss_example_files", "models")
 mod_run_folder <- file.path("run_R", "model_runs")
 # remove 2 models b/c the results often shift and the models are likely 
 # overparameterized
-to_rm_mod_names <- c("Bocaccio_2015", "CanaryRf_2015", "CanaryRf_2015_recrdist")
+to_rm_mod_names <- c("Bocaccio_2015", "CanaryRf_2015", "CanaryRf_2015_recrdist", "Petrale2015")
 to_rm <- which(mod_names %in% to_rm_mod_names)
 mod_names <- mod_names[-to_rm]
 message("Will compare ref runs to new results for these models:")
