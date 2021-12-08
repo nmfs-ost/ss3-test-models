@@ -1,4 +1,4 @@
-source("jenkins/shared/compare.R")
+source(".github/r_scripts/compare.R")
 # get model folder names
 mod_names <- list.dirs("model_runs", full.names = FALSE, recursive = FALSE)
 # remove models b/c the results often shift and the models are likely 
