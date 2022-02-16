@@ -1,10 +1,10 @@
-# ss-test-models
+# test-models
 
 Stock Synthesis models and scripts used for testing
 
 ## Repository structure
 
-All SS models are in the "models" subfolder. All testing scripts and specifications files used by the SS development team are in the "jenkins" subfolder.
+All SS models are in the "models" subfolder. All testing scripts and specifications files used by the SS development team are in the ".github" subfolder.
 
 ## Can I open a pull request to add my own models to this repository?
 
