@@ -16,11 +16,11 @@ This repository houses models used for testing Stock Synthesis. These are often 
 
 ## How is Stock Synthesis tested?
 
-Stock Synthesis is tested by running this set of models and seeing if the same results for key model quantities remains the same relative to a "reference run" (typically the last release of Stock Synthesis). If there are changes, the Stock Synthesis Development Team investigates if these changes are expected or not based on the revisions. If they are expected, then the output files for the reference run are updated. If not, then fixes are made so that the model has the same results. Note that sometimes different model results occur because the model results are not stable; in this case, the model is revised to be more stable or may be excluded from the test set.
+Regression tests are the primary way that Stock Synthesis is tested. Regression tests are conducted automatically using Github actions. Each time, the set of models in test-models are run and then key model quantities are checked to determine if they have changed or remained the same relative to a reference run.
 
 ## What features do these models have?
 
-Most of these models have at least 1 unique feature.
+Most of these models have at least 1 unique feature. The table below includes some key ones, as well as the approximate time it takes to run the model with estimation.
 
 | Model | Features | Approx. Run Times |
 | ----- | -------- | ----------------- |
