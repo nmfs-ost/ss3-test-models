@@ -144,13 +144,16 @@
 #Fishing Mortality info 
 0.5 # F ballpark value in units of annual_F
 -2001 # F ballpark year (neg value to disable)
-2 # F_Method:  1=Pope midseason rate; 2=F as parameter; 3=F as hybrid; 4=fleet-specific parm/hybrid (#4 is superset of #2 and #3 and is recommended)
+4 # F_Method:  1=Pope midseason rate; 2=F as parameter; 3=F as hybrid; 4=fleet-specific parm/hybrid (#4 is superset of #2 and #3 and is recommended)
 3 # max F (methods 2-4) or harvest fraction (method 1)
-0.05 # overall start F value (all fleets; used if start phase = 1 and not reading parfile)
-1 # start phase for parms (does hybrid in early phases)
-0 # N detailed inputs to read
-# detailed setup for F_Method=2; -Yr to fill remaining years
-#Fleet Yr Seas F_value se phase
+# F method 4 input: list of fleets
+# Fleet Parameter_Value Phase
+1 0.01 1
+2 0.01 1
+3 0.01 1
+4 0.01 1
+-9999 1 1
+4 # Tuning iterations
 #
 #_initial_F_parms; for each fleet x season that has init_catch; nest season in fleet; count = 0
 #_for unconstrained init_F, use an arbitrary initial catch and set lambda=0 for its logL
