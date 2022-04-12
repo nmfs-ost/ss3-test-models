@@ -1,12 +1,3 @@
-#V3.30.18.00;_safe;_compile_date:_Sep 30 2021;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
-#_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
-#_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
-#_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
-#_User_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
-#_Source_code_at:_https://github.com/nmfs-stock-synthesis/stock-synthesis
-
-This file contains warnings, suggestions and notes generated as files are read and processed
-
 1 fishing fleet: 1 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
 2 fishing fleet: 2 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
 3 fishing fleet: 3 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
@@ -20,5 +11,5 @@ This file contains warnings, suggestions and notes generated as files are read a
 11 fleet: 4  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 16
 12 fleet: 4  agecomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 14
 13 Reminder: Number of lamdas !=0.0 and !=1.0:  13
-14  Number_of_active_parameters_on_or_near_bounds: 4
-N warnings: 14
+ N parameters are on or within 1% of min-max bound: 4; check results, variance may be suspect
+N warnings: 13

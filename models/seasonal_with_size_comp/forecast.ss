@@ -1,8 +1,9 @@
-#V3.30.18.00;_safe;_compile_date:_Sep 30 2021;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#V3.30.19.00;_safe;_compile_date:_Apr  4 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #C  generic forecast file
 # for all year entries except rebuilder; enter either: actual year, -999 for styr, 0 for endyr, neg number for rel. endyr
-1 # Benchmarks: 0=skip; 1=calc F_spr,F_btgt,F_msy; 2=calc F_spr,F0.1,F_msy;  3=add F_Blimit
-2 # MSY: 1= set to F(SPR); 2=calc F(MSY); 3=set to F(Btgt) or F0.1; 4=set to F(endyr) 
+1 # Benchmarks: 0=skip; 1=calc F_spr,F_btgt,F_msy; 2=calc F_spr,F0.1,F_msy; 3=add F_Blimit; 
+2 # Do_MSY: 1= set to F(SPR); 2=calc F(MSY); 3=set to F(Btgt) or F0.1; 4=set to F(endyr); 5=calc F(MEY) with MSY_unit options
+# if Do_MSY=5, enter MSY_Units; then list fleet_ID, cost/F, price/mt, include_in_Fmey_scaling; # -fleet_ID to fill; -9999 to terminate
 0.2 # SPR target (e.g. 0.40)
 0.2 # Biomass target (e.g. 0.40)
 #_Bmark_years: beg_bio, end_bio, beg_selex, end_selex, beg_relF, end_relF, beg_recr_dist, end_recr_dist, beg_SRparm, end_SRparm (enter actual year, or values of 0 or -integer to be rel. endyr)
@@ -31,7 +32,7 @@
 0 #_Forecast loop control #5 (reserved for future bells&whistles) 
 2012  #FirstYear for caps and allocations (should be after years with fixed inputs) 
 0 # stddev of log(realized catch/target catch) in forecast (set value>0.0 to cause active impl_error)
-0 # Do West Coast gfish rebuilder output (0/1) 
+0 # Do West Coast gfish rebuilder output: 0=no; 1=yes 
 2011 # Rebuilder:  first year catch could have been set to zero (Ydecl)(-1 to set to 1999)
 2011 # Rebuilder:  year for current age structure (Yinit) (-1 to set to endyear+1)
 1 # fleet relative F:  1=use first-last alloc year; 2=read seas, fleet, alloc list below
@@ -39,66 +40,66 @@
 2 # basis for fcast catch tuning and for fcast catch caps and allocation  (2=deadbio; 3=retainbio; 5=deadnum; 6=retainnum); NOTE: same units for all fleets
 # Conditional input if relative F choice = 2
 # enter list of:  season,  fleet, relF; if used, terminate with season=-9999
-# 1 2 0.026754
-# 1 3 0.0101559
-# 1 4 0.0057262
-# 1 5 0.0166098
-# 1 6 0.000379459
-# 1 7 0.00257529
-# 1 8 0.00126275
-# 1 9 0.00273308
-# 1 10 0.0159906
-# 1 11 0.0658454
-# 1 12 0.0738855
-# 1 13 0.00304815
-# 1 14 0.00341574
-# 1 15 0.0297055
-# 1 16 0.00403443
-# 2 2 0.0216841
-# 2 3 0.00967061
-# 2 4 0.00641826
-# 2 5 0.0142256
-# 2 6 0.000366812
-# 2 7 0.00530842
-# 2 8 0.00156956
-# 2 9 0.00273399
-# 2 10 0.0148736
-# 2 11 0.0523773
-# 2 12 0.0664851
-# 2 13 0.0028061
-# 2 14 0.00577968
-# 2 15 0.0281085
-# 2 16 0.00425819
-# 3 2 0.0188516
-# 3 3 0.0104028
-# 3 4 0.00598779
-# 3 5 0.0138354
-# 3 6 0.000374904
-# 3 7 0.00542426
-# 3 8 0.00114289
-# 3 9 0.00313966
-# 3 10 0.0174075
-# 3 11 0.063373
-# 3 12 0.0724896
-# 3 13 0.00300728
-# 3 14 0.00543104
-# 3 15 0.0273279
-# 3 16 0.0040543
-# 4 2 0.0124233
-# 4 3 0.0107531
-# 4 4 0.00587827
-# 4 5 0.0153676
-# 4 6 0.000423936
-# 4 7 0.00427129
-# 4 8 0.00169711
-# 4 9 0.00299445
-# 4 10 0.0176951
-# 4 11 0.0629053
-# 4 12 0.0766145
-# 4 13 0.00299941
-# 4 14 0.00289373
-# 4 15 0.0280879
-# 4 16 0.00395739
+# 1 2 0.0287651
+# 1 3 0.0109193
+# 1 4 0.00485043
+# 1 5 0.0140695
+# 1 6 0.000407982
+# 1 7 0.00291979
+# 1 8 0.00152185
+# 1 9 0.00309869
+# 1 10 0.017605
+# 1 11 0.0724935
+# 1 12 0.0784245
+# 1 13 0.00304309
+# 1 14 0.00309935
+# 1 15 0.0251071
+# 1 16 0.00340991
+# 2 2 0.0234497
+# 2 3 0.010458
+# 2 4 0.00536458
+# 2 5 0.0118902
+# 2 6 0.000396679
+# 2 7 0.00603368
+# 2 8 0.00189632
+# 2 9 0.00310752
+# 2 10 0.0164663
+# 2 11 0.057986
+# 2 12 0.0710306
+# 2 13 0.00277749
+# 2 14 0.00523271
+# 2 15 0.0236422
+# 2 16 0.00358159
+# 3 2 0.0195227
+# 3 3 0.0107732
+# 3 4 0.00489478
+# 3 5 0.0113099
+# 3 6 0.000388252
+# 3 7 0.00589401
+# 3 8 0.00132269
+# 3 9 0.00341156
+# 3 10 0.0184196
+# 3 11 0.0670574
+# 3 12 0.0743549
+# 3 13 0.00287857
+# 3 14 0.00477327
+# 3 15 0.022371
+# 3 16 0.0033189
+# 4 2 0.012244
+# 4 3 0.0105979
+# 4 4 0.00467179
+# 4 5 0.0122135
+# 4 6 0.000417816
+# 4 7 0.0044306
+# 4 8 0.00189472
+# 4 9 0.00310614
+# 4 10 0.0178159
+# 4 11 0.0633346
+# 4 12 0.0749499
+# 4 13 0.00276676
+# 4 14 0.00245253
+# 4 15 0.0222321
+# 4 16 0.00313236
 # -9999 0 0  # terminator for list of relF
 # enter list of: fleet number, max annual catch for fleets with a max; terminate with fleet=-9999
 -9999 -1
@@ -110,6 +111,7 @@
 # list sequentially because read values fill to end of N forecast
 # terminate with -9999 in year field 
 # no allocation groups
+#
 2 # basis for input Fcast catch: -1=read basis with each obs; 2=dead catch; 3=retained catch; 99=input apical_F; NOTE: bio vs num based on fleet's catchunits
 #enter list of Fcast catches or Fa; terminate with line having year=-9999
 #_Yr Seas Fleet Catch(or_F)

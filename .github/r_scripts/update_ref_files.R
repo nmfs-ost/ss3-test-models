@@ -1,5 +1,5 @@
 # inputs to change ----
-ss_exe <- "ss_3.30.18" # path to model that is in the computer PATH variable
+ss_exe <- "ss_3.30.19" # path to model that is in the computer PATH variable
 
 # function to update the reference files in the models subfolder
 
@@ -44,16 +44,24 @@ new_mod_path_list <- list.dirs(new_mod_runs_folder, recursive = FALSE,
                                full.names = TRUE)
 run_results <- lapply(new_mod_path_list, update_ref_files)
 
-# check all have been replaced with 3.30.16 summary files
+# check all have been replaced with 3.30.19 summary files
 git_mods <- list.dirs("models", recursive = FALSE, full.names = TRUE)
 first_line <- lapply(git_mods, function (x) {
    ss_sum <- readLines(file.path(x, "ss_summary.sso"))
-   version <- grep("3.30.18", ss_sum, fixed = TRUE)
+   version <- grep("3.30.19", ss_sum, fixed = TRUE)
    if (!(1 %in% version)) {
-     message("3.30.18 not found on first line for ", x)
+     message("3.30.19 not found on first line for ", x)
    }
    return(ss_sum[1])
  })
  # see all first lines for the files.
 unlist(first_line)
 
+# copy the new output files back into the old ones. 
+r4ss::populate_multiple_folders(outerdir.old = "new_models", 
+                                outerdir.new = "models", overwrite = TRUE,
+                                exe.file = NULL, verbose = FALSE, 
+                                use_ss_new = TRUE)
+
+file.remove(list.files("new_models", full.names = TRUE, recursive = TRUE))
+file.remove(list.files("new_models", full.names = TRUE, recursive = FALSE))

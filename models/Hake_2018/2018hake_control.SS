@@ -1,4 +1,4 @@
-#V3.30.18.00;_safe;_compile_date:_Sep 30 2021;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#V3.30.19.00;_safe;_compile_date:_Apr  4 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
@@ -8,7 +8,7 @@
 #C 2018 Hake control file
 #_data_and_control_files: 2018hake_data.SS // 2018hake_control.SS
 1  # 0 means do not read wtatage.ss; 1 means read and use wtatage.ss and also read and use growth parameters
-1  #_N_Growth_Patterns (Growth Patterns, Morphs, Bio Patterns, GP are terms used interchangeably in SS)
+1  #_N_Growth_Patterns (Growth Patterns, Morphs, Bio Patterns, GP are terms used interchangeably in SS3)
 1 #_N_platoons_Within_GrowthPattern 
 #_Cond 1 #_Platoon_within/between_stdev_ratio (no read if N_platoons=1)
 #_Cond  1 #vector_platoon_dist_(-1_in_first_val_gives_normal_approx)
@@ -69,7 +69,7 @@
 #_growth_parms
 #_ LO HI INIT PRIOR PR_SD PR_type PHASE env_var&link dev_link dev_minyr dev_maxyr dev_PH Block Block_Fxn
 # Sex: 1  BioPattern: 1  NatMort
- 0.05 0.4 0.2 -1.60944 0.1 3 4 0 0 0 0 0 0 0 # NatM_uniform_Fem_GP_1
+ 0.05 0.4 0.213686 -1.60944 0.1 3 4 0 0 0 0 0 0 0 # NatM_uniform_Fem_GP_1
 # Sex: 1  BioPattern: 1  Growth
  2 15 5 32 99 0 -5 0 0 0 0 0 0 0 # L_at_Amin_Fem_GP_1
  45 60 53.2 50 99 0 -3 0 0 0 0 0 0 0 # L_at_Amax_Fem_GP_1
@@ -109,8 +109,8 @@
 0  # 0/1 to use steepness in initial equ recruitment calculation
 0  #  future feature:  0/1 to make realized sigmaR a function of SR curvature
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn #  parm_name
-            13            17          15.9            15            99             0          1          0          0          0          0          0          0          0 # SR_LN(R0)
-           0.2             1          0.88         0.777         0.113             2          4          0          0          0          0          0          0          0 # SR_BH_steep
+            13            17       14.5614            15            99             0          1          0          0          0          0          0          0          0 # SR_LN(R0)
+           0.2             1      0.861909         0.777         0.113             2          4          0          0          0          0          0          0          0 # SR_BH_steep
              1           1.6           1.4           1.1            99             0         -6          0          0          0          0          0          0          0 # SR_sigmaR
             -5             5             0             0            99             0        -50          0          0          0          0          0          0          0 # SR_regime
              0             2             0             1            99             0        -50          0          0          0          0          0          0          0 # SR_autocorr
@@ -127,7 +127,7 @@
  1965 #_last_yr_nobias_adj_in_MPD; begin of ramp
  1971 #_first_yr_fullbias_adj_in_MPD; begin of plateau
  2016 #_last_yr_fullbias_adj_in_MPD
- 2017 #_end_yr_for_ramp_in_MPD (can be in forecast to shape ramp, but SS sets bias_adj to 0.0 for fcast yrs)
+ 2017 #_end_yr_for_ramp_in_MPD (can be in forecast to shape ramp, but SS3 sets bias_adj to 0.0 for fcast yrs)
  0.87 #_max_bias_adj_in_MPD (typical ~0.8; -3 sets all years to 0.0; -2 sets all non-forecast yrs w/ estimated recdevs to 1.0; -1 sets biasadj=1.0 for all yrs w/ recdevs)
  0 #_period of cycles in recruitment (N parms read below)
  -6 #min rec_dev
@@ -141,7 +141,7 @@
 #
 # all recruitment deviations
 #  1946E 1947E 1948E 1949E 1950E 1951E 1952E 1953E 1954E 1955E 1956E 1957E 1958E 1959E 1960E 1961E 1962E 1963E 1964E 1965E 1966E 1967E 1968E 1969E 1970R 1971R 1972R 1973R 1974R 1975R 1976R 1977R 1978R 1979R 1980R 1981R 1982R 1983R 1984R 1985R 1986R 1987R 1988R 1989R 1990R 1991R 1992R 1993R 1994R 1995R 1996R 1997R 1998R 1999R 2000R 2001R 2002R 2003R 2004R 2005R 2006R 2007R 2008R 2009R 2010R 2011R 2012R 2013R 2014R 2015R 2016R 2017F 2018F 2019F 2020F
-#  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+#  -0.652158 -0.23564 -0.279309 -0.329064 -0.385211 -0.447967 -0.516524 -0.593691 -0.674842 -0.757133 -0.84299 -0.926225 -1.00458 -1.06973 -1.10329 -1.07724 -0.966061 -0.800415 -0.551746 -0.205043 -0.101222 0.791404 0.562396 -0.413666 1.82572 -0.192694 -0.739378 1.5444 -1.06491 0.382804 -1.6166 1.70875 -2.06718 0.150865 2.74609 -1.45731 -1.39627 -0.803724 2.50866 -2.12682 -1.76929 1.75507 0.684724 -2.00698 1.35957 0.205055 -1.94599 1.10207 1.16316 0.244121 0.593069 0.0123531 0.652865 2.55536 -0.955923 0.174651 -3.41841 0.460271 -2.43791 0.91498 0.648703 -3.67234 1.62022 0.244874 2.54511 -0.794883 0.24732 -0.7757 2.00364 -1.75939 0.947235 0 0 0 0
 #
 #Fishing Mortality info 
 0.1 # F ballpark value in units of annual_F
@@ -157,7 +157,7 @@
 # F rates by fleet x season
 # Yr:  1966 1967 1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020
 # seas:  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-# Fishery 0.00934013 0.0147019 0.00853073 0.0129155 0.0175342 0.0121669 0.00978518 0.0144514 0.0201854 0.0141169 0.0148533 0.00987443 0.00886195 0.0123772 0.0108101 0.0190929 0.0172447 0.0177747 0.0207772 0.0191633 0.0333043 0.0457354 0.0476818 0.0685462 0.0500554 0.0561304 0.0686941 0.0530962 0.0965277 0.0622804 0.0784448 0.083387 0.0895071 0.0903117 0.0528654 0.0487666 0.0361428 0.0475566 0.0865748 0.0936228 0.0917103 0.0812 0.0839382 0.0463924 0.0586633 0.0769712 0.0544206 0.0704893 0.0725883 0.051439 0.0963818 0.131729 0.161897 0.159457 0.17171
+# Fishery 0.117847 0.208163 0.127462 0.185258 0.229759 0.142019 0.0966724 0.111166 0.136934 0.11332 0.094803 0.0615097 0.055639 0.0639834 0.0496808 0.0808971 0.0636506 0.0528505 0.0581786 0.04495 0.0708399 0.0858776 0.0919926 0.129909 0.0978337 0.162105 0.151082 0.126301 0.259021 0.204917 0.267377 0.268941 0.329774 0.360761 0.268804 0.215929 0.141601 0.123246 0.287262 0.315628 0.309268 0.341842 0.425452 0.269046 0.447197 0.395864 0.230735 0.23582 0.216035 0.122181 0.187685 0.396998 0.412046 0.412046 0.412046
 #
 #_Q_setup for fleets with cpue or survey data
 #_1:  fleet number
@@ -172,14 +172,13 @@
 #
 #_Q_parms(if_any);Qunits_are_ln(q)
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn  #  parm_name
-           -15            15       -1.0285             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_Acoustic_Survey(2)
-          0.05           1.2        0.0755        0.0755           0.1             0          4          0          0          0          0          0          0          0  #  Q_extraSD_Acoustic_Survey(2)
+           -15            15      0.127308             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_Acoustic_Survey(2)
+          0.05           1.2      0.257245        0.0755           0.1             0          4          0          0          0          0          0          0          0  #  Q_extraSD_Acoustic_Survey(2)
 #_no timevary Q parameters
 #
 #_size_selex_patterns
 #Pattern:_0;  parm=0; selex=1.0 for all sizes
 #Pattern:_1;  parm=2; logistic; with 95% width specification
-#Pattern:_2;  parm=6; modification of pattern 24 with improved sex-specific offset
 #Pattern:_5;  parm=2; mirror another size selex; PARMS pick the min-max bin to mirror
 #Pattern:_11; parm=2; selex=1.0  for specified min-max population length bin range
 #Pattern:_15; parm=0; mirror another age or length selex
@@ -191,6 +190,7 @@
 #Pattern:_22; parm=4; double_normal as in CASAL
 #Pattern:_23; parm=6; double_normal where final value is directly equal to sp(6) so can be >1.0
 #Pattern:_24; parm=6; double_normal with sel(minL) and sel(maxL), using joiners
+#Pattern:_2;  parm=6; double_normal with sel(minL) and sel(maxL), using joiners, back compatibile version of 24 with 3.30.18 and older
 #Pattern:_25; parm=3; exponential-logistic in length
 #Pattern:_27; parm=special+3; cubic spline in length; parm1==1 resets knots; parm1==2 resets all 
 #Pattern:_42; parm=special+3+2; cubic spline; like 27, with 2 additional param for scaling (average over bin range)
@@ -204,7 +204,7 @@
 #Pattern:_10; parm=0; selex=1.0 for ages 1 to maxage
 #Pattern:_11; parm=2; selex=1.0  for specified min-max age
 #Pattern:_12; parm=2; age logistic
-#Pattern:_13; parm=8; age double logistic
+#Pattern:_13; parm=8; age double logistic. Recommend using pattern 18 instead.
 #Pattern:_14; parm=nages+1; age empirical
 #Pattern:_15; parm=0; mirror another age or length selex
 #Pattern:_16; parm=2; Coleraine - Gaussian
@@ -227,11 +227,11 @@
 # 1   Fishery AgeSelex
          -1002             3         -1000            -1          0.01             0         -2          0          0          0          0          0          0          0  #  AgeSel_P1_Fishery(1)
             -1             1             0            -1          0.01             0         -2          0          0          0          0          0          0          0  #  AgeSel_P2_Fishery(1)
-            -5             9           2.8            -1          0.01             0          2          0          2       1991       2017          5          0          0  #  AgeSel_P3_Fishery(1)
-            -5             9           0.1            -1          0.01             0          2          0          2       1991       2017          5          0          0  #  AgeSel_P4_Fishery(1)
-            -5             9           0.1            -1          0.01             0          2          0          2       1991       2017          5          0          0  #  AgeSel_P5_Fishery(1)
-            -5             9           0.1            -1          0.01             0          2          0          2       1991       2017          5          0          0  #  AgeSel_P6_Fishery(1)
-            -5             9             0            -1          0.01             0          2          0          2       1991       2017          5          0          0  #  AgeSel_P7_Fishery(1)
+            -5             9       2.48649            -1          0.01             0          2          0          2       1991       2017          5          0          0  #  AgeSel_P3_Fishery(1)
+            -5             9      0.928256            -1          0.01             0          2          0          2       1991       2017          5          0          0  #  AgeSel_P4_Fishery(1)
+            -5             9      0.392144            -1          0.01             0          2          0          2       1991       2017          5          0          0  #  AgeSel_P5_Fishery(1)
+            -5             9      0.214365            -1          0.01             0          2          0          2       1991       2017          5          0          0  #  AgeSel_P6_Fishery(1)
+            -5             9      0.475473            -1          0.01             0          2          0          2       1991       2017          5          0          0  #  AgeSel_P7_Fishery(1)
             -5             9             0            -1          0.01             0         -2          0          0          0          0          0          0          0  #  AgeSel_P8_Fishery(1)
             -5             9             0            -1          0.01             0         -2          0          0          0          0          0          0          0  #  AgeSel_P9_Fishery(1)
             -5             9             0            -1          0.01             0         -2          0          0          0          0          0          0          0  #  AgeSel_P10_Fishery(1)
@@ -250,10 +250,10 @@
          -1002             3         -1000            -1          0.01             0         -2          0          0          0          0          0          0          0  #  AgeSel_P1_Acoustic_Survey(2)
          -1002             3         -1000            -1          0.01             0         -2          0          0          0          0          0          0          0  #  AgeSel_P2_Acoustic_Survey(2)
             -1             1             0            -1          0.01             0         -2          0          0          0          0          0          0          0  #  AgeSel_P3_Acoustic_Survey(2)
-            -5             9           0.1            -1          0.01             0          2          0          0          0          0          0          0          0  #  AgeSel_P4_Acoustic_Survey(2)
-            -5             9           0.1            -1          0.01             0          2          0          0          0          0          0          0          0  #  AgeSel_P5_Acoustic_Survey(2)
-            -5             9             0            -1          0.01             0          2          0          0          0          0          0          0          0  #  AgeSel_P6_Acoustic_Survey(2)
-            -5             9             0            -1          0.01             0          2          0          0          0          0          0          0          0  #  AgeSel_P7_Acoustic_Survey(2)
+            -5             9      0.568619            -1          0.01             0          2          0          0          0          0          0          0          0  #  AgeSel_P4_Acoustic_Survey(2)
+            -5             9     -0.216172            -1          0.01             0          2          0          0          0          0          0          0          0  #  AgeSel_P5_Acoustic_Survey(2)
+            -5             9      0.305286            -1          0.01             0          2          0          0          0          0          0          0          0  #  AgeSel_P6_Acoustic_Survey(2)
+            -5             9      0.373829            -1          0.01             0          2          0          0          0          0          0          0          0  #  AgeSel_P7_Acoustic_Survey(2)
             -5             9             0            -1          0.01             0         -2          0          0          0          0          0          0          0  #  AgeSel_P8_Acoustic_Survey(2)
             -5             9             0            -1          0.01             0         -2          0          0          0          0          0          0          0  #  AgeSel_P9_Acoustic_Survey(2)
             -5             9             0            -1          0.01             0         -2          0          0          0          0          0          0          0  #  AgeSel_P10_Acoustic_Survey(2)
@@ -270,7 +270,7 @@
             -5             9             0            -1          0.01             0         -2          0          0          0          0          0          0          0  #  AgeSel_P21_Acoustic_Survey(2)
 #_Dirichlet parameters
 #_multiple_fleets_can_refer_to_same_parm;_but_list_cannot_have_gaps
-            -5            20           0.5             0            99             0          2          0          0          0          0          0          0          0  #  ln(DM_theta)_1
+            -5            20     -0.189215             0            99             0          2          0          0          0          0          0          0          0  #  ln(DM_theta)_1
             -5            20       2.42702             0            99             0         -2          0          0          0          0          0          0          0  #  ln(DM_theta)_2
 # timevary selex parameters 
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type    PHASE  #  parm_name
@@ -296,11 +296,11 @@
 # deviation vectors for timevary parameters
 #  base   base first block   block  env  env   dev   dev   dev   dev   dev
 #  type  index  parm trend pattern link  var  vectr link _mnyr  mxyr phase  dev_vector
-#      5     3     1     0     0     0     0     1     2  1991  2017     5      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0
-#      5     4     3     0     0     0     0     2     2  1991  2017     5      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0
-#      5     5     5     0     0     0     0     3     2  1991  2017     5      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0
-#      5     6     7     0     0     0     0     4     2  1991  2017     5      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0
-#      5     7     9     0     0     0     0     5     2  1991  2017     5      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0      0
+#      5     3     1     0     0     0     0     1     2  1991  2017     5 0.592354 -0.0215714 -0.0174073 0.0654067 -0.294918 0.494572 0.0560868 0.216799 1.12413 0.622038 0.0304448 0.0188383 -0.00360724 0.265221 -0.00505674 1.00298 0.623543 -0.0245485 0.470303 1.03985 0.0271776 0.108823 0.161674 0.424726 -0.645163 -0.0192438 -0.878769
+#      5     4     3     0     0     0     0     2     2  1991  2017     5 0.335393 0.786876 0.788958 0.0998808 0.208178 -0.409939  1.264 0.918307 -0.179413 0.771853 0.932204 0.672251 0.644534 0.366936 0.587011 -0.615109 0.348454 0.35502 0.707846 0.118072 1.06925 0.129174 0.872688 0.299833 0.366352 -1.05568 -0.186413
+#      5     5     5     0     0     0     0     3     2  1991  2017     5 -0.836257 -0.160481 0.060425 0.84767 0.236107 -0.263793 -0.132351 -0.613554 0.107826 -0.192513 0.323374 0.555672 0.59563 0.667786 0.637369 0.0501379 -0.264432 -0.524151 -0.136759 0.464491 -0.689207 0.220667 -0.263577 -0.285406 -0.0131412 0.168544 -0.0996913
+#      5     6     7     0     0     0     0     4     2  1991  2017     5 -0.0369557 -0.505815 -0.0415495 -0.123593 0.70666 -0.0856415 -0.374172 0.361413 -0.391131 0.185572 -0.17954 0.174456 0.278663 -0.644594 0.399254 0.144839 -0.164821 0.400205 -0.35154 -0.420194 -0.188218 -0.469697 -2.35578e-05 -0.0430091 0.0545444 -0.0590339 0.0044362
+#      5     7     9     0     0     0     0     5     2  1991  2017     5 -0.155169 0.0856562 -0.441156 0.105778 -0.126961 0.351942 0.157854 -0.486165 -0.236635 -0.0712506 -0.235559 -0.449424 -0.263695 -0.121808 -0.557894 -0.346538 -0.00502292 -0.177662 0.174912 -0.581363 -0.493821 -0.344713 0.0826472 0.00834964 -0.50342 -0.196723 0.215695
      #
 # Input variance adjustments factors: 
  #_1=add_to_survey_CV

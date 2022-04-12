@@ -1,15 +1,14 @@
-#V3.30.18.00;_safe;_compile_date:_Sep 30 2021;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#V3.30.19.00;_safe;_compile_date:_Apr  4 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
 #_User_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
 #_Source_code_at:_https://github.com/nmfs-stock-synthesis/stock-synthesis
 
-#_Start_time: Thu Sep 30 11:07:48 2021
-#_Number_of_datafiles: 1
+#_Start_time: Tue Apr 12 12:43:38 2022
+#_echo_input_data
 
-#_observed data: 
-#V3.30.18.00;_safe;_compile_date:_Sep 30 2021;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#V3.30.19.00;_safe;_compile_date:_Apr  4 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 1971 #_StartYr
 2011 #_EndYr
 4 #_Nseas
@@ -3272,27 +3271,27 @@
 #_minsamplesize: minimum sample size; set to 1 to match 3.24, minimum value is 0.001
 #
 #_mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
-# 0 0 1 1 1 1 0 #_fleet:1_Flt1
-# 0 0 22 22 22 22 0 #_fleet:2_Flt2
-# 0 0 127762808 127762328 127761560 127760024 0 #_fleet:3_Flt3
+# 0 0 1 1 0 0 0 #_fleet:1_Flt1
+# 0 0 22 22 0 0 0 #_fleet:2_Flt2
+# 0 0 127408616 127406312 0 0 0 #_fleet:3_Flt3
 # 0 0 0 0 0 0 0 #_fleet:4_Flt4
 # 0 0 0 0 0 0 0 #_fleet:5_Flt5
 # 0 0 0 0 0 0 0 #_fleet:6_Flt6
-# 0 0 1 1 1 1 0 #_fleet:7_Flt7
-# 0 0 22 22 22 22 0 #_fleet:8_Flt8
-# 0 0 127762832 127762352 127761584 127760048 0 #_fleet:9_Flt9
+# 0 0 1 1 0 0 0 #_fleet:7_Flt7
+# 0 0 22 22 0 0 0 #_fleet:8_Flt8
+# 0 0 127408640 127406336 0 0 0 #_fleet:9_Flt9
 # 0 0 0 0 0 0 0 #_fleet:10_Flt10
 # 0 0 0 0 0 0 0 #_fleet:11_Flt11
 # 0 0 0 0 0 0 0 #_fleet:12_Flt12
-# 0 0 1 1 1 1 0 #_fleet:13_Flt13
-# 0 0 22 22 22 22 0 #_fleet:14_Flt14
-# 0 0 127762856 127762376 127761608 127760072 0 #_fleet:15_Flt15
+# 0 0 1 1 0 0 0 #_fleet:13_Flt13
+# 0 0 22 22 0 0 0 #_fleet:14_Flt14
+# 0 0 127408664 127406360 0 0 0 #_fleet:15_Flt15
 # 0 0 0 0 0 0 0 #_fleet:16_Flt16
 # 0 0 0 0 0 0 0 #_fleet:17_S1
 # 0 0 0 0 0 0 0 #_fleet:18_S2
-# 0 0 1 1 1 1 0 #_fleet:19_S3
-# 0 0 22 22 22 22 0 #_fleet:20_S4
-# 0 0 127762880 127762400 127761632 127760096 0 #_fleet:21_S5
+# 0 0 1 1 0 0 0 #_fleet:19_S3
+# 0 0 22 22 0 0 0 #_fleet:20_S4
+# 0 0 127408688 127406384 0 0 0 #_fleet:21_S5
 # 0 0 0 0 0 0 0 #_fleet:22_S6
 # 0 #_Lbin_method_for_Age_Data: 1=poplenbins; 2=datalenbins; 3=lengths
 # sex codes:  0=combined; 1=use female only; 2=use male only; 3=use both as joint sexxlength distribution
@@ -3446,8 +3445,8 @@
  2 1993 8.5 4 0 0 31.02 1 0 0 0 0 0 0 1 8 4 1 6 4 4 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
  2 1993 11.5 4 0 0 34.61 0 0 0 0 0 0 0 1 5 6 8 10 3 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
  2 1998 8.5 4 0 0 4.08 0 0 0 0 0 0 0 0 0 1 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-#
-0 # do tags (0/1)
+# 
+0 # do tags (0/1/2); where 2 allows entry of TG_min_recap
 #
 0 #    morphcomp data(0/1) 
 #  Nobs, Nmorphs, mincomp
@@ -3459,4 +3458,3 @@
 #
 999
 
-ENDDATA

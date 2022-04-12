@@ -1,7 +1,7 @@
-#V3.30.18.00;_safe;_compile_date:_Sep 30 2021;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#V3.30.19.00;_safe;_compile_date:_Apr  4 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 three_area_dat.ss #_DataFile 
 three_area_ctl.ss #_Control 
-Run_Date: Thu Sep 30 16:15:12 2021
+Run_Date: Tue Apr 12 10:40:03 2022
 Final_phase: 5  N_iterations: 454
 #_LIKELIHOOD 
 Label logL*Lambda
@@ -461,11 +461,11 @@ SSB_SPR 42436.5 1322.98
 annF_SPR 0.0741929 0.000236432
 Dead_Catch_SPR 7425.18 230.761
 SSB_MSY 42436.5 1322.98
-SPR_MSY 0.4 4.8545e-14
+SPR_MSY 0.4 4.85457e-14
 annF_MSY 0.0741929 0.000236432
 Dead_Catch_MSY 7425.18 230.761
 Ret_Catch_MSY 7425.18 230.761
-B_MSY/SSB_unfished 0.28 5.82533e-14
+B_MSY/SSB_unfished 0.28 5.82531e-14
 ForeCatch_2008 2907.3 530.269
 ForeCatch_2009 3700.78 642.915
 ForeCatch_2010 4372.13 737.255

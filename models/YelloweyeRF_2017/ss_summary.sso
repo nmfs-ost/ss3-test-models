@@ -1,7 +1,7 @@
-#V3.30.18.00;_safe;_compile_date:_Sep 30 2021;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#V3.30.19.00;_safe;_compile_date:_Apr  4 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 yelloweye_data.ss #_DataFile 
 yelloweye_control.ss #_Control 
-Run_Date: Thu Sep 30 16:48:31 2021
+Run_Date: Tue Apr 12 11:08:36 2022
 Final_phase: 8  N_iterations: 1387
 #_LIKELIHOOD 
 Label logL*Lambda
@@ -1004,7 +1004,7 @@ SSB_SPR 999.88 57.3561
 annF_SPR 0.0217917 0.000154522
 Dead_Catch_SPR 103.432 5.99314
 SSB_MSY 999.88 57.3561
-SPR_MSY 0.5 5.19569e-18
+SPR_MSY 0.5 7.54985e-18
 annF_MSY 0.0217917 0.000154522
 Dead_Catch_MSY 103.432 5.99314
 Ret_Catch_MSY 103.432 5.99314

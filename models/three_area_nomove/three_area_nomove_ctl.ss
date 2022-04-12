@@ -1,4 +1,4 @@
-#V3.30.18.00;_safe;_compile_date:_Sep 30 2021;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#V3.30.19.00;_safe;_compile_date:_Apr  4 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
@@ -7,7 +7,7 @@
 
 #_data_and_control_files: three_area_nomove_dat.ss // three_area_nomove_ctl.ss
 0  # 0 means do not read wtatage.ss; 1 means read and use wtatage.ss and also read and use growth parameters
-1  #_N_Growth_Patterns (Growth Patterns, Morphs, Bio Patterns, GP are terms used interchangeably in SS)
+1  #_N_Growth_Patterns (Growth Patterns, Morphs, Bio Patterns, GP are terms used interchangeably in SS3)
 1 #_N_platoons_Within_GrowthPattern 
 #_Cond 1 #_Platoon_within/between_stdev_ratio (no read if N_platoons=1)
 #_Cond  1 #vector_platoon_dist_(-1_in_first_val_gives_normal_approx)
@@ -126,7 +126,7 @@
 0  # 0/1 to use steepness in initial equ recruitment calculation
 0  #  future feature:  0/1 to make realized sigmaR a function of SR curvature
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn #  parm_name
-             8            12            10           9.2            99             6          1          0          0          0          0          0          0          0 # SR_LN(R0)
+             8            12       9.33246           9.2            99             6          1          0          0          0          0          0          0          0 # SR_LN(R0)
            0.2             1           0.6           0.6            99             6         -2          0          0          0          0          0          0          0 # SR_BH_steep
            0.2           1.5           0.5           0.5             1             6         -5          0          0          0          0          0          0          0 # SR_sigmaR
             -5             5             0             0            99             6         -6          0          0          0          0          0          0          0 # SR_regime
@@ -144,7 +144,7 @@
  945 #_last_yr_nobias_adj_in_MPD; begin of ramp
  1905 #_first_yr_fullbias_adj_in_MPD; begin of plateau
  2008 #_last_yr_fullbias_adj_in_MPD
- 2009 #_end_yr_for_ramp_in_MPD (can be in forecast to shape ramp, but SS sets bias_adj to 0.0 for fcast yrs)
+ 2009 #_end_yr_for_ramp_in_MPD (can be in forecast to shape ramp, but SS3 sets bias_adj to 0.0 for fcast yrs)
  1 #_max_bias_adj_in_MPD (typical ~0.8; -3 sets all years to 0.0; -2 sets all non-forecast yrs w/ estimated recdevs to 1.0; -1 sets biasadj=1.0 for all yrs w/ recdevs)
  0 #_period of cycles in recruitment (N parms read below)
  -5 #min rec_dev
@@ -158,7 +158,7 @@
 #
 # all recruitment deviations
 #  1970R 1971R 1972R 1973R 1974R 1975R 1976R 1977R 1978R 1979R 1980R 1981R 1982R 1983R 1984R 1985R 1986R 1987R 1988R 1989R 1990R 1991R 1992R 1993R 1994R 1995R 1996R 1997R 1998R 1999R 2000R 2001R 2002R 2003R 2004R 2005R 2006R 2007R 2008F 2009F 2010F
-#  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+#  -0.330142 1.72471 -1.2326 -1.22396 1.60544 -0.641205 -0.0109298 1.19498 -1.05089 1.22362 -0.888311 0.660696 0.457975 0.975846 0.331081 -0.547098 1.07366 -0.771935 0.823456 -1.17161 1.11199 0.510169 0.440685 -0.869272 0.652335 0.208946 0.488719 -0.890647 0.688624 -0.229576 1.39276 -0.825433 0.822177 -0.793043 -0.951623 -1.26267 -1.34846 -1.34846 0 0 0
 # implementation error by year in forecast:  0 0 0
 #
 #Fishing Mortality info 
@@ -175,8 +175,8 @@
 # F rates by fleet x season
 # Yr:  1945 1946 1947 1948 1949 1950 1951 1952 1953 1954 1955 1956 1957 1958 1959 1960 1961 1962 1963 1964 1965 1966 1967 1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010
 # seas:  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-# Shallow_Fishery 0.00715009 0.0120176 0.0128192 0.0110658 0.0129039 0.00995624 0.00819939 0.0139295 0.0157174 0.0171103 0.0171618 0.0187759 0.00963714 0.0121503 0.0126077 0.0103434 0.0148291 0.00846092 0.00635907 0.0111361 0.0111552 0.00893687 0.0162476 0.00678461 0.0110998 0.0157542 0.00910511 0.00884968 0.00749921 0.0114283 0.00934667 0.00807381 0.0292317 0.0161936 0.0354392 0.0120201 0.0130268 0.0305231 0.00992373 0.0216912 0.0155478 0.011014 0.0130356 0.0156081 0.038926 0.0133885 0.0183692 0.0163334 0.0111831 0.00992243 0.0273566 0.0351799 0.0405606 0.0318988 0.0261256 0.0228858 0.0355071 0.0322953 0.0246579 0.0253306 0.0320476 0.0365365 0.0396057 0.177865 0.177865 0.177865
-# Middle_Fishery 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.00502801 0.00685392 0.00754221 0.0113055 0.0193492 0.0211696 0.0303218 0.0381304 0.052985 0.0800922 0.227054 0.0839554 0.136067 0.257795 0.108734 0.141681 0.274661 0.246154 0.259298 0.250701 0.230123 0.22157 0.203608 0.211945 0.191832 0.169223 0.174732 0.161397 0.142331 0.131874 0.130234 0.111443 0.947136 0.947136 0.947137
+# Shallow_Fishery 0.0107408 0.0181724 0.0195501 0.0170113 0.0199919 0.0155349 0.0128581 0.0219807 0.0250229 0.0275098 0.0278727 0.0308144 0.0159265 0.0201557 0.0210126 0.0173015 0.0249112 0.0142597 0.0107105 0.0187635 0.0188404 0.0151136 0.0275712 0.0115406 0.0188803 0.0269003 0.015596 0.0151959 0.0121079 0.0175343 0.0140428 0.0114365 0.0396833 0.021547 0.0456181 0.0151642 0.0158313 0.0363668 0.0116375 0.0249988 0.0174601 0.0120814 0.0141859 0.0166958 0.0414823 0.0141784 0.0194898 0.0171392 0.0115376 0.0100968 0.0279175 0.0360867 0.0419078 0.0331496 0.0275425 0.0243196 0.0381455 0.0340804 0.0256953 0.026043 0.0329934 0.0384204 0.043246 0.071228 0.071228 0.071228
+# Middle_Fishery 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.0110604 0.0145873 0.0154661 0.0224784 0.0375164 0.0401295 0.0563496 0.0697211 0.0960856 0.145157 0.420982 0.158718 0.259412 0.5114 0.223039 0.294934 0.600457 0.574713 0.62974 0.626093 0.596356 0.603813 0.579138 0.625756 0.59204 0.544037 0.571444 0.5074 0.410039 0.352195 0.333809 0.288311 1.05379 1.05379 1.05379
 #
 #_Q_setup for fleets with cpue or survey data
 #_1:  fleet number
@@ -193,15 +193,14 @@
 #
 #_Q_parms(if_any);Qunits_are_ln(q)
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn  #  parm_name
-           -15            15     -0.968324             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_Shallow_Survey(3)
-           -15            15     -0.345989             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_Middle_Survey(4)
-           -15            15     -0.694906             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_Deep_Survey(5)
+           -15            15     -0.865676             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_Shallow_Survey(3)
+           -15            15      0.381564             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_Middle_Survey(4)
+           -15            15     -0.388424             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_Deep_Survey(5)
 #_no timevary Q parameters
 #
 #_size_selex_patterns
 #Pattern:_0;  parm=0; selex=1.0 for all sizes
 #Pattern:_1;  parm=2; logistic; with 95% width specification
-#Pattern:_2;  parm=6; modification of pattern 24 with improved sex-specific offset
 #Pattern:_5;  parm=2; mirror another size selex; PARMS pick the min-max bin to mirror
 #Pattern:_11; parm=2; selex=1.0  for specified min-max population length bin range
 #Pattern:_15; parm=0; mirror another age or length selex
@@ -213,6 +212,7 @@
 #Pattern:_22; parm=4; double_normal as in CASAL
 #Pattern:_23; parm=6; double_normal where final value is directly equal to sp(6) so can be >1.0
 #Pattern:_24; parm=6; double_normal with sel(minL) and sel(maxL), using joiners
+#Pattern:_2;  parm=6; double_normal with sel(minL) and sel(maxL), using joiners, back compatibile version of 24 with 3.30.18 and older
 #Pattern:_25; parm=3; exponential-logistic in length
 #Pattern:_27; parm=special+3; cubic spline in length; parm1==1 resets knots; parm1==2 resets all 
 #Pattern:_42; parm=special+3+2; cubic spline; like 27, with 2 additional param for scaling (average over bin range)
@@ -229,7 +229,7 @@
 #Pattern:_10; parm=0; selex=1.0 for ages 1 to maxage
 #Pattern:_11; parm=2; selex=1.0  for specified min-max age
 #Pattern:_12; parm=2; age logistic
-#Pattern:_13; parm=8; age double logistic
+#Pattern:_13; parm=8; age double logistic. Recommend using pattern 18 instead.
 #Pattern:_14; parm=nages+1; age empirical
 #Pattern:_15; parm=0; mirror another age or length selex
 #Pattern:_16; parm=2; Coleraine - Gaussian
@@ -251,20 +251,20 @@
 #
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn  #  parm_name
 # 1   Shallow_Fishery LenSelex
-             1            80            55            55            99             6          3          0          0          0          0        0.5          0          0  #  Size_inflection_Shallow_Fishery(1)
-             0            60            10            10            99             6          4          0          0          0          0        0.5          0          0  #  Size_95%width_Shallow_Fishery(1)
+             1            80       44.7069            55            99             6          3          0          0          0          0        0.5          0          0  #  Size_inflection_Shallow_Fishery(1)
+             0            60       7.61779            10            99             6          4          0          0          0          0        0.5          0          0  #  Size_95%width_Shallow_Fishery(1)
 # 2   Middle_Fishery LenSelex
-             1            80            55            55            99             6          3          0          0          0          0        0.5          0          0  #  Size_inflection_Middle_Fishery(2)
-             0            60            10            10            99             6          4          0          0          0          0        0.5          0          0  #  Size_95%width_Middle_Fishery(2)
+             1            80       59.6922            55            99             6          3          0          0          0          0        0.5          0          0  #  Size_inflection_Middle_Fishery(2)
+             0            60       10.8306            10            99             6          4          0          0          0          0        0.5          0          0  #  Size_95%width_Middle_Fishery(2)
 # 3   Shallow_Survey LenSelex
-             1            80            55            55            99             6          3          0          0          0          0        0.5          0          0  #  Size_inflection_Shallow_Survey(3)
-             0            60            10            10            99             6          4          0          0          0          0        0.5          0          0  #  Size_95%width_Shallow_Survey(3)
+             1            80       45.7351            55            99             6          3          0          0          0          0        0.5          0          0  #  Size_inflection_Shallow_Survey(3)
+             0            60       9.81084            10            99             6          4          0          0          0          0        0.5          0          0  #  Size_95%width_Shallow_Survey(3)
 # 4   Middle_Survey LenSelex
-             1            80            55            55            99             6          3          0          0          0          0        0.5          0          0  #  Size_inflection_Middle_Survey(4)
-             0            60            10            10            99             6          4          0          0          0          0        0.5          0          0  #  Size_95%width_Middle_Survey(4)
+             1            80       57.7583            55            99             6          3          0          0          0          0        0.5          0          0  #  Size_inflection_Middle_Survey(4)
+             0            60       9.60802            10            99             6          4          0          0          0          0        0.5          0          0  #  Size_95%width_Middle_Survey(4)
 # 5   Deep_Survey LenSelex
-             1            80            55            55            99             6          3          0          0          0          0        0.5          0          0  #  Size_inflection_Deep_Survey(5)
-             0            60            10            10            99             6          4          0          0          0          0        0.5          0          0  #  Size_95%width_Deep_Survey(5)
+             1            80       57.2524            55            99             6          3          0          0          0          0        0.5          0          0  #  Size_inflection_Deep_Survey(5)
+             0            60       9.38206            10            99             6          4          0          0          0          0        0.5          0          0  #  Size_95%width_Deep_Survey(5)
 # 1   Shallow_Fishery AgeSelex
 # 2   Middle_Fishery AgeSelex
 # 3   Shallow_Survey AgeSelex

@@ -1,7 +1,7 @@
-#V3.30.18.00;_safe;_compile_date:_Sep 30 2021;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#V3.30.19.00;_safe;_compile_date:_Apr  4 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 Spiny_Dogfish.DAT #_DataFile 
 Spiny_Dogfish.CTL #_Control 
-Run_Date: Thu Sep 30 16:14:09 2021
+Run_Date: Tue Apr 12 10:38:34 2022
 Final_phase: 3  N_iterations: 264
 #_LIKELIHOOD 
 Label logL*Lambda

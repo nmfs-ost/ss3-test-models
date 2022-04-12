@@ -1,7 +1,7 @@
-#V3.30.18.00;_safe;_compile_date:_Sep 30 2021;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#V3.30.19.00;_safe;_compile_date:_Apr  4 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 data_boot_new.ss #_DataFile 
 control.ss #_Control 
-Run_Date: Thu Sep 30 18:26:48 2021
+Run_Date: Tue Apr 12 12:43:38 2022
 Final_phase: 5  N_iterations: 1077
 #_LIKELIHOOD 
 Label logL*Lambda
@@ -489,7 +489,7 @@ Dead_Catch_MSY 21113 632.648
 Ret_Catch_MSY 21113 632.648
 B_MSY/SSB_unfished 0.148705 0.000630313
 ForeCatch_2012 11555.2 1432.77
-OFLCatch_2012 4150.15 267.919
+OFLCatch_2012 18116.8 979.974
 #_Extra_stdev
 ln(SPB)_1971 11.2452 0.118218
 ln(SPB)_1991 10.9352 0.102192

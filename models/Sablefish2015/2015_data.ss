@@ -1,17 +1,16 @@
-#V3.30.18.00;_safe;_compile_date:_Sep 30 2021;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#V3.30.19.00;_safe;_compile_date:_Apr  4 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
 #_User_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
 #_Source_code_at:_https://github.com/nmfs-stock-synthesis/stock-synthesis
 
-#_Start_time: Thu Sep 30 11:07:42 2021
-#_Number_of_datafiles: 1
+#_Start_time: Tue Apr 12 12:43:34 2022
+#_echo_input_data
 #C data file created using the SS_writedat function in the R package r4ss
 #C should work with SS version: 
 #C file write time: 2015-05-13 13:24:55
-#_observed data: 
-#V3.30.18.00;_safe;_compile_date:_Sep 30 2021;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#V3.30.19.00;_safe;_compile_date:_Apr  4 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 1900 #_StartYr
 2014 #_EndYr
 1 #_Nseas
@@ -2245,8 +2244,8 @@
 #Yr Variable Value
 #
 0 # N sizefreq methods to read 
-#
-0 # do tags (0/1)
+# 
+0 # do tags (0/1/2); where 2 allows entry of TG_min_recap
 #
 0 #    morphcomp data(0/1) 
 #  Nobs, Nmorphs, mincomp
@@ -2258,4 +2257,3 @@
 #
 999
 
-ENDDATA

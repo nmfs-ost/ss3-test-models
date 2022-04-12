@@ -1,12 +1,3 @@
-#V3.30.18.00;_safe;_compile_date:_Sep 30 2021;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
-#_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
-#_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
-#_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
-#_User_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
-#_Source_code_at:_https://github.com/nmfs-stock-synthesis/stock-synthesis
-
-This file contains warnings, suggestions and notes generated as files are read and processed
-
 1 fishing fleet: 1 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
 2 fishing fleet: 2 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
 3 fishing fleet: 3 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
@@ -18,70 +9,47 @@ This file contains warnings, suggestions and notes generated as files are read a
 9 parameter init value is greater than parameter max 17.4441 > 15 for parm: 9 ; search for <now check> echoinput for parm_type, will exit if prior requested
 10 parameter init value is greater than parameter max 17.989 > 15 for parm: 14 ; search for <now check> echoinput for parm_type, will exit if prior requested
 11 parameter init value is greater than parameter max 16.8903 > 15 for parm: 18 ; search for <now check> echoinput for parm_type, will exit if prior requested
-12  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 1 1 1 2003 16 60 44.3593 62.5426
+12  adjusted selparm out of base parm bounds. Phase: 1; Inter: 1; fleet: 1; base_parm#: 1; y: 2003; min: 16; max: 60; base: 44.3593 timevary_val: 62.5426  Size_DblN_peak_TrawlSouth(1)
 13 1st iteration warning: ssb(endyr)/ssb(styr)= 1.04571e-10; suggest start with larger R0 to get near 0.4; or use depletion fleet option
 14 1st iteration warning: catch logL > 50% total logL; check configuration; suggest start with larger R0
-15  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1363 1 2003 16 60 43.6556 61.0161
-16  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1363 1 2004 16 60 43.6556 61.0161
-17  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1363 1 2005 16 60 43.6556 61.0161
-18  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1363 1 2006 16 60 43.6556 61.0161
-19  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1363 1 2007 16 60 43.6556 61.0161
-20  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1363 1 2008 16 60 43.6556 61.0161
-21  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1363 1 2009 16 60 43.6556 61.0161
-22  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1363 1 2010 16 60 43.6556 61.0161
-23  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1363 1 2011 16 60 43.6556 61.0161
-24  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1363 1 2012 16 60 43.6556 61.0161
-25  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1363 1 2013 16 60 43.6556 61.0161
-26  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 1363 1 2014 16 60 43.6556 61.0161
+15  adjusted selparm out of base parm bounds. Phase: 7; Inter: 1355; fleet: 1; base_parm#: 1; y: 2003; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+16  adjusted selparm out of base parm bounds. Phase: 7; Inter: 1355; fleet: 1; base_parm#: 1; y: 2004; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+17  adjusted selparm out of base parm bounds. Phase: 7; Inter: 1355; fleet: 1; base_parm#: 1; y: 2005; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+18  adjusted selparm out of base parm bounds. Phase: 7; Inter: 1355; fleet: 1; base_parm#: 1; y: 2006; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+19  adjusted selparm out of base parm bounds. Phase: 7; Inter: 1355; fleet: 1; base_parm#: 1; y: 2007; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+20  adjusted selparm out of base parm bounds. Phase: 7; Inter: 1355; fleet: 1; base_parm#: 1; y: 2008; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+21  adjusted selparm out of base parm bounds. Phase: 7; Inter: 1355; fleet: 1; base_parm#: 1; y: 2009; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+22  adjusted selparm out of base parm bounds. Phase: 7; Inter: 1355; fleet: 1; base_parm#: 1; y: 2010; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+23  adjusted selparm out of base parm bounds. Phase: 7; Inter: 1355; fleet: 1; base_parm#: 1; y: 2011; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+24  adjusted selparm out of base parm bounds. Phase: 7; Inter: 1355; fleet: 1; base_parm#: 1; y: 2012; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+25  adjusted selparm out of base parm bounds. Phase: 7; Inter: 1355; fleet: 1; base_parm#: 1; y: 2013; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+26  adjusted selparm out of base parm bounds. Phase: 7; Inter: 1355; fleet: 1; base_parm#: 1; y: 2014; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
 27 setting positive forecast relF for forecast only fleet: 3
-28  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2003 16 60 43.6556 61.0161
-29  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2004 16 60 43.6556 61.0161
-30  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2005 16 60 43.6556 61.0161
-31  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2006 16 60 43.6556 61.0161
-32  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2007 16 60 43.6556 61.0161
-33  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2008 16 60 43.6556 61.0161
-34  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2009 16 60 43.6556 61.0161
-35  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2010 16 60 43.6556 61.0161
-36  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2011 16 60 43.6556 61.0161
-37  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2012 16 60 43.6556 61.0161
-38  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2013 16 60 43.6556 61.0161
-39  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2014 16 60 43.6556 61.0161
-40 setting positive forecast relF for forecast only fleet: 3
-41  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2003 16 60 43.6556 61.0161
-42  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2004 16 60 43.6556 61.0161
-43  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2005 16 60 43.6556 61.0161
-44  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2006 16 60 43.6556 61.0161
-45  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2007 16 60 43.6556 61.0161
-46  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2008 16 60 43.6556 61.0161
-47  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2009 16 60 43.6556 61.0161
-48  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2010 16 60 43.6556 61.0161
-49  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2011 16 60 43.6556 61.0161
-50  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2012 16 60 43.6556 61.0161
-51  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2013 16 60 43.6556 61.0161
-52  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2014 16 60 43.6556 61.0161
-53  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2003 16 60 43.6556 61.0161
-54  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2004 16 60 43.6556 61.0161
-55  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2005 16 60 43.6556 61.0161
-56  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2006 16 60 43.6556 61.0161
-57  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2007 16 60 43.6556 61.0161
-58  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2008 16 60 43.6556 61.0161
-59  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2009 16 60 43.6556 61.0161
-60  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2010 16 60 43.6556 61.0161
-61  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2011 16 60 43.6556 61.0161
-62  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2012 16 60 43.6556 61.0161
-63  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2013 16 60 43.6556 61.0161
-64  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2014 16 60 43.6556 61.0161
-65  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2003 16 60 43.6556 61.0161
-66  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2004 16 60 43.6556 61.0161
-67  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2005 16 60 43.6556 61.0161
-68  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2006 16 60 43.6556 61.0161
-69  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2007 16 60 43.6556 61.0161
-70  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2008 16 60 43.6556 61.0161
-71  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2009 16 60 43.6556 61.0161
-72  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2010 16 60 43.6556 61.0161
-73  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2011 16 60 43.6556 61.0161
-74  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2012 16 60 43.6556 61.0161
-75  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2013 16 60 43.6556 61.0161
-76  adjusted selparm out of base parm bounds (Phase, Iter, Parm#, yr, min, max, base, value) 7 2033 1 2014 16 60 43.6556 61.0161
-77  Number_of_active_parameters_on_or_near_bounds: 1
-N warnings: 77
+28 setting positive forecast relF for forecast only fleet: 3
+29  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2003; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+30  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2004; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+31  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2005; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+32  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2006; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+33  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2007; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+34  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2008; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+35  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2009; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+36  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2010; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+37  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2011; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+38  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2012; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+39  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2013; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+40  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2014; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+41 setting positive forecast relF for forecast only fleet: 3
+42  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2003; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+43  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2004; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+44  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2005; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+45  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2006; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+46  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2007; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+47  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2008; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+48  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2009; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+49  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2010; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+50  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2011; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+51  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2012; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+52  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2013; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+53  adjusted selparm out of base parm bounds. Phase: 7; Inter: 2025; fleet: 1; base_parm#: 1; y: 2014; min: 16; max: 60; base: 43.624 timevary_val: 60.1546  Size_DblN_peak_TrawlSouth(1)
+ N parameters are on or within 1% of min-max bound: 1; check results, variance may be suspect
+N warnings: 53
