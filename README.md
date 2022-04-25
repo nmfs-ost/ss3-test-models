@@ -42,7 +42,7 @@ Most of these models have at least 1 unique feature. The table below includes so
 | Sablefish2015 | cubic spline selectivity with male offset | 1 hours, 16 minutes, 4 seconds |
 | seasonal_with_size_comp | uses seasons | 0 hours, 34 minutes, 59 seconds |
 | Simple | Uses sd reporting and mean size-at-age data | 0 hours, 1 minutes, 43 seconds |
-| Simple_Lorenzen | Lorenzen natural morality, extra stddev input (M-at-age) | 0 hours, 2 minutes, 2 seconds |
+| Simple_Lorenzen | Lorenzen natural morality, extra stddev input (M-at-age), tv trends on selectivity (-1,-2,-3) | 0 hours, 2 minutes, 2 seconds |
 | Simple_NoCPUE | No index of abundance | 0 hours, 1 minutes, 35 seconds |
 | Simple_with_Discard | Uses discards | 0 hours, 2 minutes, 7 seconds |
 | Spinydogfish_2011 | Stock Recruitment option 7 (survival 3 parameter)  | 0 hours, 26 minutes, 35 seconds |

@@ -14,7 +14,7 @@
 #_Cond 1 #_Platoon_within/between_stdev_ratio (no read if N_platoons=1)
 #_Cond  1 #vector_platoon_dist_(-1_in_first_val_gives_normal_approx)
 #
-2 # recr_dist_method for parameters:  2=main effects for GP, Area, Settle timing; 3=each Settle entity; 4=none (only when N_GP*Nsettle*pop==1)
+4 # recr_dist_method for parameters:  2=main effects for GP, Area, Settle timing; 3=each Settle entity; 4=none (only when N_GP*Nsettle*pop==1)
 1 # not yet implemented; Future usage: Spawner-Recruitment: 1=global; 2=by area
 1 #  number of recruitment settlement assignments 
 0 # unused option
@@ -34,7 +34,7 @@
 1 #_time-vary parm bound check (1=warn relative to base parm bounds; 3=no bound check); Also see env (3) and dev (5) options to constrain with base bounds
 #
 # AUTOGEN
- 0 0 0 0 0 # autogen: 1st element for biology, 2nd for SR, 3rd for Q, 4th reserved, 5th for selex
+ 0 0 0 0 1 # autogen: 1st element for biology, 2nd for SR, 3rd for Q, 4th reserved, 5th for selex
 # where: 0 = autogen time-varying parms of this category; 1 = read each time-varying parm line; 2 = read then autogen if parm min==-12345
 #
 #_Available timevary codes
@@ -88,7 +88,7 @@
 # Sex: 2  BioPattern: 1  NatMort
  0.05 0.15 0.1 0.1 0.8 0 -3 0 0 0 0 0 0 0 # NatM_Lorenzen_Mal_GP_1
 # Sex: 2  BioPattern: 1  Growth
- 1 45 0 36 10 0 -3 0 0 0 0 0 0 0 # L_at_Amin_Mal_GP_1
+ -10 45 0 36 10 0 -3 0 0 0 0 0 0 0 # L_at_Amin_Mal_GP_1
  40 90 68.1471 70 10 6 4 0 0 0 0 0 0 0 # L_at_Amax_Mal_GP_1
  0.05 0.25 0.197858 0.15 0.8 6 4 0 0 0 0 0 0 0 # VonBert_K_Mal_GP_1
  0.05 0.25 0.1 0.1 0.8 0 -3 0 0 0 0 0 0 0 # CV_young_Mal_GP_1
@@ -98,9 +98,6 @@
  -3 4 3.34694 3.34694 0.8 0 -3 0 0 0 0 0 0 0 # Wtlen_2_Mal_GP_1
 # Hermaphroditism
 #  Recruitment Distribution  
- 0 0 0 0 0 0 -4 0 0 0 0 0 0 0 # RecrDist_GP_1
- 0 0 0 0 0 0 -4 0 0 0 0 0 0 0 # RecrDist_Area_1
- 0 0 0 0 0 0 -4 0 0 0 0 0 0 0 # RecrDist_month_1
 #  Cohort growth dev base
  0.1 10 1 1 1 0 -1 0 0 0 0 0 0 0 # CohortGrowDev
 #  Movement
@@ -239,11 +236,11 @@
 #
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn  #  parm_name
 # 1   FISHERY LenSelex
-            19            80       53.0843            50          0.01             1          2          0          0          0          0          0          0          0  #  Size_inflection_FISHERY(1)
+            19            80       53.0843            50          0.01             1          2          0          0          0          0          0          -1          0  #  Size_inflection_FISHERY(1)
           0.01            60       18.6754            15          0.01             1          3          0          0          0          0          0          0          0  #  Size_95%width_FISHERY(1)
 # 2   SURVEY1 LenSelex
-            19            70       36.2028            30          0.01             1          2          0          0          0          0          0          0          0  #  Size_inflection_SURVEY1(2)
-          0.01            60       6.35114            10          0.01             1          3          0          0          0          0          0          0          0  #  Size_95%width_SURVEY1(2)
+            19            70       36.2028            30          0.01             1          2          0          0          0          0          0          -2          0  #  Size_inflection_SURVEY1(2)
+          0.01            60       6.35114            10          0.01             1          3          0          0          0          0          0          -3          0  #  Size_95%width_SURVEY1(2)
 # 3   SURVEY2 LenSelex
 # 1   FISHERY AgeSelex
              0            40             0             5            99             0        -99          0          0          0          0          0          0          0  #  minage@sel=1_FISHERY(1)
@@ -255,8 +252,17 @@
              0            40             0             5            99             0        -99          0          0          0          0          0          0          0  #  minage@sel=1_SURVEY2(3)
              0            40             0             6            99             0        -99          0          0          0          0          0          0          0  #  maxage@sel=1_SURVEY2(3)
 #_No_Dirichlet parameters
-#_no timevary selex parameters
-#
+# timevary selex parameters 
+#_          LO            HI          INIT         PRIOR         PR_SD       PR_type    PHASE  #  parm_name
+            -4             4             0             0           0.5             0      4  # Size_inflection_FISHERY(1)_TrendFinal_LogstOffset
+            -4             4             0             0           0.5             0      4  # Size_inflection_FISHERY(1)_TrendInfl_LogstOffset
+             1            20             1.002         3             3             0     -4  # Size_inflection_FISHERY(1)_TrendWidth_yrs_
+            19            70       36.2028            30          0.01             0      2  # Size_inflection_SURVEY1(2)_TrendFinal_direct_
+          1971          2001          1983          1986           0.5             0     -4  # Size_inflection_SURVEY1(2)_TrendInfl_yr_
+             1            20             3             3             3             0      4  # Size_inflection_SURVEY1(2)_TrendWidth_yr_
+        0.0001         0.999      0.105703      0.105703           0.5             0      4  # Size_95%width_SURVEY1(2)_TrendFinal_frac_
+        0.0001         0.999           0.5           0.5           0.5             0      4  # Size_95%width_SURVEY1(2)_TrendInfl_frac_
+             1            20             1.009        3             3             0      -4  # Size_95%width_SURVEY1(2)_TrendWidth_yr_
 0   #  use 2D_AR1 selectivity(0/1)
 #_no 2D_AR1 selex offset used
 #
