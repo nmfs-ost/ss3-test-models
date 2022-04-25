@@ -1,5 +1,7 @@
 1 NOTE:  Max data length bin: 90  < max pop len bins: 94; so will accumulate larger pop len bins
 2 NOTE: This model has just one settlement event. Changing to recr_dist_method 4 and removing the recruitment distribution parameters at the end of the MG parms section (below growth parameters) will produce identical results and simplify the model.
 3 parameter init value is less than parameter min 0 < 1 for parm: 14 ; search for <now check> in echoinput for parm_type, will exit if prior requested
-4 Reminder: Number of lamdas !=0.0 and !=1.0:  3
-N warnings: 4
+4 1st iteration warning: ssb(endyr)/ssb(styr)= 0.000324293; suggest start with larger R0 to get near 0.4; or use depletion fleet option
+5 1st iteration warning: catch logL > 50% total logL; check configuration; suggest start with larger R0
+6 Reminder: Number of lamdas !=0.0 and !=1.0:  3
+N warnings: 6
