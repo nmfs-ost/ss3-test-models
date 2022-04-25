@@ -1,7 +1,7 @@
 #V3.30.19.00;_safe;_compile_date:_Apr  4 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
 data.ss #_DataFile 
 control.ss #_Control 
-Run_Date: Mon Apr 25 11:40:18 2022
+Run_Date: Mon Apr 25 15:13:08 2022
 Final_phase: 5  N_iterations: 493
 #_LIKELIHOOD 
 Label logL*Lambda
@@ -36,16 +36,13 @@ Mat_slope_Fem_GP_1 -0.25 0 Fix 0.458333
 Eggs/kg_inter_Fem_GP_1 1 0 Fix 0.666667
 Eggs/kg_slope_wt_Fem_GP_1 0 0 Fix 0.5
 NatM_Lorenzen_Mal_GP_1 0.1 0 Fix 0.499995
-L_at_Amin_Mal_GP_1 0 0 Fix -0.0227273
+L_at_Amin_Mal_GP_1 0 0 Fix 0.181818
 L_at_Amax_Mal_GP_1 68.1647 0.657605 Act 0.563293
 VonBert_K_Mal_GP_1 0.197674 0.0116187 Act 0.738369
 CV_young_Mal_GP_1 0.1 0 Fix 0.249999
 CV_old_Mal_GP_1 0.1 0 Fix 0.249999
 Wtlen_1_Mal_GP_1 2.44e-06 0 Fix 0.5
 Wtlen_2_Mal_GP_1 3.34694 0 Fix 0.906706
-RecrDist_GP_1 0 0 Fix 0
-RecrDist_Area_1 0 0 Fix 0
-RecrDist_month_1 0 0 Fix 0
 CohortGrowDev 1 0 Fix 0.0909091
 FracFemale_GP_1 0.5 0 Fix 0.499999
 #_SPAWN_RECR
