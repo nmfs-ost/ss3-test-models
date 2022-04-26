@@ -47,7 +47,7 @@ Most of these models have at least 1 unique feature. The table below includes so
 | Spinydogfish_2011 | Stock Recruitment option 7 (survival 3 parameter)  | 0 hours, 26 minutes, 35 seconds |
 | tagging_mirrored_sel | Time varying growth using annual deviations, Tagging data and movement parameters, selectivity, environmental variable data | 0 hours, 2 minutes, 49 seconds |
 | three_area | Spatial model with movement | 0 hours, 4 minutes, 32 seconds |
-| two_morph_seas  | 2 area model with 2 growth patterns, 2 seasons, 2 areas | 0 hours, 3 minuts, 10 seconds |
+| two_morph_seas_areas  | 2 area model with 2 growth patterns, 2 seasons, uses generalized size comp | 0 hours, 3 minutes, 35 seconds |
 | three_area_nomove | Spatial model with no movement | 0 hours, 3 minutes, 32 seconds |
 | vermillion_snapper | Uses F method 2 (estimated parameters) | 0 hours, 3 minutes, 42 seconds |
 | vermillion_snapper_F4 | Uses F method 4 | 0 hours, 2 minutes, 52 seconds |
