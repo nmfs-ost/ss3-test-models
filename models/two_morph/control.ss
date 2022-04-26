@@ -240,10 +240,10 @@
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn  #  parm_name
             -7             5     0.0136215             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_SURV_A1(2)
              0           0.5       0.40119          0.05             1             0          4          0          0          0          0          0          0          0  #  Q_extraSD_SURV_A1(2)
-            -7             5      -9.24399             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_RECRSVY_A1(3)
+            -11            5      -9.24399             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_RECRSVY_A1(3)
             -7             5      0.103495             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_SURV_A2(5)
              0           0.5      0.421259          0.05             1             0          4          0          0          0          0          0          0          0  #  Q_extraSD_SURV_A2(5)
-            -7             5      -9.14993             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_RECRSVY_A2(6)
+            -11            5      -9.14993             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_RECRSVY_A2(6)
             -7             5             0             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_Depletion(7)
 #_no timevary Q parameters
 #
