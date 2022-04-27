@@ -24,36 +24,26 @@ Most of these models have at least 1 unique feature. The table below includes so
 
 | Model | Features | Approx. Run Times |
 | ----- | -------- | ----------------- |
-| BigSkate_2019 | Uses F method 3 (hybrid), Cessation growth model, Catchability time blocks, catchability priors,  discard data | 0 hours, 5 minutes, 43 seconds |
-| BlackRf_2015_WA | Uses F method 1 (Pope's approximation), Mirrored selectivity, input variance adjustments | 0 hours, 20 minutes, 7 seconds |
-| BlueDeaconRF_2017 | Mirrored selectivity, selectivity time blocks, input variance adjustment, ageing error| 0 hours, 14 minutes, 36 seconds |
-| Bocaccio_2015 | Mirrored selectivity, Selectivity time blocks, input variance adjustment  | 0 hours, 29 minutes, 56 seconds |
+| BigSkate_2019 | Uses F method 3 (hybrid), Cessation growth model, Catchability time blocks, catchability priors,  Mirrored and DN selectivity, discard data, conditional age at length data, Input var. adjustments | 0 hours, 5 minutes, 43 seconds |
 | CanaryRf_2015 | spatial model with deviations in recruitment allocation, no movement | 0 hours, 46 minutes, 32 seconds |
-| China_2015_Central | Mirrored selectivity, input variance adjustment | 0 hours, 24 minutes, 9 seconds |
-| Darkblotched_2015   |  Maturity option 6 (read length-maturity) | 0 hours, 29 minutes, 12 seconds |
 | Empirical_Wtatage_Age_Selex | Empirical Weight at age model, with empirical (as random walk) age selectivity | 0 hours, 1 minutes, 18 seconds |
 | growth_morphs | Uses 5 platoons, 1 growth pattern| 0 hours, 4 minutes, 38 seconds |
-| growth_timevary | Time-varying growth using time blocks | 0 hours, 0 minutes, 54 seconds |
+| growth_timevary | Time-varying growth using time blocks, Fmethod 1 | 0 hours, 0 minutes, 54 seconds |
 | Hake_2018 | Empirical weight at age model, Dirichlet Multinomial comps weighting, time varying selectivity using annual deviations | 0 hours, 1 minutes, 5 seconds |
 | Hake_2019_semi-parametric_selex | Empirical Weight at age model, with semiparametric (2DAR) selectivity | 0 hours, 1 minutes, 7 seconds |
 | KelpGreenling2015 | Maturity option 6 (read length-maturity), Mirrored selectivity, input variance adjustment | 0 hours, 4 minutes, 59 seconds |
-| Petrale2015 | Catchability annual parameter deviations, Selectivity time blocks, Likelihood emphasis factors (lamdas), Discard data, Mean body size data | 0 hours, 56 minutes, 21 seconds |
-| POP_2017 | Retention selectivity parameters Selectivity time blocks, Logistic selectivity, Likelihood emphasis factors (lamdas)| 0 hours, 31 minutes, 23 seconds |
-| Sablefish2015 | cubic spline selectivity with male offset | 1 hours, 16 minutes, 4 seconds |
+| Sablefish2015 | cubic spline selectivity with male offset, DN length selectivity, special recdev survey | 1 hours, 16 minutes, 4 seconds |
 | Simple | Uses sd reporting and mean size-at-age data | 0 hours, 1 minutes, 43 seconds |
-| Simple_Lorenzen | Lorenzen natural morality, extra stddev input (M-at-age), tv trends on selectivity (-1,-2,-3) | 0 hours, 2 minutes, 2 seconds |
+| Simple_Lorenzen_tv_trend | Lorenzen natural morality, lambdas, extra stddev input (M-at-age), tv trends on selectivity (-1,-2,-3) | 0 hours, 2 minutes, 2 seconds |
 | Simple_NoCPUE | No index of abundance | 0 hours, 1 minutes, 35 seconds |
 | Simple_with_Discard | Uses discards | 0 hours, 2 minutes, 7 seconds |
-| Spinydogfish_2011 | Stock Recruitment option 7 (survival 3 parameter)  | 0 hours, 26 minutes, 35 seconds |
+| Spinydogfish_2011 | Stock Recruitment option 7 (survival 3 parameter), fecundity option 4  | 0 hours, 26 minutes, 35 seconds |
 | tagging_mirrored_sel | Time varying growth using annual deviations, Tagging data and movement parameters, selectivity, environmental variable data | 0 hours, 2 minutes, 49 seconds |
-| three_area | Spatial model with movement | 0 hours, 4 minutes, 32 seconds |
-| two_morph_seas_areas  | 2 area model with 2 growth patterns, 2 seasons, uses generalized size comp | 0 hours, 3 minutes, 35 seconds |
-| three_area_nomove | Spatial model with no movement | 0 hours, 3 minutes, 32 seconds |
+| two_morph_seas_areas  | 2 area model with movement, 2 growth patterns, 2 seasons, uses generalized size comp | 0 hours, 3 minutes, 35 seconds |
+| three_area_nomove | Spatial model with areas, no movement | 0 hours, 3 minutes, 32 seconds |
 | vermillion_snapper | Uses F method 2 (estimated parameters) | 0 hours, 3 minutes, 42 seconds |
 | vermillion_snapper_F4 | Uses F method 4 | 0 hours, 2 minutes, 52 seconds |
-| Widow_2015 | Catchability parameter deviations, Time blocks on selectivity | 0 hours, 35 minutes, 47 seconds |
-| YelloweyeRF_2017 | spatial age-structured production model, no movement | 0 hours, 44 minutes, 0 seconds |
-| YellowtailRF_2017 | Selectivity time blocks, Dummy observations in indices of abundance (to get expected values), Discard data | 0 hours, 26 minutes, 22 seconds |
+| Widow_2015 | maturity option 2, Catchability parameter deviations (other models use), Time blocks on selectivity (other models use) | 0 hours, 35 minutes, 47 seconds |
 
 # Code of conduct
 
