@@ -25,7 +25,6 @@ Most of these models have at least 1 unique feature. The table below includes so
 | Model | Features | Approx. Run Times |
 | ----- | -------- | ----------------- |
 | BigSkate_2019 | Uses F method 3 (hybrid), Cessation growth model, Catchability time blocks, catchability priors,  Mirrored and DN selectivity, discard data, conditional age at length data, Input var. adjustments | 0 hours, 5 minutes, 43 seconds |
-| CanaryRf_2015 | spatial model with deviations in recruitment allocation, no movement | 0 hours, 46 minutes, 32 seconds |
 | Empirical_Wtatage_Age_Selex | Empirical Weight at age model, with empirical (as random walk) age selectivity | 0 hours, 1 minutes, 18 seconds |
 | growth_morphs | Uses 5 platoons, 1 growth pattern| 0 hours, 4 minutes, 38 seconds |
 | growth_timevary | Time-varying growth using time blocks, Fmethod 1 | 0 hours, 0 minutes, 54 seconds |
@@ -39,8 +38,8 @@ Most of these models have at least 1 unique feature. The table below includes so
 | Simple_with_Discard | Uses discards | 0 hours, 2 minutes, 7 seconds |
 | Spinydogfish_2011 | Stock Recruitment option 7 (survival 3 parameter), fecundity option 4  | 0 hours, 4 minutes, 48 seconds |
 | tagging_mirrored_sel | Time varying growth using annual deviations, Tagging data and movement parameters, selectivity, environmental variable data | 0 hours, 2 minutes, 49 seconds |
-| two_morph_seas_areas  | 2 area model with movement, 2 growth patterns, 2 seasons, uses generalized size comp | 0 hours, 3 minutes, 35 seconds |
 | three_area_nomove | Spatial model with areas, no movement | 0 hours, 3 minutes, 32 seconds |
+| two_morph_seas_areas  | 2 area model with movement, 2 growth patterns, 2 seasons, uses generalized size comp | 0 hours, 3 minutes, 35 seconds |
 | vermillion_snapper | Uses F method 2 (estimated parameters) | 0 hours, 3 minutes, 42 seconds |
 | vermillion_snapper_F4 | Uses F method 4 | 0 hours, 2 minutes, 52 seconds |
 
