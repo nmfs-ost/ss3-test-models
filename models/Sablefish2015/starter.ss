@@ -27,7 +27,7 @@
 1 # MCeval burn interval
 1 # MCeval thin interval
 0 # jitter initial parm value by this fraction
-1898 # min yr for sdreport outputs (-1 for styr); #_1898
+-1 # min yr for sdreport outputs (-1 for styr)
 2026 # max yr for sdreport outputs (-1 for endyr+1; -2 for endyr+Nforecastyrs); #_2026
 0 # N individual STD years 
 #vector of year values 

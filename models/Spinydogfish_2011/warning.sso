@@ -8,18 +8,8 @@
 8 fishing fleet: 8 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
 9 NOTE:  Max data length bin: 132  < max pop len bins: 136; so will accumulate larger pop len bins
 10 NOTE: This model has just one settlement event. Changing to recr_dist_method 4 and removing the recruitment distribution parameters at the end of the MG parms section (below growth parameters) will produce identical results and simplify the model.
-11 parameter init value is less than parameter min -15.3714 < -15 for parm: 9 ; search for <now check> in echoinput for parm_type, will exit if prior requested
-12 parameter init value is greater than parameter max 1 > 0 for parm: 19 ; search for <now check> echoinput for parm_type, will exit if prior requested
-13 parameter init value is less than parameter min -1 < 0 for parm: 20 ; search for <now check> in echoinput for parm_type, will exit if prior requested
-14 parameter init value is greater than parameter max 1 > 0 for parm: 33 ; search for <now check> echoinput for parm_type, will exit if prior requested
-15 parameter init value is less than parameter min -1 < 0 for parm: 34 ; search for <now check> in echoinput for parm_type, will exit if prior requested
-16 parameter init value is greater than parameter max 1 > 0 for parm: 59 ; search for <now check> echoinput for parm_type, will exit if prior requested
-17 parameter init value is less than parameter min -1 < 0 for parm: 60 ; search for <now check> in echoinput for parm_type, will exit if prior requested
-18 parameter init value is greater than parameter max 1 > 0 for parm: 61 ; search for <now check> echoinput for parm_type, will exit if prior requested
-19 parameter init value is less than parameter min -1 < 0 for parm: 62 ; search for <now check> in echoinput for parm_type, will exit if prior requested
-20 fleet: 1  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 4
-21 fleet: 3  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 6
-22 fleet: 5  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 6
-23 Fmsy/mey is <1/3 of Fspr are you sure?  check for convergence 
- N parameters are on or within 1% of min-max bound: 1; check results, variance may be suspect
-N warnings: 23
+11 fleet: 1  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 4
+12 fleet: 3  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 6
+13 fleet: 5  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 6
+14 Fmsy/mey is <1/3 of Fspr are you sure?  check for convergence 
+N warnings: 14

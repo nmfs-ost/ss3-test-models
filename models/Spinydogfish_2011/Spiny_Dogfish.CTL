@@ -26,7 +26,7 @@
 1 #_Nblock_Patterns
  1 #_blocks_per_pattern 
 # begin and end years of blocks
- 1915 1915
+ 1980 1980
 #
 # controls for all timevary parameters 
 1 #_time-vary parm bound check (1=warn relative to base parm bounds; 3=no bound check); Also see env (3) and dev (5) options to constrain with base bounds
@@ -127,7 +127,7 @@
              0             2             0             1            99             0         -5          0          0          0          0          0          0          0 # SR_autocorr
 #_no timevary SR parameters
 1 #do_recdev:  0=none; 1=devvector (R=F(SSB)+dev); 2=deviations (R=F(SSB)+dev); 3=deviations (R=R0*dev; dev2=R-f(SSB)); 4=like 3 with sum(dev2) adding penalty
-1916 # first year of main recr_devs; early devs can preceed this era
+1980 # first year of main recr_devs; early devs can preceed this era
 2010 # last year of main recr_devs; forecast devs start in following year
 -1 #_recdev phase 
 1 # (0/1) to read 13 advanced options
@@ -135,8 +135,8 @@
  -3 #_recdev_early_phase
  -5 #_forecast_recruitment phase (incl. late recr) (0 value resets to maxphase+1)
  1 #_lambda for Fcast_recr_like occurring before endyr+1
- 1950 #_last_yr_nobias_adj_in_MPD; begin of ramp
- 1960 #_first_yr_fullbias_adj_in_MPD; begin of plateau
+ 1980 #_last_yr_nobias_adj_in_MPD; begin of ramp
+ 1990 #_first_yr_fullbias_adj_in_MPD; begin of plateau
  2008 #_last_yr_fullbias_adj_in_MPD
  2009 #_end_yr_for_ramp_in_MPD (can be in forecast to shape ramp, but SS3 sets bias_adj to 0.0 for fcast yrs)
  0.9 #_max_bias_adj_in_MPD (typical ~0.8; -3 sets all years to 0.0; -2 sets all non-forecast yrs w/ estimated recdevs to 1.0; -1 sets biasadj=1.0 for all yrs w/ recdevs)
@@ -300,8 +300,8 @@
             -9             9      -5.50316            -7            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_MIDWATER(3)
           -999          -999          -999             0            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_end_logit_MIDWATER(3)
 # 4   A-SHOP LenSelex
-             0             0             1             0            99             0        -99          0          0          0          0        0.5          0          0  #  SizeSel_P1_A-SHOP(4)
-             0             0            -1             0            99             0        -99          0          0          0          0        0.5          0          0  #  SizeSel_P2_A-SHOP(4)
+             0             2             1             0            99             0        -99          0          0          0          0        0.5          0          0  #  SizeSel_P1_A-SHOP(4)
+             -2             0            -1             0            99             0        -99          0          0          0          0        0.5          0          0  #  SizeSel_P2_A-SHOP(4)
 # 5   HKL LenSelex
             20           120       105.098           110            99             6          1          0          0          0          0        0.5          0          0  #  Size_DblN_peak_HKL(5)
             -6             4            -1            -1            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_HKL(5)
@@ -314,11 +314,11 @@
             -6             4            -1            -1            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_Hkl_Discard(6)
             -1             9       5.13232             5            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_Hkl_Discard(6)
             -1             9             5             5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_Hkl_Discard(6)
-            -5             9      -4.99978            -3            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_Hkl_Discard(6)
+            -5             9         -4.99            -3            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_Hkl_Discard(6)
             -5             9             9            -5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_end_logit_Hkl_Discard(6)
 # 7   OTHERS LenSelex
-             0             0             1             0            99             0        -99          0          0          0          0        0.5          0          0  #  SizeSel_P1_OTHERS(7)
-             0             0            -1             0            99             0        -99          0          0          0          0        0.5          0          0  #  SizeSel_P2_OTHERS(7)
+             0             2             1             0            99             0        -99          0          0          0          0        0.5          0          0  #  SizeSel_P1_OTHERS(7)
+             -2             0            -1             0            99             0        -99          0          0          0          0        0.5          0          0  #  SizeSel_P2_OTHERS(7)
 # 8   RECREATIONAL LenSelex
             20           120       109.508           110            99             6          1          0          0          0          0        0.5          0          0  #  Size_DblN_peak_RECREATIONAL(8)
             -6             4            -1            -1            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_RECREATIONAL(8)
@@ -348,11 +348,11 @@
             -5             9            -5            -5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_NWFSC_shelf_slope(11)
             -5             9             9            -5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_end_logit_NWFSC_shelf_slope(11)
 # 12   NWFSC_slope LenSelex
-             0             0             1             0            99             0        -99          0          0          0          0        0.5          0          0  #  SizeSel_P1_NWFSC_slope(12)
-             0             0            -1             0            99             0        -99          0          0          0          0        0.5          0          0  #  SizeSel_P2_NWFSC_slope(12)
+             0             2             1             0            99             0        -99          0          0          0          0        0.5          0          0  #  SizeSel_P1_NWFSC_slope(12)
+             -2             0            -1             0            99             0        -99          0          0          0          0        0.5          0          0  #  SizeSel_P2_NWFSC_slope(12)
 # 13   IPHC LenSelex
-             0             0             1             0            99             0        -99          0          0          0          0        0.5          0          0  #  SizeSel_P1_IPHC(13)
-             0             0            -1             0            99             0        -99          0          0          0          0        0.5          0          0  #  SizeSel_P2_IPHC(13)
+             0             2             1             0            99             0        -99          0          0          0          0        0.5          0          0  #  SizeSel_P1_IPHC(13)
+             -2             0            -1             0            99             0        -99          0          0          0          0        0.5          0          0  #  SizeSel_P2_IPHC(13)
 # 1   TRAWL AgeSelex
              0             1             0           0.1            99             0        -99          0          0          0          0        0.5          0          0  #  minage@sel=1_TRAWL(1)
              0           100            95           100            99             0        -99          0          0          0          0        0.5          0          0  #  maxage@sel=1_TRAWL(1)
