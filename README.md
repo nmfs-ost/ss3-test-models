@@ -37,7 +37,7 @@ Most of these models have at least 1 unique feature. The table below includes so
 | Simple_Lorenzen_tv_trend | Lorenzen natural morality, lambdas, extra stddev input (M-at-age), tv trends on selectivity (-1,-2,-3) | 0 hours, 2 minutes, 2 seconds |
 | Simple_NoCPUE | No index of abundance | 0 hours, 1 minutes, 35 seconds |
 | Simple_with_Discard | Uses discards | 0 hours, 2 minutes, 7 seconds |
-| Spinydogfish_2011 | Stock Recruitment option 7 (survival 3 parameter), fecundity option 4  | 0 hours, 26 minutes, 35 seconds |
+| Spinydogfish_2011 | Stock Recruitment option 7 (survival 3 parameter), fecundity option 4  | 0 hours, 4 minutes, 48 seconds |
 | tagging_mirrored_sel | Time varying growth using annual deviations, Tagging data and movement parameters, selectivity, environmental variable data | 0 hours, 2 minutes, 49 seconds |
 | two_morph_seas_areas  | 2 area model with movement, 2 growth patterns, 2 seasons, uses generalized size comp | 0 hours, 3 minutes, 35 seconds |
 | three_area_nomove | Spatial model with areas, no movement | 0 hours, 3 minutes, 32 seconds |
