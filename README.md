@@ -43,7 +43,6 @@ Most of these models have at least 1 unique feature. The table below includes so
 | three_area_nomove | Spatial model with areas, no movement | 0 hours, 3 minutes, 32 seconds |
 | vermillion_snapper | Uses F method 2 (estimated parameters) | 0 hours, 3 minutes, 42 seconds |
 | vermillion_snapper_F4 | Uses F method 4 | 0 hours, 2 minutes, 52 seconds |
-| Widow_2015 | maturity option 2, Catchability parameter deviations (other models use), Time blocks on selectivity (other models use) | 0 hours, 35 minutes, 47 seconds |
 
 # Code of conduct
 

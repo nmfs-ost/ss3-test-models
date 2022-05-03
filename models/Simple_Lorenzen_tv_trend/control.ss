@@ -60,7 +60,7 @@
 0 #_SD_add_to_LAA (set to 0.1 for SS2 V1.x compatibility)
 0 #_CV_Growth_Pattern:  0 CV=f(LAA); 1 CV=F(A); 2 SD=F(LAA); 3 SD=F(A); 4 logSD=F(A)
 #
-1 #_maturity_option:  1=length logistic; 2=age logistic; 3=read age-maturity matrix by growth_pattern; 4=read age-fecundity; 5=disabled; 6=read length-maturity
+2 #_maturity_option:  1=length logistic; 2=age logistic; 3=read age-maturity matrix by growth_pattern; 4=read age-fecundity; 5=disabled; 6=read length-maturity
 1 #_First_Mature_Age
 1 #_fecundity option:(1)eggs=Wt*(a+b*Wt);(2)eggs=a*L^b;(3)eggs=a*Wt^b; (4)eggs=a+b*L; (5)eggs=a+b*W
 0 #_hermaphroditism option:  0=none; 1=female-to-male age-specific fxn; -1=male-to-female age-specific fxn
@@ -81,8 +81,8 @@
  -3 3 2.44e-06 2.44e-06 0.8 0 -3 0 0 0 0 0 0 0 # Wtlen_1_Fem_GP_1
  -3 4 3.34694 3.34694 0.8 0 -3 0 0 0 0 0 0 0 # Wtlen_2_Fem_GP_1
 # Sex: 1  BioPattern: 1  Maturity&Fecundity
- 50 60 55 55 0.8 0 -3 0 0 0 0 0 0 0 # Mat50%_Fem_GP_1
- -3 3 -0.25 -0.25 0.8 0 -3 0 0 0 0 0 0 0 # Mat_slope_Fem_GP_1
+ 1 20 8 8 0.8 0 -3 0 0 0 0 0 0 0 # Mat50%_Fem_GP_1
+ -3 3 -1 -0.25 0.8 0 -3 0 0 0 0 0 0 0 # Mat_slope_Fem_GP_1
  -3 3 1 1 0.8 0 -3 0 0 0 0 0 0 0 # Eggs/kg_inter_Fem_GP_1
  -3 3 0 0 0.8 0 -3 0 0 0 0 0 0 0 # Eggs/kg_slope_wt_Fem_GP_1
 # Sex: 2  BioPattern: 1  NatMort
@@ -323,12 +323,12 @@
  0 1 2001 15 # Selectivity: (1) 0 to skip or fleet, (2) 1=len/2=age/3=combined, (3) year, (4) N selex bins; NOTE: combined reports in age bins
  0 0 # Growth: (1) 0 to skip or growth pattern, (2) growth ages; NOTE: does each sex
  0 2001 0 # Numbers-at-age: (1) 0 or area(-1 for all), (2) year, (3) N ages;  NOTE: sums across morphs
- 1 14 # Mortality: (1) 0 to skip or growth pattern, (2) N ages for mortality; NOTE: does each sex
+ 1 13 # Mortality: (1) 0 to skip or growth pattern, (2) N ages for mortality; NOTE: does each sex
 1 # Dyn Bzero: 0 to skip, 1 to include, or 2 to add recr
 0 # SmryBio: 0 to skip, 1 to include
  # -1 # list of bin #'s for selex std (-1 in first bin to self-generate)
  # -1 # list of ages for growth std (-1 in first bin to self-generate)
  # -1 # list of ages for NatAge std (-1 in first bin to self-generate)
- 1 2 3 4 5 6 7 8 9 10 15 20 30 40 # vector with NatM std ages picks (-1 in first bin to self-generate)
+ 1 2 3 4 6 7 8 9 10 15 20 30 40 # vector with NatM std ages picks (-1 in first bin to self-generate)
 999
 
