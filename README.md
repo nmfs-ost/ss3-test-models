@@ -32,7 +32,7 @@ Most of these models have at least 1 unique feature. The table below includes so
 | Hake_2018 | Empirical weight at age model, Dirichlet Multinomial comps weighting, time varying selectivity using annual deviations | 0 hours, 1 minutes, 5 seconds |
 | Hake_2019_semi-parametric_selex | Empirical Weight at age model, with semiparametric (2DAR) selectivity | 0 hours, 1 minutes, 7 seconds |
 | KelpGreenling2015 | Maturity option 6 (read length-maturity), Mirrored selectivity, input variance adjustment | 0 hours, 4 minutes, 59 seconds |
-| Sablefish2015 | cubic spline selectivity with male offset, DN length selectivity, special recdev survey | 1 hours, 16 minutes, 4 seconds |
+| Sablefish2015 | cubic spline selectivity with male offset, DN length selectivity, special recdev survey | 0 hours, 13 minutes, 9 seconds |
 | Simple | Uses sd reporting and mean size-at-age data | 0 hours, 1 minutes, 43 seconds |
 | Simple_Lorenzen_tv_trend | Lorenzen natural morality, lambdas, extra stddev input (M-at-age), tv trends on selectivity (-1,-2,-3) | 0 hours, 2 minutes, 2 seconds |
 | Simple_NoCPUE | No index of abundance | 0 hours, 1 minutes, 35 seconds |
