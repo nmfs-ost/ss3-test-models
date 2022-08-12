@@ -178,12 +178,12 @@ compare_ss_runs <- function(mod_name = "ss_mod",
   maxgrad <- extract_max_grad(par_file)
   ref_maxgrad <- extract_max_grad(ref_par_file)
   
-  # get infor from the warning file
+  # get info from the warning file
   extract_nwarn <- function(warn_file) {
     warn <- readLines(warn_file)
-    warnstring <- grep("N warnings: ", warn, value = TRUE)
+    warnstring <- grep("(N )*[Ww]arnings: ", warn, value = TRUE)
     if(length(warnstring) > 0) {
-      nwarn <- as.numeric(strsplit(warnstring, "N warnings: ")[[1]][2])
+      nwarn <- as.numeric(strsplit(warnstring, "(N )*[Ww]arnings: ")[[1]][2])
     } else {
       nwarn <- NA
     }
