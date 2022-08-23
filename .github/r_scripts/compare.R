@@ -185,7 +185,12 @@ compare_ss_runs <- function(mod_name = "ss_mod",
     if(length(warnstring) > 0) {
       nwarn <- as.numeric(strsplit(warnstring, "(N )*[Ww]arnings: ")[[1]][2])
     } else {
+      warnstring <- grep("^\\d+ warning(s)*", warn, value = TRUE)
+      if(length(warnstring) > 0) {
+        nwarn <- as.numeric(strsplit(warnstring, " warning")[[1]][1])
+      } else {
       nwarn <- NA
+      }
     }
   }
   nwarn <- extract_nwarn(warn_file)
@@ -293,11 +298,11 @@ compare_ss_runs <- function(mod_name = "ss_mod",
       message(mod_name, ": Nwarnings changed from ", tmp_old_val," to ",
               tmp_new_val)
     }
-  } else {
-    message(mod_name, ": N warnings was not written. This may indicate that", 
-            " the model did not run all the way through.")
-    write_fail <- TRUE
-  }
+  } #else { # turn this on to fail the job if N warnings is not written
+    #message(mod_name, ": N warnings was not written. This may indicate that", 
+    #        " the model did not run all the way through.")
+    #write_fail <- TRUE
+  #}
   if(abs(tmp_df[tmp_df$quantity == paste0("Bratio_", lyr_mod), "diff"]) > 0.001 ) {
     write_fail <- TRUE
   }
