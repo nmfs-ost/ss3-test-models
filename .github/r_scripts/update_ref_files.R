@@ -1,8 +1,11 @@
+# function to update the reference files in the models subfolder. 
+# assumes the working directory is the test-models repository.
+
 # inputs to change ----
 ss_exe <- "ss_3.30.19" # path to model that is in the computer PATH variable
+update_model_string <- "3.30.19" # the model version updating to.
 
-# function to update the reference files in the models subfolder
-
+# Update the reference files
 update_ref_files <- function(new_mod_path, ss_examples_folder = getwd()) {
   mod_name <- basename(new_mod_path)
   git_mod_path <- file.path(ss_examples_folder, "models", mod_name)
@@ -44,13 +47,14 @@ new_mod_path_list <- list.dirs(new_mod_runs_folder, recursive = FALSE,
                                full.names = TRUE)
 run_results <- lapply(new_mod_path_list, update_ref_files)
 
-# check all have been replaced with 3.30.19 summary files
+# check all have been replaced with the correct version of summary files
+# want to double check this before overwriting the files!!
 git_mods <- list.dirs("models", recursive = FALSE, full.names = TRUE)
 first_line <- lapply(git_mods, function (x) {
    ss_sum <- readLines(file.path(x, "ss_summary.sso"))
-   version <- grep("3.30.19", ss_sum, fixed = TRUE)
+   version <- grep(update_model_string , ss_sum, fixed = TRUE)
    if (!(1 %in% version)) {
-     message("3.30.19 not found on first line for ", x)
+     message(update_model_string, " not found on first line for ", x)
    }
    return(ss_sum[1])
  })
