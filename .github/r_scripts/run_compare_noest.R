@@ -1,13 +1,6 @@
 source(".github/r_scripts/compare.R")
 # get model folder names
 mod_names <- list.dirs("model_runs", full.names = FALSE, recursive = FALSE)
-# remove models b/c the results often shift and the models are likely 
-# overparameterized
-# also temporarily add 4 models with NAs to see if job works
-to_rm_mod_names <- c("Bocaccio_2015", "CanaryRf_2015", "CanaryRf_2015_recrdist"
-                     )
-to_rm <- which(mod_names %in% to_rm_mod_names)
-mod_names <- mod_names[-to_rm]
 message("Will compare ref runs to new results for these models:")
 print(mod_names)
 message("Notable changes in total likelihood, max gradients, ",
