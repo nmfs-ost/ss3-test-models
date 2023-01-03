@@ -1,14 +1,14 @@
-#V3.30.19.00;_safe;_compile_date:_Apr  4 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#V3.30.20.00;_safe;_compile_date:_Sep 30 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.0
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
 #_User_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
 #_Source_code_at:_https://github.com/nmfs-stock-synthesis/stock-synthesis
 
-#_Start_time: Tue Apr 12 10:38:28 2022
+#_Start_time: Thu Dec 29 11:08:19 2022
 #_echo_input_data
 #C 2019 Hake data file
-#V3.30.19.00;_safe;_compile_date:_Apr  4 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#V3.30.20.00;_safe;_compile_date:_Sep 30 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.0
 1966 #_StartYr
 2018 #_EndYr
 1 #_Nseas
@@ -153,8 +153,8 @@
 #_addtocomp:  after accumulation of tails; this value added to all bins
 #_combM+F: males and females treated as combined gender below this bin number 
 #_compressbins: accumulate upper tail by this number of bins; acts simultaneous with mintailcomp; set=0 for no forced accumulation
-#_Comp_Error:  0=multinomial, 1=dirichlet
-#_ParmSelect:  parm number for dirichlet
+#_Comp_Error:  0=multinomial, 1=dirichlet using Theta*n, 2=dirichlet using beta, 3=MV_Tweedie
+#_ParmSelect:  consecutive index for dirichlet or MV_Tweedie
 #_minsamplesize: minimum sample size; set to 1 to match 3.24, minimum value is 0.001
 #
 #_mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
@@ -266,8 +266,8 @@
 #_addtocomp:  after accumulation of tails; this value added to all bins
 #_combM+F: males and females treated as combined gender below this bin number 
 #_compressbins: accumulate upper tail by this number of bins; acts simultaneous with mintailcomp; set=0 for no forced accumulation
-#_Comp_Error:  0=multinomial, 1=dirichlet
-#_ParmSelect:  parm number for dirichlet
+#_Comp_Error:  0=multinomial, 1=dirichlet using Theta*n, 2=dirichlet using beta, 3=MV_Tweedie
+#_ParmSelect:  consecutive index for dirichlet or MV_Tweedie
 #_minsamplesize: minimum sample size; set to 1 to match 3.24, minimum value is 0.001
 #
 #_mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
@@ -341,7 +341,8 @@
 # -2 in yr will subtract mean for that env_var; -1 will subtract mean and divide by stddev (e.g. Z-score)
 #Yr Variable Value
 #
-0 # N sizefreq methods to read 
+# Sizefreq data. Defined by method because a fleet can use multiple methods
+0 # N sizefreq methods to read (or -1 for expanded options)
 # 
 0 # do tags (0/1/2); where 2 allows entry of TG_min_recap
 #

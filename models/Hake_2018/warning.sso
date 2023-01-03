@@ -1,3 +1,5 @@
-1 NOTE: This model has just one settlement event. Changing to recr_dist_method 4 and removing the recruitment distribution parameters at the end of the MG parms section (below growth parameters) will produce identical results and simplify the model.
-2 Minimum pop size bin:_10; is > L at Amin for sex: 1; Gpat: 1; L= 5
-N warnings: 2
+Note 1 Suggestion: This model has just one settlement event. Changing to recr_dist_method 4 and removing the recruitment distribution parameters at the end of the MG parms section (below growth parameters) will produce identical results and simplify the model.
+Warning 1 : Minimum pop size bin:_10; is > L at Amin for sex: 1; Gpat: 1; L= 5
+Warning 2 : 1st iteration warning: catch logL > 50% total logL; check configuration; suggest start with larger R0
+Warning 3 : Final gradient: 9.27284e-05 is larger than final_conv: 1e-05
+ 3 warnings  and 1 note 
