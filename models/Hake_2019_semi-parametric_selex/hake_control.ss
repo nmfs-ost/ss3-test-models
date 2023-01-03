@@ -1,4 +1,4 @@
-#V3.30.19.00;_safe;_compile_date:_Apr  4 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#V3.30.20.00;_safe;_compile_date:_Sep 30 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.0
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
@@ -46,7 +46,7 @@
 #
 # setup for M, growth, wt-len, maturity, fecundity, (hermaphro), recr_distr, cohort_grow, (movement), (age error), (catch_mult), sex ratio 
 #_NATMORT
-0 #_natM_type:_0=1Parm; 1=N_breakpoints;_2=Lorenzen;_3=agespecific;_4=agespec_withseasinterpolate;_5=BETA:_Maunder_link_to_maturity
+0 #_natM_type:_0=1Parm; 1=N_breakpoints;_2=Lorenzen;_3=agespecific;_4=agespec_withseasinterpolate;_5=BETA:_Maunder_link_to_maturity;_6=Lorenzen_range
   #_no additional input for selected M option; read 1P per morph
 #
 1 # GrowthModel: 1=vonBert with L1&L2; 2=Richards with L1&L2; 3=age_specific_K_incr; 4=age_specific_K_decr; 5=age_specific_K_each; 6=NA; 7=NA; 8=growth cessation
@@ -61,7 +61,8 @@
 5 #_maturity_option:  1=length logistic; 2=age logistic; 3=read age-maturity matrix by growth_pattern; 4=read age-fecundity; 5=disabled; 6=read length-maturity
 #_Age_Fecundity by growth pattern from wt-at-age.ss now invoked by read bodywt flag
 2 #_First_Mature_Age
-1 #_fecundity option:(1)eggs=Wt*(a+b*Wt);(2)eggs=a*L^b;(3)eggs=a*Wt^b; (4)eggs=a+b*L; (5)eggs=a+b*W
+# NOTE: maturity options 4 and 5 cause fecundity_at_length to be ignored, but parameters still needed 
+1 #_fecundity_at_length option:(1)eggs=Wt*(a+b*Wt);(2)eggs=a*L^b;(3)eggs=a*Wt^b; (4)eggs=a+b*L; (5)eggs=a+b*W
 0 #_hermaphroditism option:  0=none; 1=female-to-male age-specific fxn; -1=male-to-female age-specific fxn
 1 #_parameter_offset_approach for M, G, CV_G:  1- direct, no offset**; 2- male=fem_parm*exp(male_parm); 3: male=female*exp(parm) then old=young*exp(parm)
 #_** in option 1, any male parameter with value = 0.0 and phase <0 is set equal to female parameter
@@ -85,7 +86,7 @@
  -3 3 1 1 99 0 -50 0 0 0 0 0 0 0 # Eggs/kg_inter_Fem_GP_1
  -3 3 0 0 99 0 -50 0 0 0 0 0 0 0 # Eggs/kg_slope_wt_Fem_GP_1
 # Hermaphroditism
-#  Recruitment Distribution  
+#  Recruitment Distribution 
  0 2 1 1 99 0 -50 0 0 0 0 0 0 0 # RecrDist_GP_1
  0 2 1 1 99 0 -50 0 0 0 0 0 0 0 # RecrDist_Area_1
  0 2 1 1 99 0 -50 0 0 0 0 0 0 0 # RecrDist_month_1
@@ -141,7 +142,7 @@
 #
 # all recruitment deviations
 #  1946E 1947E 1948E 1949E 1950E 1951E 1952E 1953E 1954E 1955E 1956E 1957E 1958E 1959E 1960E 1961E 1962E 1963E 1964E 1965E 1966E 1967E 1968E 1969E 1970R 1971R 1972R 1973R 1974R 1975R 1976R 1977R 1978R 1979R 1980R 1981R 1982R 1983R 1984R 1985R 1986R 1987R 1988R 1989R 1990R 1991R 1992R 1993R 1994R 1995R 1996R 1997R 1998R 1999R 2000R 2001R 2002R 2003R 2004R 2005R 2006R 2007R 2008R 2009R 2010R 2011R 2012R 2013R 2014R 2015R 2016R 2017R 2018F 2019F 2020F 2021F
-#  -0.638727 -0.233327 -0.27759 -0.328171 -0.385398 -0.449503 -0.519459 -0.598239 -0.681495 -0.766236 -0.855079 -0.941696 -1.02321 -1.09212 -1.13009 -1.10767 -1.00084 -0.838852 -0.592852 -0.253497 -0.134137 0.751922 0.530935 -0.432698 1.80416 -0.215577 -0.765808 1.51235 -1.08936 0.334433 -1.6476 1.65322 -2.10159 0.0961473 2.68657 -1.49328 -1.44259 -0.843937 2.45061 -2.16414 -1.80027 1.69445 0.659607 -2.12067 1.29927 0.145397 -2.16173 1.04896 1.10852 0.156048 0.546198 -0.0655828 0.565274 2.48384 -1.11512 0.081509 -3.50209 0.372415 -2.42658 0.842202 0.583983 -3.50362 1.54185 0.230955 2.52033 -0.869476 -0.0844442 -1.05911 1.75542 -2.28634 2.17715 2.40807 0 0 0 0
+#  -0.638727 -0.233327 -0.27759 -0.328171 -0.385398 -0.449503 -0.519459 -0.598239 -0.681495 -0.766236 -0.855079 -0.941696 -1.02321 -1.09212 -1.13009 -1.10767 -1.00084 -0.838852 -0.592852 -0.253497 -0.134137 0.751922 0.530935 -0.432698 1.80416 -0.215577 -0.765808 1.51235 -1.08936 0.334433 -1.6476 1.65322 -2.10159 0.0961473 2.68657 -1.49328 -1.44259 -0.843937 2.45061 -2.16414 -1.80027 1.69445 0.659607 -2.12067 1.29927 0.145397 -2.16173 1.04896 1.10852 0.156048 0.546198 -0.0655828 0.565274 2.48384 -1.11512 0.081509 -3.50209 0.372415 -2.42658 0.842202 0.583983 -3.50362 1.54185 0.230955 2.52033 -0.869476 -0.0844441 -1.05911 1.75542 -2.28634 2.17715 2.40807 0 0 0 0
 #
 #Fishing Mortality info 
 0.1 # F ballpark value in units of annual_F
@@ -268,10 +269,10 @@
             -5             9             0            -1          0.01             0         -2          0          0          0          0          0          0          0  #  AgeSel_P19_Acoustic_Survey(2)
             -5             9             0            -1          0.01             0         -2          0          0          0          0          0          0          0  #  AgeSel_P20_Acoustic_Survey(2)
             -5             9             0            -1          0.01             0         -2          0          0          0          0          0          0          0  #  AgeSel_P21_Acoustic_Survey(2)
-#_Dirichlet parameters
+#_Dirichlet and/or MV Tweedie parameters for composition error
 #_multiple_fleets_can_refer_to_same_parm;_but_list_cannot_have_gaps
-            -5            20     -0.205575             0            99             0          2          0          0          0          0          0          0          0  #  ln(DM_theta)_1
-            -5            20       2.39745             0            99             0          2          0          0          0          0          0          0          0  #  ln(DM_theta)_2
+            -5            20     -0.205575             0            99             0          2          0          0          0          0          0          0          0  #  ln(DM_theta)_Age_P1
+            -5            20       2.39745             0            99             0          2          0          0          0          0          0          0          0  #  ln(DM_theta)_Age_P2
 #_no timevary selex parameters
 #
 1   #  use 2D_AR1 selectivity(0/1)

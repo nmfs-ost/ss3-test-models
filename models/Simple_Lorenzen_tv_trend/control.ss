@@ -1,4 +1,4 @@
-#V3.30.19.00;_safe;_compile_date:_Apr  4 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#V3.30.20.00;_safe;_compile_date:_Sep 30 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.0
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
@@ -48,7 +48,7 @@
 #
 # setup for M, growth, wt-len, maturity, fecundity, (hermaphro), recr_distr, cohort_grow, (movement), (age error), (catch_mult), sex ratio 
 #_NATMORT
-2 #_natM_type:_0=1Parm; 1=N_breakpoints;_2=Lorenzen;_3=agespecific;_4=agespec_withseasinterpolate;_5=BETA:_Maunder_link_to_maturity
+2 #_natM_type:_0=1Parm; 1=N_breakpoints;_2=Lorenzen;_3=agespecific;_4=agespec_withseasinterpolate;_5=BETA:_Maunder_link_to_maturity;_6=Lorenzen_range
 5 #_reference age for Lorenzen M; read 1P per morph
 #
 1 # GrowthModel: 1=vonBert with L1&L2; 2=Richards with L1&L2; 3=age_specific_K_incr; 4=age_specific_K_decr; 5=age_specific_K_each; 6=NA; 7=NA; 8=growth cessation
@@ -62,7 +62,7 @@
 #
 2 #_maturity_option:  1=length logistic; 2=age logistic; 3=read age-maturity matrix by growth_pattern; 4=read age-fecundity; 5=disabled; 6=read length-maturity
 1 #_First_Mature_Age
-1 #_fecundity option:(1)eggs=Wt*(a+b*Wt);(2)eggs=a*L^b;(3)eggs=a*Wt^b; (4)eggs=a+b*L; (5)eggs=a+b*W
+1 #_fecundity_at_length option:(1)eggs=Wt*(a+b*Wt);(2)eggs=a*L^b;(3)eggs=a*Wt^b; (4)eggs=a+b*L; (5)eggs=a+b*W
 0 #_hermaphroditism option:  0=none; 1=female-to-male age-specific fxn; -1=male-to-female age-specific fxn
 1 #_parameter_offset_approach for M, G, CV_G:  1- direct, no offset**; 2- male=fem_parm*exp(male_parm); 3: male=female*exp(parm) then old=young*exp(parm)
 #_** in option 1, any male parameter with value = 0.0 and phase <0 is set equal to female parameter
@@ -72,9 +72,9 @@
 # Sex: 1  BioPattern: 1  NatMort
  0.05 0.15 0.1 0.1 0.8 0 -3 0 0 0 0 0 0 0 # NatM_Lorenzen_Fem_GP_1
 # Sex: 1  BioPattern: 1  Growth
- -10 45 18.709 36 10 6 2 0 0 0 0 0 0 0 # L_at_Amin_Fem_GP_1
- 40 90 69.6411 70 10 6 4 0 0 0 0 0 0 0 # L_at_Amax_Fem_GP_1
- 0.05 0.25 0.174263 0.15 0.8 6 4 0 0 0 0 0 0 0 # VonBert_K_Fem_GP_1
+ -10 45 18.6195 36 10 6 2 0 0 0 0 0 0 0 # L_at_Amin_Fem_GP_1
+ 40 90 69.6313 70 10 6 4 0 0 0 0 0 0 0 # L_at_Amax_Fem_GP_1
+ 0.05 0.25 0.174697 0.15 0.8 6 4 0 0 0 0 0 0 0 # VonBert_K_Fem_GP_1
  0.05 0.25 0.1 0.1 0.8 0 -3 0 0 0 0 0 0 0 # CV_young_Fem_GP_1
  0.05 0.25 0.1 0.1 0.8 0 -3 0 0 0 0 0 0 0 # CV_old_Fem_GP_1
 # Sex: 1  BioPattern: 1  WtLen
@@ -89,15 +89,15 @@
  0.05 0.15 0.1 0.1 0.8 0 -3 0 0 0 0 0 0 0 # NatM_Lorenzen_Mal_GP_1
 # Sex: 2  BioPattern: 1  Growth
  -10 45 0 36 10 0 -3 0 0 0 0 0 0 0 # L_at_Amin_Mal_GP_1
- 40 90 68.1471 70 10 6 4 0 0 0 0 0 0 0 # L_at_Amax_Mal_GP_1
- 0.05 0.25 0.197858 0.15 0.8 6 4 0 0 0 0 0 0 0 # VonBert_K_Mal_GP_1
+ 40 90 68.1566 70 10 6 4 0 0 0 0 0 0 0 # L_at_Amax_Mal_GP_1
+ 0.05 0.25 0.197797 0.15 0.8 6 4 0 0 0 0 0 0 0 # VonBert_K_Mal_GP_1
  0.05 0.25 0.1 0.1 0.8 0 -3 0 0 0 0 0 0 0 # CV_young_Mal_GP_1
  0.05 0.25 0.1 0.1 0.8 0 -3 0 0 0 0 0 0 0 # CV_old_Mal_GP_1
 # Sex: 2  BioPattern: 1  WtLen
  -3 3 2.44e-06 2.44e-06 0.8 0 -3 0 0 0 0 0 0 0 # Wtlen_1_Mal_GP_1
  -3 4 3.34694 3.34694 0.8 0 -3 0 0 0 0 0 0 0 # Wtlen_2_Mal_GP_1
 # Hermaphroditism
-#  Recruitment Distribution  
+#  Recruitment Distribution 
 #  Cohort growth dev base
  0.1 10 1 1 1 0 -1 0 0 0 0 0 0 0 # CohortGrowDev
 #  Movement
@@ -118,8 +118,8 @@
 0  # 0/1 to use steepness in initial equ recruitment calculation
 0  #  future feature:  0/1 to make realized sigmaR a function of SR curvature
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn #  parm_name
-             3            31        8.6962          10.3            10             0          1          0          0          0          0          0          0          0 # SR_LN(R0)
-           0.2             1      0.887575           0.7          0.05             1          4          0          0          0          0          0          0          0 # SR_BH_steep
+             3            31       8.70422          10.3            10             0          1          0          0          0          0          0          0          0 # SR_LN(R0)
+           0.2             1      0.908453           0.7          0.05             1          4          0          0          0          0          0          0          0 # SR_BH_steep
              0             2           0.6           0.8           0.8             0         -4          0          0          0          0          0          0          0 # SR_sigmaR
             -5             5             0             0             1             0         -4          0          0          0          0          0          0          0 # SR_regime
              0             0             0             0             0             0        -99          0          0          0          0          0          0          0 # SR_autocorr
@@ -150,7 +150,7 @@
 #
 # all recruitment deviations
 #  1971R 1972R 1973R 1974R 1975R 1976R 1977R 1978R 1979R 1980R 1981R 1982R 1983R 1984R 1985R 1986R 1987R 1988R 1989R 1990R 1991R 1992R 1993R 1994R 1995R 1996R 1997R 1998R 1999R 2000R 2001R 2002F 2003F 2004F 2005F 2006F 2007F 2008F 2009F 2010F 2011F
-#  0.585247 -0.067501 0.372757 -0.0106324 -0.0362691 1.04024 0.0930413 0.242778 0.562973 0.365661 0.285731 -0.000490555 -0.29382 -0.225971 0.516518 0.65766 0.16652 0.165305 -0.391822 0.489333 -0.791274 -0.499777 -1.12541 0.104746 -0.76763 0.177363 0.820835 -0.758602 -0.866582 -0.213591 -0.59734 0 0 0 0 0 0 0 0 0 0
+#  0.557638 -0.0578552 0.362366 -0.0151945 -0.084857 1.0347 0.0998959 0.178576 0.585213 0.328713 0.264043 0.00211143 -0.317762 -0.275359 0.5387 0.616048 0.167451 0.126508 -0.38388 0.477042 -0.799698 -0.482284 -1.08797 0.120857 -0.744913 0.227023 0.846245 -0.719482 -0.811161 -0.175045 -0.577672 0 0 0 0 0 0 0 0 0 0
 #
 #Fishing Mortality info 
 0.3 # F ballpark value in units of annual_F
@@ -166,7 +166,7 @@
 # F rates by fleet x season
 # Yr:  1971 1972 1973 1974 1975 1976 1977 1978 1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011
 # seas:  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-# FISHERY 0 0.00230191 0.0115638 0.0116477 0.0235479 0.0360236 0.0494548 0.06424 0.0807463 0.11431 0.155166 0.17103 0.189526 0.211752 0.239755 0.276972 0.328394 0.354723 0.373283 0.376241 0.360085 0.254275 0.260361 0.269941 0.285963 0.311269 0.252738 0.267681 0.279913 0.285154 0.285293 0.00466386 0.0195715 0.0294587 0.0361359 0.04101 0.0450075 0.048571 0.0518074 0.0546993 0.0572261
+# FISHERY 0 0.0022671 0.0113886 0.0114717 0.0231951 0.0354908 0.0487347 0.0633166 0.0795962 0.112701 0.153024 0.168742 0.187119 0.209294 0.237456 0.275925 0.332104 0.366265 0.391248 0.397313 0.381504 0.269405 0.275326 0.284641 0.300385 0.325527 0.263091 0.277307 0.288437 0.291832 0.289056 5.4243e-06 0.000227799 0.017411 0.0302829 0.038368 0.0429092 0.04575 0.0480776 0.0504265 0.0528655
 #
 #_Q_setup for fleets with cpue or survey data
 #_1:  fleet number
@@ -182,9 +182,9 @@
 #
 #_Q_parms(if_any);Qunits_are_ln(q)
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn  #  parm_name
-            -7             5      0.611302             0             1             0          1          0          0          0          0          0          0          0  #  LnQ_base_SURVEY1(2)
+            -7             5      0.608697             0             1             0          1          0          0          0          0          0          0          0  #  LnQ_base_SURVEY1(2)
              0           0.5             0          0.05             1             0         -4          0          0          0          0          0          0          0  #  Q_extraSD_SURVEY1(2)
-            -7             5      -6.70376             0             1             0          1          0          0          0          0          0          0          0  #  LnQ_base_SURVEY2(3)
+            -7             5      -6.74037             0             1             0          1          0          0          0          0          0          0          0  #  LnQ_base_SURVEY2(3)
 #_no timevary Q parameters
 #
 #_size_selex_patterns
@@ -236,11 +236,11 @@
 #
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn  #  parm_name
 # 1   FISHERY LenSelex
-            19            80       53.0843            50          0.01             1          2          0          0          0          0          0          -1          0  #  Size_inflection_FISHERY(1)
-          0.01            60       18.6754            15          0.01             1          3          0          0          0          0          0          0          0  #  Size_95%width_FISHERY(1)
+            19            80       52.5941            50          0.01             1          2          0          0          0          0          0         -1          0  #  Size_inflection_FISHERY(1)
+          0.01            60       18.9713            15          0.01             1          3          0          0          0          0          0          0          0  #  Size_95%width_FISHERY(1)
 # 2   SURVEY1 LenSelex
-            19            70       36.2028            30          0.01             1          2          0          0          0          0          0          -2          0  #  Size_inflection_SURVEY1(2)
-          0.01            60       6.35114            10          0.01             1          3          0          0          0          0          0          -3          0  #  Size_95%width_SURVEY1(2)
+            19            70       35.4808            30          0.01             1          2          0          0          0          0          0         -2          0  #  Size_inflection_SURVEY1(2)
+          0.01            60       5.52236            10          0.01             1          3          0          0          0          0          0         -3          0  #  Size_95%width_SURVEY1(2)
 # 3   SURVEY2 LenSelex
 # 1   FISHERY AgeSelex
              0            40             0             5            99             0        -99          0          0          0          0          0          0          0  #  minage@sel=1_FISHERY(1)
@@ -254,15 +254,17 @@
 #_No_Dirichlet parameters
 # timevary selex parameters 
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type    PHASE  #  parm_name
-            -4             4             0             0           0.5             0      4  # Size_inflection_FISHERY(1)_TrendFinal_LogstOffset
-            -4             4             0             0           0.5             0      4  # Size_inflection_FISHERY(1)_TrendInfl_LogstOffset
-             1            20             1.002         3             3             0     -4  # Size_inflection_FISHERY(1)_TrendWidth_yrs_
-            19            70       36.2028            30          0.01             0      2  # Size_inflection_SURVEY1(2)_TrendFinal_direct_
-          1971          2001          1983          1986           0.5             0     -4  # Size_inflection_SURVEY1(2)_TrendInfl_yr_
-             1            20             3             3             3             0      4  # Size_inflection_SURVEY1(2)_TrendWidth_yr_
-        0.0001         0.999      0.105703      0.105703           0.5             0      4  # Size_95%width_SURVEY1(2)_TrendFinal_frac_
-        0.0001         0.999           0.5           0.5           0.5             0      4  # Size_95%width_SURVEY1(2)_TrendInfl_frac_
-             1            20             1.009        3             3             0      -4  # Size_95%width_SURVEY1(2)_TrendWidth_yr_
+            -4             4     0.0497443             0           0.5             0      4  # Size_inflection_FISHERY(1)_TrendFinal_LogstOffset
+            -4             4     -0.262747             0           0.5             0      4  # Size_inflection_FISHERY(1)_TrendInfl_LogstOffset
+             1            20         1.002             3             3             0      -4  # Size_inflection_FISHERY(1)_TrendWidth_yrs_
+            19            70       36.5523            30          0.01             0      2  # Size_inflection_SURVEY1(2)_TrendFinal_direct_
+          1971          2001          1983          1986           0.5             0      -4  # Size_inflection_SURVEY1(2)_TrendInfl_yr_
+             1            20       10.6023             3             3             0      4  # Size_inflection_SURVEY1(2)_TrendWidth_yr_
+        0.0001         0.999      0.114366      0.105703           0.5             0      4  # Size_95%width_SURVEY1(2)_TrendFinal_frac_
+        0.0001         0.999      0.542378           0.5           0.5             0      4  # Size_95%width_SURVEY1(2)_TrendInfl_frac_
+             1            20         1.009             3             3             0      -4  # Size_95%width_SURVEY1(2)_TrendWidth_yr_
+# info on dev vectors created for selex parms are reported with other devs after tag parameter section 
+#
 0   #  use 2D_AR1 selectivity(0/1)
 #_no 2D_AR1 selex offset used
 #
@@ -270,9 +272,13 @@
 0  # TG_custom:  0=no read and autogen if tag data exist; 1=read
 #_Cond -6 6 1 1 2 0.01 -4 0 0 0 0 0 0 0  #_placeholder if no parameters
 #
-# no timevary parameters
-#
-#
+# deviation vectors for timevary parameters
+#  base   base first block   block  env  env   dev   dev   dev   dev   dev
+#  type  index  parm trend pattern link  var  vectr link _mnyr  mxyr phase  dev_vector
+#      5     1     1    -1     0     0     0     0     0     0     0     0
+#      5     3     4    -2     0     0     0     0     0     0     0     0
+#      5     4     7    -3     0     0     0     0     0     0     0     0
+     #
 # Input variance adjustments factors: 
  #_1=add_to_survey_CV
  #_2=add_to_discard_stddev

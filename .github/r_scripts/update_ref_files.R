@@ -1,9 +1,12 @@
 # function to update the reference files in the models subfolder. 
 # assumes the working directory is the test-models repository.
-
+#install.packages("r4ss")
+#install.packages("SSutils")
+library(r4ss)
+library(SSutils)
 # inputs to change ----
-ss_exe <- "ss_3.30.19" # path to model that is in the computer PATH variable
-update_model_string <- "3.30.19" # the model version updating to.
+ss_exe <- "C:/SS/ss_3.30.20.exe" # path to model that is in the computer PATH variable
+update_model_string <- "3.30.20" # the model version updating to.
 
 # functions to use ----
 
@@ -79,4 +82,3 @@ r4ss::populate_multiple_folders(outerdir.old = "new_models",
 
 # cleanup ----
 unlink("new_models", recursive = TRUE)
-

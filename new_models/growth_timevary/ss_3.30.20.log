@@ -1,0 +1,86 @@
+
+ - final statistics:
+1 variables; iteration 0; function evaluation 0
+Function value 4.1254e+02; maximum gradient component mag 1.9929e-02
+Exit code = 0;  converg criter 1.0000e+01
+
+ - final statistics:
+6 variables; iteration 0; function evaluation 0
+Function value 4.1254e+02; maximum gradient component mag -1.2796e-01
+Exit code = 0;  converg criter 1.0000e+01
+
+ - final statistics:
+31 variables; iteration 0; function evaluation 0
+Function value 4.1254e+02; maximum gradient component mag -1.2796e-01
+Exit code = 0;  converg criter 1.0000e+00
+
+ - final statistics:
+36 variables; iteration 0; function evaluation 0
+Function value 4.1278e+02; maximum gradient component mag -1.2796e-01
+Exit code = 0;  converg criter 1.0000e+00
+
+ - final statistics:
+36 variables; iteration 0; function evaluation 0
+Function value 4.1278e+02; maximum gradient component mag -1.2796e-01
+Exit code = 0;  converg criter 1.0000e+00
+
+Initial statistics: 44 variables; iteration 0; function evaluation 0; phase 6
+Function value 4.1277611e+02; maximum gradient component mag -1.2796e-01
+
+Intermediate statistics: 44 variables; iteration 20; function evaluation 29; phase 6
+Function value 4.1277611e+02; maximum gradient component mag 2.9298e-03
+44 variables; iteration 40; function evaluation 54; phase 6
+Function value 4.1277611e+02; maximum gradient component mag -2.8524e-06
+
+ - final statistics:
+44 variables; iteration 43; function evaluation 57
+Function value 4.1278e+02; maximum gradient component mag -1.3716e-08
+Exit code = 1;  converg criter 1.0000e-07
+Estimating row 1 out of 44 for hessian
+Estimating row 2 out of 44 for hessian
+Estimating row 3 out of 44 for hessian
+Estimating row 4 out of 44 for hessian
+Estimating row 5 out of 44 for hessian
+Estimating row 6 out of 44 for hessian
+Estimating row 7 out of 44 for hessian
+Estimating row 8 out of 44 for hessian
+Estimating row 9 out of 44 for hessian
+Estimating row 10 out of 44 for hessian
+Estimating row 11 out of 44 for hessian
+Estimating row 12 out of 44 for hessian
+Estimating row 13 out of 44 for hessian
+Estimating row 14 out of 44 for hessian
+Estimating row 15 out of 44 for hessian
+Estimating row 16 out of 44 for hessian
+Estimating row 17 out of 44 for hessian
+Estimating row 18 out of 44 for hessian
+Estimating row 19 out of 44 for hessian
+Estimating row 20 out of 44 for hessian
+Estimating row 21 out of 44 for hessian
+Estimating row 22 out of 44 for hessian
+Estimating row 23 out of 44 for hessian
+Estimating row 24 out of 44 for hessian
+Estimating row 25 out of 44 for hessian
+Estimating row 26 out of 44 for hessian
+Estimating row 27 out of 44 for hessian
+Estimating row 28 out of 44 for hessian
+Estimating row 29 out of 44 for hessian
+Estimating row 30 out of 44 for hessian
+Estimating row 31 out of 44 for hessian
+Estimating row 32 out of 44 for hessian
+Estimating row 33 out of 44 for hessian
+Estimating row 34 out of 44 for hessian
+Estimating row 35 out of 44 for hessian
+Estimating row 36 out of 44 for hessian
+Estimating row 37 out of 44 for hessian
+Estimating row 38 out of 44 for hessian
+Estimating row 39 out of 44 for hessian
+Estimating row 40 out of 44 for hessian
+Estimating row 41 out of 44 for hessian
+Estimating row 42 out of 44 for hessian
+Estimating row 43 out of 44 for hessian
+Estimating row 44 out of 44 for hessian
+size of file gradfil1.tmp = 0
+size of file gradfil2.tmp = 0
+size of file varssave.tmp = 0
+size of file cmpdiff.tmp = 0
