@@ -1,4 +1,0 @@
-1 NOTE:  Max data length bin: 90  < max pop len bins: 94; so will accumulate larger pop len bins
-2 NOTE: This model has just one settlement event. Changing to recr_dist_method 4 and removing the recruitment distribution parameters at the end of the MG parms section (below growth parameters) will produce identical results and simplify the model.
-3 Reminder: Number of lamdas !=0.0 and !=1.0:  1
-N warnings: 3

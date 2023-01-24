@@ -59,10 +59,11 @@ jobs:
           if (!all(model_runs$results == "ran model")) {
             stop("Not all models ran successfully.") # unknown run status is possible
           }
-
+          
           evict <- paste(
-            "[a-x]\\.sso",       # Stops at x so ss_summary.sso is not included
-            "^ss\\.[a-z0-9]{3}", # ss.xxx files, where xxx is an extension
+            "[a-fh-x]\\.sso",    # Stops at f and x so ss_summary.sso and warning.sso aren't included
+            "^ss\\.[a-z][0-9]",  # ss.xxx files, where xxx is an extension except ss.par
+            "^ss\\.[a-oq-z]",    # ss.xxx files, where xxx is an extension except ss.par
             "expval",            # expected values data_expval.ss
             "ss_new",            # new input files
             "\\.txt",            # .txt extension
@@ -84,6 +85,7 @@ jobs:
           }
 
           files_remove(mod_dirs, pattern = evict)
+
         shell: Rscript {0}
 
 

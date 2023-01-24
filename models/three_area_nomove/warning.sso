@@ -1,8 +1,0 @@
-1 fishing fleet: 1 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-2 fishing fleet: 2 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-3 NOTE: recr_dist_method 3 is simpler and takes 1 parm for each settlement
-4 bias adjustment ramp extends into forecast; biasadj set to 0.0 internally for forecast years
-5 setting in starter does not request all priors, and 26 parameters have priors and are not estimated, so their prior not included in obj_fun.
-6 Forecast F capped by max possible F from control file: 1.5
-7 Forecast F capped by max possible F from control file: 1.5
-N warnings: 7
