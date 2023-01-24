@@ -1,5 +1,0 @@
-1 NOTE:  Max data length bin: 200  < max pop len bins: 250; so will accumulate larger pop len bins
-2 Block:2 13 ends in: 2030 after retroyr+1:  2019
-3 parameter init value is less than parameter min -0.13155 < -0.09 for parm: 11 ; search for <now check> in echoinput for parm_type, will exit if prior requested
-4 parameter init value is less than parameter min 0 < 0.001 for parm: 12 ; search for <now check> in echoinput for parm_type, will exit if prior requested
-N warnings: 4

@@ -1,7 +1,0 @@
-1 bias adjustment ramp extends into forecast; biasadj set to 0.0 internally for forecast years
-2 mean recruitment for forecast is incompatible with pos. phase for forecast rec_devs; set phase to neg. unless using late rec_devs
-3 fleet: 9  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 9
-4 setting positive forecast relF for bycatch fleet: 4
-5 setting positive forecast relF for bycatch fleet: 4
-6 setting positive forecast relF for bycatch fleet: 4
-N warnings: 6

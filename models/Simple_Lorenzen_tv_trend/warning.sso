@@ -1,5 +1,0 @@
-1 NOTE:  Max data length bin: 90  < max pop len bins: 94; so will accumulate larger pop len bins
-2 1st iteration warning: ssb(endyr)/ssb(styr)= 1.9033e-05; suggest start with larger R0 to get near 0.4; or use depletion fleet option
-3 1st iteration warning: catch logL > 50% total logL; check configuration; suggest start with larger R0
-4 Reminder: Number of lamdas !=0.0 and !=1.0:  3
-N warnings: 4

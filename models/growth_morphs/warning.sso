@@ -1,7 +1,0 @@
-1 fishing fleet: 1 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-2 NOTE: This model has just one settlement event. Changing to recr_dist_method 4 and removing the recruitment distribution parameters at the end of the MG parms section (below growth parameters) will produce identical results and simplify the model.
-3 bias adjustment ramp extends into forecast; biasadj set to 0.0 internally for forecast years
-4 Fleet:_1 min bound on parameter for size at peak is 5; which is < min databin (22), so illogical.
-5 Fleet:_2 min bound on parameter for size at peak is 5; which is < min databin (22), so illogical.
-6 setting in starter does not request all priors, and 29 parameters have priors and are not estimated, so their prior not included in obj_fun.
-N warnings: 6
