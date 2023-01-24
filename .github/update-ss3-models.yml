@@ -1,0 +1,95 @@
+name: update-test-models
+on: push
+
+jobs:
+  update-user-example-models:
+    runs-on: ubuntu-latest
+    env:
+      R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      R_KEEP_PKG_SOURCE: yes
+
+    steps:
+
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      
+      - name: install libcurl
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev
+
+      - name: setup R  
+        uses: r-lib/actions/setup-r@v2
+      
+      - name: install remotes
+        run: Rscript -e 'install.packages("remotes")'
+
+      - name: install r4ss
+        run: Rscript -e 'remotes::install_github("r4ss/r4ss")'
+      
+      - name: install SSutils
+        run: Rscript -e 'remotes::install_github("r4ss/SSutils")'
+        
+      - name: Get the latest SS3 executable
+        run:  wget -O ss https://github.com/nmfs-stock-synthesis/stock-synthesis/releases/latest/download/ss_linux
+          
+      - name: move ss to path
+        run: |
+          echo "ss" >> $GITHUB_PATH
+     
+      - name: run models
+        run: |
+          # first part: update the reference files.
+          # run models first
+          dirs_test <- list.dirs(recursive = FALSE)
+          mod_dir_name <- dirs_test[grepl("model", dirs_test)]
+          mod_dir_name <- gsub(".*\\./", "", mod_dir_name)
+          mod_dirs <- list.dirs(dirs_test[grepl("model", dirs_test)], recursive = FALSE)
+
+          r4ss::populate_multiple_folders(outerdir.old = mod_dir_name,
+                                          outerdir.new = mod_dir_name,
+                                          exe.file = NULL, verbose = FALSE)
+          # use the parallel version to speed up model runs 
+          model_runs <- SSutils::run_SS_models_parallel(dirvec = mod_dirs,
+                                          model = "ss", exe_in_path = TRUE, 
+                                          parallel = TRUE, verbose = TRUE)
+
+          # test that all the models ran successfully
+          if (!all(model_runs$results == "ran model")) {
+            stop("Not all models ran successfully.") # unknown run status is possible
+          }
+
+          evict <- paste(
+            "[a-x]\\.sso",       # Stops at x so ss_summary.sso is not included
+            "^ss\\.[a-z0-9]{3}", # ss.xxx files, where xxx is an extension
+            "expval",            # expected values data_expval.ss
+            "ss_new",            # new input files
+            "\\.txt",            # .txt extension
+            "admodel",
+            "runnumber",
+            "log",
+            "boot",
+            sep = "|"
+          )
+
+          files_remove <- function(directory, pattern = "ss_summary.sso") {
+            file.remove(dir(
+              path = directory,
+              recursive = TRUE,
+              pattern = pattern,
+              full.names = TRUE
+            ))
+            return(invisible())
+          }
+
+          files_remove(mod_dirs, pattern = evict)
+        shell: Rscript {0}
+
+
+      - name: Create Pull Request 
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit_message: Update model files to new ss exe
+          branch: add-update-workflow-new
+          title: 'Update model files to new ss exe'
