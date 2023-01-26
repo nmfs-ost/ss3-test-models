@@ -1,4 +1,4 @@
-#V3.30.19.00;_safe;_compile_date:_Apr  4 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#V3.30.20.00;_safe;_compile_date:_Sep 30 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.0
 #C forecast file written by R function SS_writeforecast
 #C rerun model to get more complete formatting in forecast.ss_new
 #C should work with SS version: SSv3.21_or_later
@@ -11,7 +11,7 @@
 0.4 # Biomass target (e.g. 0.40)
 #_Bmark_years: beg_bio, end_bio, beg_selex, end_selex, beg_relF, end_relF, beg_recr_dist, end_recr_dist, beg_SRparm, end_SRparm (enter actual year, or values of 0 or -integer to be rel. endyr)
  2012 2014 2012 2014 2012 2014 -999 2014 -999 2014
-#  2012 2014 2012 2014 2012 2014 -999 2014 -999 2014
+#  2012 2014 2012 2014 2012 2014 1970 2014 1970 2014
 # value <0 convert to endyr-value; except -999 converts to start_yr; must be >=start_yr and <=endyr
 2 #Bmark_relF_Basis: 1 = use year range; 2 = set relF same as forecast below
 #
@@ -21,12 +21,12 @@
 1 # Fmult (only used for Do_Forecast==5) such that apical_F(f)=Fmult*relF(f)
 #_Fcast_years:  beg_selex, end_selex, beg_relF, end_relF, beg_mean recruits, end_recruits  (enter actual year, or values of 0 or -integer to be rel. endyr)
  2012 2014 2012 2014 -999 0
-#  2012 2014 2012 2014 -999 2014
+#  2012 2014 2012 2014 1970 2014
 0 # Forecast selectivity (0=fcast selex is mean from year range; 1=fcast selectivity from annual time-vary parms)
 1 # Control rule method (0: none; 1: ramp does catch=f(SSB), buffer on F; 2: ramp does F=f(SSB), buffer on F; 3: ramp does catch=f(SSB), buffer on catch; 4: ramp does F=f(SSB), buffer on catch) 
 # values for top, bottom and buffer exist, but not used when Policy=0
-0.4 # Control rule Biomass level for constant F (as frac of Bzero, e.g. 0.40); (Must be > the no F level below) 
-0.1 # Control rule Biomass level for no F (as frac of Bzero, e.g. 0.10) 
+0.4 # Control rule inflection for constant F (as frac of Bzero, e.g. 0.40); must be > control rule cutoff, or set to -1 to use Bmsy/SSB_unf 
+0.1 # Control rule cutoff for no F (as frac of Bzero, e.g. 0.10) 
 0.913 # Buffer:  enter Control rule target as fraction of Flimit (e.g. 0.75), negative value invokes list of [year, scalar] with filling from year to YrMax 
 3 #_N forecast loops (1=OFL only; 2=ABC; 3=get F from forecast ABC catch with allocations applied)
 3 #_First forecast loop with stochastic recruitment
@@ -43,9 +43,9 @@
 2 # basis for fcast catch tuning and for fcast catch caps and allocation  (2=deadbio; 3=retainbio; 5=deadnum; 6=retainnum); NOTE: same units for all fleets
 # Conditional input if relative F choice = 2
 # enter list of:  season,  fleet, relF; if used, terminate with season=-9999
-# 1 1 0.0529991
-# 1 2 0.0687834
-# 1 3 0.878217
+# 1 1 0.0372999
+# 1 2 0.150047
+# 1 3 0.812653
 # -9999 0 0  # terminator for list of relF
 # enter list of: fleet number, max annual catch for fleets with a max; terminate with fleet=-9999
 -9999 -1

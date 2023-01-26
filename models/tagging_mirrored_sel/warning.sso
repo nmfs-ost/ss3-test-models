@@ -1,0 +1,150 @@
+Warning 1 : fishing fleet: 1 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+Warning 2 : fishing fleet: 2 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+Warning 3 : fishing fleet: 3 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+Warning 4 : fishing fleet: 4 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+Warning 5 : fishing fleet: 5 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
+Note 1 Information: Max data length bin: 180  < max pop len bins: 245; so will accumulate larger pop len bins
+Note 2 Suggestion: This model has just one settlement event. Changing to recr_dist_method 4 and removing the recruitment distribution parameters at the end of the MG parms section (below growth parameters) will produce identical results and simplify the model.
+Warning 6 : parameter init value is less than parameter min -17.6973 < -1 for parm: 51; search for <now check> in echoinput.sso for parm_type
+Warning 7 : parameter init value is less than parameter min -14.3325 < -1 for parm: 52; search for <now check> in echoinput.sso for parm_type
+Warning 8 : parameter init value is less than parameter min -11.5543 < -1 for parm: 53; search for <now check> in echoinput.sso for parm_type
+Warning 9 : parameter init value is less than parameter min -9.24508 < -1 for parm: 54; search for <now check> in echoinput.sso for parm_type
+Warning 10 : parameter init value is less than parameter min -7.31939 < -1 for parm: 55; search for <now check> in echoinput.sso for parm_type
+Warning 11 : parameter init value is less than parameter min -5.71317 < -1 for parm: 56; search for <now check> in echoinput.sso for parm_type
+Warning 12 : parameter init value is less than parameter min -4.37719 < -1 for parm: 57; search for <now check> in echoinput.sso for parm_type
+Warning 13 : parameter init value is less than parameter min -3.27279 < -1 for parm: 58; search for <now check> in echoinput.sso for parm_type
+Warning 14 : parameter init value is less than parameter min -2.36906 < -1 for parm: 59; search for <now check> in echoinput.sso for parm_type
+Warning 15 : parameter init value is less than parameter min -1.64089 < -1 for parm: 60; search for <now check> in echoinput.sso for parm_type
+Warning 16 : parameter init value is less than parameter min -1.06761 < -1 for parm: 61; search for <now check> in echoinput.sso for parm_type
+Warning 17 : parameter init value is less than parameter min -1.07666 < -1 for parm: 71; search for <now check> in echoinput.sso for parm_type
+Warning 18 : parameter init value is less than parameter min -1.4766 < -1 for parm: 72; search for <now check> in echoinput.sso for parm_type
+Warning 19 : parameter init value is less than parameter min -1.92839 < -1 for parm: 73; search for <now check> in echoinput.sso for parm_type
+Warning 20 : parameter init value is less than parameter min -2.42857 < -1 for parm: 74; search for <now check> in echoinput.sso for parm_type
+Warning 21 : parameter init value is less than parameter min -2.97402 < -1 for parm: 75; search for <now check> in echoinput.sso for parm_type
+Warning 22 : parameter init value is less than parameter min -3.56192 < -1 for parm: 76; search for <now check> in echoinput.sso for parm_type
+Warning 23 : parameter init value is less than parameter min -4.18968 < -1 for parm: 77; search for <now check> in echoinput.sso for parm_type
+Warning 24 : parameter init value is less than parameter min -4.85496 < -1 for parm: 78; search for <now check> in echoinput.sso for parm_type
+Warning 25 : parameter init value is less than parameter min -5.55561 < -1 for parm: 79; search for <now check> in echoinput.sso for parm_type
+Warning 26 : parameter init value is less than parameter min -6.28968 < -1 for parm: 80; search for <now check> in echoinput.sso for parm_type
+Warning 27 : parameter init value is less than parameter min -7.05536 < -1 for parm: 81; search for <now check> in echoinput.sso for parm_type
+Warning 28 : parameter init value is less than parameter min -7.85098 < -1 for parm: 82; search for <now check> in echoinput.sso for parm_type
+Warning 29 : parameter init value is less than parameter min -8.67499 < -1 for parm: 83; search for <now check> in echoinput.sso for parm_type
+Warning 30 : parameter init value is less than parameter min -9.526 < -1 for parm: 84; search for <now check> in echoinput.sso for parm_type
+Warning 31 : parameter init value is less than parameter min -10.4027 < -1 for parm: 85; search for <now check> in echoinput.sso for parm_type
+Warning 32 : parameter init value is less than parameter min -11.3038 < -1 for parm: 86; search for <now check> in echoinput.sso for parm_type
+Warning 33 : parameter init value is less than parameter min -12.2282 < -1 for parm: 87; search for <now check> in echoinput.sso for parm_type
+Warning 34 : parameter init value is less than parameter min -13.1749 < -1 for parm: 88; search for <now check> in echoinput.sso for parm_type
+Warning 35 : parameter init value is less than parameter min -14.1429 < -1 for parm: 89; search for <now check> in echoinput.sso for parm_type
+Warning 36 : parameter init value is less than parameter min -15.1311 < -1 for parm: 90; search for <now check> in echoinput.sso for parm_type
+Warning 37 : parameter init value is less than parameter min -16.1389 < -1 for parm: 91; search for <now check> in echoinput.sso for parm_type
+Warning 38 : parameter init value is less than parameter min -17.1653 < -1 for parm: 92; search for <now check> in echoinput.sso for parm_type
+Warning 39 : parameter init value is less than parameter min -34.5153 < -1 for parm: 95; search for <now check> in echoinput.sso for parm_type
+Warning 40 : parameter init value is less than parameter min -28.346 < -1 for parm: 96; search for <now check> in echoinput.sso for parm_type
+Warning 41 : parameter init value is less than parameter min -23.356 < -1 for parm: 97; search for <now check> in echoinput.sso for parm_type
+Warning 42 : parameter init value is less than parameter min -19.2491 < -1 for parm: 98; search for <now check> in echoinput.sso for parm_type
+Warning 43 : parameter init value is less than parameter min -15.8283 < -1 for parm: 99; search for <now check> in echoinput.sso for parm_type
+Warning 44 : parameter init value is less than parameter min -12.9561 < -1 for parm: 100; search for <now check> in echoinput.sso for parm_type
+Warning 45 : parameter init value is less than parameter min -10.5324 < -1 for parm: 101; search for <now check> in echoinput.sso for parm_type
+Warning 46 : parameter init value is less than parameter min -8.48245 < -1 for parm: 102; search for <now check> in echoinput.sso for parm_type
+Warning 47 : parameter init value is less than parameter min -6.74856 < -1 for parm: 103; search for <now check> in echoinput.sso for parm_type
+Warning 48 : parameter init value is less than parameter min -5.28554 < -1 for parm: 104; search for <now check> in echoinput.sso for parm_type
+Warning 49 : parameter init value is less than parameter min -4.05723 < -1 for parm: 105; search for <now check> in echoinput.sso for parm_type
+Warning 50 : parameter init value is less than parameter min -3.03427 < -1 for parm: 106; search for <now check> in echoinput.sso for parm_type
+Warning 51 : parameter init value is less than parameter min -2.19248 < -1 for parm: 107; search for <now check> in echoinput.sso for parm_type
+Warning 52 : parameter init value is less than parameter min -1.51169 < -1 for parm: 108; search for <now check> in echoinput.sso for parm_type
+Warning 53 : parameter init value is less than parameter min -1.14432 < -1 for parm: 119; search for <now check> in echoinput.sso for parm_type
+Warning 54 : parameter init value is less than parameter min -1.55811 < -1 for parm: 120; search for <now check> in echoinput.sso for parm_type
+Warning 55 : parameter init value is less than parameter min -2.02485 < -1 for parm: 121; search for <now check> in echoinput.sso for parm_type
+Warning 56 : parameter init value is less than parameter min -2.54124 < -1 for parm: 122; search for <now check> in echoinput.sso for parm_type
+Warning 57 : parameter init value is less than parameter min -3.10426 < -1 for parm: 123; search for <now check> in echoinput.sso for parm_type
+Warning 58 : parameter init value is less than parameter min -3.71117 < -1 for parm: 124; search for <now check> in echoinput.sso for parm_type
+Warning 59 : parameter init value is less than parameter min -4.35945 < -1 for parm: 125; search for <now check> in echoinput.sso for parm_type
+Warning 60 : parameter init value is less than parameter min -5.04681 < -1 for parm: 126; search for <now check> in echoinput.sso for parm_type
+Warning 61 : parameter init value is less than parameter min -5.77114 < -1 for parm: 127; search for <now check> in echoinput.sso for parm_type
+Warning 62 : parameter init value is less than parameter min -6.5305 < -1 for parm: 128; search for <now check> in echoinput.sso for parm_type
+Warning 63 : parameter init value is less than parameter min -7.32307 < -1 for parm: 129; search for <now check> in echoinput.sso for parm_type
+Warning 64 : parameter init value is less than parameter min -8.14721 < -1 for parm: 130; search for <now check> in echoinput.sso for parm_type
+Warning 65 : parameter init value is less than parameter min -9.00138 < -1 for parm: 131; search for <now check> in echoinput.sso for parm_type
+Warning 66 : parameter init value is less than parameter min -9.88414 < -1 for parm: 132; search for <now check> in echoinput.sso for parm_type
+Warning 67 : parameter init value is less than parameter min -10.7942 < -1 for parm: 133; search for <now check> in echoinput.sso for parm_type
+Warning 68 : parameter init value is less than parameter min -11.7302 < -1 for parm: 134; search for <now check> in echoinput.sso for parm_type
+Warning 69 : parameter init value is less than parameter min -12.6911 < -1 for parm: 135; search for <now check> in echoinput.sso for parm_type
+Warning 70 : parameter init value is less than parameter min -13.6758 < -1 for parm: 136; search for <now check> in echoinput.sso for parm_type
+Warning 71 : parameter init value is less than parameter min -14.6833 < -1 for parm: 137; search for <now check> in echoinput.sso for parm_type
+Warning 72 : parameter init value is less than parameter min -15.7126 < -1 for parm: 138; search for <now check> in echoinput.sso for parm_type
+Warning 73 : parameter init value is less than parameter min -43.2078 < -1 for parm: 141; search for <now check> in echoinput.sso for parm_type
+Warning 74 : parameter init value is less than parameter min -35.9024 < -1 for parm: 142; search for <now check> in echoinput.sso for parm_type
+Warning 75 : parameter init value is less than parameter min -29.961 < -1 for parm: 143; search for <now check> in echoinput.sso for parm_type
+Warning 76 : parameter init value is less than parameter min -25.041 < -1 for parm: 144; search for <now check> in echoinput.sso for parm_type
+Warning 77 : parameter init value is less than parameter min -20.9146 < -1 for parm: 145; search for <now check> in echoinput.sso for parm_type
+Warning 78 : parameter init value is less than parameter min -17.4227 < -1 for parm: 146; search for <now check> in echoinput.sso for parm_type
+Warning 79 : parameter init value is less than parameter min -14.4497 < -1 for parm: 147; search for <now check> in echoinput.sso for parm_type
+Warning 80 : parameter init value is less than parameter min -11.9088 < -1 for parm: 148; search for <now check> in echoinput.sso for parm_type
+Warning 81 : parameter init value is less than parameter min -9.73354 < -1 for parm: 149; search for <now check> in echoinput.sso for parm_type
+Warning 82 : parameter init value is less than parameter min -7.87158 < -1 for parm: 150; search for <now check> in echoinput.sso for parm_type
+Warning 83 : parameter init value is less than parameter min -6.2811 < -1 for parm: 151; search for <now check> in echoinput.sso for parm_type
+Warning 84 : parameter init value is less than parameter min -4.92813 < -1 for parm: 152; search for <now check> in echoinput.sso for parm_type
+Warning 85 : parameter init value is less than parameter min -3.7847 < -1 for parm: 153; search for <now check> in echoinput.sso for parm_type
+Warning 86 : parameter init value is less than parameter min -2.82751 < -1 for parm: 154; search for <now check> in echoinput.sso for parm_type
+Warning 87 : parameter init value is less than parameter min -2.03693 < -1 for parm: 155; search for <now check> in echoinput.sso for parm_type
+Warning 88 : parameter init value is less than parameter min -1.39631 < -1 for parm: 156; search for <now check> in echoinput.sso for parm_type
+Warning 89 : parameter init value is less than parameter min -1.21396 < -1 for parm: 167; search for <now check> in echoinput.sso for parm_type
+Warning 90 : parameter init value is less than parameter min -1.64146 < -1 for parm: 168; search for <now check> in echoinput.sso for parm_type
+Warning 91 : parameter init value is less than parameter min -2.12288 < -1 for parm: 169; search for <now check> in echoinput.sso for parm_type
+Warning 92 : parameter init value is less than parameter min -2.65508 < -1 for parm: 170; search for <now check> in echoinput.sso for parm_type
+Warning 93 : parameter init value is less than parameter min -3.23513 < -1 for parm: 171; search for <now check> in echoinput.sso for parm_type
+Warning 94 : parameter init value is less than parameter min -3.86038 < -1 for parm: 172; search for <now check> in echoinput.sso for parm_type
+Warning 95 : parameter init value is less than parameter min -4.52839 < -1 for parm: 173; search for <now check> in echoinput.sso for parm_type
+Warning 96 : parameter init value is less than parameter min -5.23692 < -1 for parm: 174; search for <now check> in echoinput.sso for parm_type
+Warning 97 : parameter init value is less than parameter min -5.98387 < -1 for parm: 175; search for <now check> in echoinput.sso for parm_type
+Warning 98 : parameter init value is less than parameter min -6.76732 < -1 for parm: 176; search for <now check> in echoinput.sso for parm_type
+Warning 99 : parameter init value is less than parameter min -7.5855 < -1 for parm: 177; search for <now check> in echoinput.sso for parm_type
+Warning 100 : parameter init value is less than parameter min -8.43676 < -1 for parm: 178; search for <now check> in echoinput.sso for parm_type
+Warning 101 : parameter init value is less than parameter min -9.31954 < -1 for parm: 179; search for <now check> in echoinput.sso for parm_type
+Warning 102 : parameter init value is less than parameter min -10.2324 < -1 for parm: 180; search for <now check> in echoinput.sso for parm_type
+Warning 103 : parameter init value is less than parameter min -11.1741 < -1 for parm: 181; search for <now check> in echoinput.sso for parm_type
+Warning 104 : parameter init value is less than parameter min -12.1432 < -1 for parm: 182; search for <now check> in echoinput.sso for parm_type
+Warning 105 : parameter init value is less than parameter min -13.1387 < -1 for parm: 183; search for <now check> in echoinput.sso for parm_type
+Warning 106 : parameter init value is less than parameter min -14.1595 < -1 for parm: 184; search for <now check> in echoinput.sso for parm_type
+Warning 107 : parameter init value is less than parameter min -64.199 < -1 for parm: 187; search for <now check> in echoinput.sso for parm_type
+Warning 108 : parameter init value is less than parameter min -54.2645 < -1 for parm: 188; search for <now check> in echoinput.sso for parm_type
+Warning 109 : parameter init value is less than parameter min -46.1763 < -1 for parm: 189; search for <now check> in echoinput.sso for parm_type
+Warning 110 : parameter init value is less than parameter min -39.417 < -1 for parm: 190; search for <now check> in echoinput.sso for parm_type
+Warning 111 : parameter init value is less than parameter min -33.69 < -1 for parm: 191; search for <now check> in echoinput.sso for parm_type
+Warning 112 : parameter init value is less than parameter min -28.7885 < -1 for parm: 192; search for <now check> in echoinput.sso for parm_type
+Warning 113 : parameter init value is less than parameter min -24.5619 < -1 for parm: 193; search for <now check> in echoinput.sso for parm_type
+Warning 114 : parameter init value is less than parameter min -20.8976 < -1 for parm: 194; search for <now check> in echoinput.sso for parm_type
+Warning 115 : parameter init value is less than parameter min -17.7088 < -1 for parm: 195; search for <now check> in echoinput.sso for parm_type
+Warning 116 : parameter init value is less than parameter min -14.9277 < -1 for parm: 196; search for <now check> in echoinput.sso for parm_type
+Warning 117 : parameter init value is less than parameter min -12.4997 < -1 for parm: 197; search for <now check> in echoinput.sso for parm_type
+Warning 118 : parameter init value is less than parameter min -10.3807 < -1 for parm: 198; search for <now check> in echoinput.sso for parm_type
+Warning 119 : parameter init value is less than parameter min -8.53434 < -1 for parm: 199; search for <now check> in echoinput.sso for parm_type
+Warning 120 : parameter init value is less than parameter min -6.93022 < -1 for parm: 200; search for <now check> in echoinput.sso for parm_type
+Warning 121 : parameter init value is less than parameter min -5.54285 < -1 for parm: 201; search for <now check> in echoinput.sso for parm_type
+Warning 122 : parameter init value is less than parameter min -4.35055 < -1 for parm: 202; search for <now check> in echoinput.sso for parm_type
+Warning 123 : parameter init value is less than parameter min -3.33474 < -1 for parm: 203; search for <now check> in echoinput.sso for parm_type
+Warning 124 : parameter init value is less than parameter min -2.47934 < -1 for parm: 204; search for <now check> in echoinput.sso for parm_type
+Warning 125 : parameter init value is less than parameter min -1.77042 < -1 for parm: 205; search for <now check> in echoinput.sso for parm_type
+Warning 126 : parameter init value is less than parameter min -1.19576 < -1 for parm: 206; search for <now check> in echoinput.sso for parm_type
+Warning 127 : parameter init value is less than parameter min -1.35915 < -1 for parm: 217; search for <now check> in echoinput.sso for parm_type
+Warning 128 : parameter init value is less than parameter min -1.81365 < -1 for parm: 218; search for <now check> in echoinput.sso for parm_type
+Warning 129 : parameter init value is less than parameter min -2.32377 < -1 for parm: 219; search for <now check> in echoinput.sso for parm_type
+Warning 130 : parameter init value is less than parameter min -2.88658 < -1 for parm: 220; search for <now check> in echoinput.sso for parm_type
+Warning 131 : parameter init value is less than parameter min -3.49939 < -1 for parm: 221; search for <now check> in echoinput.sso for parm_type
+Warning 132 : parameter init value is less than parameter min -4.15969 < -1 for parm: 222; search for <now check> in echoinput.sso for parm_type
+Warning 133 : parameter init value is less than parameter min -4.86517 < -1 for parm: 223; search for <now check> in echoinput.sso for parm_type
+Warning 134 : parameter init value is less than parameter min -5.61367 < -1 for parm: 224; search for <now check> in echoinput.sso for parm_type
+Warning 135 : parameter init value is less than parameter min -6.40319 < -1 for parm: 225; search for <now check> in echoinput.sso for parm_type
+Warning 136 : parameter init value is less than parameter min -7.23187 < -1 for parm: 226; search for <now check> in echoinput.sso for parm_type
+Warning 137 : parameter init value is less than parameter min -8.09797 < -1 for parm: 227; search for <now check> in echoinput.sso for parm_type
+Warning 138 : parameter init value is less than parameter min -8.99986 < -1 for parm: 228; search for <now check> in echoinput.sso for parm_type
+Warning 139 : parameter init value is less than parameter min -9.93602 < -1 for parm: 229; search for <now check> in echoinput.sso for parm_type
+Warning 140 : parameter init value is less than parameter min -10.905 < -1 for parm: 230; search for <now check> in echoinput.sso for parm_type
+Warning 141 : Setting in starter does not request all priors, and 142 parameters have priors and are not estimated, so their prior not included in obj_fun.
+Warning 142 : fleet: 2  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 62
+Warning 143 : Fleet: 2  agecomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 12
+Warning 144 : fleet: 4  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 10
+Warning 145 : Final gradient: 0.00569686 is larger than final_conv: 1e-06
+Warning 146 : Reminder: Number of lamdas !=0.0 and !=1.0:  38
+Note 3 Information:  N parameters that are on or within 1% of min-max bound: 2; check results, variance may be suspect
+ 146 warnings  and 3 notes 

@@ -1,4 +1,4 @@
-#V3.30.19.00;_safe;_compile_date:_Apr  4 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#V3.30.20.00;_safe;_compile_date:_Sep 30 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.0
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
@@ -48,7 +48,7 @@
 #
 # setup for M, growth, wt-len, maturity, fecundity, (hermaphro), recr_distr, cohort_grow, (movement), (age error), (catch_mult), sex ratio 
 #_NATMORT
-0 #_natM_type:_0=1Parm; 1=N_breakpoints;_2=Lorenzen;_3=agespecific;_4=agespec_withseasinterpolate;_5=BETA:_Maunder_link_to_maturity
+0 #_natM_type:_0=1Parm; 1=N_breakpoints;_2=Lorenzen;_3=agespecific;_4=agespec_withseasinterpolate;_5=BETA:_Maunder_link_to_maturity;_6=Lorenzen_range
   #_no additional input for selected M option; read 1P per morph
 #
 1 # GrowthModel: 1=vonBert with L1&L2; 2=Richards with L1&L2; 3=age_specific_K_incr; 4=age_specific_K_decr; 5=age_specific_K_each; 6=NA; 7=NA; 8=growth cessation
@@ -62,7 +62,7 @@
 #
 1 #_maturity_option:  1=length logistic; 2=age logistic; 3=read age-maturity matrix by growth_pattern; 4=read age-fecundity; 5=disabled; 6=read length-maturity
 1 #_First_Mature_Age
-1 #_fecundity option:(1)eggs=Wt*(a+b*Wt);(2)eggs=a*L^b;(3)eggs=a*Wt^b; (4)eggs=a+b*L; (5)eggs=a+b*W
+1 #_fecundity_at_length option:(1)eggs=Wt*(a+b*Wt);(2)eggs=a*L^b;(3)eggs=a*Wt^b; (4)eggs=a+b*L; (5)eggs=a+b*W
 0 #_hermaphroditism option:  0=none; 1=female-to-male age-specific fxn; -1=male-to-female age-specific fxn
 1 #_parameter_offset_approach for M, G, CV_G:  1- direct, no offset**; 2- male=fem_parm*exp(male_parm); 3: male=female*exp(parm) then old=young*exp(parm)
 #_** in option 1, any male parameter with value = 0.0 and phase <0 is set equal to female parameter
@@ -97,7 +97,7 @@
  -3 3 2.44e-06 2.44e-06 0.8 0 -3 0 0 0 0 0 0 0 # Wtlen_1_Mal_GP_1
  -3 4 3.34694 3.34694 0.8 0 -3 0 0 0 0 0 0 0 # Wtlen_2_Mal_GP_1
 # Hermaphroditism
-#  Recruitment Distribution  
+#  Recruitment Distribution 
  0 0 0 0 0 0 -4 0 0 0 0 0 0 0 # RecrDist_GP_1
  0 0 0 0 0 0 -4 0 0 0 0 0 0 0 # RecrDist_Area_1
  0 0 0 0 0 0 -4 0 0 0 0 0 0 0 # RecrDist_month_1
@@ -153,7 +153,7 @@
 #
 # all recruitment deviations
 #  1971R 1972R 1973R 1974R 1975R 1976R 1977R 1978R 1979R 1980R 1981R 1982R 1983R 1984R 1985R 1986R 1987R 1988R 1989R 1990R 1991R 1992R 1993R 1994R 1995R 1996R 1997R 1998R 1999R 2000R 2001R 2002F 2003F 2004F 2005F 2006F 2007F 2008F 2009F 2010F 2011F
-#  0.177904 -0.0977744 0.0417631 -0.30636 0.323543 0.166863 0.520225 -0.518331 0.589664 -0.218869 0.160331 -0.226304 -0.42619 -0.613983 0.58044 0.401447 0.0798449 0.184367 -0.355343 0.590506 -0.608373 -0.111175 -0.751971 0.37205 -0.64155 0.874421 0.895215 -0.414685 -0.679256 0.251538 -0.23996 0 0 0 0 0 0 0 0 0 0
+#  0.177904 -0.0977749 0.0417634 -0.30636 0.323543 0.166863 0.520225 -0.518331 0.589664 -0.218869 0.160331 -0.226303 -0.42619 -0.613983 0.58044 0.401447 0.0798451 0.184367 -0.355342 0.590506 -0.608374 -0.111175 -0.751971 0.37205 -0.64155 0.874421 0.895215 -0.414684 -0.679256 0.251538 -0.23996 0 0 0 0 0 0 0 0 0 0
 #
 #Fishing Mortality info 
 0.3 # F ballpark value in units of annual_F
@@ -243,27 +243,27 @@
 # 3   SURVEY2 LenSelex
 # 1   FISHERY1 AgeSelex
          -1000            10             0         -1000             3             0         -2          0          0          0          0          0          0          0  #  AgeSel_P1_FISHERY1(1)
-           -10            10       8.12465             3             3             0          2          0          0       1948       2011          4          0          0  #  AgeSel_P2_FISHERY1(1)
+           -10            10       8.12484             3             3             0          2          0          0       1948       2011          4          0          0  #  AgeSel_P2_FISHERY1(1)
            -10            10        1.0328             0             3             6          2          0          0       1948       2011          4          0          0  #  AgeSel_P3_FISHERY1(1)
-           -10            10     0.0879168             0             3             6          2          0          0       1948       2011          4          0          0  #  AgeSel_P4_FISHERY1(1)
+           -10            10     0.0879164             0             3             6          2          0          0       1948       2011          4          0          0  #  AgeSel_P4_FISHERY1(1)
            -10            10      0.855116             0             3             6          2          0          0       1948       2011          4          0          0  #  AgeSel_P5_FISHERY1(1)
            -10            10         0.328             0             3             6          2          0          0       1948       2011          4          0          0  #  AgeSel_P6_FISHERY1(1)
-           -10            10     0.0962406             0             3             6          2          0          0       1948       2011          4          0          0  #  AgeSel_P7_FISHERY1(1)
-           -10            10     0.0909618             0             3             6          2          0          0       1948       2011          4          0          0  #  AgeSel_P8_FISHERY1(1)
-           -10            10    -0.0444585             0             3             6          2          0          0       1948       2011          4          0          0  #  AgeSel_P9_FISHERY1(1)
+           -10            10     0.0962402             0             3             6          2          0          0       1948       2011          4          0          0  #  AgeSel_P7_FISHERY1(1)
+           -10            10     0.0909623             0             3             6          2          0          0       1948       2011          4          0          0  #  AgeSel_P8_FISHERY1(1)
+           -10            10    -0.0444589             0             3             6          2          0          0       1948       2011          4          0          0  #  AgeSel_P9_FISHERY1(1)
            -10            10      0.538461             0             3             6          2          0          0       1948       2011          4          0          0  #  AgeSel_P10_FISHERY1(1)
            -10            10             0             0             3             0         -5          0          0          0          0       0.25          0          0  #  AgeSel_P11_FISHERY1(1)
 # 2   SURVEY1 AgeSelex
          -1000            10             0         -1000             3             0         -2          0          0          0          0          0          0          0  #  AgeSel_P1_SURVEY1(2)
-           -10            10         7.489             3             3             0          2          0          0       1948       2011          4          0          0  #  AgeSel_P2_SURVEY1(2)
+           -10            10       7.48901             3             3             0          2          0          0       1948       2011          4          0          0  #  AgeSel_P2_SURVEY1(2)
            -10            10      0.639258             0             3             6          2          0          0       1948       2011          4          0          0  #  AgeSel_P3_SURVEY1(2)
            -10            10        0.8463             0             3             6          2          0          0       1948       2011          4          0          0  #  AgeSel_P4_SURVEY1(2)
-           -10            10     -0.417476             0             3             6          2          0          0       1948       2011          4          0          0  #  AgeSel_P5_SURVEY1(2)
+           -10            10     -0.417475             0             3             6          2          0          0       1948       2011          4          0          0  #  AgeSel_P5_SURVEY1(2)
            -10            10      0.866247             0             3             6          2          0          0       1948       2011          4          0          0  #  AgeSel_P6_SURVEY1(2)
            -10            10      -2.30091             0             3             6          2          0          0       1948       2011          4          0          0  #  AgeSel_P7_SURVEY1(2)
            -10            10       2.13292             0             3             6          2          0          0       1948       2011          4          0          0  #  AgeSel_P8_SURVEY1(2)
            -10            10     -0.124955             0             3             6          2          0          0       1948       2011          4          0          0  #  AgeSel_P9_SURVEY1(2)
-           -10            10    -0.0881771             0             3             6          2          0          0       1948       2011          4          0          0  #  AgeSel_P10_SURVEY1(2)
+           -10            10    -0.0881772             0             3             6          2          0          0       1948       2011          4          0          0  #  AgeSel_P10_SURVEY1(2)
            -10            10             0             0             3             0         -5          0          0          0          0       0.25          0          0  #  AgeSel_P11_SURVEY1(2)
 # 3   SURVEY2 AgeSelex
              0            40             0             5            99             0        -99          0          0          0          0          0          0          0  #  minage@sel=1_SURVEY2(3)
