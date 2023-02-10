@@ -89,8 +89,10 @@ jobs:
 
         shell: Rscript {0}
 
-      - name: Commit files
+      - name: Setup git user
         uses: fregante/setup-git-user@v1
+      
+      - name: Commit
         run: |
           git add .
           git commit -m "update test model files to new ss3 release"
