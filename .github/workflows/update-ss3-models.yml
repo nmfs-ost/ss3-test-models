@@ -38,8 +38,12 @@ jobs:
       - name: move ss to path
         run: |
           echo "ss" >> $GITHUB_PATH
+
+      - name: find ss path
+      - run: |
           where ss
-     
+        shell: bash
+
       - name: run models
         run: |
           # first part: update the reference files.
