@@ -61,7 +61,7 @@ jobs:
           r4ss::populate_multiple_folders(outerdir.old = mod_dir_name,
                                           outerdir.new = mod_dir_name,
                                           exe.file = NULL, verbose = FALSE,
-                                          use_ss_new = TRUE)
+                                          use_ss_new = TRUE, overwrite = TRUE)
 
           evict <- paste(
             "[a-fh-x]\\.sso",    # Stops at f and x so ss_summary.sso and warning.sso aren't included
@@ -89,6 +89,9 @@ jobs:
           files_remove(mod_dirs, pattern = evict)
 
         shell: Rscript {0}
+      
+      - name: Remove ss from path
+        run: rm ss
 
       - name: Setup git user
         uses: fregante/setup-git-user@v1
