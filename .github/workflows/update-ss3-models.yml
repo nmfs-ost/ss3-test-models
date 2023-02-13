@@ -31,15 +31,13 @@ jobs:
       
       - name: install SSutils
         run: Rscript -e 'remotes::install_github("r4ss/SSutils")'
-      
-      - name: install purrr
-        run: Rscript -e 'install.packages("purrr")'
         
       - name: Get the latest SS3 executable and put in path
         run:  |
           wget -O ss3 https://github.com/nmfs-stock-synthesis/stock-synthesis/releases/latest/download/ss_linux
           sudo chmod a+x ss3
           mv ss3 /usr/local/bin/ss3
+          export PATH=/usr/local/bin/ss3:$PATH
           echo "/usr/local/bin/ss3" >> $GITHUB_PATH
 
       - name: run models
