@@ -72,8 +72,8 @@ jobs:
           new_mod_dir_name <- "new_models"
           new_mod_dirs <- list.dirs(new_mod_dir_name, recursive = FALSE)
 
-          r4ss::populate_multiple_folders(outerdir.old = mod_dirs, 
-                                outerdir.new = new_mod_dirs,
+          r4ss::populate_multiple_folders(outerdir.old = mod_dir_name, 
+                                outerdir.new = new_mod_dir_name,
                                 exe.file = NULL, verbose = FALSE)
 
           # use the parallel version to speed up model runs 
