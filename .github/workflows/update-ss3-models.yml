@@ -89,7 +89,7 @@ jobs:
           new_mod_runs_folder <- file.path(new_mod_dir_name)
           new_mod_path_list <- list.dirs(new_mod_runs_folder, recursive = FALSE,
                                         full.names = TRUE)
-          run_results <- lapply(new_mod_path_list, update_ref_files)
+          run_result <- lapply(new_mod_path_list, update_ref_files)
           run_result
 
           r4ss::populate_multiple_folders(outerdir.old = new_mod_dir_name, 
