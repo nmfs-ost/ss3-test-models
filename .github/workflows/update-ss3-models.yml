@@ -41,16 +41,44 @@ jobs:
 
       - name: run models
         run: |
-          # first part: update the reference files.
-          # run models first
+          update_ref_files <- function(new_mod_path, ss_examples_folder = file.path(getwd(), "models")) {
+            mod_name <- basename(new_mod_path)
+            git_mod_path <- file.path(ss_examples_folder, mod_name)
+            # list model files that need to be moved
+            files_to_move <- c("ss.par", "ss_summary.sso", "warning.sso")
+            # copy model files from new_mod_path folder to the git_mod_path folder,
+            results_of_move <- lapply(files_to_move,
+                                        function(x, new_mod_path, git_mod_path) {
+                file.remove(file.path(git_mod_path, x))
+                file.copy(from = file.path(new_mod_path, x),
+                        to = file.path(git_mod_path, x), 
+                        overwrite = FALSE) 
+                #to make sure worked:
+                worked <- file.exists(file.path(git_mod_path, x))
+            }, new_mod_path = new_mod_path, git_mod_path = git_mod_path)
+            if(all(unlist(results_of_move) == TRUE)) {
+                files_replaced <- TRUE
+            } else {
+                files_replaced <- FALSE
+            }
+            files_replaced
+            }
+          
           dirs_test <- list.dirs(recursive = FALSE)
           mod_dir_name <- dirs_test[grepl("model", dirs_test)]
           mod_dir_name <- gsub(".*\\./", "", mod_dir_name)
           mod_dirs <- list.dirs(dirs_test[grepl("model", dirs_test)], recursive = FALSE)
 
+          new_mod_dir_name <- "new_models"
+          new_mod_dirs <- list.dirs(new_mod_dir_name, recursive = FALSE)
+
+          r4ss::populate_multiple_folders(outerdir.old = mod_dirs, 
+                                outerdir.new = new_mod_dirs,
+                                exe.file = NULL, verbose = FALSE)
+
           # use the parallel version to speed up model runs 
-          model_runs <- SSutils::run_SS_models_parallel(dirvec = mod_dirs,
-                                          model = "ss", exe_in_path = TRUE, 
+          model_runs <- SSutils::run_SS_models_parallel(dirvec = new_mod_dirs,
+                                          model = "ss", exe_in_path = FALSE, 
                                           parallel = TRUE, verbose = TRUE)
 
           # test that all the models ran successfully
@@ -58,35 +86,18 @@ jobs:
             stop("Not all models ran successfully.") # unknown run status is possible
           }
 
-          r4ss::populate_multiple_folders(outerdir.old = mod_dir_name,
-                                          outerdir.new = mod_dir_name,
-                                          exe.file = NULL, verbose = FALSE,
-                                          use_ss_new = TRUE, overwrite = TRUE)
+          new_mod_runs_folder <- file.path(new_mod_dir_name)
+          new_mod_path_list <- list.dirs(new_mod_runs_folder, recursive = FALSE,
+                                        full.names = TRUE)
+          run_results <- lapply(new_mod_path_list, update_ref_files)
+          run_result
 
-          evict <- paste(
-            "[a-fh-x]\\.sso",    # Stops at f and x so ss_summary.sso and warning.sso aren't included
-            "^ss\\.[a-z][0-9]",  # ss.xxx files, where xxx is an extension except ss.par
-            "^ss\\.[a-oq-z]",    # ss.xxx files, where xxx is an extension except ss.par
-            "expval",            # expected values data_expval.ss
-            "ss_new",            # new input files
-            "\\.txt",            # .txt extension
-            "admodel",
-            "runnumber",
-            "log",
-            sep = "|"
-          )
+          r4ss::populate_multiple_folders(outerdir.old = new_mod_dir_name, 
+                                outerdir.new = mod_dir_name, overwrite = TRUE,
+                                exe.file = NULL, verbose = FALSE, 
+                                use_ss_new = TRUE)
 
-          files_remove <- function(directory, pattern = "ss_summary.sso") {
-            file.remove(dir(
-              path = directory,
-              recursive = TRUE,
-              pattern = pattern,
-              full.names = TRUE
-            ))
-            return(invisible())
-          }
-
-          files_remove(mod_dirs, pattern = evict)
+          unlink(new_mod_dir_name, recursive = TRUE)
 
         shell: Rscript {0}
       
