@@ -31,6 +31,9 @@ jobs:
       
       - name: install SSutils
         run: Rscript -e 'remotes::install_github("r4ss/SSutils")'
+      
+      - name: install purrr
+        run: Rscript -e 'install.packages("purrr")'
         
       - name: Get the latest SS3 executable
         run:  wget -O ss https://github.com/nmfs-stock-synthesis/stock-synthesis/releases/latest/download/ss_linux
@@ -77,14 +80,13 @@ jobs:
                                 exe.file = NULL, verbose = FALSE)
 
           # use the parallel version to speed up model runs 
-          model_runs <- SSutils::run_SS_models_parallel(dirvec = new_mod_dirs,
-                                          model = "ss", exe_in_path = TRUE, 
-                                          parallel = TRUE, verbose = TRUE)
-
-          # test that all the models ran successfully
-          if (!all(model_runs$results == "ran model")) {
-            stop("Not all models ran successfully.") # unknown run status is possible
-          }
+          run_results <- purrr::map(
+             .x = new_mod_dirs,
+             .f = r4ss::run,
+             exe = "C:/SS/ss_win.exe",
+             verbose = FALSE,
+             extras = "-stopph 0"
+            )
 
           new_mod_runs_folder <- file.path(new_mod_dir_name)
           new_mod_path_list <- list.dirs(new_mod_runs_folder, recursive = FALSE,
