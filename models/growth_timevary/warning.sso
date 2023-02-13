@@ -1,6 +1,0 @@
-Warning 1 : fishing fleet: 1 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-Warning 2 : fishing fleet: 2 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-Note 1 Suggestion: This model has just one settlement event. Changing to recr_dist_method 4 and removing the recruitment distribution parameters at the end of the MG parms section (below growth parameters) will produce identical results and simplify the model.
-Note 2 Information: Max harvest rate typically is >1.0 for F_method 2, 3 or 4 0.9
-Warning 3 : Setting in starter does not request all priors, and 1 parameters have priors and are not estimated, so their prior not included in obj_fun.
- 3 warnings  and 2 notes 
