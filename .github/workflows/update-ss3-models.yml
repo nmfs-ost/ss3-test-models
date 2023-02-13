@@ -73,12 +73,23 @@ jobs:
           mod_dirs <- list.dirs(dirs_test[grepl("model", dirs_test)], recursive = FALSE)
 
           new_mod_dir_name <- "new_models"
+          new_mod_dirs <- list.dirs(new_mod_dir_name, recursive = FALSE)
 
           r4ss::populate_multiple_folders(outerdir.old = mod_dir_name, 
                                 outerdir.new = new_mod_dir_name,
                                 exe.file = NULL, verbose = FALSE)
+          
+          new_mod_dirs <- list.dirs(new_mod_dir_name, recursive = FALSE)
 
           new_mod_dirs <- list.dirs(new_mod_dir_name, recursive = FALSE)
+          # use the parallel version to speed up model runs 
+          run_results <- purrr::map(
+             .x = new_mod_dirs,
+             .f = r4ss::run,
+             exe = "ss",
+             verbose = FALSE,
+             extras = "-stopph 0"
+            )
 
           # use the parallel version to speed up model runs 
           model_runs <- SSutils::run_SS_models_parallel(dirvec = new_mod_dirs,
