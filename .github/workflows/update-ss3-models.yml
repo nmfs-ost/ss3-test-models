@@ -38,6 +38,7 @@ jobs:
       - name: move ss to path
         run: |
           echo "ss" >> $GITHUB_PATH
+          where ss
      
       - name: run models
         run: |
@@ -48,9 +49,6 @@ jobs:
           mod_dir_name <- gsub(".*\\./", "", mod_dir_name)
           mod_dirs <- list.dirs(dirs_test[grepl("model", dirs_test)], recursive = FALSE)
 
-          r4ss::populate_multiple_folders(outerdir.old = mod_dir_name,
-                                          outerdir.new = mod_dir_name,
-                                          exe.file = NULL, verbose = FALSE)
           # use the parallel version to speed up model runs 
           model_runs <- SSutils::run_SS_models_parallel(dirvec = mod_dirs,
                                           model = "ss", exe_in_path = TRUE, 
@@ -60,6 +58,11 @@ jobs:
           if (!all(model_runs$results == "ran model")) {
             stop("Not all models ran successfully.") # unknown run status is possible
           }
+
+          r4ss::populate_multiple_folders(outerdir.old = mod_dir_name,
+                                          outerdir.new = mod_dir_name,
+                                          exe.file = NULL, verbose = FALSE,
+                                          use_ss_new = TRUE)
 
           evict <- paste(
             "[a-fh-x]\\.sso",    # Stops at f and x so ss_summary.sso and warning.sso aren't included
@@ -71,7 +74,6 @@ jobs:
             "admodel",
             "runnumber",
             "log",
-            "boot",
             sep = "|"
           )
 
