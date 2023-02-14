@@ -1,14 +1,14 @@
-#V3.30.20.00;_safe;_compile_date:_Sep 30 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.0
+#V3.30.21.00;_safe;_compile_date:_Feb 10 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
 #_User_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
 #_Source_code_at:_https://github.com/nmfs-stock-synthesis/stock-synthesis
 
-#_Start_time: Thu Dec 29 11:17:29 2022
+#_Start_time: Tue Feb 14 20:35:27 2023
 #_echo_input_data
 #C data file for simple example
-#V3.30.20.00;_safe;_compile_date:_Sep 30 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.0
+#V3.30.21.00;_safe;_compile_date:_Feb 10 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 1971 #_StartYr
 2001 #_EndYr
 1 #_Nseas
@@ -74,10 +74,11 @@
 2001 1 1 3000 0.01
 -9999 0 0 0 0
 #
- #_CPUE_and_surveyabundance_observations
-#_Units:  0=numbers; 1=biomass; 2=F; 30=spawnbio; 31=recdev; 32=spawnbio*recdev; 33=recruitment; 34=depletion(&see Qsetup); 35=parm_dev(&see Qsetup)
+#_CPUE_and_surveyabundance_and_index_observations
+#_Units: 0=numbers; 1=biomass; 2=F; 30=spawnbio; 31=exp(recdev); 36=recdev; 32=spawnbio*recdev; 33=recruitment; 34=depletion(&see Qsetup); 35=parm_dev(&see Qsetup)
 #_Errtype:  -1=normal; 0=lognormal; >0=T
 #_SD_Report: 0=no sdreport; 1=enable sdreport
+#_note that link functions are specified in Q_setup section of control file
 #_Fleet Units Errtype SD_Report
 1 1 0 0 # FISHERY1
 2 1 0 0 # SURVEY1
@@ -125,7 +126,7 @@
 2 # binwidth for population size comp 
 10 # minimum size in the population (lower edge of first bin and size at age 0.00) 
 94 # maximum size in the population (lower edge of last bin) 
-0 # use length composition data (0/1)
+0 # use length composition data (0/1/2) where 2 invokes new comp_control format
 # see manual for format of length composition data 
 #
 17 #_N_age_bins

@@ -10,6 +10,7 @@ Warning 8 : Fleet: 2  agecomp has obs with partition==2; will treat as partition
 Warning 9 : fleet: 3  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 30
 Warning 10 : fleet: 4  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 22
 Warning 11 : Fleet: 5  agecomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 8
-Warning 12 : Forecast F capped by max possible F from control file4
+Warning 12 : Main recdev biasadj is >2 times ratio of rmse to sigmaR
 Warning 13 : Forecast F capped by max possible F from control file4
- 13 warnings  and 1 note 
+Warning 14 : Forecast F capped by max possible F from control file4
+ 14 warnings  and 1 note 
