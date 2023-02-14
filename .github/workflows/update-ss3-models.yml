@@ -31,18 +31,25 @@ jobs:
       
       - name: install SSutils
         run: Rscript -e 'remotes::install_github("r4ss/SSutils")'
+
+      - name: install purrr
+        run: Rscript -e 'install.packages("purrr")'
         
-      - name: Get the latest SS3 executable and put in path
-        run:  |
+      - name: Get the latest SS3 executable
+        run: |
           wget -O ss3 https://github.com/nmfs-stock-synthesis/stock-synthesis/releases/latest/download/ss_linux
           sudo chmod a+x ss3
           mv ss3 /usr/local/bin/ss3
           export PATH=/usr/local/bin/ss3:$PATH
           echo "/usr/local/bin/ss3" >> $GITHUB_PATH
-
+     
       - name: run models
         run: |
-          update_ref_files <- function(new_mod_path, ss_examples_folder = file.path(getwd(), "models")) {
+          dirs_test <- list.dirs(recursive = FALSE)
+          mod_dir_name <- dirs_test[grepl("model", dirs_test)]
+          mod_dir_name <- gsub(".*\\./", "", mod_dir_name)
+
+          update_ref_files <- function(new_mod_path, ss_examples_folder = file.path(getwd(), mod_dir_name)) {
             mod_name <- basename(new_mod_path)
             git_mod_path <- file.path(ss_examples_folder, mod_name)
             # list model files that need to be moved
@@ -65,24 +72,17 @@ jobs:
             files_replaced
             }
           
-          dirs_test <- list.dirs(recursive = FALSE)
-          mod_dir_name <- dirs_test[grepl("model", dirs_test)]
-          mod_dir_name <- gsub(".*\\./", "", mod_dir_name)
-          mod_dirs <- list.dirs(dirs_test[grepl("model", dirs_test)], recursive = FALSE)
-
           new_mod_dir_name <- "new_models"
 
           r4ss::populate_multiple_folders(outerdir.old = mod_dir_name, 
                                 outerdir.new = new_mod_dir_name,
                                 exe.file = NULL, verbose = FALSE)
 
-          new_mod_dirs <- list.dirs(new_mod_dir_name, recursive = FALSE)
-
-          # use the parallel version to speed up model runs 
-          model_runs <- SSutils::run_SS_models_parallel(dirvec = new_mod_dirs,
-                                          model = "ss3", exe_in_path = TRUE,
-                                          extras = "-stopph 0",
-                                          parallel = TRUE, verbose = TRUE)
+          purrr::map(
+            .x = file.path(new_mod_dir_name, list.files(new_mod_dir_name)),
+            .f = r4ss::run,
+            exe = "/usr/local/bin/ss3", 
+            extras = "-stopph 0", verbose = TRUE)
           
           new_mod_runs_folder <- file.path(new_mod_dir_name)
           new_mod_path_list <- list.dirs(new_mod_runs_folder, recursive = FALSE,
@@ -96,11 +96,7 @@ jobs:
                                 use_ss_new = TRUE, overwrite = TRUE)
 
           unlink(new_mod_dir_name, recursive = TRUE)
-
         shell: Rscript {0}
-      
-      - name: Remove ss from path
-        run: rm /usr/local/bin/ss3
 
       - name: Setup git user
         uses: fregante/setup-git-user@v1
