@@ -1,0 +1,40 @@
+name: add-tag-on-model-update
+on: 
+  pull_request:
+    branches:
+      - main
+    types: [closed]
+
+jobs:
+   
+  add-tag-on-model-update:
+    if: ${{ github.event.pull_request.merged }}
+    runs-on: ubuntu-latest
+    env:
+      R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      R_KEEP_PKG_SOURCE: yes
+
+    steps:
+
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Get the ss last tag on unix
+        id: get-latest-tag-unix
+        run: |
+          latest_tag=$(git ls-remote --tags https://github.com/nmfs-stock-synthesis/stock-synthesis.git | tail -1 | sed 's/.*\/v//')
+          echo "tag=${latest_tag}" >> $GITHUB_OUTPUT
+          
+      - name: Get the ss last tag on unix
+        id: get-latest-tag-repo-unix
+        run: |
+          latest_tag_repo=$(git ls-remote --tags | tail -1 | sed 's/.*\/v//')
+          echo "tag=${latest_tag_repo}" >> $GITHUB_OUTPUT
+          
+      - name: create tag
+        uses: mathieudutour/github-tag-action@v6.1
+        if: ${{ steps.get-latest-tag-unix.outputs.tag != steps.get-latest-tag-repo-unix.outputs.tag}}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          custom_tag: ${{ steps.get-latest-tag-unix.outputs.tag }}
