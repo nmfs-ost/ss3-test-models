@@ -1,4 +1,4 @@
-#V3.30.20.00;_safe;_compile_date:_Sep 30 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.0
+#V3.30.21.00;_safe;_compile_date:_Feb 10 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
@@ -160,7 +160,7 @@
 #
 # all recruitment deviations
 #  1951R 1952R 1953R 1954R 1955R 1956R 1957R 1958R 1959R 1960R 1961R 1962R 1963R 1964R 1965R 1966R 1967R 1968R 1969R 1970R 1971R 1972R 1973R 1974R 1975R 1976R 1977R 1978R 1979R 1980R 1981R 1982R 1983R 1984R 1985R 1986R 1987R 1988R 1989R 1990R 1991R 1992R 1993R 1994R 1995R 1996R 1997R 1998R 1999R 2000R 2001R 2002F 2003F 2004F
-#  -0.035244 -0.0433866 -0.0554545 -0.0717585 -0.0911116 -0.108305 -0.109837 -0.0748805 0.00848797 0.104277 0.124309 0.0757451 0.044416 0.011094 -0.0725581 -0.0953587 0.0221306 0.144804 0.0705434 -0.014606 0.016633 0.265633 0.797989 0.551448 -0.0929259 0.163552 0.209827 -0.142259 -0.280606 -0.583899 -0.653992 -0.373518 -0.301102 0.670094 0.589737 -0.142598 -0.282286 -0.144206 -0.373352 -0.498001 -0.313401 -0.369649 0.397804 0.224883 0.441674 0.116625 -0.206473 0.402718 0.0588385 0.0229973 -0.00549179 0 0 0
+#  -0.035244 -0.0433867 -0.0554545 -0.0717586 -0.0911116 -0.108305 -0.109837 -0.0748804 0.0084882 0.104277 0.124309 0.0757452 0.044416 0.0110939 -0.072558 -0.0953589 0.0221306 0.144803 0.0705434 -0.0146059 0.0166328 0.265633 0.797989 0.551448 -0.0929258 0.163552 0.209827 -0.142259 -0.280606 -0.583899 -0.653992 -0.373518 -0.301102 0.670094 0.589737 -0.142598 -0.282286 -0.144207 -0.373352 -0.498001 -0.313401 -0.369649 0.397804 0.224884 0.441674 0.116625 -0.206473 0.402718 0.0588384 0.0229974 -0.00549162 0 0 0
 # implementation error by year in forecast:  0 0 0
 #
 #Fishing Mortality info 
@@ -246,14 +246,14 @@
             -3             3         -0.75         -0.75            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_fishery1(1)
             -4            12        4.9874             5            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_fishery1(1)
             -2            15            15            15            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_fishery1(1)
-           -15             0      -12.9089           -15            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_fishery1(1)
+           -15             0      -12.9085           -15            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_fishery1(1)
           -999            15          -999             0            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_end_logit_fishery1(1)
 # 2   survey1 LenSelex
              5            89        55.676            55            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_peak_survey1(2)
             -3             3         -0.31         -0.31            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_survey1(2)
             -4            12       5.08702             5            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_survey1(2)
             -2            15            15            15            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_survey1(2)
-           -15             0      -12.2565           -15            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_survey1(2)
+           -15             0      -12.2567           -15            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_survey1(2)
           -999            15          -999             0            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_end_logit_survey1(2)
 # 1   fishery1 AgeSelex
 # 2   survey1 AgeSelex

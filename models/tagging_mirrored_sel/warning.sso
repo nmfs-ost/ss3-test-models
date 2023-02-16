@@ -144,7 +144,7 @@ Warning 141 : Setting in starter does not request all priors, and 142 parameters
 Warning 142 : fleet: 2  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 62
 Warning 143 : Fleet: 2  agecomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 12
 Warning 144 : fleet: 4  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 10
-Warning 145 : Final gradient: 0.00569686 is larger than final_conv: 1e-06
+Warning 145 : Final gradient: 0.00498891 is larger than final_conv: 1e-06
 Warning 146 : Reminder: Number of lamdas !=0.0 and !=1.0:  38
 Note 3 Information:  N parameters that are on or within 1% of min-max bound: 2; check results, variance may be suspect
  146 warnings  and 3 notes 

@@ -1,7 +1,7 @@
-#V3.30.20.00;_safe;_compile_date:_Sep 30 2022;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.0
+#V3.30.21.00;_safe;_compile_date:_Feb 10 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 simple.dat #_DataFile 
 simple.ctl #_Control 
-Run_Date: Thu Dec 29 11:10:35 2022
+Run_Date: Tue Feb 14 23:42:23 2023
 Final_phase: 5  N_iterations: 395
 #_LIKELIHOOD 
 Label logL*Lambda
@@ -11,8 +11,8 @@ Length_comp 651.433
 Age_comp 586.251
 Size_at_age 79.3351
 Recruitment -9.37385
-InitEQ_regime 1.54502e-30
-Sum_recdevs 2.77556e-16
+InitEQ_regime 0
+Sum_recdevs -1.11022e-16
 Forecast_Recruitment 0
 Parm_priors 1.04528
 Parm_softbounds 0.00118162
@@ -214,7 +214,7 @@ SPRratio_1987 1.38676 0.0123312
 SPRratio_1988 1.40601 0.014487
 SPRratio_1989 1.41719 0.0176902
 SPRratio_1990 1.4163 0.0224829
-SPRratio_1991 1.40021 0.0294455
+SPRratio_1991 1.40021 0.0294456
 SPRratio_1992 1.28462 0.0444634
 SPRratio_1993 1.28864 0.0515882
 SPRratio_1994 1.29601 0.0597253
