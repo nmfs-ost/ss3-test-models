@@ -14,8 +14,8 @@
 0  # 0 means do not read wtatage.ss; 1 means read and use wtatage.ss and also read and use growth parameters
 1  #_N_Growth_Patterns (Growth Patterns, Morphs, Bio Patterns, GP are terms used interchangeably in SS3)
 5 #_N_platoons_Within_GrowthPattern 
-1 #_Platoon_within/between_stdev_ratio (no read if N_platoons=1)
- 0.031 0.237 0.464 0.237 0.031 #vector_platoon_dist_(-1_in_first_val_gives_normal_approx)
+-1 #_Platoon_within/between_stdev_ratio (no read if N_platoons=1)
+ -1 1 1 1 1 #vector_platoon_dist_(-1_in_first_val_gives_normal_approx)
 #
 2 # recr_dist_method for parameters:  2=main effects for GP, Area, Settle timing; 3=each Settle entity; 4=none (only when N_GP*Nsettle*pop==1)
 1 # not yet implemented; Future usage: Spawner-Recruitment: 1=global; 2=by area
@@ -111,6 +111,8 @@
 #  Cohort growth dev base
  0.1 10 1 1 1 0 -1 0 0 0 0 0 0 0 # CohortGrowDev
 #  Movement
+#  Platoon StDev Ratio
+ 0.1 3 1 0 99 0 1 0 0 0 0 0 0 0 # Platoon_SD_Ratio
 #  Age Error from parameters
 #  catch multiplier
 #  fraction female, by GP

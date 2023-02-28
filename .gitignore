@@ -32,7 +32,7 @@ control.ss_new
 data.ss_new
 data_boot_*
 data_echo.ss_new
-data_expvals.ss
+data_expval.ss
 forecast.ss_new
 starter.ss_new
 wtatage.ss_new
