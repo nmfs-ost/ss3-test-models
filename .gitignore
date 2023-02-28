@@ -30,6 +30,9 @@ SIS_table.sso
 # .ss_new files
 control.ss_new
 data.ss_new
+data_boot_*
+data_echo.ss_new
+data_expvals.ss
 forecast.ss_new
 starter.ss_new
 wtatage.ss_new
@@ -47,8 +50,8 @@ ss.bar
 ss.cor
 ss.ecm
 ss.eva
-ss.exe
-ss.log
+*.exe
+*.log
 ss.mc2
 ss.mcm
 ss.p0*
