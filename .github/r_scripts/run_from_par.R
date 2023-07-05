@@ -17,16 +17,23 @@ run_ss_noest <- function(dir) {
   # change models to read from the .par file of the reference run
   start <- readLines(file.path(dir, "starter.ss"))
   first_val_line <- grep("0=use init values in control file", start, fixed = TRUE)
-  start[first_val_line] <- "1 # read from .par file"
-  print(start[first_val_line])
-  # phase_line <- grep("Turn off estimation", start, fixed = TRUE)
-  # start[phase_line] <- "0 # Turn off estimation after this phase"
-  writeLines(start, file.path(dir, "starter.ss"))
-  # run the models without estimation and see if model finishes without error
-  message("running ss on ", basename(dir))
-  system(paste0("cd ", dir, " && ../ss -maxfn 0 -phase 50 -nohess"))
-  model_ran <- file.exists(file.path(dir, "control.ss_new"))
-  return(model_ran)
+    if(!identical(first_val_line, integer(0)) == TRUE){
+      start[first_val_line] <- "1 # read from .par file"
+      print(start[first_val_line])
+      # phase_line <- grep("Turn off estimation", start, fixed = TRUE)
+      # start[phase_line] <- "0 # Turn off estimation after this phase"
+      writeLines(start, file.path(dir, "starter.ss"))
+      # run the models without estimation and see if model finishes without error
+      message("running ss on ", basename(dir))
+      system(paste0("cd ", dir, " && ../ss -maxfn 0 -phase 50 -nohess"))
+      model_ran <- file.exists(file.path(dir, "control.ss_new"))
+      return(model_ran)
+      } else {
+        message("running ss on ", basename(dir))
+        system(paste0("cd ", dir, " && ../ss -maxfn 0 -phase 50 -nohess"))
+        model_ran <- file.exists(file.path(dir, "control.ss_new"))
+        return(model_ran)
+        }
 }
 
 mod_ran <- lapply(mod_paths, function(x) tryCatch(run_ss_noest(x), 
