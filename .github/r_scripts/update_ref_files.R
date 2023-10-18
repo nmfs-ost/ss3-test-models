@@ -1,5 +1,5 @@
 # function to update the reference files in the models subfolder. 
-# assumes the working directory is the test-models repository.
+# assumes the working directory is the ss3-test-models repository.
 #install.packages("r4ss")
 #install.packages("SSutils")
 library(r4ss)
