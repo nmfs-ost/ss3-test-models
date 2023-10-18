@@ -1,9 +1,9 @@
-name: update-test-models
+name: update-ss3-test-models
 on: 
   workflow_dispatch:
 
 jobs:
-  update-user-example-models:
+  update-ss3-test-models:
     runs-on: ubuntu-latest
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
@@ -111,4 +111,4 @@ jobs:
         with:
           commit_message: Update model files to new ss exe
           branch: add-update-workflow-new
-          title: 'Update model files to new ss exe'
+          title: 'Update model files to new ss3 exe'
