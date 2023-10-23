@@ -23,7 +23,7 @@ jobs:
       - name: Get the ss last tag on unix
         id: get-latest-tag-unix
         run: |
-          latest_tag=$(git ls-remote --tags https://github.com/nmfs-stock-synthesis/stock-synthesis.git | tail -1 | sed 's/.*\/v//')
+          latest_tag=$(git ls-remote --tags https://github.com/nmfs-stock-synthesis/ss3-source-code.git | tail -1 | sed 's/.*\/v//')
           echo "tag=${latest_tag}" >> $GITHUB_OUTPUT
           
       - name: Get the ss last tag on unix
