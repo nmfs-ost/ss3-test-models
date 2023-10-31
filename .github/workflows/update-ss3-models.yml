@@ -29,8 +29,8 @@ jobs:
       - name: install r4ss
         run: Rscript -e 'remotes::install_github("r4ss/r4ss")'
       
-      - name: install SSutils
-        run: Rscript -e 'remotes::install_github("r4ss/SSutils")'
+      # - name: install SSutils
+      #   run: Rscript -e 'remotes::install_github("r4ss/SSutils")'
 
       - name: install purrr
         run: Rscript -e 'install.packages("purrr")'
