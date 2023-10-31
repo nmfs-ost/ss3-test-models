@@ -141,10 +141,11 @@ Warning 138 : parameter init value is less than parameter min -8.99986 < -1 for 
 Warning 139 : parameter init value is less than parameter min -9.93602 < -1 for parm: 229; search for <now check> in echoinput.sso for parm_type
 Warning 140 : parameter init value is less than parameter min -10.905 < -1 for parm: 230; search for <now check> in echoinput.sso for parm_type
 Warning 141 : Setting in starter does not request all priors, and 142 parameters have priors and are not estimated, so their prior not included in obj_fun.
-Warning 142 : fleet: 2  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 62
-Warning 143 : Fleet: 2  agecomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 12
-Warning 144 : fleet: 4  lencomp has obs with partition==2; will treat as partition=0 because retention not defined; N= 10
-Warning 145 : Final gradient: 0.00498891 is larger than final_conv: 1e-06
+Warning 142 : fleet: 2 lencomp has N obs with partition==2 (retained); changed to partition=0 because retention not defined; N= 62
+Warning 143 Adjustment: Fleet: 2  agecomp has N obs with partition==2 (retained); changed to partition=0 because retention not defined; N= 12
+Warning 144 : fleet: 4 lencomp has N obs with partition==2 (retained); changed to partition=0 because retention not defined; N= 10
+Warning 145 : Final gradient: 0.0048694 is larger than final_conv: 1e-06
+Note 3 Information: A revised protocol for the Fcast_yr specification is available and recommended.
 Warning 146 : Reminder: Number of lamdas !=0.0 and !=1.0:  38
-Note 3 Information:  N parameters that are on or within 1% of min-max bound: 2; check results, variance may be suspect
- 146 warnings  and 3 notes 
+Note 4 Information:  N parameters that are on or within 1% of min-max bound: 2; check results, variance may be suspect
+ 146 warnings  and 4 notes 
