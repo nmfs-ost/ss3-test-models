@@ -26,7 +26,7 @@
 #_catch_mult: 0=no; 1=yes
 #_rows are fleets
 #_fleet_type fishery_timing area catch_units need_catch_mult fleetname
- 1 1 1 1 0 FISHERY1  # 1
+ 1 -1 1 1 0 FISHERY1  # 1
  3 1 1 2 0 SURVEY1  # 2
  3 1 1 2 0 SURVEY2  # 3
 #Bycatch_fleet_input_goes_next

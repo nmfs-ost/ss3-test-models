@@ -13,7 +13,7 @@
 #_Cond sd_ratio_rd < 0: platoon_sd_ratio parameter required after movement params.
 #_Cond  1 #vector_platoon_dist_(-1_in_first_val_gives_normal_approx)
 #
-2 # recr_dist_method for parameters:  2=main effects for GP, Area, Settle timing; 3=each Settle entity; 4=none (only when N_GP*Nsettle*pop==1)
+4 # recr_dist_method for parameters:  2=main effects for GP, Area, Settle timing; 3=each Settle entity; 4=none (only when N_GP*Nsettle*pop==1)
 1 # not yet implemented; Future usage: Spawner-Recruitment: 1=global; 2=by area
 1 #  number of recruitment settlement assignments 
 0 # unused option
@@ -93,9 +93,6 @@
  -3 3 0 0 99 0 -50 0 0 0 0 0 0 0 # Eggs/kg_slope_wt_Fem_GP_1
 # Hermaphroditism
 #  Recruitment Distribution 
- 0 2 1 1 99 0 -50 0 0 0 0 0 0 0 # RecrDist_GP_1
- 0 2 1 1 99 0 -50 0 0 0 0 0 0 0 # RecrDist_Area_1
- 0 2 1 1 99 0 -50 0 0 0 0 0 0 0 # RecrDist_month_1
 #  Cohort growth dev base
  0.1 10 1 1 1 0 -1 0 0 0 0 0 0 0 # CohortGrowDev
 #  Movement

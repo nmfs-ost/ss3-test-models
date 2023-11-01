@@ -110,5 +110,5 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           commit_message: Update model files to new ss exe
-          branch: add-update-workflow-new
+          branch: update-test-models
           title: 'Update model files to new ss exe'

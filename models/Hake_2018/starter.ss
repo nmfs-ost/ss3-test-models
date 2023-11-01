@@ -29,7 +29,7 @@
 0 # N individual STD years 
 #COND: vector of year values if N>0
 
-1e-05 # final convergence criteria (e.g. 1.0e-04) 
+1e-04 # final convergence criteria (e.g. 1.0e-04) 
 0 # retrospective year relative to end year (e.g. -4)
 2 # min age for calc of summary biomass
 1 # Depletion basis:  denom is: 0=skip; 1=X*SPBvirgin; 2=X*SPBmsy; 3=X*SPB_styr; 4=X*SPB_endyr; 5=X*dyn_Bzero;  values>=11 invoke N multiyr (up to 9!) with 10's digit; >100 invokes log(ratio)

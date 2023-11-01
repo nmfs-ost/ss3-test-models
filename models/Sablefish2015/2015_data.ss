@@ -28,9 +28,9 @@
 #_catch_mult: 0=no; 1=yes
 #_rows are fleets
 #_fleet_type fishery_timing area catch_units need_catch_mult fleetname
- 1 1 1 1 0 HKL  # 1
- 1 1 1 1 0 POT  # 2
- 1 1 1 1 0 TWL  # 3
+ 1 -1 1 1 0 HKL  # 1
+ 1 -1 1 1 0 POT  # 2
+ 1 -1 1 1 0 TWL  # 3
  3 1 1 2 0 ENV  # 4
  3 1 1 2 0 AKSHLF  # 5
  3 1 1 2 0 AKSLP  # 6

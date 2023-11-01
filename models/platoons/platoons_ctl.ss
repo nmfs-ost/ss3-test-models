@@ -14,11 +14,11 @@
 0  # 0 means do not read wtatage.ss; 1 means read and use wtatage.ss and also read and use growth parameters
 1  #_N_Growth_Patterns (Growth Patterns, Morphs, Bio Patterns, GP are terms used interchangeably in SS3)
 5 #_N_platoons_Within_GrowthPattern 
--0.357046 #_Platoon_within/between_stdev_ratio (no read if N_platoons=1)
+-1 #_Platoon_within/between_stdev_ratio (no read if N_platoons=1)
 #_Cond sd_ratio_rd < 0: platoon_sd_ratio parameter required after movement params.
  0.031 0.237 0.464 0.237 0.031 #vector_platoon_dist_(-1_in_first_val_gives_normal_approx)
 #
-2 # recr_dist_method for parameters:  2=main effects for GP, Area, Settle timing; 3=each Settle entity; 4=none (only when N_GP*Nsettle*pop==1)
+4 # recr_dist_method for parameters:  2=main effects for GP, Area, Settle timing; 3=each Settle entity; 4=none (only when N_GP*Nsettle*pop==1)
 1 # not yet implemented; Future usage: Spawner-Recruitment: 1=global; 2=by area
 1 #  number of recruitment settlement assignments 
 0 # unused option
@@ -106,9 +106,6 @@
  -3 4 3 3 0.8 6 -3 0 0 0 0 0.5 0 0 # Wtlen_2_Mal_GP_1
 # Hermaphroditism
 #  Recruitment Distribution 
- 0 999 1 1 0.8 6 -3 0 0 0 0 0.5 0 0 # RecrDist_GP_1
- 0 999 1 1 0.8 6 -3 0 0 0 0 0.5 0 0 # RecrDist_Area_1
- 0 999 1 1 0.8 6 -3 0 0 0 0 0.5 0 0 # RecrDist_month_1
 #  Cohort growth dev base
  0.1 10 1 1 1 0 -1 0 0 0 0 0 0 0 # CohortGrowDev
 #  Movement
@@ -149,7 +146,7 @@
  1974 #_last_yr_nobias_adj_in_MPD; begin of ramp
  1978.78 #_first_yr_fullbias_adj_in_MPD; begin of plateau
  1993.23 #_last_yr_fullbias_adj_in_MPD
- 2003.28 #_end_yr_for_ramp_in_MPD (can be in forecast to shape ramp, but SS3 sets bias_adj to 0.0 for fcast yrs)
+ 2001 #_end_yr_for_ramp_in_MPD (can be in forecast to shape ramp, but SS3 sets bias_adj to 0.0 for fcast yrs)
  0.4959 #_max_bias_adj_in_MPD (typical ~0.8; -3 sets all years to 0.0; -2 sets all non-forecast yrs w/ estimated recdevs to 1.0; -1 sets biasadj=1.0 for all yrs w/ recdevs)
  0 #_period of cycles in recruitment (N parms read below)
  -5 #min rec_dev
@@ -245,14 +242,14 @@
 #
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn  #  parm_name
 # 1   fishery1 LenSelex
-             5            89       60.5283            60            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_peak_fishery1(1)
+            22            89       60.5283            60            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_peak_fishery1(1)
             -3             3         -0.75         -0.75            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_fishery1(1)
             -4            12        5.0364             5            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_fishery1(1)
             -2            15            15            15            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_fishery1(1)
            -15             0      -12.8882           -15            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_fishery1(1)
           -999            15          -999             0            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_end_logit_fishery1(1)
 # 2   survey1 LenSelex
-             5            89       56.0865            55            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_peak_survey1(2)
+            22            89       56.0865            55            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_peak_survey1(2)
             -3             3         -0.31         -0.31            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_survey1(2)
             -4            12       5.13379             5            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_survey1(2)
             -2            15            15            15            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_survey1(2)

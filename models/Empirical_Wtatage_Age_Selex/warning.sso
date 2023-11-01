@@ -1,4 +1,2 @@
-Warning 1 : fishing fleet: 1 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-Note 1 Suggestion: This model has just one settlement event. Changing to recr_dist_method 4 and removing the recruitment distribution parameters at the end of the MG parms section (below growth parameters) will produce identical results and simplify the model.
-Note 2 Information: A revised protocol for the Fcast_yr specification is available and recommended.
- 1 warning  and 2 notes 
+Note 1 Information: A revised protocol for the Fcast_yr specification is available and recommended.
+ 1 note 

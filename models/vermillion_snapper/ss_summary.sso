@@ -1,8 +1,8 @@
 #V3.30.22.00;_safe;_compile_date:_Oct 30 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 vermilion.dat #_DataFile 
 vermilion.ctl #_Control 
-Run_Date: Tue Oct 31 17:16:19 2023
-Final_phase: 5  N_iterations: 2451
+Run_Date: Wed Nov  1 11:31:56 2023
+Final_phase: 5  N_iterations: 2422
 #_LIKELIHOOD 
 Label logL*Lambda
 TOTAL_LogL 359.687
@@ -13,7 +13,7 @@ Length_comp 88.4498
 Age_comp 260.69
 Recruitment -12.9067
 InitEQ_regime 0
-Sum_recdevs -4.16334e-16
+Sum_recdevs 5.82867e-16
 Forecast_Recruitment 0
 Parm_priors 0
 Parm_softbounds 0.00753787
@@ -346,7 +346,7 @@ F_fleet_4_YR_2011_s_1 0.10958 0.0247627 Act 0.0365265
 F_fleet_4_YR_2012_s_1 0.0976433 0.0219065 Act 0.0325478
 F_fleet_4_YR_2013_s_1 0.108939 0.0240565 Act 0.0363128
 F_fleet_4_YR_2014_s_1 0.0869571 0.0189781 Act 0.0289857
-F_fleet_4_YR_2015_s_1 0.0714355 0.0153125 Act 0.0238118
+F_fleet_4_YR_2015_s_1 0.0714355 0.0153126 Act 0.0238118
 F_fleet_4_YR_2016_s_1 0.073489 0.015614 Act 0.0244963
 F_fleet_4_YR_2017_s_1 0.0796822 0.0172539 Act 0.0265607
 #_Catchability
@@ -401,7 +401,7 @@ Age_95%width_CM_E(1) 0.916154 0.128482 Act 0.0308262
 Age_inflection_CM_W(2) 3.68075 0.134813 Act 0.235611
 Age_95%width_CM_W(2) 2.09661 0.185826 Act 0.118267
 Age_DblN_peak_REC(3) 3.33276 0.184741 Act 0.259195
-Age_DblN_top_logit_REC(3) -9.16508 19.7739 Act 0.0642248
+Age_DblN_top_logit_REC(3) -9.16508 19.7739 Act 0.0642249
 Age_DblN_ascend_se_REC(3) 0.549862 0.24526 Act 0.363881
 Age_DblN_descend_se_REC(3) 2.95273 0.336669 Act 0.695273
 Age_DblN_start_logit_REC(3) -12.1035 49.4222 Act 0.144826
@@ -992,7 +992,7 @@ TotBio_1968 26639.4 0.0
 TotBio_1969 26269 0.0
 TotBio_1970 25836.8 0.0
 TotBio_1971 25463.9 0.0
-TotBio_1972 25153.6 0.0
+TotBio_1972 25153.5 0.0
 TotBio_1973 24904.8 0.0
 TotBio_1974 24655.9 0.0
 TotBio_1975 24439.2 0.0

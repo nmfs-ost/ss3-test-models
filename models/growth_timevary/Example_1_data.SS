@@ -26,8 +26,8 @@
 #_catch_mult: 0=no; 1=yes
 #_rows are fleets
 #_fleet_type fishery_timing area catch_units need_catch_mult fleetname
- 1 1 1 1 0 Fish1  # 1
- 1 1 1 1 0 Fish2  # 2
+ 1 -1 1 1 0 Fish1  # 1
+ 1 -1 1 1 0 Fish2  # 2
  3 1 1 2 0 Surv1  # 3
  3 1 1 2 0 Surv2  # 4
  3 1 1 2 0 Surv3  # 5

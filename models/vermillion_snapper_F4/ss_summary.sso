@@ -1,8 +1,8 @@
 #V3.30.22.00;_safe;_compile_date:_Oct 30 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 vermilion.dat #_DataFile 
 vermilion.ctl #_Control 
-Run_Date: Tue Oct 31 17:17:57 2023
-Final_phase: 5  N_iterations: 2157
+Run_Date: Wed Nov  1 11:32:12 2023
+Final_phase: 5  N_iterations: 2160
 #_LIKELIHOOD 
 Label logL*Lambda
 TOTAL_LogL 359.687
@@ -12,11 +12,11 @@ Discard -1.70754
 Length_comp 88.4498
 Age_comp 260.69
 Recruitment -12.9067
-InitEQ_regime 1.18001e-30
-Sum_recdevs -9.99201e-16
+InitEQ_regime 0
+Sum_recdevs -5.82867e-16
 Forecast_Recruitment 0
 Parm_priors 0
-Parm_softbounds 0.00753786
+Parm_softbounds 0.00753787
 Parm_devs 0
 F_Ballpark 0
 Crash_Pen 0
@@ -401,7 +401,7 @@ Age_95%width_CM_E(1) 0.916154 0.128482 Act 0.0308262
 Age_inflection_CM_W(2) 3.68075 0.134813 Act 0.235611
 Age_95%width_CM_W(2) 2.09661 0.185826 Act 0.118267
 Age_DblN_peak_REC(3) 3.33276 0.184741 Act 0.259195
-Age_DblN_top_logit_REC(3) -9.16508 19.7739 Act 0.0642249
+Age_DblN_top_logit_REC(3) -9.16508 19.7739 Act 0.0642248
 Age_DblN_ascend_se_REC(3) 0.549862 0.24526 Act 0.363881
 Age_DblN_descend_se_REC(3) 2.95273 0.336669 Act 0.695273
 Age_DblN_start_logit_REC(3) -12.1035 49.4222 Act 0.144826
@@ -992,7 +992,7 @@ TotBio_1968 26639.4 0.0
 TotBio_1969 26269 0.0
 TotBio_1970 25836.8 0.0
 TotBio_1971 25463.9 0.0
-TotBio_1972 25153.6 0.0
+TotBio_1972 25153.5 0.0
 TotBio_1973 24904.8 0.0
 TotBio_1974 24655.9 0.0
 TotBio_1975 24439.2 0.0

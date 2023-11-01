@@ -15,7 +15,7 @@ control.ss
 0 # write 1st iteration details to echoinput.sso file (0,1) 
 0 # write parm values to ParmTrace.sso (0=no,1=good,active; 2=good,all; 3=every_iter,all_parms; 4=every,active)
 0 # write to cumreport.sso (0=no,1=like&timeseries; 2=add survey fits)
-0 # Include prior_like for non-estimated parameters (0,1) 
+1 # Include prior_like for non-estimated parameters (0,1) 
 1 # Use Soft Boundaries to aid convergence (0,1) (recommended)
 #
 1 # Number of datafiles to produce:  0 turns off all *.ss_new; 1st is data_echo.ss_new, 2nd is data_expval.ss, 3rd and higher are data_boot_**N.ss,
