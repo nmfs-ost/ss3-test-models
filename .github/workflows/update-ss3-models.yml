@@ -109,6 +109,6 @@ jobs:
       - name: Create Pull Request 
         uses: peter-evans/create-pull-request@v3
         with:
-          commit_message: Update model files to new ss exe
+          commit_message: Update model files to new ss3 release
           branch: update-test-models
-          title: 'Update model files to new ss exe'
+          title: 'Update test model files to new ss3 release'
