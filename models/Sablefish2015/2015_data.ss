@@ -1,23 +1,23 @@
-#V3.30.21.00;_safe;_compile_date:_Feb 10 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.22.00;_safe;_compile_date:_Oct 30 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
 #_User_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
 #_Source_code_at:_https://github.com/nmfs-stock-synthesis/stock-synthesis
 
-#_Start_time: Tue Feb 14 23:40:23 2023
+#_Start_time: Tue Oct 31 17:00:29 2023
 #_echo_input_data
 #C data file created using the SS_writedat function in the R package r4ss
 #C should work with SS version: 
 #C file write time: 2015-05-13 13:24:55
-#V3.30.21.00;_safe;_compile_date:_Feb 10 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.22.00;_safe;_compile_date:_Oct 30 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 1970 #_StartYr
 2014 #_EndYr
 1 #_Nseas
  12 #_months/season
 2 #_Nsubseasons (even number, minimum is 2)
 1 #_spawn_month
-2 #_Ngenders: 1, 2, -1  (use -1 for 1 sex setup with SSB multiplied by female_frac parameter)
+2 #_Nsexes: 1, 2, -1  (use -1 for 1 sex setup with SSB multiplied by female_frac parameter)
 50 #_Nages=accumulator age, first age is always age 0
 1 #_Nareas
 8 #_Nfleets (including surveys)
@@ -28,9 +28,9 @@
 #_catch_mult: 0=no; 1=yes
 #_rows are fleets
 #_fleet_type fishery_timing area catch_units need_catch_mult fleetname
- 1 1 1 1 0 HKL  # 1
- 1 1 1 1 0 POT  # 2
- 1 1 1 1 0 TWL  # 3
+ 1 -1 1 1 0 HKL  # 1
+ 1 -1 1 1 0 POT  # 2
+ 1 -1 1 1 0 TWL  # 3
  3 1 1 2 0 ENV  # 4
  3 1 1 2 0 AKSHLF  # 5
  3 1 1 2 0 AKSLP  # 6
@@ -375,7 +375,7 @@
 1 # use length composition data (0/1/2) where 2 invokes new comp_control format
 #_mintailcomp: upper and lower distribution for females and males separately are accumulated until exceeding this level.
 #_addtocomp:  after accumulation of tails; this value added to all bins
-#_combM+F: males and females treated as combined gender below this bin number 
+#_combM+F: males and females treated as combined sex below this bin number 
 #_compressbins: accumulate upper tail by this number of bins; acts simultaneous with mintailcomp; set=0 for no forced accumulation
 #_Comp_Error:  0=multinomial, 1=dirichlet using Theta*n, 2=dirichlet using beta, 3=MV_Tweedie
 #_ParmSelect:  consecutive index for dirichlet or MV_Tweedie
@@ -561,7 +561,7 @@
  0.0001 0.1037 0.2075 0.4094 0.6059 0.797 0.9831 1.1642 1.3403 1.5118 1.6786 1.841 1.999 2.1528 2.3024 2.448 2.5897 2.7275 2.8617 2.9923 3.1193 3.243 3.3633 3.4804 3.5943 3.7052 3.8131 3.9181 4.0202 4.1197 4.2164 4.3106 4.4022 4.4914 4.5781 4.6626 4.7447 4.8247 4.9025 4.9782 5.0519 5.1236 5.1934 5.2613 5.3273 5.3916 5.4542 5.5151 5.5743 5.632 5.6881
 #_mintailcomp: upper and lower distribution for females and males separately are accumulated until exceeding this level.
 #_addtocomp:  after accumulation of tails; this value added to all bins
-#_combM+F: males and females treated as combined gender below this bin number 
+#_combM+F: males and females treated as combined sex below this bin number 
 #_compressbins: accumulate upper tail by this number of bins; acts simultaneous with mintailcomp; set=0 for no forced accumulation
 #_Comp_Error:  0=multinomial, 1=dirichlet using Theta*n, 2=dirichlet using beta, 3=MV_Tweedie
 #_ParmSelect:  consecutive index for dirichlet or MV_Tweedie

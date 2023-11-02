@@ -1,6 +1,4 @@
-Note 1 Suggestion: This model has just one settlement event. Changing to recr_dist_method 4 and removing the recruitment distribution parameters at the end of the MG parms section (below growth parameters) will produce identical results and simplify the model.
-Warning 1 : The experimental 2D_AR selectivity smoother option is selected!
+Warning 1 : 2D_AR selectivity deviations option is selected!
 Warning 2 : Minimum pop size bin:_10; is > L at Amin for sex: 1; Gpat: 1; L= 5
-Warning 3 : 1st iteration warning: catch logL > 50% total logL; check configuration; suggest start with larger R0
-Warning 4 : Final gradient: 2.25471e-05 is larger than final_conv: 1e-05
- 4 warnings  and 1 note 
+Note 1 Information: A revised protocol for the Fcast_yr specification is available and recommended.
+ 2 warnings  and 1 note 

@@ -1,8 +1,8 @@
-#V3.30.21.00;_safe;_compile_date:_Feb 10 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.22.00;_safe;_compile_date:_Oct 30 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 data.ss #_DataFile 
 control.ss #_Control 
-Run_Date: Tue Feb 14 23:40:27 2023
-Final_phase: 5  N_iterations: 419
+Run_Date: Wed Nov  1 11:00:39 2023
+Final_phase: 5  N_iterations: 418
 #_LIKELIHOOD 
 Label logL*Lambda
 TOTAL_LogL 1306.52
@@ -13,7 +13,7 @@ Age_comp 586.61
 Size_at_age 79.225
 Recruitment -7.39702
 InitEQ_regime 1.54502e-30
-Sum_recdevs 7.77156e-16
+Sum_recdevs -4.44089e-16
 Forecast_Recruitment 0
 Parm_priors 1.05602
 Parm_softbounds 0.0012046
@@ -43,9 +43,6 @@ CV_young_Mal_GP_1 0.1 0 Fix 0.249999
 CV_old_Mal_GP_1 0.1 0 Fix 0.249999
 Wtlen_1_Mal_GP_1 2.44e-06 0 Fix 0.5
 Wtlen_2_Mal_GP_1 3.34694 0 Fix 0.906706
-RecrDist_GP_1 0 0 Fix 0
-RecrDist_Area_1 0 0 Fix 0
-RecrDist_month_1 0 0 Fix 0
 CohortGrowDev 1 0 Fix 0.0909091
 FracFemale_GP_1 0.5 0 Fix 0.499999
 #_SPAWN_RECR

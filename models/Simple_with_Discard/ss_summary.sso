@@ -1,8 +1,8 @@
-#V3.30.21.00;_safe;_compile_date:_Feb 10 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.22.00;_safe;_compile_date:_Oct 30 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 data.ss #_DataFile 
 control.ss #_Control 
-Run_Date: Tue Feb 14 23:42:58 2023
-Final_phase: 6  N_iterations: 398
+Run_Date: Wed Nov  1 11:13:22 2023
+Final_phase: 6  N_iterations: 397
 #_LIKELIHOOD 
 Label logL*Lambda
 TOTAL_LogL 1590.79
@@ -15,7 +15,7 @@ Age_comp 614.604
 Size_at_age 123.54
 Recruitment -7.16913
 InitEQ_regime 0
-Sum_recdevs -1.66533e-16
+Sum_recdevs 4.44089e-16
 Forecast_Recruitment 0
 Parm_priors 1.10698
 Parm_softbounds 0.00147008
@@ -45,9 +45,6 @@ CV_young_Mal_GP_1 0.1 0 Fix 0.249999
 CV_old_Mal_GP_1 0.1 0 Fix 0.249999
 Wtlen_1_Mal_GP_1 2.44e-06 0 Fix 0.5
 Wtlen_2_Mal_GP_1 3.34694 0 Fix 0.906706
-RecrDist_GP_1 0 0 Fix 0
-RecrDist_Area_1 0 0 Fix 0
-RecrDist_month_1 0 0 Fix 0
 CohortGrowDev 1 0 Fix 0.0909091
 FracFemale_GP_1 0.5 0 Fix 0.499999
 #_SPAWN_RECR
@@ -63,7 +60,7 @@ Main_RecrDev_1974 -0.178096 0.41921 Act 0.48219
 Main_RecrDev_1975 0.043586 0.384829 Act 0.504359
 Main_RecrDev_1976 0.709985 0.238263 Act 0.570998
 Main_RecrDev_1977 -0.0130968 0.419572 Act 0.49869
-Main_RecrDev_1978 0.00421148 0.387811 Act 0.500421
+Main_RecrDev_1978 0.00421149 0.387811 Act 0.500421
 Main_RecrDev_1979 0.267748 0.327621 Act 0.526775
 Main_RecrDev_1980 0.165904 0.35552 Act 0.51659
 Main_RecrDev_1981 0.132445 0.321954 Act 0.513244
@@ -104,7 +101,7 @@ Q_extraSD_SURVEY1(2) 0 0 Fix 0
 LnQ_base_SURVEY2(3) -6.71531 0 Fix 0.0237238
 LnQ_base_Depletion(4) 0 0 Fix 0.583333
 #_Selectivity
-Size_inflection_FISHERY(1) 53.6664 0.699394 Act 0.568301
+Size_inflection_FISHERY(1) 53.6664 0.699395 Act 0.568301
 Size_95%width_FISHERY(1) 18.8307 0.69995 Act 0.313731
 Retain_L_infl_FISHERY(1) 38.7358 1.67077 Act 0.374715
 Retain_L_width_FISHERY(1) 6.22218 0.648201 Act 0.618402
@@ -179,7 +176,7 @@ Recr_1976 12038.8 2824.65
 Recr_1977 5816.02 2437.99
 Recr_1978 5880.39 2273.3
 Recr_1979 7589.97 2472.73
-Recr_1980 6784.45 2406.53
+Recr_1980 6784.46 2406.53
 Recr_1981 6466.38 2074.34
 Recr_1982 4415.35 1542.94
 Recr_1983 3400.56 1244.11

@@ -1,9 +1,7 @@
-Warning 1 : fishing fleet: 1 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
-Warning 2 : fishing fleet: 2 surveytime read as: 1 normally is -1 for fishing fleet; can override for indiv. obs. using 1000+month
 Note 1 Suggestion:  recr_dist_method 3 is simpler and takes 1 parm for each settlement
-Warning 3 : bias adjustment ramp extends into forecast; biasadj set to 0.0 internally for forecast years
-Warning 4 : Setting in starter does not request all priors, and 26 parameters have priors and are not estimated, so their prior not included in obj_fun.
-Warning 5 : 1st iteration warning: catch logL > 50% total logL; check configuration; suggest start with larger R0
-Warning 6 : Forecast F capped by max possible F from control file1.5
-Warning 7 : Forecast F capped by max possible F from control file1.5
- 7 warnings  and 1 note 
+Warning 1 : bias adjustment ramp extends into forecast; biasadj set to 0.0 internally for forecast years
+Warning 2 : 1st iteration warning: catch logL > 50% total logL; check configuration; suggest start with larger R0
+Warning 3 : Forecast F capped by max possible F from control file1.5
+Warning 4 : Forecast F capped by max possible F from control file1.5
+Note 2 Information: A revised protocol for the Fcast_yr specification is available and recommended.
+ 4 warnings  and 2 notes 

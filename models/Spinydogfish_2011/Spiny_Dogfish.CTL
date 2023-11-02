@@ -1,4 +1,4 @@
-#V3.30.21.00;_safe;_compile_date:_Feb 10 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.22.00;_safe;_compile_date:_Oct 30 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
@@ -10,9 +10,10 @@
 1  #_N_Growth_Patterns (Growth Patterns, Morphs, Bio Patterns, GP are terms used interchangeably in SS3)
 1 #_N_platoons_Within_GrowthPattern 
 #_Cond 1 #_Platoon_within/between_stdev_ratio (no read if N_platoons=1)
+#_Cond sd_ratio_rd < 0: platoon_sd_ratio parameter required after movement params.
 #_Cond  1 #vector_platoon_dist_(-1_in_first_val_gives_normal_approx)
 #
-2 # recr_dist_method for parameters:  2=main effects for GP, Area, Settle timing; 3=each Settle entity; 4=none (only when N_GP*Nsettle*pop==1)
+4 # recr_dist_method for parameters:  2=main effects for GP, Area, Settle timing; 3=each Settle entity; 4=none (only when N_GP*Nsettle*pop==1)
 1 # not yet implemented; Future usage: Spawner-Recruitment: 1=global; 2=by area
 1 #  number of recruitment settlement assignments 
 0 # unused option
@@ -50,8 +51,8 @@
   #_no additional input for selected M option; read 1P per morph
 #
 1 # GrowthModel: 1=vonBert with L1&L2; 2=Richards with L1&L2; 3=age_specific_K_incr; 4=age_specific_K_decr; 5=age_specific_K_each; 6=NA; 7=NA; 8=growth cessation
-0 #_Age(post-settlement)_for_L1;linear growth below this
-999 #_Growth_Age_for_L2 (999 to use as Linf)
+0 #_Age(post-settlement) for L1 (aka Amin); first growth parameter is size at this age; linear growth below this
+999 #_Age(post-settlement) for L2 (aka Amax); 999 to treat as Linf
 -999 #_exponential decay for growth above maxage (value should approx initial Z; -999 replicates 3.24; -998 to not allow growth above maxage)
 0  #_placeholder for future growth feature
 #
@@ -96,12 +97,10 @@
  2 4 3.0349 3.0349 99 0 -5 0 0 0 0 0 0 0 # Wtlen_2_Mal_GP_1
 # Hermaphroditism
 #  Recruitment Distribution 
- 0 2 1 1 99 0 -5 0 0 0 0 0 0 0 # RecrDist_GP_1
- 0 2 1 1 99 0 -5 0 0 0 0 0 0 0 # RecrDist_Area_1
- 0 2 1 1 99 0 -5 0 0 0 0 0 0 0 # RecrDist_month_1
 #  Cohort growth dev base
  0.1 10 1 1 1 0 -1 0 0 0 0 0 0 0 # CohortGrowDev
 #  Movement
+#  Platoon StDev Ratio 
 #  Age Error from parameters
 #  catch multiplier
 #  fraction female, by GP
@@ -127,7 +126,7 @@
              0             2             0             1            99             0         -5          0          0          0          0          0          0          0 # SR_autocorr
 #_no timevary SR parameters
 1 #do_recdev:  0=none; 1=devvector (R=F(SSB)+dev); 2=deviations (R=F(SSB)+dev); 3=deviations (R=R0*dev; dev2=R-f(SSB)); 4=like 3 with sum(dev2) adding penalty
-1980 # first year of main recr_devs; early devs can preceed this era
+1980 # first year of main recr_devs; early devs can precede this era
 2010 # last year of main recr_devs; forecast devs start in following year
 -1 #_recdev phase 
 1 # (0/1) to read 13 advanced options
@@ -169,13 +168,13 @@
 # Yr:  1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022
 # seas:  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 # TRAWL 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-# Trawl_Discard 0.0104157 0.0114581 0.0106471 0.00614342 0.0116882 0.0118662 0.010625 0.0109626 0.01186 0.0109246 0.0117028 0.0082581 0.00613915 0.00659739 0.00438248 0.0118115 0.0127104 0.0121698 0.0116239 0.0115048 0.0127847 0.0125479 0.0114862 0.0108923 0.0151577 0.0208812 0.0126019 0.00919761 0.0139718 0.00829824 0.00979751 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355
+# Trawl_Discard 0.0104157 0.0114581 0.0106471 0.00614341 0.0116882 0.0118662 0.010625 0.0109626 0.01186 0.0109246 0.0117028 0.00825809 0.00613914 0.00659738 0.00438247 0.0118115 0.0127104 0.0121698 0.0116239 0.0115048 0.0127847 0.0125479 0.0114862 0.0108922 0.0151577 0.0208812 0.0126018 0.00919761 0.0139718 0.00829824 0.0097975 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355
 # MIDWATER 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 # A-SHOP 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 # HKL 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 # Hkl_Discard 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 # OTHERS 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-# RECREATIONAL 5.03357e-06 0.00149827 0.00213426 0.000805253 0.000755526 0.00246151 0.00298266 0.000409866 0.00237249 0.00119504 0.00126591 0.00126607 0.00128342 0.00126605 0.000571382 0.00101036 0.0009575 0.000240094 4.4567e-05 0.000597231 0.000541821 0.00050775 0.000799692 0.000633538 0.000141988 0.000245067 0.000201084 0.000320972 0.000160662 0.00024443 0.000125704 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178
+# RECREATIONAL 5.03357e-06 0.00149827 0.00213426 0.000805253 0.000755525 0.00246151 0.00298266 0.000409865 0.00237249 0.00119504 0.00126591 0.00126607 0.00128342 0.00126605 0.000571382 0.00101036 0.000957499 0.000240094 4.4567e-05 0.00059723 0.00054182 0.00050775 0.000799692 0.000633537 0.000141988 0.000245067 0.000201084 0.000320972 0.000160662 0.00024443 0.000125704 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178
 #
 #_Q_setup for fleets with cpue or survey data
 #_1:  fleet number
@@ -198,10 +197,10 @@
              0             1      0.312773           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_AFSC_triennial(9)
            -15            15        0.2433             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_AFSC_slope(10)
              0             1      0.470457           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_AFSC_slope(10)
-           -15            15     -0.405813             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_NWFSC_shelf_slope(11)
-             0             1      0.808003           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_NWFSC_shelf_slope(11)
+           -15            15     -0.405814             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_NWFSC_shelf_slope(11)
+             0             1      0.808004           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_NWFSC_shelf_slope(11)
            -15            15      -2.46801             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_NWFSC_slope(12)
-             0             1      0.812211           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_NWFSC_slope(12)
+             0             1      0.812209           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_NWFSC_slope(12)
            -15            15      -14.0178             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_IPHC(13)
              0             1           0.1           0.1            99             0         -3          0          0          0          0          0          0          0  #  Q_extraSD_IPHC(13)
 # timevary Q parameters 
@@ -217,7 +216,7 @@
 #Pattern:_11; parm=2; selex=1.0  for specified min-max population length bin range
 #Pattern:_15; parm=0; mirror another age or length selex
 #Pattern:_6;  parm=2+special; non-parm len selex
-#Pattern:_43; parm=2+special+2;  like 6, with 2 additional param for scaling (average over bin range)
+#Pattern:_43; parm=2+special+2;  like 6, with 2 additional param for scaling (mean over bin range)
 #Pattern:_8;  parm=8; double_logistic with smooth transitions and constant above Linf option
 #Pattern:_9;  parm=6; simple 4-parm double logistic with starting length; parm 5 is first length; parm 6=1 does desc as offset
 #Pattern:_21; parm=2+special; non-parm len selex, read as pairs of size, then selex
@@ -227,7 +226,7 @@
 #Pattern:_2;  parm=6; double_normal with sel(minL) and sel(maxL), using joiners, back compatibile version of 24 with 3.30.18 and older
 #Pattern:_25; parm=3; exponential-logistic in length
 #Pattern:_27; parm=special+3; cubic spline in length; parm1==1 resets knots; parm1==2 resets all 
-#Pattern:_42; parm=special+3+2; cubic spline; like 27, with 2 additional param for scaling (average over bin range)
+#Pattern:_42; parm=special+3+2; cubic spline; like 27, with 2 additional param for scaling (mean over bin range)
 #_discard_options:_0=none;_1=define_retention;_2=retention&mortality;_3=all_discarded_dead;_4=define_dome-shaped_retention
 #_Pattern Discard Male Special
  24 0 0 0 # 1 TRAWL
@@ -254,13 +253,13 @@
 #Pattern:_15; parm=0; mirror another age or length selex
 #Pattern:_16; parm=2; Coleraine - Gaussian
 #Pattern:_17; parm=nages+1; empirical as random walk  N parameters to read can be overridden by setting special to non-zero
-#Pattern:_41; parm=2+nages+1; // like 17, with 2 additional param for scaling (average over bin range)
+#Pattern:_41; parm=2+nages+1; // like 17, with 2 additional param for scaling (mean over bin range)
 #Pattern:_18; parm=8; double logistic - smooth transition
 #Pattern:_19; parm=6; simple 4-parm double logistic with starting age
 #Pattern:_20; parm=6; double_normal,using joiners
 #Pattern:_26; parm=3; exponential-logistic in age
 #Pattern:_27; parm=3+special; cubic spline in age; parm1==1 resets knots; parm1==2 resets all 
-#Pattern:_42; parm=2+special+3; // cubic spline; with 2 additional param for scaling (average over bin range)
+#Pattern:_42; parm=2+special+3; // cubic spline; with 2 additional param for scaling (mean over bin range)
 #Age patterns entered with value >100 create Min_selage from first digit and pattern from remainder
 #_Pattern Discard Male Special
  11 0 0 0 # 1 TRAWL
@@ -296,7 +295,7 @@
             20           120       57.2886            55            99             6          1          0          0          0          0        0.5          0          0  #  Size_DblN_peak_MIDWATER(3)
             -6             4      0.556088             0            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_MIDWATER(3)
             -1             9       4.95189             5            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_MIDWATER(3)
-            -1             9       4.49235             5            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_MIDWATER(3)
+            -1             9       4.49236             5            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_MIDWATER(3)
             -9             9      -5.49833            -7            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_MIDWATER(3)
           -999          -999          -999             0            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_end_logit_MIDWATER(3)
 # 4   A-SHOP LenSelex
@@ -395,8 +394,12 @@
 #_No_Dirichlet parameters
 #_no timevary selex parameters
 #
-0   #  use 2D_AR1 selectivity(0/1)
+0   #  use 2D_AR1 selectivity? (0/1)
 #_no 2D_AR1 selex offset used
+#_specs:  fleet, ymin, ymax, amin, amax, sigma_amax, use_rho, len1/age2, devphase, before_range, after_range
+#_sigma_amax>amin means create sigma parm for each bin from min to sigma_amax; sigma_amax<0 means just one sigma parm is read and used for all bins
+#_needed parameters follow each fleet's specifications
+# -9999  0 0 0 0 0 0 0 0 0 0 # terminator
 #
 # Tag loss and Tag reporting parameters go next
 0  # TG_custom:  0=no read and autogen if tag data exist; 1=read
