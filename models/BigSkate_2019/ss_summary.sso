@@ -1,8 +1,8 @@
 #V3.30.22.00;_safe;_compile_date:_Oct 30 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 BSKT2019_data.ss #_DataFile 
 BSKT2019_control.ss #_Control 
-Run_Date: Tue Oct 31 16:35:17 2023
-Final_phase: 5  N_iterations: 242
+Run_Date: Tue Nov  7 09:35:20 2023
+Final_phase: 5  N_iterations: 241
 #_LIKELIHOOD 
 Label logL*Lambda
 TOTAL_LogL 402.017
@@ -18,7 +18,7 @@ InitEQ_regime 0
 Sum_recdevs 0
 Forecast_Recruitment 0
 Parm_priors 0.138712
-Parm_softbounds 0.00839922
+Parm_softbounds 0.00839921
 Parm_devs 0
 F_Ballpark 0
 Crash_Pen 0
@@ -35,7 +35,7 @@ SD_old_Fem_GP_1 7.08412 0.920452 Act 0.320217
 Wtlen_1_Fem_GP_1 7.49e-06 0 Fix 2.49667e-06
 Wtlen_2_Fem_GP_1 2.9925 0 Fix 0.49625
 Mat50%_Fem_GP_1 148.245 0 Fix 0.987464
-Mat_slope_Fem_GP_1 -0.13155 0 Fix -1.03872
+Mat_slope_Fem_GP_1 -0.13155 0 Fix 0.184498
 Eggs/kg_inter_Fem_GP_1 1 0 Fix 0.666667
 Eggs/kg_slope_wt_Fem_GP_1 0 0 Fix 0.5
 NatM_uniform_Mal_GP_1 0 0 Fix 0.5
@@ -96,7 +96,7 @@ LnQ_base_WCGBTS(5) -0.403308 0.315405 Act 0.399173
 Q_extraSD_WCGBTS(5) 0.163264 0.0573576 Act 0.0816318
 LnQ_base_Triennial(6) -1.2524 0.74312 Act 0.728966
 Q_extraSD_Triennial(6) 0.365954 0.146404 Act 0.182977
-LnQ_base_Triennial(6)_BLK1repl_1995 -0.934511 0.741209 Act 0.866498
+LnQ_base_Triennial(6)_BLK1repl_1995 -0.934511 0.741208 Act 0.866498
 #_Selectivity
 Size_DblN_peak_Fishery_current(1) 94.1114 4.8992 Act 0.201591
 Size_DblN_top_logit_Fishery_current(1) -15 0 Fix 0
@@ -109,7 +109,7 @@ Retain_L_width_Fishery_current(1) 4.87637 0.354422 Act 0.482462
 Retain_L_asymptote_logit_Fishery_current(1) 2.05182 0.358541 Act 0.401727
 Retain_L_maleoffset_Fishery_current(1) 0 0 Fix 0
 DiscMort_L_infl_Fishery_current(1) 5 0 Fix 0
-DiscMort_L_width_Fishery_current(1) 0 0 Fix -0.00010001
+DiscMort_L_width_Fishery_current(1) 0 0 Fix 0
 DiscMort_L_level_old_Fishery_current(1) 0.5 0 Fix 0.5
 DiscMort_L_male_offset_Fishery_current(1) 0 0 Fix 0
 SzSel_Fem_Peak_Fishery_current(1) -5.52193 2.16233 Act 0.444781
@@ -128,11 +128,11 @@ SzSel_Fem_Ascend_WCGBTS(5) 0 0 Fix 0.5
 SzSel_Fem_Descend_WCGBTS(5) 0 0 Fix 0.5
 SzSel_Fem_Final_WCGBTS(5) 0 0 Fix 0.5
 SzSel_Fem_Scale_WCGBTS(5) 0.698111 0.125697 Act 0.198111
-Size_DblN_peak_Triennial(6) 187.543 34.6114 Act 0.916952
+Size_DblN_peak_Triennial(6) 187.543 34.6113 Act 0.916952
 Size_DblN_top_logit_Triennial(6) -15 0 Fix 0
-Size_DblN_ascend_se_Triennial(6) 8.47236 0.420335 Act 0.947236
+Size_DblN_ascend_se_Triennial(6) 8.47236 0.420335 Act 0.947235
 Size_DblN_descend_se_Triennial(6) 20 0 Fix 1
-Size_DblN_start_logit_Triennial(6) -4.79417 0.784067 Act 0.425243
+Size_DblN_start_logit_Triennial(6) -4.79417 0.784066 Act 0.425243
 Size_DblN_end_logit_Triennial(6) -999 0 Fix 0
 SzSel_Fem_Peak_Triennial(6) 0 0 Fix 0.5
 SzSel_Fem_Ascend_Triennial(6) 0 0 Fix 0.5
@@ -143,9 +143,9 @@ Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2005 2.30033 0.565178 Act 0
 Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2006 3.30395 1.30217 Act 0.443465
 Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2007 3.96299 1.9778 Act 0.465433
 Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2008 11.0793 112.04 Act 0.702643
-Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2009 4.91241 3.71218 Act 0.49708
-Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2010 13.2418 88.1325 Act 0.774727
-Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2011 14.6406 74.0296 Act 0.821353
+Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2009 4.91241 3.71217 Act 0.49708
+Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2010 13.2418 88.1326 Act 0.774727
+Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2011 14.6406 74.0295 Act 0.821353
 Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2012 13.8921 81.517 Act 0.796403
 Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2013 3.45566 0.333454 Act 0.448522
 Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2014 3.62006 0.276524 Act 0.454002
@@ -248,7 +248,7 @@ SSB_2004 1906.82 727.816
 SSB_2005 1917.69 728.743
 SSB_2006 1922.93 729.218
 SSB_2007 1920.13 729.1
-SSB_2008 1928.2 729.63
+SSB_2008 1928.2 729.631
 SSB_2009 1926.15 729.477
 SSB_2010 1938.68 730.208
 SSB_2011 1952.35 730.891
@@ -276,7 +276,7 @@ Recr_Virgin 7366.45 2751.26
 Recr_Initial 7366.45 2751.26
 Recr_1916 7366.56 2751.29
 Recr_1917 7366.56 2751.29
-Recr_1918 7365.31 2751.09
+Recr_1918 7365.3 2751.09
 Recr_1919 7362.8 2750.68
 Recr_1920 7359.02 2750.07
 Recr_1921 7353.99 2749.27
@@ -398,7 +398,7 @@ SPRratio_1921 0.0430728 0.0120691
 SPRratio_1922 0.0516473 0.0144625
 SPRratio_1923 0.0602936 0.016876
 SPRratio_1924 0.0688782 0.0192737
-SPRratio_1925 0.077474 0.021677
+SPRratio_1925 0.0774739 0.021677
 SPRratio_1926 0.0860849 0.024088
 SPRratio_1927 0.0947831 0.0265276
 SPRratio_1928 0.103436 0.0289606
@@ -415,8 +415,8 @@ SPRratio_1938 0.191863 0.054299
 SPRratio_1939 0.231289 0.0650101
 SPRratio_1940 0.232376 0.0656784
 SPRratio_1941 0.25627 0.0723272
-SPRratio_1942 0.24994 0.0711018
-SPRratio_1943 0.245947 0.0704104
+SPRratio_1942 0.249939 0.0711018
+SPRratio_1943 0.245946 0.0704104
 SPRratio_1944 0.251237 0.0721433
 SPRratio_1945 0.261854 0.0753032
 SPRratio_1946 0.273047 0.0786488
@@ -436,7 +436,7 @@ SPRratio_1959 0.327723 0.0994864
 SPRratio_1960 0.323465 0.0987172
 SPRratio_1961 0.36554 0.110546
 SPRratio_1962 0.352042 0.107544
-SPRratio_1963 0.358844 0.10991
+SPRratio_1963 0.358843 0.10991
 SPRratio_1964 0.35676 0.109858
 SPRratio_1965 0.336663 0.104747
 SPRratio_1966 0.341678 0.106443
@@ -497,7 +497,7 @@ SPRratio_2020 0.257148 0.081834
 SPRratio_2021 0.910817 6.38219e-05
 SPRratio_2022 0.904129 6.81782e-05
 SPRratio_2023 0.898147 7.20222e-05
-SPRratio_2024 0.89213 7.58386e-05
+SPRratio_2024 0.89213 7.58385e-05
 SPRratio_2025 0.886078 7.96263e-05
 SPRratio_2026 0.87999 8.33845e-05
 SPRratio_2027 0.874634 8.66479e-05
@@ -536,7 +536,7 @@ F_1944 0.0139407 0.00410407
 F_1945 0.0145723 0.00431026
 F_1946 0.0152414 0.00453078
 F_1947 0.0159208 0.00475804
-F_1948 0.0167488 0.00503374
+F_1948 0.0167488 0.00503373
 F_1949 0.0173989 0.0052607
 F_1950 0.0173966 0.0052926
 F_1951 0.0172319 0.00527244
@@ -567,7 +567,7 @@ F_1975 0.019038 0.006415
 F_1976 0.019523 0.00659258
 F_1977 0.0201176 0.00680992
 F_1978 0.0239071 0.00811508
-F_1979 0.0261481 0.00892958
+F_1979 0.026148 0.00892958
 F_1980 0.0200287 0.00689116
 F_1981 0.0246427 0.00848702
 F_1982 0.02198 0.0076115
@@ -579,7 +579,7 @@ F_1987 0.0195623 0.006824
 F_1988 0.0188327 0.00657775
 F_1989 0.0187169 0.00654086
 F_1990 0.0191439 0.00669275
-F_1991 0.0195823 0.0068507
+F_1991 0.0195822 0.0068507
 F_1992 0.0192012 0.00672356
 F_1993 0.0198622 0.00695755
 F_1994 0.019868 0.00696574
@@ -692,7 +692,7 @@ Bratio_1986 0.722691 0.0852393
 Bratio_1987 0.723623 0.0853599
 Bratio_1988 0.724669 0.0854358
 Bratio_1989 0.726272 0.08536
-Bratio_1990 0.727687 0.0853142
+Bratio_1990 0.727687 0.0853141
 Bratio_1991 0.728374 0.0854365
 Bratio_1992 0.728323 0.0857349
 Bratio_1993 0.728219 0.0860468
@@ -710,7 +710,7 @@ Bratio_2004 0.755313 0.0810799
 Bratio_2005 0.759617 0.0800376
 Bratio_2006 0.761695 0.0794946
 Bratio_2007 0.760583 0.0796891
-Bratio_2008 0.763782 0.0788314
+Bratio_2008 0.763783 0.0788314
 Bratio_2009 0.762969 0.0789319
 Bratio_2010 0.767934 0.0776481
 Bratio_2011 0.773345 0.0762374
@@ -739,7 +739,7 @@ Totbio_unfished 29359.2 8024.53
 SmryBio_unfished 27268.3 7354.47
 Recr_unfished 7366.45 2751.26
 SSB_Btgt 1009.82 297.221
-SPR_Btgt 0.625 1.79711e-17
+SPR_Btgt 0.625 1.12326e-16
 annF_Btgt 0.0483043 0.00332516
 Dead_Catch_Btgt 700.716 196.505
 SSB_SPR 504.909 148.61
@@ -756,7 +756,7 @@ ForeCatch_2020 336.279 1.55031
 ForeCatch_2021 1472.75 499.789
 ForeCatch_2022 1387.22 462.025
 ForeCatch_2023 1320.37 433.214
-ForeCatch_2024 1268.11 411.414
+ForeCatch_2024 1268.11 411.415
 ForeCatch_2025 1226.04 394.475
 ForeCatch_2026 1189.47 380.188
 ForeCatch_2027 1156.81 367.555
@@ -775,8 +775,8 @@ OFLCatch_2027 1391.41 441.9
 OFLCatch_2028 1364.51 430.814
 OFLCatch_2029 1337.96 419.89
 OFLCatch_2030 1311.74 409.105
-ForeCatchret_2019 313.16 4.49126e-09
-ForeCatchret_2020 313.16 4.48829e-09
+ForeCatchret_2019 313.16 4.49137e-09
+ForeCatchret_2020 313.16 4.48826e-09
 ForeCatchret_2021 1370.72 464.967
 ForeCatchret_2022 1288.64 428.692
 ForeCatchret_2023 1224.51 401.008

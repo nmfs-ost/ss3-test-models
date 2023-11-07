@@ -274,8 +274,8 @@
           0.01           0.8           0.2           0.1            99             0        -50          0          0          0          0          0          0          0  #  DiscMort_L_level_old_HKL(1)
            -10            10             0             0            99             0        -50          0          0          0          0          0          0          0  #  DiscMort_L_male_offset_HKL(1)
 # 2   POT LenSelex
-            35            60       46.5601            30            99             0          6          0          0          0          0          0          3          2  #  Retain_L_infl_POT(2)
-             3            20       3.66139             1            99             0          6          0          0          0          0          0          0          0  #  Retain_L_width_POT(2)
+            25            60       46.5601            30            99             0          6          0          0          0          0          0          3          2  #  Retain_L_infl_POT(2)
+             1            20       3.66139             1            99             0          6          0          0          0          0          0          0          0  #  Retain_L_width_POT(2)
            -10            10            10            10            99             0         -6          0          0          0          0          0          1          2  #  Retain_L_asymptote_logit_POT(2)
            -10            10             0             0            99             0        -50          0          0          0          0          0          0          0  #  Retain_L_maleoffset_POT(2)
              8            70            28            18            99             0        -50          0          0          0          0          0          0          0  #  DiscMort_L_infl_POT(2)
@@ -283,7 +283,7 @@
           0.01           0.8           0.2           0.1            99             0        -50          0          0          0          0          0          0          0  #  DiscMort_L_level_old_POT(2)
            -10            10             0             0            99             0        -50          0          0          0          0          0          0          0  #  DiscMort_L_male_offset_POT(2)
 # 3   TWL LenSelex
-            35            55       45.0201            32            99             0          6          0          0          0          0          0          3          2  #  Retain_L_infl_TWL(3)
+            25            60       45.0201            32            99             0          6          0          0          0          0          0          3          2  #  Retain_L_infl_TWL(3)
              1             5       2.09988             1            99             0          6          0          0          0          0          0          0          0  #  Retain_L_width_TWL(3)
            -10            10            10            10            99             0        -99          0          0          0          0          0          2          2  #  Retain_L_asymptote_logit_TWL(3)
            -10            10             0             0            99             0        -50          0          0          0          0          0          0          0  #  Retain_L_maleoffset_TWL(3)

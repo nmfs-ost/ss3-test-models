@@ -128,7 +128,7 @@
 0  # 0/1 to use steepness in initial equ recruitment calculation
 0  #  future feature:  0/1 to make realized sigmaR a function of SR curvature
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn #  parm_name
-             8            12       9.33246           9.2            99             6          1          0          0          0          0          0          0          0 # SR_LN(R0)
+             8            12            10           9.2            99             6          1          0          0          0          0          0          0          0 # SR_LN(R0)
            0.2             1           0.6           0.6            99             6         -2          0          0          0          0          0          0          0 # SR_BH_steep
            0.2           1.5           0.5           0.5             1             6         -5          0          0          0          0          0          0          0 # SR_sigmaR
             -5             5             0             0            99             6         -6          0          0          0          0          0          0          0 # SR_regime
