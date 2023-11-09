@@ -84,7 +84,7 @@
  2 4 2.9925 2.9925 99 0 -3 0 0 0 0 0.5 0 0 # Wtlen_2_Fem_GP_1
 # Sex: 1  BioPattern: 1  Maturity&Fecundity
  10 150 148.245 148.245 99 0 -3 0 0 0 0 0.5 0 0 # Mat50%_Fem_GP_1
- -0.09 -0.05 -0.13155 -0.13155 99 0 -3 0 0 0 0 0.5 0 0 # Mat_slope_Fem_GP_1
+ -0.15 -0.05 -0.13155 -0.13155 99 0 -3 0 0 0 0 0.5 0 0 # Mat_slope_Fem_GP_1
  -3 3 1 1 99 0 -3 0 0 0 0 0.5 0 0 # Eggs/kg_inter_Fem_GP_1
  -3 3 0 0 99 0 -3 0 0 0 0 0.5 0 0 # Eggs/kg_slope_wt_Fem_GP_1
 # Sex: 2  BioPattern: 1  NatMort
@@ -264,7 +264,7 @@
            -10            20       2.05182            10            99             0          3          0          0          0          0          0          2          2  #  Retain_L_asymptote_logit_Fishery_current(1)
              0             0             0             0            99             0         -3          0          0          0          0          0          0          0  #  Retain_L_maleoffset_Fishery_current(1)
              5            15             5             5            99             0         -4          0          0          0          0          0          0          0  #  DiscMort_L_infl_Fishery_current(1)
-         0.001            10             0             0            99             0         -4          0          0          0          0          0          0          0  #  DiscMort_L_width_Fishery_current(1)
+         0            10             0             0            99             0         -4          0          0          0          0          0          0          0  #  DiscMort_L_width_Fishery_current(1)
              0             1           0.5           0.5            99             0         -5          0          0          0          0          0          0          0  #  DiscMort_L_level_old_Fishery_current(1)
              0             0             0             0            99             0         -5          0          0          0          0          0          0          0  #  DiscMort_L_male_offset_Fishery_current(1)
            -50            50      -5.52193             0            99             0          4          0          0          0          0          0          0          0  #  SzSel_Fem_Peak_Fishery_current(1)

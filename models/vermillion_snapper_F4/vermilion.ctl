@@ -151,9 +151,9 @@
 # read list of fleets that do F as parameter; unlisted fleets stay hybrid, bycatch fleets must be included with start_PH=1, high F fleets should switch early
 # (A) fleet, (B) F_starting_value (used if start_PH=1), (C) start_PH for parms (99 to stay in hybrid, <0 to stay at starting value)
 # (A) (B) (C)  (terminate list with -9999 for fleet)
- 1 0.01 1 # CM_E
- 2 0.01 1 # CM_W
- 3 0.01 1 # REC
+ 1 0.01 2 # CM_E
+ 2 0.01 2 # CM_W
+ 3 0.01 2 # REC
  4 0.01 1 # SMP_BYC
 -9999 1 1 # end of list
 4 #_number of loops for hybrid tuning; 4 good; 3 faster; 2 enough if switching to parms is enabled
