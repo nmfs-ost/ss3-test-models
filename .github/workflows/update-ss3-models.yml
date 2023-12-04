@@ -1,9 +1,9 @@
-name: update-test-models
+name: update-ss3-test-models
 on: 
   workflow_dispatch:
 
 jobs:
-  update-user-example-models:
+  update-ss3-test-models:
     runs-on: ubuntu-latest
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
@@ -28,16 +28,13 @@ jobs:
 
       - name: install r4ss
         run: Rscript -e 'remotes::install_github("r4ss/r4ss")'
-      
-      # - name: install SSutils
-      #   run: Rscript -e 'remotes::install_github("r4ss/SSutils")'
 
       - name: install purrr
         run: Rscript -e 'install.packages("purrr")'
         
       - name: Get the latest SS3 executable
         run: |
-          wget -O ss3 https://github.com/nmfs-stock-synthesis/stock-synthesis/releases/latest/download/ss_linux
+          wget -O ss3 https://github.com/nmfs-ost/ss3-source-code/releases/latest/download/ss_linux
           sudo chmod a+x ss3
           mv ss3 /usr/local/bin/ss3
           export PATH=/usr/local/bin/ss3:$PATH
@@ -104,11 +101,11 @@ jobs:
       - name: Commit
         run: |
           git add .
-          git commit -m "update test model files to new ss3 release"
+          git commit -m "update test model files for new ss3 release"
         
       - name: Create Pull Request 
         uses: peter-evans/create-pull-request@v3
         with:
-          commit_message: Update model files to new ss3 release
+          commit_message: Update model files for new ss3 release
           branch: update-test-models
-          title: 'Update test model files to new ss3 release'
+          title: 'Update test model files for new ss3 release'

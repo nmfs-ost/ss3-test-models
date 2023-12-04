@@ -3,7 +3,7 @@
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
 #_User_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
-#_Source_code_at:_https://github.com/nmfs-stock-synthesis/stock-synthesis
+#_Source_code_at:_https://github.com/nmfs-ost/ss3-source-code
 
 #C 2015 Assessent of Kelp Greenling (Berger, Arnold, Rodomsky) run with SSv3.24u
 #_data_and_control_files: BC_dat.ss // BC_ctl.ss

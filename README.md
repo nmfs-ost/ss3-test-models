@@ -1,22 +1,22 @@
-# test-models
+# ss3-test-models
 
 Stock Synthesis models and scripts used for testing
 
 ## Repository structure
 
-All SS models are in the "models" subfolder. All testing scripts and specifications files used by the SS development team are in the ".github" subfolder.
+All SS3 models are in the "models" subfolder. All testing scripts and specifications files used by the SS3 development team are in the ".github" subfolder.
 
 ## Can I open a pull request to add my own models to this repository?
 
-It is always helpful to have more examples of Stock Synthesis models! Please open a pull request in the [user-examples repository](https://github.com/nmfs-stock-synthesis/user-examples) to share your own models publicly.
+It is always helpful to have more examples of Stock Synthesis models! Please open a pull request in the [ss3-user-examples repository](https://github.com/nmfs-ost/ss3-user-examples) to share your own models publicly.
 
-## Why are these models not in the user-examples repository?
+## Why are these models not in the ss3-user-examples repository?
 
 This repository houses models used for testing Stock Synthesis. These are often based on stock assessment models, but may not be the final model version or may have been altered for testing purposes. In addition, the data in the model files should not be used as data sources, as the data may have been altered for testing purposes.
 
 ## How is Stock Synthesis tested?
 
-Regression tests are the primary way that Stock Synthesis is tested. Regression tests are conducted automatically using Github actions. Each time, the set of models in test-models are run and then key model quantities are checked to determine if they have changed or remained the same relative to a reference run.
+Regression tests are the primary way that Stock Synthesis is tested. Regression tests are conducted automatically using Github actions. Each time, the set of models in ss3-test-models are run and then key model quantities are checked to determine if they have changed or remained the same relative to a reference run.
 
 ## What features do these models have?
 
