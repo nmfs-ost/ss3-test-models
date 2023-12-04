@@ -8,7 +8,7 @@ All SS3 models are in the "models" subfolder. All testing scripts and specificat
 
 ## Can I open a pull request to add my own models to this repository?
 
-It is always helpful to have more examples of Stock Synthesis models! Please open a pull request in the [ss3-user-examples repository](https://github.com/nmfs-stock-synthesis/ss3-user-examples) to share your own models publicly.
+It is always helpful to have more examples of Stock Synthesis models! Please open a pull request in the [ss3-user-examples repository](https://github.com/nmfs-ost/ss3-user-examples) to share your own models publicly.
 
 ## Why are these models not in the ss3-user-examples repository?
 

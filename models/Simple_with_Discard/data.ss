@@ -3,7 +3,7 @@
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
 #_User_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
-#_Source_code_at:_https://github.com/nmfs-stock-synthesis/stock-synthesis
+#_Source_code_at:_https://github.com/nmfs-ost/ss3-source-code
 
 #_Start_time: Tue Oct 31 17:04:44 2023
 #_echo_input_data
