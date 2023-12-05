@@ -3,7 +3,7 @@ list.of.packages <- c("parallely", "furrr", "future")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)>0) install.packages(new.packages)
 
-ncores <- parallelly::availableCores() - 1
+ncores <- parallelly::availableCores(omit = 1)
 future::plan(future::multisession, workers = ncores)
 
 mod_names <- list.dirs("model_runs", full.names = FALSE, recursive = FALSE)
