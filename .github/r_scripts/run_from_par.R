@@ -1,4 +1,10 @@
 # code to run the ss_new models
+list.of.packages <- c("parallely", "furrr", "future")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)>0) install.packages(new.packages)
+
+ncores <- parallelly::availableCores() - 1
+future::plan(future::multisession, workers = ncores)
 
 mod_names <- list.dirs("model_runs", full.names = FALSE, recursive = FALSE)
 mod_paths <- list.dirs("model_runs", full.names = TRUE, recursive = FALSE)
@@ -36,9 +42,10 @@ run_ss_noest <- function(dir) {
         }
 }
 
-mod_ran <- lapply(mod_paths, function(x) tryCatch(run_ss_noest(x), 
+mod_ran <- furrr::future_map(mod_paths, function(x) {tryCatch(run_ss_noest(x), 
                                        error = function(e) print(e)
-                                       )
+                                       )}
+
            )
 mod_errors <- mod_names[unlist(lapply(mod_ran, function(x) "simpleError" %in% class(x)))]
 success <- TRUE
