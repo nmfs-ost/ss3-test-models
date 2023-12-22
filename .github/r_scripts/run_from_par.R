@@ -30,13 +30,13 @@ run_ss_noest <- function(dir) {
       # start[phase_line] <- "0 # Turn off estimation after this phase"
       writeLines(start, file.path(dir, "starter.ss"))
       # run the models without estimation and see if model finishes without error
-      message("running ss on ", basename(dir))
-      system(paste0("cd ", dir, " && ../ss -maxfn 0 -phase 50 -nohess"))
+      message("running ss3 on ", basename(dir))
+      system(paste0("cd ", dir, " && ../ss3 -maxfn 0 -phase 50 -nohess modelname ss"))
       model_ran <- file.exists(file.path(dir, "control.ss_new"))
       return(model_ran)
       } else {
-        message("running ss on ", basename(dir))
-        system(paste0("cd ", dir, " && ../ss -maxfn 0 -phase 50 -nohess"))
+        message("running ss3 on ", basename(dir))
+        system(paste0("cd ", dir, " && ../ss3 -maxfn 0 -phase 50 -nohess modelname ss"))
         model_ran <- file.exists(file.path(dir, "control.ss_new"))
         return(model_ran)
         }
