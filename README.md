@@ -24,19 +24,19 @@ Most of these models have at least 1 unique feature. The table below includes so
 
 | Model | Features | Approx. Run Times |
 | ----- | -------- | ----------------- |
-| BigSkate_2019 | Uses F method 3 (hybrid), Cessation growth model, Catchability time blocks, catchability priors,  Mirrored and DN selectivity, discard data, conditional age at length data, Input var. adjustments | 0 hours, 5 minutes, 43 seconds |
+| BigSkate_2019 | Uses F method 3 (hybrid), cessation growth model, catchability time blocks, catchability priors,  Mirrored and DN selectivity, discard data, conditional age at length data, Input var. adjustments | 0 hours, 5 minutes, 43 seconds |
 | Empirical_Wtatage_Age_Selex | Empirical Weight at age model, with empirical (as random walk) age selectivity | 0 hours, 1 minutes, 18 seconds |
 | growth_morphs | Uses 5 platoons, 1 growth pattern| 0 hours, 4 minutes, 38 seconds |
 | growth_timevary | Time-varying growth using time blocks, Fmethod 1 | 0 hours, 0 minutes, 54 seconds |
 | Hake_2018 | Empirical weight at age model, Dirichlet Multinomial comps weighting, time varying selectivity using annual deviations | 0 hours, 1 minutes, 5 seconds |
 | Hake_2019_semi-parametric_selex | Empirical Weight at age model, with semiparametric (2DAR) selectivity | 0 hours, 1 minutes, 7 seconds |
 | KelpGreenling2015 | Maturity option 6 (read length-maturity), Mirrored selectivity, input variance adjustment | 0 hours, 4 minutes, 59 seconds |
-| Sablefish2015 | cubic spline selectivity with male offset, DN length selectivity, special recdev survey | 0 hours, 13 minutes, 9 seconds |
+| Sablefish2015 | Cubic spline selectivity with male offset, DN length selectivity, special recdev survey | 0 hours, 13 minutes, 9 seconds |
 | Simple | Uses sd reporting and mean size-at-age data | 0 hours, 1 minutes, 43 seconds |
 | Simple_Lorenzen_tv_trend | Lorenzen natural morality, lambdas, extra stddev input (M-at-age), tv trends on selectivity (-1,-2,-3) | 0 hours, 2 minutes, 2 seconds |
 | Simple_NoCPUE | No index of abundance | 0 hours, 1 minutes, 35 seconds |
 | Simple_with_Discard | Uses discards | 0 hours, 2 minutes, 7 seconds |
-| Simple_with_DM_sizefreq | Generalized size-composition data (Sizefreq) with Dirichlet-multinomial | 0 hours, 7 minutes, 42 second |
+| Simple_with_DM_sizefreq | Generalized size-composition (sizefreq) data in the same units as the length-composition data (2 cm bins), 2 areas with identical fisheries and surveys in both areas, 2 seasons of unequal durations with all catch in season 1, fleet 7 as a depletion survery, Dirichlet Multinomial (D-M) for fleets 1, 2, 3, and 4 and all use the same shared parameter. **Note that fleet 3 has no composition data so D-M is irrelevant and fleet 5 has composition data but does not have D-M so it provides a comparison to fleet 2.**| 0 hours, 7 minutes, 42 seconds |
 | Spinydogfish_2011 | Stock Recruitment option 7 (survival 3 parameter), fecundity option 4  | 0 hours, 4 minutes, 48 seconds |
 | tagging_mirrored_sel | Time varying growth using annual deviations, Tagging data and movement parameters, selectivity, environmental variable data | 0 hours, 2 minutes, 49 seconds |
 | three_area_nomove | Spatial model with areas, no movement | 0 hours, 3 minutes, 32 seconds |
