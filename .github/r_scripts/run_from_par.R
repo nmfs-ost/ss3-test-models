@@ -31,12 +31,12 @@ run_ss_noest <- function(dir) {
       writeLines(start, file.path(dir, "starter.ss"))
       # run the models without estimation and see if model finishes without error
       message("running ss3 on ", basename(dir))
-      system(paste0("cd ", dir, " && ../ss3 -maxfn 0 -phase 50 -nohess modelname ss"))
+      system(paste0("cd ", dir, " && ../ss3 -maxfn 0 -phase 50 -nohess"))
       model_ran <- file.exists(file.path(dir, "control.ss_new"))
       return(model_ran)
       } else {
         message("running ss3 on ", basename(dir))
-        system(paste0("cd ", dir, " && ../ss3 -maxfn 0 -phase 50 -nohess modelname ss"))
+        system(paste0("cd ", dir, " && ../ss3 -maxfn 0 -phase 50 -nohess"))
         model_ran <- file.exists(file.path(dir, "control.ss_new"))
         return(model_ran)
         }
