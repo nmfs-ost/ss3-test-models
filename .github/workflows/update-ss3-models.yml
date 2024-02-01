@@ -50,7 +50,7 @@ jobs:
             mod_name <- basename(new_mod_path)
             git_mod_path <- file.path(ss_examples_folder, mod_name)
             # list model files that need to be moved
-            files_to_move <- c("ss.par", "ss_summary.sso", "warning.sso")
+            files_to_move <- c("ss.par", "ss3.par", "ss_summary.sso", "warning.sso")
             # copy model files from new_mod_path folder to the git_mod_path folder,
             results_of_move <- lapply(files_to_move,
                                         function(x, new_mod_path, git_mod_path) {
