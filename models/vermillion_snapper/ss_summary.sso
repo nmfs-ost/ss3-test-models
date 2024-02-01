@@ -1,8 +1,8 @@
-#V3.30.22.00;_safe;_compile_date:_Oct 30 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.22.1;_safe;_compile_date:_Jan 30 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 vermilion.dat #_DataFile 
 vermilion.ctl #_Control 
-Run_Date: Wed Nov  1 11:31:56 2023
-Final_phase: 5  N_iterations: 2422
+Run_Date: Thu Feb  1 14:26:47 2024
+Final_phase: 5  N_iterations: 2393
 #_LIKELIHOOD 
 Label logL*Lambda
 TOTAL_LogL 359.687
@@ -13,7 +13,7 @@ Length_comp 88.4498
 Age_comp 260.69
 Recruitment -12.9067
 InitEQ_regime 0
-Sum_recdevs 5.82867e-16
+Sum_recdevs 0
 Forecast_Recruitment 0
 Parm_priors 0
 Parm_softbounds 0.00753787
@@ -308,7 +308,7 @@ F_fleet_4_YR_1973_s_1 0.240708 0.0520899 Act 0.0802361
 F_fleet_4_YR_1974_s_1 0.240163 0.0520232 Act 0.0800542
 F_fleet_4_YR_1975_s_1 0.242293 0.0525375 Act 0.0807642
 F_fleet_4_YR_1976_s_1 0.252188 0.0547273 Act 0.0840627
-F_fleet_4_YR_1977_s_1 0.277413 0.0602162 Act 0.092471
+F_fleet_4_YR_1977_s_1 0.277413 0.0602163 Act 0.092471
 F_fleet_4_YR_1978_s_1 0.294156 0.0638464 Act 0.0980519
 F_fleet_4_YR_1979_s_1 0.308794 0.0669481 Act 0.102931
 F_fleet_4_YR_1980_s_1 0.316241 0.0683643 Act 0.105414
@@ -328,7 +328,7 @@ F_fleet_4_YR_1993_s_1 0.362349 0.0723 Act 0.120783
 F_fleet_4_YR_1994_s_1 0.554456 0.10197 Act 0.184819
 F_fleet_4_YR_1995_s_1 0.427143 0.099401 Act 0.142381
 F_fleet_4_YR_1996_s_1 0.402656 0.0844693 Act 0.134218
-F_fleet_4_YR_1997_s_1 0.414599 0.0863987 Act 0.138199
+F_fleet_4_YR_1997_s_1 0.414599 0.0863987 Act 0.1382
 F_fleet_4_YR_1998_s_1 0.503302 0.10249 Act 0.167767
 F_fleet_4_YR_1999_s_1 0.328667 0.0706641 Act 0.109556
 F_fleet_4_YR_2000_s_1 0.263139 0.0542107 Act 0.0877131
@@ -722,7 +722,7 @@ F_1990 0.124461 0.0134366
 F_1991 0.130658 0.0139776
 F_1992 0.164242 0.0163509
 F_1993 0.178025 0.0192638
-F_1994 0.22616 0.0234488
+F_1994 0.22616 0.0234489
 F_1995 0.18867 0.0242926
 F_1996 0.172728 0.0248386
 F_1997 0.193208 0.0257665
@@ -992,7 +992,7 @@ TotBio_1968 26639.4 0.0
 TotBio_1969 26269 0.0
 TotBio_1970 25836.8 0.0
 TotBio_1971 25463.9 0.0
-TotBio_1972 25153.5 0.0
+TotBio_1972 25153.6 0.0
 TotBio_1973 24904.8 0.0
 TotBio_1974 24655.9 0.0
 TotBio_1975 24439.2 0.0

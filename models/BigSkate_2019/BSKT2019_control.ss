@@ -1,4 +1,4 @@
-#V3.30.22.00;_safe;_compile_date:_Oct 30 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.22.1;_safe;_compile_date:_Jan 30 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
@@ -264,7 +264,7 @@
            -10            20       2.05182            10            99             0          3          0          0          0          0          0          2          2  #  Retain_L_asymptote_logit_Fishery_current(1)
              0             0             0             0            99             0         -3          0          0          0          0          0          0          0  #  Retain_L_maleoffset_Fishery_current(1)
              5            15             5             5            99             0         -4          0          0          0          0          0          0          0  #  DiscMort_L_infl_Fishery_current(1)
-         0            10             0             0            99             0         -4          0          0          0          0          0          0          0  #  DiscMort_L_width_Fishery_current(1)
+             0            10             0             0            99             0         -4          0          0          0          0          0          0          0  #  DiscMort_L_width_Fishery_current(1)
              0             1           0.5           0.5            99             0         -5          0          0          0          0          0          0          0  #  DiscMort_L_level_old_Fishery_current(1)
              0             0             0             0            99             0         -5          0          0          0          0          0          0          0  #  DiscMort_L_male_offset_Fishery_current(1)
            -50            50      -5.52193             0            99             0          4          0          0          0          0          0          0          0  #  SzSel_Fem_Peak_Fishery_current(1)

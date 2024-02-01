@@ -1,4 +1,4 @@
-#V3.30.22.beta: not an official version of SS;_safe;_compile_date:_Dec 19 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.22.1;_safe;_compile_date:_Jan 30 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
@@ -199,7 +199,7 @@
 #
 # all recruitment deviations
 #  1971R 1972R 1973R 1974R 1975R 1976R 1977R 1978R 1979R 1980R 1981R 1982R 1983R 1984R 1985R 1986R 1987R 1988R 1989R 1990R 1991R 1992R 1993R 1994R 1995R 1996R 1997R 1998R 1999R 2000R 2001R
-#  -0.140069 0.179602 0.0166193 -0.36764 0.394699 0.589832 -0.0825266 -0.0426238 0.568616 -0.37012 0.301664 -0.325918 -0.530638 -0.358776 0.639822 0.221415 0.586102 0.0800808 -0.628479 0.733502 -1.02689 -0.432215 -0.691231 0.610032 -0.560291 0.845321 1.37123 -0.822162 0.505073 -0.661004 -0.603032#
+#  -0.140068 0.179601 0.0166198 -0.36764 0.394699 0.589832 -0.082526 -0.0426242 0.568616 -0.37012 0.301664 -0.325919 -0.530637 -0.358776 0.639822 0.221415 0.586102 0.0800806 -0.628479 0.733502 -1.02689 -0.432214 -0.691231 0.610032 -0.560291 0.845321 1.37123 -0.822161 0.505072 -0.661005 -0.603033#
 #Fishing Mortality info 
 0.3 # F ballpark value in units of annual_F
 -2001 # F ballpark year (neg value to disable)
@@ -237,7 +237,7 @@
 #_Q_parms(if_any);Qunits_are_ln(q)
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn  #  parm_name
             -7             5      0.141713             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_SURV_A1(2)
-             0           0.5      0.243044          0.05             1             0          4          0          0          0          0          0          0          0  #  Q_extraSD_SURV_A1(2)
+             0           0.5      0.243043          0.05             1             0          4          0          0          0          0          0          0          0  #  Q_extraSD_SURV_A1(2)
            -11             5      -9.37057             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_RECRSVY_A1(3)
             -7             5       0.15639             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_SURV_A2(5)
              0           0.5      0.239072          0.05             1             0          4          0          0          0          0          0          0          0  #  Q_extraSD_SURV_A2(5)
@@ -342,7 +342,7 @@
 # deviation vectors for timevary parameters
 #  base   base first block   block  env  env   dev   dev   dev   dev   dev
 #  type  index  parm trend pattern link  var  vectr link _mnyr  mxyr phase  dev_vector
-#      1    42     1     0     0     0     0     1     2  1971  2001     5 -0.120867 -0.0160789 -0.0176271 -0.0131973 -0.0282762 -0.0425298 -0.0252719 -0.0294842 -0.0628088 -0.0284979 -0.0626778 -0.0388262 -0.0361671 -0.044466 -0.130786 -0.100032 -0.168557 -0.117115 -0.0608347 -0.241887 -0.0447881 -0.0820345 -0.0562006 -0.17056 -0.0402474 -0.0946252 -0.0849666 -0.00494986 -0.00703544 -0.00038317      0
+#      1    42     1     0     0     0     0     1     2  1971  2001     5 -0.120867 -0.016078 -0.0176245 -0.0131942 -0.0282749 -0.0425294 -0.0252769 -0.0294871 -0.0628068 -0.02849 -0.0626796 -0.0388353 -0.0361696 -0.0444615 -0.130783 -0.100036 -0.168561 -0.117107 -0.0608309 -0.241888 -0.0447828 -0.0820346 -0.056198 -0.17056 -0.0402537 -0.0946255 -0.0849647 -0.00494675 -0.00704209 -0.000382694      0
      #
 # Input variance adjustments factors: 
  #_1=add_to_survey_CV

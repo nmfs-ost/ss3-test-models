@@ -1,18 +1,18 @@
-#V3.30.22.00;_safe;_compile_date:_Oct 30 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.22.1;_safe;_compile_date:_Jan 30 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 platoons_dat.ss #_DataFile 
 platoons_ctl.ss #_Control 
-Run_Date: Wed Nov  1 09:57:10 2023
+Run_Date: Thu Feb  1 14:04:20 2024
 Final_phase: 6  N_iterations: 464
 #_LIKELIHOOD 
 Label logL*Lambda
 TOTAL_LogL 1223.37
-Catch 5.77834e-13
+Catch 5.77833e-13
 Survey -5.7988
 Length_comp 760.701
 Age_comp 365.11
 Recruitment 1.51298
 InitEQ_regime 0
-Sum_recdevs 8.53484e-16
+Sum_recdevs -4.09395e-16
 Forecast_Recruitment 0
 Parm_priors 101.847
 Parm_softbounds 0.00128834
@@ -102,7 +102,7 @@ Main_RecrDev_1996 0.0683047 0.393335 Act 0.50683
 Main_RecrDev_1997 -0.140881 0.432556 Act 0.485912
 Main_RecrDev_1998 0.329099 0.40172 Act 0.53291
 Main_RecrDev_1999 0.0981129 0.434438 Act 0.509811
-Main_RecrDev_2000 0.0130453 0.454334 Act 0.501304
+Main_RecrDev_2000 0.0130452 0.454334 Act 0.501304
 Main_RecrDev_2001 -0.00782044 0.495029 Act 0.499218
 ForeRecr_2002 0 0.5 Act 0.5
 ForeRecr_2003 0 0.5 Act 0.5
@@ -136,7 +136,7 @@ SSB_1974 57882.7 4946.67
 SSB_1975 56722.9 4790.19
 SSB_1976 55530.7 4621.85
 SSB_1977 54456.7 4421.32
-SSB_1978 53382.1 4203.89
+SSB_1978 53382 4203.89
 SSB_1979 51998.9 3998.37
 SSB_1980 50068.4 3812.39
 SSB_1981 47476.8 3642.73
@@ -317,7 +317,7 @@ SSB_SPR 21669.9 5659.42
 annF_SPR 0.0689515 0.000799979
 Dead_Catch_SPR 4857.21 1234.7
 SSB_MSY 21669.9 5659.42
-SPR_MSY 0.4 3.38237e-16
+SPR_MSY 0.4 3.47498e-16
 annF_MSY 0.0689515 0.000799979
 Dead_Catch_MSY 4857.21 1234.7
 Ret_Catch_MSY 4857.21 1234.7

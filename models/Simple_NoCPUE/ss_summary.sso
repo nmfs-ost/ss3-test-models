@@ -1,7 +1,7 @@
-#V3.30.22.00;_safe;_compile_date:_Oct 30 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.22.1;_safe;_compile_date:_Jan 30 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 simple.dat #_DataFile 
 simple.ctl #_Control 
-Run_Date: Wed Nov  1 11:09:49 2023
+Run_Date: Thu Feb  1 14:16:43 2024
 Final_phase: 5  N_iterations: 408
 #_LIKELIHOOD 
 Label logL*Lambda
@@ -123,7 +123,7 @@ SSB_1984 26993.3 826.975
 SSB_1985 23912.1 779.017
 SSB_1986 20906.7 744.457
 SSB_1987 17904.5 724.187
-SSB_1988 14898.1 719.12
+SSB_1988 14898.1 719.121
 SSB_1989 12379.3 735.088
 SSB_1990 10484.2 780.566
 SSB_1991 9237.61 863.456
@@ -308,7 +308,7 @@ Bratio_2003 0.40486 0.193624
 Bratio_2004 0.453327 0.205552
 Bratio_2005 0.493688 0.214722
 Bratio_2006 0.527058 0.222059
-Bratio_2007 0.55628 0.229057
+Bratio_2007 0.55628 0.229058
 Bratio_2008 0.583914 0.236679
 Bratio_2009 0.611407 0.245009
 Bratio_2010 0.639194 0.253575
