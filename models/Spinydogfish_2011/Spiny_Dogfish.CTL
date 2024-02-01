@@ -1,4 +1,4 @@
-#V3.30.22.00;_safe;_compile_date:_Oct 30 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.22.1;_safe;_compile_date:_Jan 30 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
@@ -118,7 +118,7 @@
 0  # 0/1 to use steepness in initial equ recruitment calculation
 0  #  future feature:  0/1 to make realized sigmaR a function of SR curvature
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn #  parm_name
-             8            18       9.05312          10.5            99             0          1          0          0          0          0          0          0          0 # SR_LN(R0)
+             8            18       9.05275          10.5            99             0          1          0          0          0          0          0          0          0 # SR_LN(R0)
              0             1           0.4           0.4            99             0         -5          0          0          0          0          0          0          0 # SR_surv_zfrac
            0.2             5             1             1            99             0         -5          0          0          0          0          0          0          0 # SR_surv_Beta
           0.01             1           0.2           1.1            99             0         -6          0          0          0          0          0          0          0 # SR_sigmaR
@@ -168,13 +168,13 @@
 # Yr:  1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022
 # seas:  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 # TRAWL 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-# Trawl_Discard 0.0104157 0.0114581 0.0106471 0.00614341 0.0116882 0.0118662 0.010625 0.0109626 0.01186 0.0109246 0.0117028 0.00825809 0.00613914 0.00659738 0.00438247 0.0118115 0.0127104 0.0121698 0.0116239 0.0115048 0.0127847 0.0125479 0.0114862 0.0108922 0.0151577 0.0208812 0.0126018 0.00919761 0.0139718 0.00829824 0.0097975 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355 0.0253355
+# Trawl_Discard 0.0104196 0.0114625 0.0106512 0.0061458 0.0116928 0.0118709 0.0106292 0.010967 0.0118648 0.0109291 0.0117076 0.0082615 0.00614169 0.00660013 0.0043843 0.0118165 0.0127158 0.012175 0.0116289 0.0115098 0.0127902 0.0125534 0.0114912 0.0108971 0.0151645 0.0208906 0.0126076 0.00920183 0.0139782 0.00830209 0.00980206 0.0253358 0.0253358 0.0253358 0.0253358 0.0253358 0.0253358 0.0253358 0.0253358 0.0253358 0.0253358 0.0253358 0.0253358
 # MIDWATER 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 # A-SHOP 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 # HKL 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 # Hkl_Discard 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 # OTHERS 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-# RECREATIONAL 5.03357e-06 0.00149827 0.00213426 0.000805253 0.000755525 0.00246151 0.00298266 0.000409865 0.00237249 0.00119504 0.00126591 0.00126607 0.00128342 0.00126605 0.000571382 0.00101036 0.000957499 0.000240094 4.4567e-05 0.00059723 0.00054182 0.00050775 0.000799692 0.000633537 0.000141988 0.000245067 0.000201084 0.000320972 0.000160662 0.00024443 0.000125704 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178 0.000722178
+# RECREATIONAL 5.03547e-06 0.00149885 0.00213509 0.000805567 0.000755822 0.00246249 0.00298386 0.000410032 0.00237346 0.00119553 0.00126644 0.00126661 0.00128397 0.00126659 0.000571626 0.0010108 0.000957916 0.000240199 4.45867e-05 0.000597497 0.000542064 0.00050798 0.000800058 0.00063383 0.000142054 0.000245183 0.00020118 0.000321126 0.000160739 0.000244549 0.000125766 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195
 #
 #_Q_setup for fleets with cpue or survey data
 #_1:  fleet number
@@ -193,15 +193,15 @@
 #
 #_Q_parms(if_any);Qunits_are_ln(q)
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn  #  parm_name
-           -10             2     -0.825502             0            99             0          1          0          1       1980       2004         -5          0          0  #  LnQ_base_AFSC_triennial(9)
-             0             1      0.312773           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_AFSC_triennial(9)
-           -15            15        0.2433             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_AFSC_slope(10)
-             0             1      0.470457           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_AFSC_slope(10)
-           -15            15     -0.405814             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_NWFSC_shelf_slope(11)
-             0             1      0.808004           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_NWFSC_shelf_slope(11)
-           -15            15      -2.46801             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_NWFSC_slope(12)
-             0             1      0.812209           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_NWFSC_slope(12)
-           -15            15      -14.0178             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_IPHC(13)
+           -10             2     -0.825117             0            99             0          1          0          1       1980       2004         -5          0          0  #  LnQ_base_AFSC_triennial(9)
+             0             1      0.312772           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_AFSC_triennial(9)
+           -15            15      0.243714             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_AFSC_slope(10)
+             0             1      0.470453           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_AFSC_slope(10)
+           -15            15      -0.40537             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_NWFSC_shelf_slope(11)
+             0             1      0.807998           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_NWFSC_shelf_slope(11)
+           -15            15       -2.4676             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_NWFSC_slope(12)
+             0             1      0.812199           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_NWFSC_slope(12)
+           -15            15      -14.0174             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_IPHC(13)
              0             1           0.1           0.1            99             0         -3          0          0          0          0          0          0          0  #  Q_extraSD_IPHC(13)
 # timevary Q parameters 
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type     PHASE  #  parm_name
@@ -278,25 +278,25 @@
 #
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn  #  parm_name
 # 1   TRAWL LenSelex
-            20           120       99.8722           100            99             6          1          0          0          0          0        0.5          0          0  #  Size_DblN_peak_TRAWL(1)
+            20           120       99.8723           100            99             6          1          0          0          0          0        0.5          0          0  #  Size_DblN_peak_TRAWL(1)
             -6             4            -1            -1            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_TRAWL(1)
-            -1             9       5.88259             6            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_TRAWL(1)
+            -1             9       5.88258             6            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_TRAWL(1)
             -1             9             5             5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_TRAWL(1)
             -5             9            -5            -5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_TRAWL(1)
             -5             9             9            -5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_end_logit_TRAWL(1)
 # 2   Trawl_Discard LenSelex
-            20           120       73.3787            75            99             6          1          0          0          0          0        0.5          0          0  #  Size_DblN_peak_Trawl_Discard(2)
+            20           120       73.3797            75            99             6          1          0          0          0          0        0.5          0          0  #  Size_DblN_peak_Trawl_Discard(2)
             -6             4            -1            -1            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_Trawl_Discard(2)
-            -1             9       6.09319             6            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_Trawl_Discard(2)
+            -1             9       6.09326             6            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_Trawl_Discard(2)
             -1             9             5             5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_Trawl_Discard(2)
-            -5             9      -3.16734            -5            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_Trawl_Discard(2)
+            -5             9      -3.16735            -5            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_Trawl_Discard(2)
             -5             9             9            -5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_end_logit_Trawl_Discard(2)
 # 3   MIDWATER LenSelex
             20           120       57.2886            55            99             6          1          0          0          0          0        0.5          0          0  #  Size_DblN_peak_MIDWATER(3)
-            -6             4      0.556088             0            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_MIDWATER(3)
-            -1             9       4.95189             5            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_MIDWATER(3)
-            -1             9       4.49236             5            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_MIDWATER(3)
-            -9             9      -5.49833            -7            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_MIDWATER(3)
+            -6             4        0.5561             0            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_MIDWATER(3)
+            -1             9        4.9519             5            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_MIDWATER(3)
+            -1             9       4.49235             5            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_MIDWATER(3)
+            -9             9       -5.4983            -7            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_MIDWATER(3)
           -999          -999          -999             0            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_end_logit_MIDWATER(3)
 # 4   A-SHOP LenSelex
              0             2             1             0            99             0        -99          0          0          0          0        0.5          0          0  #  SizeSel_P1_A-SHOP(4)
@@ -304,14 +304,14 @@
 # 5   HKL LenSelex
             20           120       105.009           110            99             6          1          0          0          0          0        0.5          0          0  #  Size_DblN_peak_HKL(5)
             -6             4            -1            -1            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_HKL(5)
-            -1             9       5.95833             6            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_HKL(5)
+            -1             9       5.95832             6            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_HKL(5)
             -1             9             5             5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_HKL(5)
             -5             9            -5            -5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_HKL(5)
             -5             9             9            -5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_end_logit_HKL(5)
 # 6   Hkl_Discard LenSelex
-            20           120       67.0827            70            99             6          1          0          0          0          0        0.5          0          0  #  Size_DblN_peak_Hkl_Discard(6)
+            20           120       67.0829            70            99             6          1          0          0          0          0        0.5          0          0  #  Size_DblN_peak_Hkl_Discard(6)
             -6             4            -1            -1            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_Hkl_Discard(6)
-            -1             9       5.11045             5            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_Hkl_Discard(6)
+            -1             9       5.11047             5            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_Hkl_Discard(6)
             -1             9             5             5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_Hkl_Discard(6)
             -5             9         -4.99            -3            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_Hkl_Discard(6)
             -5             9             9            -5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_end_logit_Hkl_Discard(6)
@@ -321,28 +321,28 @@
 # 8   RECREATIONAL LenSelex
             20           120       109.785           110            99             6          1          0          0          0          0        0.5          0          0  #  Size_DblN_peak_RECREATIONAL(8)
             -6             4            -1            -1            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_RECREATIONAL(8)
-            -1             9       6.08692             6            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_RECREATIONAL(8)
+            -1             9        6.0869             6            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_RECREATIONAL(8)
             -1             9             5             5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_RECREATIONAL(8)
             -5             9            -5            -5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_RECREATIONAL(8)
             -5             9             9            -5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_end_logit_RECREATIONAL(8)
 # 9   AFSC_triennial LenSelex
-            25           100       57.7786            60            99             6          1          0          0          0          0        0.5          0          0  #  Size_DblN_peak_AFSC_triennial(9)
+            25           100       57.7788            60            99             6          1          0          0          0          0        0.5          0          0  #  Size_DblN_peak_AFSC_triennial(9)
             -9             3      -8.72472            -8            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_AFSC_triennial(9)
-            -4            12       6.59311             6            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_AFSC_triennial(9)
-            -2            15       6.46192             6            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_AFSC_triennial(9)
+            -4            12       6.59314             6            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_AFSC_triennial(9)
+            -2            15       6.46195             6            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_AFSC_triennial(9)
             -5             9            -5            -5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_AFSC_triennial(9)
           -999          -999          -999             0            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_end_logit_AFSC_triennial(9)
 # 10   AFSC_slope LenSelex
-            25           100       59.0785            60            99             6          1          0          0          0          0        0.5          0          0  #  Size_DblN_peak_AFSC_slope(10)
-            -9             3      -1.02634            -1            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_AFSC_slope(10)
+            25           100       59.0786            60            99             6          1          0          0          0          0        0.5          0          0  #  Size_DblN_peak_AFSC_slope(10)
+            -9             3      -1.02632            -1            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_AFSC_slope(10)
             -4            12       5.63834             5            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_AFSC_slope(10)
-            -2            15       4.98179             5            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_AFSC_slope(10)
+            -2            15       4.98178             5            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_AFSC_slope(10)
             -5             9            -5            -5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_AFSC_slope(10)
           -999          -999          -999             0            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_end_logit_AFSC_slope(10)
 # 11   NWFSC_shelf_slope LenSelex
-            20           120       57.1978            60            99             6          1          0          0          0          0        0.5          0          0  #  Size_DblN_peak_NWFSC_shelf_slope(11)
+            20           120       57.1981            60            99             6          1          0          0          0          0        0.5          0          0  #  Size_DblN_peak_NWFSC_shelf_slope(11)
             -6             4            -1            -1            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_NWFSC_shelf_slope(11)
-            -1             9       6.71618             6            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_NWFSC_shelf_slope(11)
+            -1             9       6.71619             6            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_NWFSC_shelf_slope(11)
             -1             9             5             5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_NWFSC_shelf_slope(11)
             -5             9            -5            -5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_NWFSC_shelf_slope(11)
             -5             9             9            -5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_end_logit_NWFSC_shelf_slope(11)

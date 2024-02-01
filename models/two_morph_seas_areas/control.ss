@@ -1,4 +1,4 @@
-#V3.30.22.00;_safe;_compile_date:_Oct 30 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.22.1;_safe;_compile_date:_Jan 30 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
@@ -199,7 +199,7 @@
 #
 # all recruitment deviations
 #  1971R 1972R 1973R 1974R 1975R 1976R 1977R 1978R 1979R 1980R 1981R 1982R 1983R 1984R 1985R 1986R 1987R 1988R 1989R 1990R 1991R 1992R 1993R 1994R 1995R 1996R 1997R 1998R 1999R 2000R 2001R
-#  0.0618202 -0.0109003 0.0906262 -0.220163 0.12491 0.68784 -0.0754578 0.0186113 0.324604 0.123436 0.0546181 -0.203232 -0.478855 -0.39098 0.507898 0.362641 0.348551 0.0318673 -0.375788 0.545755 -0.518636 -0.686157 -0.410671 0.117448 -0.485283 0.583759 0.855842 -0.486369 -0.301148 -0.131942 -0.0646449#
+#  0.0618202 -0.0109003 0.0906261 -0.220163 0.124909 0.68784 -0.0754579 0.0186113 0.324604 0.123436 0.0546181 -0.203232 -0.478855 -0.39098 0.507898 0.362641 0.348551 0.0318673 -0.375789 0.545755 -0.518636 -0.686157 -0.410671 0.117448 -0.485283 0.583759 0.855842 -0.486369 -0.301148 -0.131941 -0.0646449#
 #Fishing Mortality info 
 0.3 # F ballpark value in units of annual_F
 -2001 # F ballpark year (neg value to disable)
@@ -240,7 +240,7 @@
              0           0.5    0.00496268          0.05             1             0          4          0          0          0          0          0          0          0  #  Q_extraSD_SURV_A1(2)
            -11             5      -8.65326             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_RECRSVY_A1(3)
             -7             5      0.531522             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_SURV_A2(5)
-             0           0.5    0.00309004          0.05             1             0          4          0          0          0          0          0          0          0  #  Q_extraSD_SURV_A2(5)
+             0           0.5    0.00309005          0.05             1             0          4          0          0          0          0          0          0          0  #  Q_extraSD_SURV_A2(5)
            -11             5      -8.64901             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_RECRSVY_A2(6)
             -7             5             0             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_Depletion(7)
 #_no timevary Q parameters
@@ -340,7 +340,7 @@
 # deviation vectors for timevary parameters
 #  base   base first block   block  env  env   dev   dev   dev   dev   dev
 #  type  index  parm trend pattern link  var  vectr link _mnyr  mxyr phase  dev_vector
-#      1    42     1     0     0     0     0     1     2  1971  2001     5 0.178304 0.013386 0.00571622 0.0197974 0.0600286 -0.00271894 -0.00420792 0.03621 0.0628853 -0.0288189 -0.0273599 -0.0137824 -0.0117385 0.0188138 0.0276935 0.0217079 0.0218104 0.000802434 0.0109059 0.00332637 -0.0467711 -0.0373714 -0.0201176 -0.00195811 0.00180022 0.0335567 0.0220866 -0.00658347 0.00868511 -0.0285827      0
+#      1    42     1     0     0     0     0     1     2  1971  2001     5 0.178304 0.0133838 0.00571515 0.0197992 0.0600324 -0.00271921 -0.00421091 0.0362068 0.0628854 -0.0288154 -0.0273585 -0.0137865 -0.0117394 0.0188156 0.0276946 0.0217052 0.0218122 0.000800275 0.0109036 0.00332611 -0.0467698 -0.0373716 -0.0201192 -0.0019611 0.00180078 0.0335577 0.0220834 -0.00658228 0.00868573 -0.0285819      0
      #
 # Input variance adjustments factors: 
  #_1=add_to_survey_CV

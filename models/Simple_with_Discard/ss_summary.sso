@@ -1,8 +1,8 @@
-#V3.30.22.00;_safe;_compile_date:_Oct 30 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.22.1;_safe;_compile_date:_Jan 30 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 data.ss #_DataFile 
 control.ss #_Control 
-Run_Date: Wed Nov  1 11:13:22 2023
-Final_phase: 6  N_iterations: 397
+Run_Date: Thu Feb  1 14:17:10 2024
+Final_phase: 6  N_iterations: 398
 #_LIKELIHOOD 
 Label logL*Lambda
 TOTAL_LogL 1590.79
@@ -15,7 +15,7 @@ Age_comp 614.604
 Size_at_age 123.54
 Recruitment -7.16913
 InitEQ_regime 0
-Sum_recdevs 4.44089e-16
+Sum_recdevs 5.55112e-17
 Forecast_Recruitment 0
 Parm_priors 1.10698
 Parm_softbounds 0.00147008
@@ -54,13 +54,13 @@ SR_sigmaR 0.6 0 Fix 0.3
 SR_regime 0 0 Fix 0.5
 SR_autocorr 0 0 Fix 0
 Main_RecrDev_1971 0.152049 0.244424 Act 0.515205
-Main_RecrDev_1972 -0.0946753 0.41167 Act 0.490532
+Main_RecrDev_1972 -0.0946752 0.41167 Act 0.490532
 Main_RecrDev_1973 0.110298 0.34726 Act 0.51103
 Main_RecrDev_1974 -0.178096 0.41921 Act 0.48219
 Main_RecrDev_1975 0.043586 0.384829 Act 0.504359
 Main_RecrDev_1976 0.709985 0.238263 Act 0.570998
-Main_RecrDev_1977 -0.0130968 0.419572 Act 0.49869
-Main_RecrDev_1978 0.00421149 0.387811 Act 0.500421
+Main_RecrDev_1977 -0.0130967 0.419572 Act 0.49869
+Main_RecrDev_1978 0.00421147 0.387811 Act 0.500421
 Main_RecrDev_1979 0.267748 0.327621 Act 0.526775
 Main_RecrDev_1980 0.165904 0.35552 Act 0.51659
 Main_RecrDev_1981 0.132445 0.321954 Act 0.513244
@@ -176,7 +176,7 @@ Recr_1976 12038.8 2824.65
 Recr_1977 5816.02 2437.99
 Recr_1978 5880.39 2273.3
 Recr_1979 7589.97 2472.73
-Recr_1980 6784.46 2406.53
+Recr_1980 6784.45 2406.53
 Recr_1981 6466.38 2074.34
 Recr_1982 4415.35 1542.94
 Recr_1983 3400.56 1244.11
@@ -258,7 +258,7 @@ F_1976 0.288487 0.00641739
 F_1977 0.397613 0.00871323
 F_1978 0.518814 0.0112162
 F_1979 0.655537 0.0139717
-F_1980 0.932942 0.0196607
+F_1980 0.932942 0.0196606
 F_1981 1.27189 0.0268421
 F_1982 1.40737 0.0300459
 F_1983 1.56565 0.0339469

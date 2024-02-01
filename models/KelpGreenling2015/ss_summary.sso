@@ -1,8 +1,8 @@
-#V3.30.22.00;_safe;_compile_date:_Oct 30 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.22.1;_safe;_compile_date:_Jan 30 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 BC_dat.ss #_DataFile 
 BC_ctl.ss #_Control 
-Run_Date: Wed Nov  1 09:54:37 2023
-Final_phase: 6  N_iterations: 595
+Run_Date: Thu Feb  1 14:02:59 2024
+Final_phase: 6  N_iterations: 563
 #_LIKELIHOOD 
 Label logL*Lambda
 TOTAL_LogL 1305.49
@@ -11,7 +11,7 @@ Survey -32.5974
 Length_comp 377.465
 Age_comp 951.075
 Recruitment 1.55337
-InitEQ_regime 0
+InitEQ_regime 7.56809e-32
 Sum_recdevs -0.335474
 Forecast_Recruitment 0.133187
 Parm_priors 7.84759
@@ -115,9 +115,9 @@ Size_DblN_ascend_se_Ocean(2) 3.62326 0.0830572 Act 0.402584
 Size_DblN_descend_se_Ocean(2) 8 0 Fix 0.888889
 Size_DblN_start_logit_Ocean(2) -8 0 Fix 0.0555556
 Size_DblN_end_logit_Ocean(2) 8 0 Fix 0.944444
-Size_DblN_peak_Estuary(3) 12.285 22.2401 Act 0.0652854
-Size_DblN_top_logit_Estuary(3) -5.1547 76.0052 Act 0.32302
-Size_DblN_ascend_se_Estuary(3) 4.5031 100.31 Act 0.500344
+Size_DblN_peak_Estuary(3) 12.285 22.241 Act 0.0652849
+Size_DblN_top_logit_Estuary(3) -5.15463 76.0042 Act 0.323025
+Size_DblN_ascend_se_Estuary(3) 4.50307 100.31 Act 0.500342
 Size_DblN_descend_se_Estuary(3) 3.57592 1.22746 Act 0.698662
 Size_DblN_start_logit_Estuary(3) -8 0 Fix 0.0555556
 Size_DblN_end_logit_Estuary(3) -1.58966 2.3377 Act 0.411686
@@ -695,7 +695,7 @@ Totbio_unfished 1423.93 317.504
 SmryBio_unfished 1423.93 317.504
 Recr_unfished 1448.83 312.359
 SSB_Btgt 158.342 34.1377
-SPR_Btgt 0.464286 3.59796e-17
+SPR_Btgt 0.464286 5.32785e-17
 annF_Btgt 0.17546 0.00297995
 Dead_Catch_Btgt 128.502 27.7685
 SSB_SPR 152.009 32.7722

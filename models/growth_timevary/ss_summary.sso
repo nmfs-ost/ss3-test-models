@@ -1,7 +1,7 @@
-#V3.30.22.00;_safe;_compile_date:_Oct 30 2023;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.22.1;_safe;_compile_date:_Jan 30 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 Example_1_data.SS #_DataFile 
 Example_1_control.SS #_Control 
-Run_Date: Tue Nov  7 09:44:01 2023
+Run_Date: Thu Feb  1 14:02:02 2024
 Final_phase: 6  N_iterations: 294
 #_LIKELIHOOD 
 Label logL*Lambda
@@ -10,8 +10,8 @@ Survey -5.5073
 Age_comp 418.181
 Recruitment 0
 InitEQ_regime 0
-Sum_recdevs -6.23747e-07
-Forecast_Recruitment 1.15107e-13
+Sum_recdevs -6.23102e-07
+Forecast_Recruitment 1.14869e-13
 Parm_priors 0.291496
 Parm_softbounds 0
 Parm_devs 0
@@ -90,7 +90,7 @@ Main_RecrDev_2005 0 0 Fix 0.5
 Main_RecrDev_2006 0 0 Fix 0.5
 Main_RecrDev_2007 0 0 Fix 0.5
 Main_RecrDev_2008 0 0 Fix 0.5
-Late_RecrDev_2009 -6.23747e-07 1.3 Act 0.5
+Late_RecrDev_2009 -6.23102e-07 1.3 Act 0.5
 ForeRecr_2010 0 1.3 Act 0.5
 ForeRecr_2011 0 1.3 Act 0.5
 ForeRecr_2012 0 1.3 Act 0.5
@@ -452,7 +452,7 @@ SSB_SPR 1.21388e+06 117108
 annF_SPR 0.221616 0.0130616
 Dead_Catch_SPR 313274 32841.3
 SSB_MSY 1.21388e+06 117108
-SPR_MSY 0.4 9.66341e-16
+SPR_MSY 0.4 9.76249e-16
 annF_MSY 0.221616 0.0130616
 Dead_Catch_MSY 313274 32841.3
 Ret_Catch_MSY 313274 32841.3
