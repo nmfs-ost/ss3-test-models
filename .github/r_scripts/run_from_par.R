@@ -19,7 +19,7 @@ run_ss_noest <- function(dir) {
               file.path(dir, "ss_summary_ref.sso"))
   file.rename(file.path(dir, "warning.sso"),
               file.path(dir, "warning_ref.sso"))
-	file.copy(file.path(dir, "ss.par"), file.path(dir, "ss_ref.par"))
+	file.copy(file.path(dir, "ss3.par"), file.path(dir, "ss3_ref.par"))
   # change models to read from the .par file of the reference run
   start <- readLines(file.path(dir, "starter.ss"))
   first_val_line <- grep("0=use init values in control file", start, fixed = TRUE)

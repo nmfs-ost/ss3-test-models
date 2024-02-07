@@ -19,8 +19,8 @@ for(i in mod_names) {
   sum_file <- file.path(mod_run_folder, i, "ss_summary.sso")
   ref_sum_file <- file.path(ref_file_folder, i, "ss_summary_ref.sso")
   
-  par_file <- file.path(mod_run_folder, i, "ss.par")
-  ref_par_file <- file.path(ref_file_folder, i, "ss_ref.par")
+  par_file <- file.path(mod_run_folder, i, "ss3.par")
+  ref_par_file <- file.path(ref_file_folder, i, "ss3_ref.par")
   
   warn_file <- file.path(mod_run_folder, i, "warning.sso")
   ref_warn_file <- file.path(ref_file_folder, i, "warning_ref.sso")

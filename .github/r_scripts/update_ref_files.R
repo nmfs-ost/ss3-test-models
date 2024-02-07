@@ -11,7 +11,7 @@ update_model_string <- "3.30.20" # the model version updating to.
 # functions to use ----
 
 #' Update the reference files for one model
-#' Updates the ss.par, ss_summary.sso, and warning.sso files
+#' Updates the ss3.par, ss_summary.sso, and warning.sso files
 #' @param new_mod_path where the model files of one model have been written
 #' @param ss_examples_folder subfolder containing the model files in the git repository.
 #' @returns TRUE if files were all successfully replaced, FALSE if they were not all successfully replaced.
@@ -19,7 +19,7 @@ update_ref_files <- function(new_mod_path, ss_examples_folder = file.path(getwd(
   mod_name <- basename(new_mod_path)
   git_mod_path <- file.path(ss_examples_folder, mod_name)
   # list model files that need to be moved
-  files_to_move <- c("ss.par", "ss_summary.sso", "warning.sso")
+  files_to_move <- c("ss3.par", "ss_summary.sso", "warning.sso")
   # copy model files from new_mod_path folder to the git_mod_path folder,
   results_of_move <- lapply(files_to_move,
                             function(x, new_mod_path, git_mod_path) {
