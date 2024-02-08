@@ -315,10 +315,10 @@
            0.5            14       2.09661        7.2774             0             0          1          0          0          0          0          0          0          0  #  Age_95%width_CM_W(2)
 # 3   REC AgeSelex
              1            10       3.33276           4.3          0.05             0          2          0          0          0          0        0.5          0          0  #  Age_DblN_peak_REC(3)
-           -10             3      -9.16507          -4.6          0.05             0          3          0          0          0          0        0.5          0          0  #  Age_DblN_top_logit_REC(3)
+           -10             3      -9.16505          -4.6          0.05             0          3          0          0          0          0        0.5          0          0  #  Age_DblN_top_logit_REC(3)
             -6            12      0.549862           0.7          0.05             0          3          0          0          0          0        0.5          0          0  #  Age_DblN_ascend_se_REC(3)
             -4             6       2.95273           2.7          0.05             0          3          0          0          0          0        0.5          0          0  #  Age_DblN_descend_se_REC(3)
-           -15             5      -12.1035         -11.2          0.05             0          2          0          0          0          0        0.5          0          0  #  Age_DblN_start_logit_REC(3)
+           -15             5      -12.1034         -11.2          0.05             0          2          0          0          0          0        0.5          0          0  #  Age_DblN_start_logit_REC(3)
             -8             5      -1.82948          -3.3          0.05             0          2          0          0          0          0        0.5          0          0  #  Age_DblN_end_logit_REC(3)
 # 4   SMP_BYC AgeSelex
          1e-07             2           0.5           0.5             0             0         -4          0          0          0          0          0          0          0  #  AgeSel_P1_SMP_BYC(4)

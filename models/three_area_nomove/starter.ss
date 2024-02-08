@@ -39,5 +39,5 @@ three_area_nomove_ctl.ss
 0 # F_std_scaling: 0=no scaling; 1=F/Fspr; 2=F/Fmsy; 3=F/Fbtgt; where F means annual F_std, Fmsy means F_std@msy; values >=11 invoke N multiyr (up to 9!) using 10's digit; >100 invokes log(ratio)
 0 # MCMC output detail: integer part (0=default; 1=adds obj func components; 2= +write_report_for_each_mceval); and decimal part (added to SR_LN(R0) on first call to mcmc)
 0 # ALK tolerance ***disabled in code
--1 # random number seed for bootstrap data (-1 to use long(time) as seed): # 1706797487
+-1 # random number seed for bootstrap data (-1 to use long(time) as seed): # 1707415310
 3.30 # check value for end of file and for version control
