@@ -1,5 +1,0 @@
-Warning 1 : At least one block pattern ends in endyr. Check the output parameter value time series to see if the values in forecast years are as intended.
-Warning 2 : Forecast F capped by max possible F from control file4
-Warning 3 : Forecast F capped by max possible F from control file4
-Note 1 Information: A revised protocol for the Fcast_yr specification is available and recommended.
- 3 warnings  and 1 note 
