@@ -1,5 +1,5 @@
 # code to run the ss_new models
-list.of.packages <- c("parallely", "furrr", "future")
+list.of.packages <- c("parallelly", "furrr", "future")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)>0) install.packages(new.packages)
 
