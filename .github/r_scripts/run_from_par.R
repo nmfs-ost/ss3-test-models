@@ -7,11 +7,10 @@ remotes::install_github("r4ss/r4ss")
 ncores <- parallelly::availableCores(omit = 1)
 future::plan(future::multisession, workers = ncores)
 
-mod_names <- list.dirs("models", full.names = FALSE, recursive = FALSE)
-mod_paths <- list.dirs("models", full.names = TRUE, recursive = FALSE)
+mod_names <- list.dirs("model_runs", full.names = FALSE, recursive = FALSE)
+mod_paths <- list.dirs("model_runs", full.names = TRUE, recursive = FALSE)
 print(mod_names)
 
-dir <- mod_paths[1]
 run_ss_noest <- function(dir) {
   wd <- getwd()
   print(wd)
@@ -33,15 +32,14 @@ run_ss_noest <- function(dir) {
       writeLines(start, file.path(wd, dir, "starter.ss"))
       # run the models without estimation and see if model finishes without error
       message("running ss3 on ", basename(dir))
-      r4ss::run(dir = file.path(wd, dir), exe = file.path(wd, "models","ss3"), extras = "-maxfn 0 -phase 50 -nohess")
 
       system(paste0("cd ", wd, "/", dir, " && ../ss3 -maxfn 0 -phase 50 -nohess"))
-      model_ran <- file.exists(file.path(dir, "control.ss_new"))
+      model_ran <- file.exists(file.path(wd, dir, "control.ss_new"))
       return(model_ran)
       } else {
         message("running ss3 on ", basename(dir))
-        system(paste0("cd ", dir, " && ../ss3 -maxfn 0 -phase 50 -nohess"))
-        model_ran <- file.exists(file.path(dir, "control.ss_new"))
+        system(paste0("cd ", wd, "/", dir, " && ../ss3 -maxfn 0 -phase 50 -nohess"))
+        model_ran <- file.exists(file.path(wd, dir, "control.ss_new"))
         return(model_ran)
         }
 }
