@@ -11,7 +11,7 @@
 			"installSystemRequirements": true
 		}
 	},
-   	"postCreateCommand": "bash .devcontainer/ss3-exe-download.sh",
+   	// "postCreateCommand": "bash .devcontainer/ss3-exe-download.sh",
 	"customizations": {
 	  "vscode": {
 	  		"extensions":[
