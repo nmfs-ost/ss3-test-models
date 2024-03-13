@@ -2,36 +2,40 @@
 list.of.packages <- c("parallelly", "furrr", "future")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)>0) install.packages(new.packages)
+remotes::install_github("r4ss/r4ss")
 
 ncores <- parallelly::availableCores(omit = 1)
 future::plan(future::multisession, workers = ncores)
 
-mod_names <- list.dirs("model_runs", full.names = FALSE, recursive = FALSE)
-mod_paths <- list.dirs("model_runs", full.names = TRUE, recursive = FALSE)
+mod_names <- list.dirs("models", full.names = FALSE, recursive = FALSE)
+mod_paths <- list.dirs("models", full.names = TRUE, recursive = FALSE)
 print(mod_names)
 
+dir <- mod_paths[1]
 run_ss_noest <- function(dir) {
   wd <- getwd()
   print(wd)
   on.exit(system(paste0("cd ", wd)))
   # rename the reference files 
-  file.rename(file.path(dir, "ss_summary.sso"),
-              file.path(dir, "ss_summary_ref.sso"))
-  file.rename(file.path(dir, "warning.sso"),
-              file.path(dir, "warning_ref.sso"))
-	file.copy(file.path(dir, "ss3.par"), file.path(dir, "ss3_ref.par"))
+  file.rename(file.path(wd, dir, "ss_summary.sso"),
+              file.path(wd, dir, "ss_summary_ref.sso"))
+  file.rename(file.path(wd, dir, "warning.sso"),
+              file.path(wd, dir, "warning_ref.sso"))
+	file.copy(file.path(wd, dir, "ss3.par"), file.path(wd, dir, "ss3_ref.par"))
   # change models to read from the .par file of the reference run
-  start <- readLines(file.path(dir, "starter.ss"))
+  start <- readLines(file.path(wd, dir, "starter.ss"))
   first_val_line <- grep("0=use init values in control file", start, fixed = TRUE)
     if(!identical(first_val_line, integer(0)) == TRUE){
       start[first_val_line] <- "1 # read from .par file"
       print(start[first_val_line])
       # phase_line <- grep("Turn off estimation", start, fixed = TRUE)
       # start[phase_line] <- "0 # Turn off estimation after this phase"
-      writeLines(start, file.path(dir, "starter.ss"))
+      writeLines(start, file.path(wd, dir, "starter.ss"))
       # run the models without estimation and see if model finishes without error
       message("running ss3 on ", basename(dir))
-      system(paste0("cd ", dir, " && ../ss3 -maxfn 0 -phase 50 -nohess"))
+      r4ss::run(dir = file.path(wd, dir), exe = file.path(wd, "models","ss3"), extras = "-maxfn 0 -phase 50 -nohess")
+
+      system(paste0("cd ", wd, "/", dir, " && ../ss3 -maxfn 0 -phase 50 -nohess"))
       model_ran <- file.exists(file.path(dir, "control.ss_new"))
       return(model_ran)
       } else {
