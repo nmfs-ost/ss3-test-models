@@ -1,0 +1,27 @@
+{
+	"name": "R (rocker/r-tidyverse base)",
+   	"image": "ghcr.io/rocker-org/devcontainer/tidyverse:4.3",
+
+	"features": {
+		"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+            	"packages": "make,gcc,g++,cmake,clang-tidy,clang-format"
+		},
+	    	"ghcr.io/rocker-org/devcontainer-features/r-packages:1": {
+			"packages": "cli,rlang,github::r4ss/r4ss,github::ss3sim/ss3sim,ggplot2,dplyr,scales,covr",
+			"installSystemRequirements": true
+		}
+	},
+   	"postCreateCommand": "bash .devcontainer/ss3-exe-download.sh",
+	"customizations": {
+	  "vscode": {
+	  		"extensions":[
+				"GitHub.codespaces",
+				"hbenl.vscode-test-explorer",
+				"reditorsupport.r",
+				"rdebugger.r-debugger",
+				"ms-vsliveshare.vsliveshare",
+				"mathematic.vscode-pdf"
+			]
+	  }
+	}
+}
