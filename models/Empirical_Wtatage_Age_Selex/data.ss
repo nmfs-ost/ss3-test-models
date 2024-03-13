@@ -12,7 +12,7 @@
 1971 #_StartYr
 2001 #_EndYr
 1 #_Nseas
- 12 #_months/season
+12 #_months/season
 2 #_Nsubseasons (even number, minimum is 2)
 1 #_spawn_month
 2 #_Nsexes: 1, 2, -1  (use -1 for 1 sex setup with SSB multiplied by female_frac parameter)
@@ -80,32 +80,32 @@
 #_SD_Report: 0=not; 1=include survey expected value with se
 #_note that link functions are specified in Q_setup section of control file
 #_Fleet Units Errtype SD_Report
-1 1 0 0 # FISHERY1
-2 1 0 0 # SURVEY1
-3 0 0 0 # SURVEY2
+1 1 0 0 #FISHERY1
+2 1 0 0 #SURVEY1
+3 0 0 0 #SURVEY2
 #_yr month fleet obs stderr
-1977 7 2 339689 0.3 #_ SURVEY1
-1980 7 2 193353 0.3 #_ SURVEY1
-1983 7 2 151984 0.3 #_ SURVEY1
-1986 7 2 55221.8 0.3 #_ SURVEY1
-1989 7 2 59232.3 0.3 #_ SURVEY1
-1992 7 2 31137.5 0.3 #_ SURVEY1
-1995 7 2 35845.4 0.3 #_ SURVEY1
-1998 7 2 27492.6 0.3 #_ SURVEY1
-2001 7 2 37338.3 0.3 #_ SURVEY1
-1990 7 3 5.19333 0.7 #_ SURVEY2
-1991 7 3 1.1784 0.7 #_ SURVEY2
-1992 7 3 5.94383 0.7 #_ SURVEY2
-1993 7 3 0.770106 0.7 #_ SURVEY2
-1994 7 3 16.318 0.7 #_ SURVEY2
-1995 7 3 1.36339 0.7 #_ SURVEY2
-1996 7 3 4.76482 0.7 #_ SURVEY2
-1997 7 3 51.0707 0.7 #_ SURVEY2
-1998 7 3 1.36095 0.7 #_ SURVEY2
-1999 7 3 0.862531 0.7 #_ SURVEY2
-2000 7 3 5.97125 0.7 #_ SURVEY2
-2001 7 3 1.69379 0.7 #_ SURVEY2
--9999 1 1 1 1 # terminator for survey observations 
+1977 7 2 339689 0.3 #_SURVEY1
+1980 7 2 193353 0.3 #_SURVEY1
+1983 7 2 151984 0.3 #_SURVEY1
+1986 7 2 55221.8 0.3 #_SURVEY1
+1989 7 2 59232.3 0.3 #_SURVEY1
+1992 7 2 31137.5 0.3 #_SURVEY1
+1995 7 2 35845.4 0.3 #_SURVEY1
+1998 7 2 27492.6 0.3 #_SURVEY1
+2001 7 2 37338.3 0.3 #_SURVEY1
+1990 7 3 5.19333 0.7 #_SURVEY2
+1991 7 3 1.1784 0.7 #_SURVEY2
+1992 7 3 5.94383 0.7 #_SURVEY2
+1993 7 3 0.770106 0.7 #_SURVEY2
+1994 7 3 16.318 0.7 #_SURVEY2
+1995 7 3 1.36339 0.7 #_SURVEY2
+1996 7 3 4.76482 0.7 #_SURVEY2
+1997 7 3 51.0707 0.7 #_SURVEY2
+1998 7 3 1.36095 0.7 #_SURVEY2
+1999 7 3 0.862531 0.7 #_SURVEY2
+2000 7 3 5.97125 0.7 #_SURVEY2
+2001 7 3 1.69379 0.7 #_SURVEY2
+-9999 1 1 1 1 #terminator for survey observations 
 #
 0 #_N_fleets_with_discard
 #_discard_units (1=same_as_catchunits(bio/num); 2=fraction; 3=numbers)
