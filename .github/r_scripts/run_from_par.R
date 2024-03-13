@@ -2,7 +2,6 @@
 list.of.packages <- c("parallelly", "furrr", "future")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)>0) install.packages(new.packages)
-remotes::install_github("r4ss/r4ss")
 
 ncores <- parallelly::availableCores(omit = 1)
 future::plan(future::multisession, workers = ncores)
