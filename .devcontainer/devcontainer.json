@@ -1,6 +1,6 @@
 {
 	"name": "R (rocker/r-tidyverse base)",
-   	"image": "ghcr.io/rocker-org/devcontainer/tidyverse:4.3",
+   	"image": "ghcr.io/rocker-org/devcontainer/tidyverse:4.2",
 
 	"features": {
 		"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
@@ -11,6 +11,7 @@
 			"installSystemRequirements": true
 		}
 	},
+	// "onCreateCommand": "apt install software-properties-common -y && apt upgrade libstdc++6 -y",
    	// "postCreateCommand": "bash .devcontainer/ss3-exe-download.sh",
 	"customizations": {
 	  "vscode": {
