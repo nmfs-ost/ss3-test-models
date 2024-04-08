@@ -47,6 +47,9 @@ jobs:
             return(model_ran)
           }
 
+          ncores <- parallelly::availableCores(omit = 1)
+          future::plan(future::multisession, workers = ncores)
+          
           mod_ran <- furrr::future_map(mod_paths, function(x){tryCatch(run_ss3(x),
           error = function(e) print(e))})
 
