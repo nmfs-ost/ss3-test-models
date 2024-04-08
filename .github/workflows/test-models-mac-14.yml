@@ -1,0 +1,90 @@
+name: update-ss3-test-models-mac
+on: 
+  push:
+
+jobs:
+  update-ss3-test-models-mac:
+    runs-on: macos-14
+    env:
+      R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      R_KEEP_PKG_SOURCE: yes
+
+    steps:
+
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      
+      - name: install libcurl
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev
+
+      - name: setup R  
+        uses: r-lib/actions/setup-r@v2
+      
+      - name: install remotes
+        run: Rscript -e 'install.packages("remotes")'
+
+      - name: install r4ss
+        run: Rscript -e 'remotes::install_github("r4ss/r4ss")'
+
+      - name: install other r packages
+        run: Rscript -e 'install.packages("purrr","furrr","parallely","future")'
+        
+      - name: Get the latest SS3 executable
+        run: |
+          wget -O ss3 https://github.com/nmfs-ost/ss3-source-code/releases/latest/download/ss3_osx
+          sudo chmod a+x ss3
+          mv ss3 /usr/local/bin/ss3
+          export PATH=/usr/local/bin/ss3:$PATH
+          echo "/usr/local/bin/ss3" >> $GITHUB_PATH
+
+      - name: Run models
+        run: |
+          mod_names <- list.dirs(file.path("models"), full.names = FALSE, recursive = FALSE)
+          mod_paths <- list.dirs(file.path("models"), full.names = TRUE, recursive = FALSE)
+          print(mod_names)
+          run_ss <- function(dir) {
+            wd <- getwd()
+            print(wd)
+            on.exit(system(paste0("cd ", wd)))
+            # rename the reference files
+            file.rename(file.path(dir, "ss_summary.sso"),
+                        file.path(dir, "ss_summary_ref.sso"))
+            file.rename(file.path(dir, "warning.sso"),
+                        file.path(dir, "warning_ref.sso"))
+            file.copy(file.path(dir, "ss3.par"), file.path(dir, "ss3_ref.par"))
+            # run the models with estimation and see if model finishes without error
+            message("running ss on ", basename(dir))
+            system(paste0("cd ", dir, " && ../ss3 -nox"))
+            model_ran <- file.exists(file.path(dir, "control.ss_new"))
+            return(model_ran)
+          }
+
+          mod_ran <- furrr::future_map(mod_paths, function(x){tryCatch(run_ss(x),
+          error = function(e) print(e))})
+
+          mod_errors <- mod_names[unlist(lapply(mod_ran, function(x) "simpleError" %in% class(x)))]
+          success <- TRUE
+          if(length(mod_errors) > 0) {
+            message("Model code with errors were: ", paste0(mod_errors, collapse = ", "),
+                    ". See error list above for more details.")
+            success <- FALSE
+          } else {
+            message("All code ran without error, but model runs may still have failed.")
+          }
+          mod_no_run <- mod_names[unlist(lapply(mod_ran, function(x) isFALSE(x)))] # false means model didn't run
+          if(length(mod_no_run) > 0) {
+            message("Models that didn't run are ", paste0(mod_no_run, collapse = ", "))
+            success <- FALSE
+          } else {
+            message("All models ran without error.")
+          }
+          # determine if job fails or passes
+          if(success == FALSE) {
+            stop("Job failed due to code with errors or models that didn't run.")
+          } else {
+            message("All models successfully ran.")
+          }
+        shell: Rscript {0}
