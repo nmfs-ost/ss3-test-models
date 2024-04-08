@@ -25,7 +25,7 @@ jobs:
         run: Rscript -e 'remotes::install_github("r4ss/r4ss")'
 
       - name: install other r packages
-        run: Rscript -e 'install.packages("purrr","furrr","parallely","future")'
+        run: Rscript -e 'install.packages(c("purrr","furrr","parallely","future"))'
         
       - name: Get the latest SS3 executable
         run: |
