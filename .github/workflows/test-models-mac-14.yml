@@ -38,24 +38,16 @@ jobs:
           mod_names <- list.dirs(file.path("models"), full.names = FALSE, recursive = FALSE)
           mod_paths <- list.dirs(file.path("models"), full.names = TRUE, recursive = FALSE)
           print(mod_names)
-          run_ss <- function(dir) {
+          run_ss3 <- function(dir) {
             wd <- getwd()
-            print(wd)
-            on.exit(system(paste0("cd ", wd)))
-            # rename the reference files
-            file.rename(file.path(dir, "ss_summary.sso"),
-                        file.path(dir, "ss_summary_ref.sso"))
-            file.rename(file.path(dir, "warning.sso"),
-                        file.path(dir, "warning_ref.sso"))
-            file.copy(file.path(dir, "ss3.par"), file.path(dir, "ss3_ref.par"))
             # run the models with estimation and see if model finishes without error
-            message("running ss on ", basename(dir))
-            system(paste0("cd ", dir, " && ../ss3 -nox"))
+            message("running ss3 on ", basename(dir))
+            r4ss::run(dir = dir, exe = file.path("models","ss3"), extras = "-nox")
             model_ran <- file.exists(file.path(dir, "control.ss_new"))
             return(model_ran)
           }
 
-          mod_ran <- furrr::future_map(mod_paths, function(x){tryCatch(run_ss(x),
+          mod_ran <- furrr::future_map(mod_paths, function(x){tryCatch(run_ss3(x),
           error = function(e) print(e))})
 
           mod_errors <- mod_names[unlist(lapply(mod_ran, function(x) "simpleError" %in% class(x)))]
