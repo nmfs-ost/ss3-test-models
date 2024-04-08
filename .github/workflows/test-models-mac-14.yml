@@ -31,9 +31,7 @@ jobs:
         run: |
           wget -O ss3 https://github.com/nmfs-ost/ss3-source-code/releases/latest/download/ss3_osx
           sudo chmod a+x ss3
-          mv ss3 /usr/local/bin/ss3
-          export PATH=/usr/local/bin/ss3:$PATH
-          echo "/usr/local/bin/ss3" >> $GITHUB_PATH
+          mv ss3 models/ss3
 
       - name: Run models
         run: |
