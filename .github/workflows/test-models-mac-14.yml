@@ -49,7 +49,7 @@ jobs:
 
           ncores <- parallelly::availableCores(omit = 1)
           future::plan(future::multisession, workers = ncores)
-          
+
           mod_ran <- furrr::future_map(mod_paths, function(x){tryCatch(run_ss3(x),
           error = function(e) print(e))})
 
@@ -75,4 +75,13 @@ jobs:
           } else {
             message("All models successfully ran.")
           }
+
+          writeLines(mod_ran, "models_ran_output.txt")
         shell: Rscript {0}
+
+      - name: Archive models_ran_output text file
+        if: always()
+        uses: actions/upload-artifact@main
+        with:
+          name: 'models_ran_output.txt'
+          path: models_ran_output.txt
