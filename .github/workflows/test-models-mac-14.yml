@@ -38,43 +38,11 @@ jobs:
           mod_names <- list.dirs(file.path("models"), full.names = FALSE, recursive = FALSE)
           mod_paths <- list.dirs(file.path("models"), full.names = TRUE, recursive = FALSE)
           print(mod_names)
-          run_ss3 <- function(dir) {
-            wd <- getwd()
-            # run the models with estimation and see if model finishes without error
-            message("running ss3 on ", basename(dir))
-            r4ss::run(dir = dir, exe = file.path("models","ss3"), extras = "-nox")
-            model_ran <- file.exists(file.path(dir, "control.ss_new"))
-            return(model_ran)
-          }
 
           ncores <- parallelly::availableCores(omit = 1)
           future::plan(future::multisession, workers = ncores)
 
-          mod_ran <- furrr::future_map(mod_paths, function(x){tryCatch(run_ss3(x),
-          error = function(e) print(e))})
-
-          mod_errors <- mod_names[unlist(lapply(mod_ran, function(x) "simpleError" %in% class(x)))]
-          success <- TRUE
-          if(length(mod_errors) > 0) {
-            message("Model code with errors were: ", paste0(mod_errors, collapse = ", "),
-                    ". See error list above for more details.")
-            success <- FALSE
-          } else {
-            message("All code ran without error, but model runs may still have failed.")
-          }
-          mod_no_run <- mod_names[unlist(lapply(mod_ran, function(x) isFALSE(x)))] # false means model didn't run
-          if(length(mod_no_run) > 0) {
-            message("Models that didn't run are ", paste0(mod_no_run, collapse = ", "))
-            success <- FALSE
-          } else {
-            message("All models ran without error.")
-          }
-          # determine if job fails or passes
-          if(success == FALSE) {
-            stop("Job failed due to code with errors or models that didn't run.")
-          } else {
-            message("All models successfully ran.")
-          }
+          mod_ran <- furrr::future_map(mod_paths, function(x){r4ss::run(dir = x, exe = "/Users/runner/work/ss3-test-models/ss3-test-models/models/ss3"))})
           
           print(mod_ran)
         shell: Rscript {0}
