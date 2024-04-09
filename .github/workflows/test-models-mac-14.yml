@@ -76,13 +76,5 @@ jobs:
             message("All models successfully ran.")
           }
           
-          mod_ran_char <- lapply(mod_ran, as.character)
-          writeLines(mod_ran_char, "models_ran_output.txt")
+          print(mod_ran)
         shell: Rscript {0}
-
-      - name: Archive models_ran_output text file
-        if: always()
-        uses: actions/upload-artifact@main
-        with:
-          name: 'models_ran_output.txt'
-          path: models_ran_output.txt
