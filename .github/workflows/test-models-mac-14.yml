@@ -42,7 +42,7 @@ jobs:
           ncores <- parallelly::availableCores(omit = 1)
           future::plan(future::multisession, workers = ncores)
 
-          mod_ran <- furrr::future_map(mod_paths, function(x){r4ss::run(dir = x, exe = "/Users/runner/work/ss3-test-models/ss3-test-models/models/ss3"))})
+          mod_ran <- furrr::future_map(mod_paths, function(x){r4ss::run(dir = x, exe = "/Users/runner/work/ss3-test-models/ss3-test-models/models/ss3")})
           
           print(mod_ran)
         shell: Rscript {0}
