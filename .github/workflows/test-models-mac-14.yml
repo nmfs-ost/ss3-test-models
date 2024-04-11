@@ -22,14 +22,14 @@ jobs:
         run: Rscript -e 'install.packages("remotes")'
 
       - name: install r4ss
-        run: Rscript -e 'remotes::install_github("r4ss/r4ss")'
+        run: Rscript -e 'remotes::install_github("r4ss/r4ss", ref = "m2-chip-get-ss3-exe")'
 
       - name: install other r packages
         run: Rscript -e 'install.packages(c("purrr","furrr","parallely","future"))'
       
-      - name: get R info
+      - name: get ss3 exe for m2 chip
         run: |
-          R.version
+          get_ss3_exe()
         shell: Rscript {0}
 
       # - name: Get the latest SS3 executable
