@@ -29,7 +29,7 @@ jobs:
       
       - name: get ss3 exe for m2 chip
         run: |
-          get_ss3_exe()
+          r4ss::get_ss3_exe()
         shell: Rscript {0}
 
       # - name: Get the latest SS3 executable
