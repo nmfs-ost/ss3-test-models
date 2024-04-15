@@ -29,7 +29,7 @@ jobs:
 
       - name: Get the latest SS3 executable
         run: |
-          wget -O https://github.com/nmfs-ost/ss3-source-code/actions/runs/8664716853/artifacts/1409298598
+          wget -O https://api.github.com/repos/nmfs-ost/ss3-source-code/actions/artifacts/1409298598
           sudo unzip ss3-macos-13.zip
           mv ss3_osx ss3
           sudo chmod a+x ss3
