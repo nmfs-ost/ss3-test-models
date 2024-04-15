@@ -26,10 +26,16 @@ jobs:
 
       # - name: install other r packages
       #   run: Rscript -e 'install.packages(c("purrr","furrr","parallely","future"))'
+      - name: use download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ss3-macos-13.zip
+          github-token: ${{ secrets.GITHUB_TOKEN}} # token with actions:read permissions on target repo
+          repository: nmfs-ost/ss3-source-code
+          run-id: 8664716853
 
       - name: Get the latest SS3 executable
         run: |
-          wget --output-document=ss3-macos-13.zip https://api.github.com/repos/nmfs-ost/ss3-source-code/actions/artifacts/1409298598
           ls
           sudo unzip ss3-macos-13.zip
       #     mv ss3_osx ss3
