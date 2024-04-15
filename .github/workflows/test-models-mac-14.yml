@@ -29,7 +29,7 @@ jobs:
       - name: use download artifact
         uses: actions/download-artifact@v4
         with:
-          name: ss3-macos-13.zip
+          name: ss3-macos-13
           github-token: ${{ secrets.GITHUB_TOKEN}} # token with actions:read permissions on target repo
           repository: nmfs-ost/ss3-source-code
           run-id: 8664716853
