@@ -31,7 +31,7 @@ jobs:
         run: Rscript -e 'install.packages(c("purrr","furrr","parallely","future"))'
       
       - name: try get_ss3_exe
-        run: Rscript -e 'get_ss3_exe()'
+        run: Rscript -e 'r4ss::get_ss3_exe()'
 
       # - name: use download artifact
       #   uses: actions/download-artifact@v4
