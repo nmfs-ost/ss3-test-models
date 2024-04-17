@@ -4,7 +4,7 @@ on:
 
 jobs:
   update-ss3-test-models-mac:
-    runs-on: macos-13
+    runs-on: macos-latest
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -21,14 +21,17 @@ jobs:
       - name: R.version
         run: Rscript -e 'R.version'
       
-      # - name: install remotes
-      #   run: Rscript -e 'install.packages("remotes")'
+      - name: install remotes
+        run: Rscript -e 'install.packages("remotes")'
 
-      # - name: install r4ss
-      #   run: Rscript -e 'remotes::install_github("r4ss/r4ss")'
+      - name: install r4ss
+        run: Rscript -e 'remotes::install_github("r4ss/r4ss", ref = "m2-chip-get-ss3-exe")'
 
-      # - name: install other r packages
-      #   run: Rscript -e 'install.packages(c("purrr","furrr","parallely","future"))'
+      - name: install other r packages
+        run: Rscript -e 'install.packages(c("purrr","furrr","parallely","future"))'
+      
+      - name: try get_ss3_exe
+        run: Rscript -e 'get_ss3_exe()'
 
       # - name: use download artifact
       #   uses: actions/download-artifact@v4
