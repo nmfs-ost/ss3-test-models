@@ -1,14 +1,14 @@
-#V3.30.22.1;_safe;_compile_date:_Jan 30 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.22.beta: not an official version of SS;_safe;_compile_date:_Apr 23 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
 #_User_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
 #_Source_code_at:_https://github.com/nmfs-ost/ss3-source-code
 
-#_Start_time: Thu Feb  1 14:15:48 2024
+#_Start_time: Wed Apr 24 15:52:03 2024
 #_echo_input_data
 #C data file for simple example
-#V3.30.22.1;_safe;_compile_date:_Jan 30 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.22.beta: not an official version of SS;_safe;_compile_date:_Apr 23 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
 1971 #_StartYr
 2001 #_EndYr
 1 #_Nseas
