@@ -117,7 +117,7 @@
 #
 3 #_Spawner-Recruitment; Options: 1=NA; 2=Ricker; 3=std_B-H; 4=SCAA; 5=Hockey; 6=B-H_flattop; 7=survival_3Parm; 8=Shepherd_3Parm; 9=RickerPower_3parm
 0  # 0/1 to use steepness in initial equ recruitment calculation
-1  #  SR_update_SSBpR0
+2  #  SR_update_SSBpR0
 #  0 - OK, but only if no timevary biology or SR parm
 #  1 - best: update SSBpR0 for benchmark and for time series only if SRparm R0 or h (not regime) is set to have time-varying property
 #  2 - incorrect (old, incorrect SS3 approach):  always update SSBpR0 for benchmark's use of spawner-recruitment, but only for the time series if there is a timevary SR parm
