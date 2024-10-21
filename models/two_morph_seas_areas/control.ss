@@ -165,7 +165,12 @@
 #
 3 #_Spawner-Recruitment; Options: 1=NA; 2=Ricker; 3=std_B-H; 4=SCAA; 5=Hockey; 6=B-H_flattop; 7=survival_3Parm; 8=Shepherd_3Parm; 9=RickerPower_3parm
 0  # 0/1 to use steepness in initial equ recruitment calculation
-0  #  future feature:  0/1 to make realized sigmaR a function of SR curvature
+1  #  SR_update_SSBpR0
+#  0 - OK, but only if no timevary biology or SR parm
+#  1 - best: update SSBpR0 for benchmark and for time series only if SRparm R0 or h (not regime) is set to have time-varying property
+#  2 - incorrect (old, incorrect SS3 approach):  always update SSBpR0 for benchmark's use of spawner-recruitment, but only for the time series if there is a timevary SR parm
+#  3 - option:  do not update SSBpR0 (do keep start year SSBpR0), even if R0 or h is set to have time-varying property
+#
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn #  parm_name
              3            31       9.50866          10.3            10             0          1          0          0          0          0          0          0          0 # SR_LN(R0)
            0.2             1       0.63828           0.7          0.05             1          4          0          0          0          0          0          0          0 # SR_BH_steep
@@ -413,5 +418,5 @@
  5 15 25 35 43 # vector with selex std bins (-1 in first bin to self-generate)
  1 2 14 26 40 # vector with growth std ages picks (-1 in first bin to self-generate)
  1 2 14 26 40 # vector with NatAge std ages (-1 in first bin to self-generate)
-999
+999e
 
