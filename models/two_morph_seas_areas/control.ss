@@ -418,5 +418,4 @@
  5 15 25 35 43 # vector with selex std bins (-1 in first bin to self-generate)
  1 2 14 26 40 # vector with growth std ages picks (-1 in first bin to self-generate)
  1 2 14 26 40 # vector with NatAge std ages (-1 in first bin to self-generate)
-999e
-
+999
