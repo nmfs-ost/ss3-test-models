@@ -1,6 +1,7 @@
 Note 1 Suggestion:  recr_dist_method 3 is simpler and takes 1 parm for each settlement
 Warning 1 : bias adjustment ramp extends into forecast; biasadj set to 0.0 internally for forecast years
-Warning 2 : Forecast F capped by max possible F from control file1.5
+Warning 2 : 1st iteration warning: catch logL > 50% total logL; check configuration; suggest start with larger R0
 Warning 3 : Forecast F capped by max possible F from control file1.5
+Warning 4 : Forecast F capped by max possible F from control file1.5
 Note 2 Information: A revised protocol for the Fcast_yr specification is available and recommended.
- 3 warnings  and 2 notes 
+ 4 warnings  and 2 notes 

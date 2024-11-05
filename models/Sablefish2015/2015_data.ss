@@ -1,16 +1,16 @@
-#V3.30.22.1;_safe;_compile_date:_Jan 30 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.23.00;_safe;_compile_date:_Oct 31 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
 #_User_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
 #_Source_code_at:_https://github.com/nmfs-ost/ss3-source-code
 
-#_Start_time: Thu Feb  1 14:15:17 2024
+#_Start_time: Tue Nov  5 18:34:22 2024
 #_echo_input_data
 #C data file created using the SS_writedat function in the R package r4ss
 #C should work with SS version: 
 #C file write time: 2015-05-13 13:24:55
-#V3.30.22.1;_safe;_compile_date:_Jan 30 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.23.00;_safe;_compile_date:_Oct 31 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 1970 #_StartYr
 2014 #_EndYr
 1 #_Nseas
@@ -44,7 +44,7 @@
 #e:  last year of range
 #f:  not used
 # a   b   c   d   e   f 
-#_Catch data: yr, seas, fleet, catch, catch_se
+#_Catch data: year, seas, fleet, catch, catch_se
 #_catch_se:  standard error of log(catch)
 #_NOTE:  catch data is ignored for survey fleets
 -999 1 1 0 0.01
@@ -188,11 +188,12 @@
 -9999 0 0 0 0
 #
 #_CPUE_and_surveyabundance_and_index_observations
-#_Units: 0=numbers; 1=biomass; 2=F; 30=spawnbio; 31=exp(recdev); 36=recdev; 32=spawnbio*recdev; 33=recruitment; 34=depletion(&see Qsetup); 35=parm_dev(&see Qsetup)
-#_Errtype:  -1=normal; 0=lognormal; 1=lognormal with bias correction; >1=df for T-dist
-#_SD_Report: 0=not; 1=include survey expected value with se
+#_units: 0=numbers; 1=biomass; 2=F; 30=spawnbio; 31=exp(recdev); 36=recdev; 32=spawnbio*recdev; 33=recruitment; 34=depletion(&see Qsetup); 35=parm_dev(&see Qsetup)
+#_errtype:  -1=normal; 0=lognormal; 1=lognormal with bias correction; >1=df for T-dist
+#_SD_report: 0=not; 1=include survey expected value with se
 #_note that link functions are specified in Q_setup section of control file
-#_Fleet Units Errtype SD_Report
+#_dataunits = 36 and 35 should use Q_type 5 to provide offset parameter
+#_fleet units errtype SD_report
 1 1 0 0 # HKL
 2 1 0 0 # POT
 3 1 0 0 # TWL
@@ -201,7 +202,7 @@
 6 1 0 0 # AKSLP
 7 1 0 0 # NWSLP
 8 1 0 0 # NWCBO
-#_yr month fleet obs stderr
+#_year month fleet obs stderr
 1970 7 4 10.4104 0.1483 #_ ENV
 1971 7 4 0.6499 0.6227 #_ ENV
 1972 7 4 0.4807 0.6209 #_ ENV
@@ -280,11 +281,11 @@
 #_discard_errtype:  >0 for DF of T-dist(read CV below); 0 for normal with CV; -1 for normal with se; -2 for lognormal; -3 for trunc normal with CV
 # note: only enter units and errtype for fleets with discard 
 # note: discard data is the total for an entire season, so input of month here must be to a month in that season
-#_Fleet units errtype
+#_fleet units errtype
 1 2 -1 # HKL
 2 2 -1 # POT
 3 2 -1 # TWL
-#_yr month fleet obs stderr
+#_year month fleet obs stderr
 2002 7 1 0.227511 0.0507665 #_ HKL
 2003 7 1 0.189133 0.0325628 #_ HKL
 2004 7 1 0.0880365 0.0140353 #_ HKL
@@ -329,7 +330,7 @@
 1 #_use meanbodysize_data (0/1)
 300 #_DF_for_meanbodysize_T-distribution_like
 # note:  type=1 for mean length; type=2 for mean body weight 
-#_yr month fleet part type obs stderr
+#_year month fleet part type obs stderr
 2002 7 1 1 1 1.73627 0.098133 #_ HKL
 2003 7 1 1 1 1.39569 0.0900418 #_ HKL
 2004 7 1 1 1 1.51976 0.102864 #_ HKL
@@ -391,11 +392,11 @@
 -1 0.0001 0 0 0 0 1 #_fleet:6_AKSLP
 -1 0.0001 0 0 0 0 1 #_fleet:7_NWSLP
 -1 0.0001 0 0 0 0 1 #_fleet:8_NWCBO
-# sex codes:  0=combined; 1=use female only; 2=use male only; 3=use both as joint sexxlength distribution
+# sex codes:  0=combined; 1=use female only; 2=use male only; 3=use both as joint sex*length distribution
 # partition codes:  (0=combined; 1=discard; 2=retained
 36 #_N_LengthBins; then enter lower edge of each length bin
  20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62 64 66 68 70 72 74 76 78 80 82 84 86 88 90
-#_yr month fleet sex part Nsamp datavector(female-male)
+#_year month fleet sex part Nsamp datavector(female-male)
  2005 7 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.315789 0 0 0 0 0 0.684211 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.315789 0 0 0 0 0 0.684211 0 0 0 0 0
  2006 7 1 0 1 36 0 0 0 0 0 0 0 0 0.00610634 0 0.0152616 0.0492013 0.0522269 0.0605624 0.107274 0.0702382 0.0815599 0.0663304 0.150737 0.0801256 0.127251 0.06611 0.0447705 0.0102746 0.00212881 0.00942338 0 0 0 0 0.00041778 0 0 0 0 0 0 0 0 0 0 0 0 0 0.00610634 0 0.0152616 0.0492013 0.0522269 0.0605624 0.107274 0.0702382 0.0815599 0.0663304 0.150737 0.0801256 0.127251 0.06611 0.0447705 0.0102746 0.00212881 0.00942338 0 0 0 0 0.00041778 0 0 0 0 0
  2007 7 1 0 1 74 0 0 0 0 0 0 0 0 0.000648207 7.77023e-05 0.0134926 0.00146695 0.00790742 0.0439834 0.0481587 0.11835 0.151461 0.206165 0.140198 0.0913632 0.0842732 0.045702 0.0183726 0.0225786 0.00580114 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.000648207 7.77023e-05 0.0134926 0.00146695 0.00790742 0.0439834 0.0481587 0.11835 0.151461 0.206165 0.140198 0.0913632 0.0842732 0.045702 0.0183726 0.0225786 0.00580114 0 0 0 0 0 0 0 0 0 0 0
@@ -577,9 +578,9 @@
 -1 0.0001 0 0 0 0 1 #_fleet:7_NWSLP
 -1 0.0001 0 0 0 0 1 #_fleet:8_NWCBO
 3 #_Lbin_method_for_Age_Data: 1=poplenbins; 2=datalenbins; 3=lengths
-# sex codes:  0=combined; 1=use female only; 2=use male only; 3=use both as joint sexxlength distribution
+# sex codes:  0=combined; 1=use female only; 2=use male only; 3=use both as joint sex*length distribution
 # partition codes:  (0=combined; 1=discard; 2=retained
-#_yr month fleet sex part ageerr Lbin_lo Lbin_hi Nsamp datavector(female-male)
+#_year month fleet sex part ageerr Lbin_lo Lbin_hi Nsamp datavector(female-male)
  2003 7 -8 3 0 1 -1 -1 1 0.00416277 0.0237002 0.0251827 0.142015 0.0710153 0.0221799 0.00480359 0.0118316 0.0231454 0.00276101 0.0146696 0.00599182 0.00267611 0.0056584 0.0159109 0 0.012474 0.00147909 0.00073006 0.00269999 0.00140419 0.00331784 0.00275087 0.000485206 0.00347176 0.00291664 0.00102513 0 0.000466366 0.000426582 0.000591378 0.000500151 0.00206504 0.000330748 0.00124036 0.0192512 0.00748596 0.0140364 0.018409 0.136552 0.153175 0.0414254 0.0288354 0.0218169 0.0106498 0.00654824 0.000588664 0.00117155 0.00259941 0.00138685 0.00322328 0.000515915 0.0163269 0.00185029 0.00218002 0.000412175 0.00262974 0.00282705 0.00420973 0.00112758 0.00145423 0.00320779 0.0162142 0.00371248 0.00380749 0.00262617 0 0.0020192 0.000865947 0.0044183 0.00517088 0.0431888
  2004 7 -8 3 0 1 -1 -1 1 0.0189395 0.0144739 0.0173421 0.106578 0.097993 0.0913502 0.0286527 0.00435007 0.00767578 0.0111867 0.00354877 0.000889952 0.000570072 0.00851014 0.00197598 0.00699498 0.00280173 0.003284 0.00176217 0.00117921 0.00355779 0.00106329 0.00131598 0.000978526 0.00132086 0.000768042 0.000867544 0.00198591 0.000968814 0 0.000531187 0.00955725 0.00821246 0 0 0.01159 0.0189686 0.0111755 0.0421034 0.0597716 0.0971066 0.0730551 0.0249846 0.0136129 0.00696659 0.00755529 0.00563357 0.00296676 0.00176319 0.00205779 0.00809243 0.00249877 0.000670148 0.0103703 0.00487381 0.00872404 0.00252106 0.00471886 0.00319119 0.000480834 0.0116014 0.00464548 0.00821246 0.00342973 0.0032194 0.0145838 0.000880352 0.00233822 0 0.00220526 0.0116877 0.0505561
  2005 7 -8 3 0 1 -1 -1 1 8.72748e-05 0.0470361 0.0218008 0.0684013 0.0709669 0.0778323 0.0334614 0.0219909 0.0032364 0.0015188 0.00672934 0.00306461 0.00638472 0.0040775 0.00511543 0.0111637 0.00713002 0.0076943 0.00404752 0.0035125 0.00485499 0.00646004 0.00305405 0.00272128 0.00223487 0.00142228 0.000627484 0.00287032 0.00386314 0.00494926 0.00210794 0.00500553 0.00291682 0.00466643 0.00235291 0.0113881 0.00172711 0.0350766 0.0342556 0.0644548 0.0859289 0.075466 0.0386746 0.0169536 0.0108966 0.0048413 0.0112517 0.00742762 0.0108464 0.00267047 0.00367297 0.00488809 0.00802115 0.00368731 0.00906924 0.00591878 0.0072152 0.00222095 0.00539825 0.00619168 0.00888485 0.00447765 0.00546951 0.00308879 0.0031434 0.00275594 0.00351832 0.00173372 0 0.00679566 0.00188941 0.0347405
@@ -2032,8 +2033,8 @@
 0 #_Use_MeanSize-at-Age_obs (0/1)
 #
 0 #_N_environ_variables
-# -2 in yr will subtract mean for that env_var; -1 will subtract mean and divide by stddev (e.g. Z-score)
-#Yr Variable Value
+# -2 in year will subtract mean for that env_var; -1 will subtract mean and divide by stddev (e.g. Z-score)
+#_year variable value
 #
 # Sizefreq data. Defined by method because a fleet can use multiple methods
 0 # N sizefreq methods to read (or -1 for expanded options)
@@ -2042,10 +2043,10 @@
 #
 0 #    morphcomp data(0/1) 
 #  Nobs, Nmorphs, mincomp
-#  yr, seas, type, partition, Nsamp, datavector_by_Nmorphs
+#_year, seas, type, partition, Nsamp, datavector_by_Nmorphs
 #
 0  #  Do dataread for selectivity priors(0/1)
-# Yr, Seas, Fleet,  Age/Size,  Bin,  selex_prior,  prior_sd
+#_year, seas, fleet, age/size, bin, selex_prior, prior_sd
 # feature not yet implemented
 #
 999
