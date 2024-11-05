@@ -1,8 +1,8 @@
-#V3.30.22.beta: not an official version of SS;_safe;_compile_date:_Apr 23 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.23.00;_safe;_compile_date:_Oct 31 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 data.ss #_DataFile 
 control.ss #_Control 
-Run_Date: Wed Apr 24 15:50:44 2024
-Final_phase: 5  N_iterations: 452
+Run_Date: Tue Nov  5 17:08:09 2024
+Final_phase: 5  N_iterations: 388
 #_LIKELIHOOD 
 Label logL*Lambda
 TOTAL_LogL 1306.38
@@ -12,7 +12,7 @@ Length_comp 650.96
 Age_comp 586.657
 Size_at_age 79.2224
 Recruitment -7.52769
-InitEQ_regime 0
+InitEQ_regime 1.54502e-30
 Sum_recdevs 1.37009
 Forecast_Recruitment 0
 Parm_priors 1.05541
@@ -55,9 +55,9 @@ Main_RecrDev_1971 0.134968 0.250604 Act 0.513497
 Main_RecrDev_1972 -0.0507584 0.398113 Act 0.494924
 Main_RecrDev_1973 0.0972615 0.346157 Act 0.509726
 Main_RecrDev_1974 -0.164709 0.40653 Act 0.483529
-Main_RecrDev_1975 0.0443744 0.379269 Act 0.504437
+Main_RecrDev_1975 0.0443745 0.379269 Act 0.504437
 Main_RecrDev_1976 0.710789 0.235163 Act 0.571079
-Main_RecrDev_1977 -0.00439023 0.409109 Act 0.499561
+Main_RecrDev_1977 -0.00439022 0.409109 Act 0.499561
 Main_RecrDev_1978 0.0113464 0.377357 Act 0.501135
 Main_RecrDev_1979 0.266822 0.322103 Act 0.526682
 Main_RecrDev_1980 0.186805 0.342546 Act 0.51868
@@ -338,7 +338,7 @@ Ret_Catch_MSY 3017.14 555.535
 B_MSY/SSB_unfished 0.326648 0.0346665
 ForeCatch_2002 167.969 367.106
 ForeCatch_2003 403.585 379.81
-ForeCatch_2004 601.369 390.74
+ForeCatch_2004 601.368 390.74
 ForeCatch_2005 758.067 399.694
 ForeCatch_2006 881.551 408.299
 ForeCatch_2007 983.167 418.371
@@ -384,7 +384,7 @@ NatAge_std_1_Fem_A_26 4.97919 2.11554
 NatAge_std_1_Fem_A_40 3.22783 1.28092
 NatAge_std_1_Mal_A_1 827.143 434.554
 NatAge_std_1_Mal_A_2 1217.49 503.915
-NatAge_std_1_Mal_A_14 110.714 44.1342
+NatAge_std_1_Mal_A_14 110.713 44.1342
 NatAge_std_1_Mal_A_26 5.41204 2.25022
 NatAge_std_1_Mal_A_40 3.74638 1.41882
 ln(SPB)_1971 10.8151 0.028305
@@ -522,7 +522,7 @@ TotCatch_2000 3000 0.0
 TotCatch_2001 3000 0.0
 TotCatch_2002 167.969 0.0
 TotCatch_2003 403.585 0.0
-TotCatch_2004 601.369 0.0
+TotCatch_2004 601.368 0.0
 TotCatch_2005 758.067 0.0
 TotCatch_2006 881.551 0.0
 TotCatch_2007 983.167 0.0

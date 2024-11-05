@@ -1,8 +1,8 @@
-#V3.30.22.1;_safe;_compile_date:_Jan 30 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.23.00;_safe;_compile_date:_Oct 31 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 data.ss #_DataFile 
 control.ss #_Control 
-Run_Date: Thu Feb  1 14:15:49 2024
-Final_phase: 5  N_iterations: 486
+Run_Date: Tue Nov  5 17:08:32 2024
+Final_phase: 5  N_iterations: 477
 #_LIKELIHOOD 
 Label logL*Lambda
 TOTAL_LogL 794.96
@@ -12,7 +12,7 @@ Length_comp 191.11
 Age_comp 610.19
 Size_at_age 0
 Recruitment -4.32975
-InitEQ_regime 0
+InitEQ_regime 2.77366e-30
 Sum_recdevs 2.66454e-15
 Forecast_Recruitment 0
 Parm_priors 1.58929
@@ -237,7 +237,7 @@ SPRratio_1999 0.874359 0.0288036
 SPRratio_2000 0.876234 0.0339576
 SPRratio_2001 0.874704 0.0403182
 SPRratio_2002 7.8059e-05 2.19514e-05
-SPRratio_2003 0.00326922 0.341209
+SPRratio_2003 0.00326921 0.341209
 SPRratio_2004 0.206059 0.170797
 SPRratio_2005 0.316513 0.102142
 SPRratio_2006 0.373468 0.0731711
@@ -293,7 +293,7 @@ Bratio_1974 5.56642 1.7309
 Bratio_1975 5.51464 1.71439
 Bratio_1976 5.41241 1.68199
 Bratio_1977 5.26411 1.6356
-Bratio_1978 5.07524 1.57783
+Bratio_1978 5.07524 1.57782
 Bratio_1979 4.84715 1.5097
 Bratio_1980 4.57339 1.42825
 Bratio_1981 4.20107 1.31503

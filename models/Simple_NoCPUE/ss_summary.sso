@@ -1,8 +1,8 @@
-#V3.30.22.1;_safe;_compile_date:_Jan 30 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.23.00;_safe;_compile_date:_Oct 31 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 simple.dat #_DataFile 
 simple.ctl #_Control 
-Run_Date: Thu Feb  1 14:16:43 2024
-Final_phase: 5  N_iterations: 408
+Run_Date: Tue Nov  5 17:09:10 2024
+Final_phase: 5  N_iterations: 366
 #_LIKELIHOOD 
 Label logL*Lambda
 TOTAL_LogL 1308.69
@@ -11,8 +11,8 @@ Length_comp 651.429
 Age_comp 586.245
 Size_at_age 79.339
 Recruitment -9.3705
-InitEQ_regime 0
-Sum_recdevs -2.77556e-16
+InitEQ_regime 1.54502e-30
+Sum_recdevs 2.77556e-16
 Forecast_Recruitment 0
 Parm_priors 1.04563
 Parm_softbounds 0.00118104
@@ -51,7 +51,7 @@ SR_sigmaR 0.6 0 Fix 0.3
 SR_regime 0 0 Fix 0.5
 SR_autocorr 0 0 Fix 0
 Main_RecrDev_1971 0.144449 0.25051 Act 0.514445
-Main_RecrDev_1972 -0.0677382 0.409851 Act 0.493226
+Main_RecrDev_1972 -0.0677381 0.409851 Act 0.493226
 Main_RecrDev_1973 0.107489 0.351096 Act 0.510749
 Main_RecrDev_1974 -0.169622 0.41821 Act 0.483038
 Main_RecrDev_1975 0.0429103 0.388529 Act 0.504291
@@ -126,7 +126,7 @@ SSB_1987 17904.5 724.187
 SSB_1988 14898.1 719.121
 SSB_1989 12379.3 735.088
 SSB_1990 10484.2 780.566
-SSB_1991 9237.61 863.456
+SSB_1991 9237.61 863.457
 SSB_1992 8514.19 984.235
 SSB_1993 8494.12 1137.97
 SSB_1994 8434.45 1317.57
@@ -213,7 +213,7 @@ SPRratio_1989 1.41747 0.0178151
 SPRratio_1990 1.41655 0.0226412
 SPRratio_1991 1.40042 0.0296505
 SPRratio_1992 1.2848 0.0447695
-SPRratio_1993 1.28878 0.0519375
+SPRratio_1993 1.28878 0.0519376
 SPRratio_1994 1.2961 0.0601223
 SPRratio_1995 1.30887 0.0692711
 SPRratio_1996 1.32776 0.0794694
@@ -374,7 +374,7 @@ Grow_std_GP:_1_Mal_A_26 69.7417 0.303979
 Grow_std_GP:_1_Mal_A_40 70.3335 0.352651
 NatAge_std_1_Fem_A_1 1435.88 1140.68
 NatAge_std_1_Fem_A_2 1181.46 804.588
-NatAge_std_1_Fem_A_14 141.382 86.9531
+NatAge_std_1_Fem_A_14 141.382 86.9532
 NatAge_std_1_Fem_A_26 6.71533 4.7358
 NatAge_std_1_Fem_A_40 4.33354 3.02723
 NatAge_std_1_Mal_A_1 1435.77 1140.63

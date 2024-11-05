@@ -1,4 +1,4 @@
-#V3.30.22.1;_safe;_compile_date:_Jan 30 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.23.00;_safe;_compile_date:_Oct 31 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
@@ -147,7 +147,7 @@
 #
 #_placeholder for full parameter lines for recruitment cycles
 # read specified recr devs
-#_Yr Input_value
+#_year Input_value
 #
 # all recruitment deviations
 #  1980R 1981R 1982R 1983R 1984R 1985R 1986R 1987R 1988R 1989R 1990R 1991R 1992R 1993R 1994R 1995R 1996R 1997R 1998R 1999R 2000R 2001R 2002R 2003R 2004R 2005R 2006R 2007R 2008R 2009R 2010R 2011F 2012F 2013F 2014F 2015F 2016F 2017F 2018F 2019F 2020F 2021F 2022F
@@ -165,7 +165,7 @@
 #_ LO HI INIT PRIOR PR_SD  PR_type  PHASE
 #
 # F rates by fleet x season
-# Yr:  1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022
+#_year:  1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022
 # seas:  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 # TRAWL 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 # Trawl_Discard 0.0104196 0.0114625 0.0106512 0.0061458 0.0116928 0.0118709 0.0106292 0.010967 0.0118648 0.0109291 0.0117076 0.0082615 0.00614169 0.00660013 0.0043843 0.0118165 0.0127158 0.012175 0.0116289 0.0115098 0.0127902 0.0125534 0.0114912 0.0108971 0.0151645 0.0208906 0.0126076 0.00920183 0.0139782 0.00830209 0.00980206 0.0253358 0.0253358 0.0253358 0.0253358 0.0253358 0.0253358 0.0253358 0.0253358 0.0253358 0.0253358 0.0253358 0.0253358
@@ -174,11 +174,13 @@
 # HKL 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 # Hkl_Discard 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 # OTHERS 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-# RECREATIONAL 5.03547e-06 0.00149885 0.00213509 0.000805567 0.000755822 0.00246249 0.00298386 0.000410032 0.00237346 0.00119553 0.00126644 0.00126661 0.00128397 0.00126659 0.000571626 0.0010108 0.000957916 0.000240199 4.45867e-05 0.000597497 0.000542064 0.00050798 0.000800058 0.00063383 0.000142054 0.000245183 0.00020118 0.000321126 0.000160739 0.000244549 0.000125766 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195
+# RECREATIONAL 5.03548e-06 0.00149885 0.00213509 0.000805567 0.000755822 0.00246249 0.00298386 0.000410032 0.00237346 0.00119553 0.00126644 0.00126661 0.00128397 0.00126659 0.000571626 0.0010108 0.000957916 0.000240199 4.45867e-05 0.000597497 0.000542064 0.000507981 0.000800058 0.00063383 0.000142054 0.000245183 0.00020118 0.000321126 0.000160739 0.000244549 0.000125766 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195
 #
-#_Q_setup for fleets with cpue or survey data
+#_Q_setup for fleets with cpue or survey or deviation data
 #_1:  fleet number
-#_2:  link type: (1=simple q, 1 parm; 2=mirror simple q, 1 mirrored parm; 3=q and power, 2 parm; 4=mirror with offset, 2 parm)
+#_2:  link type: 1=simple q; 2=mirror; 3=power (+1 parm); 4=mirror with scale (+1p); 5=offset (+1p); 6=offset & power (+2p)
+#_     where power is applied as y = q * x ^ (1 + power); so a power value of 0 has null effect
+#_     and with the offset included it is y = q * (x + offset) ^ (1 + power)
 #_3:  extra input for link, i.e. mirror fleet# or dev index number
 #_4:  0/1 to select extra sd parameter
 #_5:  0/1 for biasadj or not
@@ -191,16 +193,16 @@
         13         1         0         1         0         1  #  IPHC
 -9999 0 0 0 0 0
 #
-#_Q_parms(if_any);Qunits_are_ln(q)
+#_Q_parameters
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn  #  parm_name
            -10             2     -0.825117             0            99             0          1          0          1       1980       2004         -5          0          0  #  LnQ_base_AFSC_triennial(9)
              0             1      0.312772           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_AFSC_triennial(9)
            -15            15      0.243714             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_AFSC_slope(10)
              0             1      0.470453           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_AFSC_slope(10)
-           -15            15      -0.40537             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_NWFSC_shelf_slope(11)
+           -15            15     -0.405369             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_NWFSC_shelf_slope(11)
              0             1      0.807998           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_NWFSC_shelf_slope(11)
            -15            15       -2.4676             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_NWFSC_slope(12)
-             0             1      0.812199           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_NWFSC_slope(12)
+             0             1      0.812206           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_NWFSC_slope(12)
            -15            15      -14.0174             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_IPHC(13)
              0             1           0.1           0.1            99             0         -3          0          0          0          0          0          0          0  #  Q_extraSD_IPHC(13)
 # timevary Q parameters 
@@ -219,7 +221,7 @@
 #Pattern:_43; parm=2+special+2;  like 6, with 2 additional param for scaling (mean over bin range)
 #Pattern:_8;  parm=8; double_logistic with smooth transitions and constant above Linf option
 #Pattern:_9;  parm=6; simple 4-parm double logistic with starting length; parm 5 is first length; parm 6=1 does desc as offset
-#Pattern:_21; parm=2+special; non-parm len selex, read as pairs of size, then selex
+#Pattern:_21; parm=2*special; non-parm len selex, read as N break points, then N selex parameters
 #Pattern:_22; parm=4; double_normal as in CASAL
 #Pattern:_23; parm=6; double_normal where final value is directly equal to sp(6) so can be >1.0
 #Pattern:_24; parm=6; double_normal with sel(minL) and sel(maxL), using joiners
@@ -293,7 +295,7 @@
             -5             9             9            -5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_end_logit_Trawl_Discard(2)
 # 3   MIDWATER LenSelex
             20           120       57.2886            55            99             6          1          0          0          0          0        0.5          0          0  #  Size_DblN_peak_MIDWATER(3)
-            -6             4        0.5561             0            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_MIDWATER(3)
+            -6             4      0.556101             0            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_MIDWATER(3)
             -1             9        4.9519             5            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_MIDWATER(3)
             -1             9       4.49235             5            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_MIDWATER(3)
             -9             9       -5.4983            -7            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_MIDWATER(3)
@@ -418,7 +420,7 @@
  #_5=mult_by_agecomp_N
  #_6=mult_by_size-at-age_N
  #_7=mult_by_generalized_sizecomp
-#_Factor  Fleet  Value
+#_factor  fleet  value
       4      1     0.673
       5      1     0.768
       4      2     0.441
