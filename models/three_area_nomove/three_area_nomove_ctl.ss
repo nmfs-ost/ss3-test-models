@@ -1,4 +1,4 @@
-#V3.30.22.1;_safe;_compile_date:_Jan 30 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.23.00;_safe;_compile_date:_Oct 31 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
@@ -156,11 +156,11 @@
 #
 #_placeholder for full parameter lines for recruitment cycles
 # read specified recr devs
-#_Yr Input_value
+#_year Input_value
 #
 # all recruitment deviations
 #  1970R 1971R 1972R 1973R 1974R 1975R 1976R 1977R 1978R 1979R 1980R 1981R 1982R 1983R 1984R 1985R 1986R 1987R 1988R 1989R 1990R 1991R 1992R 1993R 1994R 1995R 1996R 1997R 1998R 1999R 2000R 2001R 2002R 2003R 2004R 2005R 2006R 2007R 2008F 2009F 2010F
-#  -0.330267 1.72479 -1.23264 -1.22402 1.60555 -0.641251 -0.0108693 1.19513 -1.05102 1.22379 -0.888365 0.660865 0.45815 0.976015 0.331175 -0.547051 1.07387 -0.772206 0.823674 -1.17155 1.11232 0.510265 0.440936 -0.869469 0.652327 0.208997 0.488725 -0.890678 0.688129 -0.228988 1.39199 -0.825276 0.82164 -0.793334 -0.951708 -1.26269 -1.34849 -1.34849 0 0 0
+#  -0.330258 1.72479 -1.23265 -1.22402 1.60555 -0.641252 -0.0108622 1.19513 -1.05102 1.22379 -0.888371 0.660866 0.458149 0.976015 0.331177 -0.547056 1.07387 -0.772205 0.823675 -1.17156 1.11232 0.510268 0.440934 -0.869468 0.652329 0.208994 0.488726 -0.890676 0.688127 -0.228981 1.39199 -0.825273 0.821639 -0.793334 -0.951709 -1.26269 -1.34849 -1.34849 0 0 0
 # implementation error by year in forecast:  0 0 0
 #
 #Fishing Mortality info 
@@ -175,14 +175,16 @@
 #_ LO HI INIT PRIOR PR_SD  PR_type  PHASE
 #
 # F rates by fleet x season
-# Yr:  1945 1946 1947 1948 1949 1950 1951 1952 1953 1954 1955 1956 1957 1958 1959 1960 1961 1962 1963 1964 1965 1966 1967 1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010
+#_year:  1945 1946 1947 1948 1949 1950 1951 1952 1953 1954 1955 1956 1957 1958 1959 1960 1961 1962 1963 1964 1965 1966 1967 1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010
 # seas:  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 # Shallow_Fishery 0.0107442 0.0181783 0.0195566 0.017017 0.0199987 0.0155403 0.0128626 0.0219885 0.0250319 0.0275199 0.0278832 0.0308262 0.0159327 0.0201635 0.0210209 0.0173083 0.0249212 0.0142654 0.0107148 0.018771 0.018848 0.0151197 0.0275825 0.0115453 0.018888 0.0269114 0.0156025 0.0152022 0.0121127 0.0175412 0.0140483 0.0114408 0.0396981 0.0215551 0.0456348 0.0151697 0.0158369 0.0363796 0.0116415 0.0250072 0.0174658 0.0120852 0.0141904 0.0167009 0.041495 0.0141827 0.0194956 0.017144 0.0115408 0.0100995 0.0279248 0.0360962 0.0419192 0.0331589 0.0275505 0.0243271 0.038158 0.0340932 0.0257063 0.0260553 0.0330104 0.0384417 0.0432715 0.0711641 0.0711641 0.0711641
-# Middle_Fishery 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.0110592 0.0145855 0.0154643 0.0224758 0.037512 0.0401248 0.056343 0.0697132 0.0960755 0.145143 0.420954 0.158713 0.259412 0.511431 0.223066 0.29498 0.600605 0.574918 0.630016 0.626434 0.596768 0.604326 0.579708 0.626457 0.592802 0.544824 0.572336 0.508202 0.410691 0.352772 0.334388 0.288855 1.05385 1.05385 1.05386
+# Middle_Fishery 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.0110592 0.0145855 0.0154643 0.0224758 0.037512 0.0401248 0.056343 0.0697132 0.0960755 0.145143 0.420954 0.158713 0.259412 0.511431 0.223066 0.29498 0.600605 0.574918 0.630016 0.626434 0.596768 0.604326 0.579708 0.626457 0.592802 0.544824 0.572336 0.508202 0.410691 0.352772 0.334388 0.288856 1.05385 1.05385 1.05386
 #
-#_Q_setup for fleets with cpue or survey data
+#_Q_setup for fleets with cpue or survey or deviation data
 #_1:  fleet number
-#_2:  link type: (1=simple q, 1 parm; 2=mirror simple q, 1 mirrored parm; 3=q and power, 2 parm; 4=mirror with offset, 2 parm)
+#_2:  link type: 1=simple q; 2=mirror; 3=power (+1 parm); 4=mirror with scale (+1p); 5=offset (+1p); 6=offset & power (+2p)
+#_     where power is applied as y = q * x ^ (1 + power); so a power value of 0 has null effect
+#_     and with the offset included it is y = q * (x + offset) ^ (1 + power)
 #_3:  extra input for link, i.e. mirror fleet# or dev index number
 #_4:  0/1 to select extra sd parameter
 #_5:  0/1 for biasadj or not
@@ -193,7 +195,7 @@
          5         1         0         0         0         1  #  Deep_Survey
 -9999 0 0 0 0 0
 #
-#_Q_parms(if_any);Qunits_are_ln(q)
+#_Q_parameters
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn  #  parm_name
            -15            15      -0.86533             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_Shallow_Survey(3)
            -15            15      0.382872             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_Middle_Survey(4)
@@ -210,7 +212,7 @@
 #Pattern:_43; parm=2+special+2;  like 6, with 2 additional param for scaling (mean over bin range)
 #Pattern:_8;  parm=8; double_logistic with smooth transitions and constant above Linf option
 #Pattern:_9;  parm=6; simple 4-parm double logistic with starting length; parm 5 is first length; parm 6=1 does desc as offset
-#Pattern:_21; parm=2+special; non-parm len selex, read as pairs of size, then selex
+#Pattern:_21; parm=2*special; non-parm len selex, read as N break points, then N selex parameters
 #Pattern:_22; parm=4; double_normal as in CASAL
 #Pattern:_23; parm=6; double_normal where final value is directly equal to sp(6) so can be >1.0
 #Pattern:_24; parm=6; double_normal with sel(minL) and sel(maxL), using joiners
@@ -260,7 +262,7 @@
              0            60       10.8291            10            99             6          4          0          0          0          0        0.5          0          0  #  Size_95%width_Middle_Fishery(2)
 # 3   Shallow_Survey LenSelex
              1            80       45.7354            55            99             6          3          0          0          0          0        0.5          0          0  #  Size_inflection_Shallow_Survey(3)
-             0            60       9.81098            10            99             6          4          0          0          0          0        0.5          0          0  #  Size_95%width_Shallow_Survey(3)
+             0            60       9.81097            10            99             6          4          0          0          0          0        0.5          0          0  #  Size_95%width_Shallow_Survey(3)
 # 4   Middle_Survey LenSelex
              1            80       57.7604            55            99             6          3          0          0          0          0        0.5          0          0  #  Size_inflection_Middle_Survey(4)
              0            60       9.60716            10            99             6          4          0          0          0          0        0.5          0          0  #  Size_95%width_Middle_Survey(4)
@@ -297,7 +299,7 @@
  #_5=mult_by_agecomp_N
  #_6=mult_by_size-at-age_N
  #_7=mult_by_generalized_sizecomp
-#_Factor  Fleet  Value
+#_factor  fleet  value
  -9999   1    0  # terminator
 #
 1 #_maxlambdaphase

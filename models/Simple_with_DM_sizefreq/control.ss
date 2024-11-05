@@ -1,4 +1,4 @@
-#V3.30.22.1;_safe;_compile_date:_Jan 30 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.23.00;_safe;_compile_date:_Oct 31 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
@@ -165,12 +165,7 @@
 #
 3 #_Spawner-Recruitment; Options: 1=NA; 2=Ricker; 3=std_B-H; 4=SCAA; 5=Hockey; 6=B-H_flattop; 7=survival_3Parm; 8=Shepherd_3Parm; 9=RickerPower_3parm
 0  # 0/1 to use steepness in initial equ recruitment calculation
-1  #  SR_update_SSBpR0
-#  0 - OK, but only if no timevary biology or SR parm
-#  1 - best: update SSBpR0 for benchmark and for time series only if SRparm R0 or h (not regime) is set to have time-varying property
-#  2 - incorrect (old, incorrect SS3 approach):  always update SSBpR0 for benchmark's use of spawner-recruitment, but only for the time series if there is a timevary SR parm
-#  3 - option:  do not update SSBpR0 (do keep start year SSBpR0), even if R0 or h is set to have time-varying property
-#
+1  #  future feature:  0/1 to make realized sigmaR a function of SR curvature
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn #  parm_name
              3            31       9.54739          10.3            10             0          1          0          0          0          0          0          0          0 # SR_LN(R0)
            0.2             1      0.997192           0.7          0.05             1          4          0          0          0          0          0          0          0 # SR_BH_steep
@@ -200,11 +195,11 @@
 #
 #_placeholder for full parameter lines for recruitment cycles
 # read specified recr devs
-#_Yr Input_value
+#_year Input_value
 #
 # all recruitment deviations
 #  1971R 1972R 1973R 1974R 1975R 1976R 1977R 1978R 1979R 1980R 1981R 1982R 1983R 1984R 1985R 1986R 1987R 1988R 1989R 1990R 1991R 1992R 1993R 1994R 1995R 1996R 1997R 1998R 1999R 2000R 2001R
-#  -0.140068 0.179601 0.0166198 -0.36764 0.394699 0.589832 -0.082526 -0.0426242 0.568616 -0.37012 0.301664 -0.325919 -0.530637 -0.358776 0.639822 0.221415 0.586102 0.0800806 -0.628479 0.733502 -1.02689 -0.432214 -0.691231 0.610032 -0.560291 0.845321 1.37123 -0.822161 0.505072 -0.661005 -0.603033#
+#  -0.140068 0.179601 0.0166196 -0.367639 0.394698 0.589833 -0.0825286 -0.0426216 0.568615 -0.370119 0.301664 -0.32592 -0.530635 -0.358777 0.639822 0.221415 0.586101 0.0800812 -0.628479 0.733502 -1.02689 -0.432214 -0.691232 0.610033 -0.560292 0.845321 1.37123 -0.822163 0.505073 -0.661006 -0.603029#
 #Fishing Mortality info 
 0.3 # F ballpark value in units of annual_F
 -2001 # F ballpark year (neg value to disable)
@@ -217,14 +212,16 @@
 #_ LO HI INIT PRIOR PR_SD  PR_type  PHASE
 #
 # F rates by fleet x season
-# Yr:  1971 1971 1972 1972 1973 1973 1974 1974 1975 1975 1976 1976 1977 1977 1978 1978 1979 1979 1980 1980 1981 1981 1982 1982 1983 1983 1984 1984 1985 1985 1986 1986 1987 1987 1988 1988 1989 1989 1990 1990 1991 1991 1992 1992 1993 1993 1994 1994 1995 1995 1996 1996 1997 1997 1998 1998 1999 1999 2000 2000 2001 2001
+#_year:  1971 1971 1972 1972 1973 1973 1974 1974 1975 1975 1976 1976 1977 1977 1978 1978 1979 1979 1980 1980 1981 1981 1982 1982 1983 1983 1984 1984 1985 1985 1986 1986 1987 1987 1988 1988 1989 1989 1990 1990 1991 1991 1992 1992 1993 1993 1994 1994 1995 1995 1996 1996 1997 1997 1998 1998 1999 1999 2000 2000 2001 2001
 # seas:  1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2
-# FISH_A1 0 0 0.00212946 0 0.0107042 0 0.0108041 0 0.0219241 0 0.0336856 0 0.0464422 0 0.0605535 0 0.076357 0 0.1083 0 0.146952 0 0.161538 0 0.178238 0 0.197836 0 0.221746 0 0.252063 0 0.29142 0 0.303258 0 0.303502 0 0.287036 0 0.254474 0 0.167212 0 0.160354 0 0.154702 0 0.150911 0 0.14914 0 0.10971 0 0.105415 0 0.0994042 0 0.0913171 0 0.0826169 0
+# FISH_A1 0 0 0.00212946 0 0.0107042 0 0.0108041 0 0.0219241 0 0.0336856 0 0.0464422 0 0.0605535 0 0.076357 0 0.1083 0 0.146952 0 0.161538 0 0.178238 0 0.197836 0 0.221746 0 0.252063 0 0.29142 0 0.303258 0 0.303502 0 0.287036 0 0.254474 0 0.167212 0 0.160354 0 0.154702 0 0.150911 0 0.14914 0 0.10971 0 0.105415 0 0.0994042 0 0.0913171 0 0.0826168 0
 # FISH_A2 0 0 0.00215806 0 0.0108484 0 0.0109499 0 0.0222206 0 0.0341429 0 0.0470759 0 0.0613882 0 0.0774292 0 0.109865 0 0.149168 0 0.164097 0 0.181212 0 0.201322 0 0.225888 0 0.257081 0 0.29769 0 0.310435 0 0.311462 0 0.29529 0 0.262277 0 0.17247 0 0.165414 0 0.159599 0 0.155691 0 0.153868 0 0.113171 0 0.108696 0 0.102457 0 0.0940722 0 0.0850371 0
 #
-#_Q_setup for fleets with cpue or survey data
+#_Q_setup for fleets with cpue or survey or deviation data
 #_1:  fleet number
-#_2:  link type: (1=simple q, 1 parm; 2=mirror simple q, 1 mirrored parm; 3=q and power, 2 parm; 4=mirror with offset, 2 parm)
+#_2:  link type: 1=simple q; 2=mirror; 3=power (+1 parm); 4=mirror with scale (+1p); 5=offset (+1p); 6=offset & power (+2p)
+#_     where power is applied as y = q * x ^ (1 + power); so a power value of 0 has null effect
+#_     and with the offset included it is y = q * (x + offset) ^ (1 + power)
 #_3:  extra input for link, i.e. mirror fleet# or dev index number
 #_4:  0/1 to select extra sd parameter
 #_5:  0/1 for biasadj or not
@@ -239,10 +236,10 @@
          7         1         0         0         0         0  #  Depletion
 -9999 0 0 0 0 0
 #
-#_Q_parms(if_any);Qunits_are_ln(q)
+#_Q_parameters
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn  #  parm_name
             -7             5      0.141713             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_SURV_A1(2)
-             0           0.5      0.243043          0.05             1             0          4          0          0          0          0          0          0          0  #  Q_extraSD_SURV_A1(2)
+             0           0.5      0.243044          0.05             1             0          4          0          0          0          0          0          0          0  #  Q_extraSD_SURV_A1(2)
            -11             5      -9.37057             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_RECRSVY_A1(3)
             -7             5       0.15639             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_SURV_A2(5)
              0           0.5      0.239072          0.05             1             0          4          0          0          0          0          0          0          0  #  Q_extraSD_SURV_A2(5)
@@ -260,7 +257,7 @@
 #Pattern:_43; parm=2+special+2;  like 6, with 2 additional param for scaling (mean over bin range)
 #Pattern:_8;  parm=8; double_logistic with smooth transitions and constant above Linf option
 #Pattern:_9;  parm=6; simple 4-parm double logistic with starting length; parm 5 is first length; parm 6=1 does desc as offset
-#Pattern:_21; parm=2+special; non-parm len selex, read as pairs of size, then selex
+#Pattern:_21; parm=2*special; non-parm len selex, read as N break points, then N selex parameters
 #Pattern:_22; parm=4; double_normal as in CASAL
 #Pattern:_23; parm=6; double_normal where final value is directly equal to sp(6) so can be >1.0
 #Pattern:_24; parm=6; double_normal with sel(minL) and sel(maxL), using joiners
@@ -347,7 +344,7 @@
 # deviation vectors for timevary parameters
 #  base   base first block   block  env  env   dev   dev   dev   dev   dev
 #  type  index  parm trend pattern link  var  vectr link _mnyr  mxyr phase  dev_vector
-#      1    42     1     0     0     0     0     1     2  1971  2001     5 -0.120867 -0.016078 -0.0176245 -0.0131942 -0.0282749 -0.0425294 -0.0252769 -0.0294871 -0.0628068 -0.02849 -0.0626796 -0.0388353 -0.0361696 -0.0444615 -0.130783 -0.100036 -0.168561 -0.117107 -0.0608309 -0.241888 -0.0447828 -0.0820346 -0.056198 -0.17056 -0.0402537 -0.0946255 -0.0849647 -0.00494675 -0.00704209 -0.000382694      0
+#      1    42     1     0     0     0     0     1     2  1971  2001     5 -0.120868 -0.0160785 -0.017624 -0.0131938 -0.0282756 -0.0425318 -0.0252777 -0.0294895 -0.0628128 -0.0284912 -0.0626794 -0.0388347 -0.0361681 -0.0444635 -0.130786 -0.100036 -0.168564 -0.117107 -0.0608346 -0.241888 -0.0447898 -0.0820329 -0.0561991 -0.17056 -0.0402506 -0.0946285 -0.0849589 -0.00494862 -0.0070372 -0.000382499      0
      #
 # Input variance adjustments factors: 
  #_1=add_to_survey_CV
@@ -357,7 +354,7 @@
  #_5=mult_by_agecomp_N
  #_6=mult_by_size-at-age_N
  #_7=mult_by_generalized_sizecomp
-#_Factor  Fleet  Value
+#_factor  fleet  value
  -9999   1    0  # terminator
 #
 4 #_maxlambdaphase
