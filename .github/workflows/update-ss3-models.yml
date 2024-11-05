@@ -34,14 +34,13 @@ jobs:
       - name: install purrr
         run: Rscript -e 'install.packages("purrr")'
         
-      # - name: Get the latest SS3 executable
-      #   run: |
-      #     wget -O ss3 https://github.com/nmfs-ost/ss3-source-code/releases/latest/download/ss3_linux
-      #     sudo chmod a+x ss3
-      #     mv ss3 /usr/local/bin/ss3
-      #     mv models/ss3
-      #     export PATH=/usr/local/bin/ss3:$PATH
-      #     echo "/usr/local/bin/ss3" >> $GITHUB_PATH
+      - name: Get the latest SS3 executable
+        run: |
+          wget -O ss3 https://github.com/nmfs-ost/ss3-source-code/releases/latest/download/ss3_linux
+          sudo chmod a+x ss3
+          mv ss3 /usr/local/bin/ss3
+          export PATH=/usr/local/bin/ss3:$PATH
+          echo "/usr/local/bin/ss3" >> $GITHUB_PATH
      
       - name: run models
         run: |
@@ -49,67 +48,45 @@ jobs:
           mod_dir_name <- dirs_test[grepl("model", dirs_test)]
           mod_dir_name <- gsub(".*\\./", "", mod_dir_name)
 
-          update_ref_files <- function(new_mod_path, mod_dir_name) {
-                  ss_examples_folder <- file.path(getwd(), mod_dir_name)
-                  mod_name <- basename(new_mod_path)
-                  git_mod_path <- file.path(ss_examples_folder, mod_name)
-                  # list model files that need to be moved
-                  files_to_move <- c("ss.par", "ss3.par", "ss_summary.sso", "warning.sso")
-                  # copy model files from new_mod_path folder to the git_mod_path folder,
-                  results_of_move <- lapply(files_to_move,
-                                            function(x, new_mod_path, git_mod_path) {
-                      # file.remove(file.path(git_mod_path, x))
-                      file.copy(from = file.path(new_mod_path, x),
-                                to = file.path(git_mod_path, x), 
-                                overwrite = TRUE) 
-                      #to make sure worked:
-                        worked <- file.exists(file.path(git_mod_path, x))
-                      }, new_mod_path = new_mod_path, git_mod_path = git_mod_path)
-                      if(all(unlist(results_of_move) == TRUE)) {
-                          files_replaced <- TRUE
-                      } else {
-                          files_replaced <- FALSE
-                      }
-                  files_replaced
-                  }
-                    
+          update_ref_files <- function(new_mod_path, ss_examples_folder = file.path(getwd(), mod_dir_name)) {
+            mod_name <- basename(new_mod_path)
+            git_mod_path <- file.path(ss_examples_folder, mod_name)
+            # list model files that need to be moved
+            files_to_move <- c("ss3.par", "ss_summary.sso", "warning.sso")
+            # copy model files from new_mod_path folder to the git_mod_path folder,
+            results_of_move <- lapply(files_to_move,
+                                        function(x, new_mod_path, git_mod_path) {
+                file.remove(file.path(git_mod_path, x))
+                file.copy(from = file.path(new_mod_path, x),
+                        to = file.path(git_mod_path, x), 
+                        overwrite = FALSE) 
+                #to make sure worked:
+                worked <- file.exists(file.path(git_mod_path, x))
+            }, new_mod_path = new_mod_path, git_mod_path = git_mod_path)
+            if(all(unlist(results_of_move) == TRUE)) {
+                files_replaced <- TRUE
+            } else {
+                files_replaced <- FALSE
+            }
+            files_replaced
+            }
+          
           new_mod_dir_name <- "new_models"
 
           r4ss::populate_multiple_folders(outerdir.old = mod_dir_name, 
                                 outerdir.new = new_mod_dir_name,
                                 exe.file = NULL, verbose = FALSE)
-          
-          run_ssnew <- function(dir) {
-            wd <- getwd()
-            print(wd)
-            on.exit(system(paste0("cd ", wd)))
-            system(paste0("cd ", dir, " && ../ss3"))
-            model_ran <- file.exists(file.path(dir, "control.ss_new"))
-            return(model_ran)
-          }
-          
-          r4ss::get_ss3_exe(dir = file.path(getwd(), new_mod_dir_name))
+
+          purrr::map(
+            .x = file.path(new_mod_dir_name, list.files(new_mod_dir_name)),
+            .f = r4ss::run,
+            exe = "/usr/local/bin/ss3", 
+            verbose = TRUE)
           
           new_mod_runs_folder <- file.path(new_mod_dir_name)
           new_mod_path_list <- list.dirs(new_mod_runs_folder, recursive = FALSE,
                                         full.names = TRUE)
-                                        
-          # Run models in parallel using .ss_new files and print out error messages
-          purrr::map(
-            .x = new_mod_path_list,
-            .f = run_ssnew)
-
-            # purrr::map(
-            #   .x = file.path(new_mod_dir_name, list.files(new_mod_dir_name)),
-            #   .f = r4ss::run,
-            #   exe = "ss3", 
-            #   verbose = TRUE)
-                      
-          run_result <- purrr::map(
-            .x = new_mod_path_list,
-            .f = update_ref_files,
-            mod_dir_name = mod_dir_name)
-
+          run_result <- lapply(new_mod_path_list, update_ref_files)
           run_result
 
           r4ss::populate_multiple_folders(outerdir.old = new_mod_dir_name, 
@@ -119,7 +96,7 @@ jobs:
 
           unlink(new_mod_dir_name, recursive = TRUE)
         shell: Rscript {0}
-
+        
       - name: Setup git user
         uses: fregante/setup-git-user@v1
       
