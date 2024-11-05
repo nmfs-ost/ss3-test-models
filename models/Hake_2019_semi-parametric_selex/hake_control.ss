@@ -1,4 +1,4 @@
-#V3.30.22.1;_safe;_compile_date:_Jan 30 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.1
+#V3.30.23.00;_safe;_compile_date:_Oct 31 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
@@ -137,11 +137,11 @@
 #
 #_placeholder for full parameter lines for recruitment cycles
 # read specified recr devs
-#_Yr Input_value
+#_year Input_value
 #
 # all recruitment deviations
 #  1946E 1947E 1948E 1949E 1950E 1951E 1952E 1953E 1954E 1955E 1956E 1957E 1958E 1959E 1960E 1961E 1962E 1963E 1964E 1965E 1966E 1967E 1968E 1969E 1970R 1971R 1972R 1973R 1974R 1975R 1976R 1977R 1978R 1979R 1980R 1981R 1982R 1983R 1984R 1985R 1986R 1987R 1988R 1989R 1990R 1991R 1992R 1993R 1994R 1995R 1996R 1997R 1998R 1999R 2000R 2001R 2002R 2003R 2004R 2005R 2006R 2007R 2008R 2009R 2010R 2011R 2012R 2013R 2014R 2015R 2016R 2017R 2018F 2019F 2020F 2021F
-#  -0.638727 -0.233327 -0.277591 -0.328172 -0.385399 -0.449503 -0.51946 -0.598238 -0.681495 -0.766236 -0.855079 -0.941696 -1.02321 -1.09212 -1.13009 -1.10767 -1.00084 -0.838853 -0.592853 -0.253496 -0.134137 0.751923 0.530934 -0.432698 1.80416 -0.215577 -0.765808 1.51235 -1.08936 0.334433 -1.6476 1.65322 -2.10159 0.0961472 2.68657 -1.49328 -1.44259 -0.843937 2.45061 -2.16414 -1.80027 1.69445 0.659607 -2.12067 1.29927 0.145397 -2.16173 1.04896 1.10852 0.156048 0.546198 -0.0655828 0.565274 2.48384 -1.11512 0.0815091 -3.50209 0.372415 -2.42658 0.842202 0.583983 -3.50362 1.54185 0.230955 2.52033 -0.869476 -0.0844442 -1.05911 1.75542 -2.28634 2.17715 2.40807 0 0 0 0
+#  -0.638727 -0.233327 -0.27759 -0.328171 -0.385398 -0.449503 -0.519459 -0.598239 -0.681495 -0.766236 -0.855079 -0.941696 -1.02321 -1.09212 -1.13009 -1.10767 -1.00084 -0.838852 -0.592852 -0.253497 -0.134137 0.751922 0.530935 -0.432698 1.80416 -0.215577 -0.765808 1.51235 -1.08936 0.334433 -1.6476 1.65322 -2.10159 0.0961473 2.68657 -1.49328 -1.44259 -0.843937 2.45061 -2.16414 -1.80027 1.69445 0.659607 -2.12067 1.29926 0.145397 -2.16173 1.04896 1.10852 0.156048 0.546198 -0.0655829 0.565274 2.48384 -1.11512 0.081509 -3.50209 0.372415 -2.42658 0.842202 0.583983 -3.50362 1.54185 0.230955 2.52033 -0.869476 -0.0844441 -1.05911 1.75542 -2.28634 2.17715 2.40807 0 0 0 0
 #
 #Fishing Mortality info 
 0.1 # F ballpark value in units of annual_F
@@ -155,13 +155,15 @@
 #_ LO HI INIT PRIOR PR_SD  PR_type  PHASE
 #
 # F rates by fleet x season
-# Yr:  1966 1967 1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021
+#_year:  1966 1967 1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021
 # seas:  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-# Fishery 0.112372 0.197489 0.120318 0.173962 0.214251 0.132035 0.0895327 0.103022 0.126685 0.1044 0.0879104 0.057008 0.0515569 0.059819 0.0464031 0.0758201 0.0596427 0.04989 0.0549822 0.0425762 0.0682079 0.082572 0.0895172 0.124832 0.0951471 0.113693 0.148795 0.108072 0.248196 0.19296 0.258648 0.259282 0.269767 0.29944 0.258152 0.20999 0.116819 0.118083 0.195783 0.229021 0.308428 0.332229 0.417899 0.277677 0.21153 0.168233 0.148625 0.221687 0.207638 0.0988118 0.175976 0.318504 0.332558 0.422733 0.422733 0.422733
+# Fishery 0.112372 0.197489 0.120318 0.173962 0.214251 0.132035 0.0895327 0.103022 0.126685 0.1044 0.0879104 0.057008 0.0515569 0.059819 0.0464031 0.0758201 0.0596426 0.04989 0.0549822 0.0425762 0.0682079 0.082572 0.0895172 0.124832 0.0951471 0.113693 0.148795 0.108072 0.248196 0.19296 0.258648 0.259282 0.269766 0.29944 0.258152 0.20999 0.116819 0.118083 0.195783 0.229021 0.308428 0.332229 0.417899 0.277677 0.21153 0.168233 0.148625 0.221687 0.207638 0.0988118 0.175976 0.318503 0.332558 0.422733 0.422733 0.422733
 #
-#_Q_setup for fleets with cpue or survey data
+#_Q_setup for fleets with cpue or survey or deviation data
 #_1:  fleet number
-#_2:  link type: (1=simple q, 1 parm; 2=mirror simple q, 1 mirrored parm; 3=q and power, 2 parm; 4=mirror with offset, 2 parm)
+#_2:  link type: 1=simple q; 2=mirror; 3=power (+1 parm); 4=mirror with scale (+1p); 5=offset (+1p); 6=offset & power (+2p)
+#_     where power is applied as y = q * x ^ (1 + power); so a power value of 0 has null effect
+#_     and with the offset included it is y = q * (x + offset) ^ (1 + power)
 #_3:  extra input for link, i.e. mirror fleet# or dev index number
 #_4:  0/1 to select extra sd parameter
 #_5:  0/1 for biasadj or not
@@ -170,9 +172,9 @@
          2         1         0         1         0         1  #  Acoustic_Survey
 -9999 0 0 0 0 0
 #
-#_Q_parms(if_any);Qunits_are_ln(q)
+#_Q_parameters
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn  #  parm_name
-           -15            15     0.0906705             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_Acoustic_Survey(2)
+           -15            15     0.0906704             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_Acoustic_Survey(2)
           0.05           1.2      0.254247        0.0755           0.1             0          4          0          0          0          0          0          0          0  #  Q_extraSD_Acoustic_Survey(2)
 #_no timevary Q parameters
 #
@@ -186,7 +188,7 @@
 #Pattern:_43; parm=2+special+2;  like 6, with 2 additional param for scaling (mean over bin range)
 #Pattern:_8;  parm=8; double_logistic with smooth transitions and constant above Linf option
 #Pattern:_9;  parm=6; simple 4-parm double logistic with starting length; parm 5 is first length; parm 6=1 does desc as offset
-#Pattern:_21; parm=2+special; non-parm len selex, read as pairs of size, then selex
+#Pattern:_21; parm=2*special; non-parm len selex, read as N break points, then N selex parameters
 #Pattern:_22; parm=4; double_normal as in CASAL
 #Pattern:_23; parm=6; double_normal where final value is directly equal to sp(6) so can be >1.0
 #Pattern:_24; parm=6; double_normal with sel(minL) and sel(maxL), using joiners
@@ -280,8 +282,8 @@
 #_sigma_amax>amin means create sigma parm for each bin from min to sigma_amax; sigma_amax<0 means just one sigma parm is read and used for all bins
  1 1991 2017 1 5 1 1 2 5 0 0  #  2D_AR specs for fleet: Fishery AGE
  0.01 5 1 1 99 0 -5  # sigma_sel for fleet:_1; AGE_1
- -0.8 0.8 0 0 99 0 -3  # rho_year for fleet:_1
- -0.8 0.8 0 0 99 0 -3  # rho_AGE for fleet:_1
+ -0.8 0.8 0 0 99 0 -1  # rho_year for fleet:_1
+ -0.8 0.8 0 0 99 0 -1  # rho_AGE for fleet:_1
 -9999  0 0 0 0 0 0 0 0 0 0 # terminator
 #
 # Tag loss and Tag reporting parameters go next
@@ -299,7 +301,7 @@
  #_5=mult_by_agecomp_N
  #_6=mult_by_size-at-age_N
  #_7=mult_by_generalized_sizecomp
-#_Factor  Fleet  Value
+#_factor  fleet  value
  -9999   1    0  # terminator
 #
 1 #_maxlambdaphase
