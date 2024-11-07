@@ -31,7 +31,7 @@ jobs:
         run: Rscript -e 'install.packages(c("purrr","furrr","parallely","future"))'
       
       - name: try get_ss3_exe
-        run: Rscript -e 'r4ss::get_ss3_exe()'
+        run: Rscript -e 'r4ss::get_ss3_exe(dir = file.path(getwd(), "models"))'
 
       # - name: use download artifact
       #   uses: actions/download-artifact@v4
@@ -47,16 +47,16 @@ jobs:
       #     sudo chmod a+x ss3
       #     mv ss3 models/ss3
 
-      # - name: Run models
-      #   run: |
-      #     mod_names <- list.dirs(file.path("models"), full.names = FALSE, recursive = FALSE)
-      #     mod_paths <- list.dirs(file.path("models"), full.names = TRUE, recursive = FALSE)
-      #     print(mod_names)
+      - name: Run models
+        run: |
+          mod_names <- list.dirs(file.path("models"), full.names = FALSE, recursive = FALSE)
+          mod_paths <- list.dirs(file.path("models"), full.names = TRUE, recursive = FALSE)
+          print(mod_names)
 
-      #     ncores <- parallelly::availableCores(omit = 1)
-      #     future::plan(future::multisession, workers = ncores)
+          ncores <- parallelly::availableCores(omit = 1)
+          future::plan(future::multisession, workers = ncores)
 
-      #     mod_ran <- furrr::future_map(mod_paths, function(x){r4ss::run(dir = x, exe = "/Users/runner/work/ss3-test-models/ss3-test-models/models/ss3", verbose = TRUE)})
+          mod_ran <- furrr::future_map(mod_paths, function(x){r4ss::run(dir = x, exe = file.path(getwd(), "models/ss3"), verbose = TRUE)})
           
-      #     print(mod_ran)
-      #   shell: Rscript {0}
+          print(mod_ran)
+        shell: Rscript {0}
