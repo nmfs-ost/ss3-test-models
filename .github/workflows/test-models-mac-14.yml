@@ -41,11 +41,9 @@ jobs:
       #     repository: nmfs-ost/ss3-source-code
       #     run-id: 8664716853
 
-      # - name: Change exe name
-      #   run: |
-      #     mv ss3_osx ss3
-      #     sudo chmod a+x ss3
-      #     mv ss3 models/ss3
+      - name: Change exe permissions
+        run: |
+          sudo chmod a+x models/ss3
 
       - name: Run models
         run: |
