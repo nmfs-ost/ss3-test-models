@@ -1,4 +1,4 @@
-#V3.30.23.00;_safe;_compile_date:_Oct 31 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.23.1;_safe;_compile_date:_Dec  5 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
@@ -160,7 +160,7 @@
 #
 # all recruitment deviations
 #  1970R 1971R 1972R 1973R 1974R 1975R 1976R 1977R 1978R 1979R 1980R 1981R 1982R 1983R 1984R 1985R 1986R 1987R 1988R 1989R 1990R 1991R 1992R 1993R 1994R 1995R 1996R 1997R 1998R 1999R 2000R 2001R 2002R 2003R 2004R 2005R 2006R 2007R 2008F 2009F 2010F
-#  -0.330258 1.72479 -1.23265 -1.22402 1.60555 -0.641252 -0.0108622 1.19513 -1.05102 1.22379 -0.888371 0.660866 0.458149 0.976015 0.331177 -0.547056 1.07387 -0.772205 0.823675 -1.17156 1.11232 0.510268 0.440934 -0.869468 0.652329 0.208994 0.488726 -0.890676 0.688127 -0.228981 1.39199 -0.825273 0.821639 -0.793334 -0.951709 -1.26269 -1.34849 -1.34849 0 0 0
+#  -0.330256 1.72479 -1.23265 -1.22402 1.60555 -0.641253 -0.0108626 1.19513 -1.05101 1.22379 -0.888371 0.660866 0.45815 0.976015 0.331176 -0.547055 1.07387 -0.772204 0.823675 -1.17156 1.11232 0.510268 0.440934 -0.869466 0.652328 0.208995 0.488726 -0.890678 0.688128 -0.228984 1.39199 -0.82527 0.821638 -0.793333 -0.95171 -1.26269 -1.34849 -1.34849 0 0 0
 # implementation error by year in forecast:  0 0 0
 #
 #Fishing Mortality info 
@@ -262,7 +262,7 @@
              0            60       10.8291            10            99             6          4          0          0          0          0        0.5          0          0  #  Size_95%width_Middle_Fishery(2)
 # 3   Shallow_Survey LenSelex
              1            80       45.7354            55            99             6          3          0          0          0          0        0.5          0          0  #  Size_inflection_Shallow_Survey(3)
-             0            60       9.81097            10            99             6          4          0          0          0          0        0.5          0          0  #  Size_95%width_Shallow_Survey(3)
+             0            60       9.81098            10            99             6          4          0          0          0          0        0.5          0          0  #  Size_95%width_Shallow_Survey(3)
 # 4   Middle_Survey LenSelex
              1            80       57.7604            55            99             6          3          0          0          0          0        0.5          0          0  #  Size_inflection_Middle_Survey(4)
              0            60       9.60716            10            99             6          4          0          0          0          0        0.5          0          0  #  Size_95%width_Middle_Survey(4)
