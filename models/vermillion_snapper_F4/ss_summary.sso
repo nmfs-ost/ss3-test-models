@@ -1,8 +1,8 @@
-#V3.30.23.00;_safe;_compile_date:_Oct 31 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.23.1;_safe;_compile_date:_Dec  5 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 vermilion.dat #_DataFile 
 vermilion.ctl #_Control 
-Run_Date: Tue Nov  5 18:44:22 2024
-Final_phase: 5  N_iterations: 2119
+Run_Date: Tue Dec 10 14:36:13 2024
+Final_phase: 5  N_iterations: 2107
 #_LIKELIHOOD 
 Label logL*Lambda
 TOTAL_LogL 359.687
@@ -13,10 +13,10 @@ Length_comp 88.4498
 Age_comp 260.69
 Recruitment -12.9067
 InitEQ_regime 0
-Sum_recdevs 4.16334e-16
+Sum_recdevs -9.99201e-16
 Forecast_Recruitment 0
 Parm_priors 0
-Parm_softbounds 0.00753781
+Parm_softbounds 0.00753771
 Parm_devs 0
 F_Ballpark 0
 Crash_Pen 0
@@ -346,7 +346,7 @@ F_fleet_4_YR_2011_s_1 0.10958 0.0247627 Act 0.0365265
 F_fleet_4_YR_2012_s_1 0.0976433 0.0219065 Act 0.0325478
 F_fleet_4_YR_2013_s_1 0.108939 0.0240565 Act 0.0363128
 F_fleet_4_YR_2014_s_1 0.0869571 0.0189781 Act 0.0289857
-F_fleet_4_YR_2015_s_1 0.0714355 0.0153125 Act 0.0238118
+F_fleet_4_YR_2015_s_1 0.0714355 0.0153126 Act 0.0238118
 F_fleet_4_YR_2016_s_1 0.073489 0.015614 Act 0.0244963
 F_fleet_4_YR_2017_s_1 0.0796822 0.0172539 Act 0.0265607
 #_Catchability
@@ -401,10 +401,10 @@ Age_95%width_CM_E(1) 0.916154 0.128482 Act 0.0308262
 Age_inflection_CM_W(2) 3.68075 0.134813 Act 0.235611
 Age_95%width_CM_W(2) 2.09661 0.185826 Act 0.118267
 Age_DblN_peak_REC(3) 3.33276 0.184741 Act 0.259195
-Age_DblN_top_logit_REC(3) -9.16505 19.774 Act 0.064227
+Age_DblN_top_logit_REC(3) -9.16497 19.7743 Act 0.0642333
 Age_DblN_ascend_se_REC(3) 0.549862 0.24526 Act 0.363881
 Age_DblN_descend_se_REC(3) 2.95273 0.336669 Act 0.695273
-Age_DblN_start_logit_REC(3) -12.1034 49.4206 Act 0.144831
+Age_DblN_start_logit_REC(3) -12.1033 49.4201 Act 0.144833
 Age_DblN_end_logit_REC(3) -1.82948 0.621038 Act 0.474655
 AgeSel_P1_SMP_BYC(4) 0.5 0 Fix 0.25
 AgeSel_P2_SMP_BYC(4) 100 0 Fix 9.95e-06
@@ -636,7 +636,7 @@ SPRratio_1983 0.361346 0.0459358
 SPRratio_1984 0.452288 0.0431105
 SPRratio_1985 0.476424 0.040597
 SPRratio_1986 0.527086 0.0394767
-SPRratio_1987 0.512306 0.0348148
+SPRratio_1987 0.512306 0.0348149
 SPRratio_1988 0.540425 0.0329074
 SPRratio_1989 0.506534 0.0342492
 SPRratio_1990 0.528867 0.0293565
@@ -1068,7 +1068,7 @@ TotCatch_1964 643.491 0.0
 TotCatch_1965 700.119 0.0
 TotCatch_1966 678.506 0.0
 TotCatch_1967 743.686 0.0
-TotCatch_1968 785.748 0.0
+TotCatch_1968 785.749 0.0
 TotCatch_1969 867.025 0.0
 TotCatch_1970 832.704 0.0
 TotCatch_1971 815.555 0.0

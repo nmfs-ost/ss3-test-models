@@ -1,4 +1,4 @@
-#V3.30.23.00;_safe;_compile_date:_Oct 31 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.23.1;_safe;_compile_date:_Dec  5 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
@@ -152,7 +152,8 @@
 # (A) fleet;
 # (B) F_starting_value (ignored if start_PH=1 or reading from ss3.par);
 # (C) start_PH for fleet's Fparms (99 to stay in hybrid, <0 to stay at starting value)
-# Terminate list with -9999 for fleet (use -9998 to read fleet-time specific F values after reading N hybrid tune loops)
+# Terminate list with -9999 for fleet
+# or terminate with -9998 to invoke reading fleet-time specific F values after first reading N hybrid tune loops)
 # (A) (B) (C)
  1 0.01 2 # CM_E
  2 0.01 2 # CM_W
@@ -321,10 +322,10 @@
            0.5            14       2.09661        7.2774             0             0          1          0          0          0          0          0          0          0  #  Age_95%width_CM_W(2)
 # 3   REC AgeSelex
              1            10       3.33276           4.3          0.05             0          2          0          0          0          0        0.5          0          0  #  Age_DblN_peak_REC(3)
-           -10             3      -9.16505          -4.6          0.05             0          3          0          0          0          0        0.5          0          0  #  Age_DblN_top_logit_REC(3)
+           -10             3      -9.16497          -4.6          0.05             0          3          0          0          0          0        0.5          0          0  #  Age_DblN_top_logit_REC(3)
             -6            12      0.549862           0.7          0.05             0          3          0          0          0          0        0.5          0          0  #  Age_DblN_ascend_se_REC(3)
             -4             6       2.95273           2.7          0.05             0          3          0          0          0          0        0.5          0          0  #  Age_DblN_descend_se_REC(3)
-           -15             5      -12.1034         -11.2          0.05             0          2          0          0          0          0        0.5          0          0  #  Age_DblN_start_logit_REC(3)
+           -15             5      -12.1033         -11.2          0.05             0          2          0          0          0          0        0.5          0          0  #  Age_DblN_start_logit_REC(3)
             -8             5      -1.82948          -3.3          0.05             0          2          0          0          0          0        0.5          0          0  #  Age_DblN_end_logit_REC(3)
 # 4   SMP_BYC AgeSelex
          1e-07             2           0.5           0.5             0             0         -4          0          0          0          0          0          0          0  #  AgeSel_P1_SMP_BYC(4)
