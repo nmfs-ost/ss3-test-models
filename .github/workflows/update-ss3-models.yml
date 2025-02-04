@@ -106,7 +106,7 @@ jobs:
           git commit -m "update test model files for new ss3 release"
         
       - name: Create Pull Request 
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v7
         with:
           commit_message: Update model files for new ss3 release
           branch: update-test-models
