@@ -98,7 +98,7 @@ jobs:
         shell: Rscript {0}
         
       - name: Setup git user
-        uses: fregante/setup-git-user@v1
+        uses: fregante/setup-git-user@v2
       
       - name: Commit
         run: |
