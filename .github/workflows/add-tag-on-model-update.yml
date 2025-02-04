@@ -35,7 +35,7 @@ jobs:
           echo "tag=${latest_tag_repo}" >> $GITHUB_OUTPUT
           
       - name: create tag
-        uses: mathieudutour/github-tag-action@v6.1
+        uses: mathieudutour/github-tag-action@v6.2
         if: ${{ steps.get-latest-tag-unix.outputs.tag != steps.get-latest-tag-repo-unix.outputs.tag}}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
