@@ -38,7 +38,7 @@ Most of these models have at least 1 unique feature. The table below includes so
 | Simple_with_Discard | Uses discards | 0 hours, 2 minutes, 7 seconds |
 | Simple_with_DM_sizefreq | Generalized size-composition (sizefreq) data in the same units as the length-composition data (2 cm bins), 2 areas with identical fisheries and surveys in both areas, 2 seasons of unequal durations with all catch in season 1, fleet 7 as a depletion survery, Dirichlet Multinomial (D-M) for fleets 1, 2, 3, and 4 and all use the same shared parameter. **Note that fleet 3 has no composition data so D-M is irrelevant and fleet 5 has composition data but does not have D-M so it provides a comparison to fleet 2.**| 0 hours, 7 minutes, 42 seconds |
 | Spinydogfish_2011 | Stock Recruitment option 7 (survival 3 parameter), fecundity option 4  | 0 hours, 4 minutes, 48 seconds |
-| tagging_mirrored_sel | Time varying growth using annual deviations, Tagging data and movement parameters, selectivity, environmental variable data | 0 hours, 2 minutes, 49 seconds |
+| tagging_mirrored_sel | Time varying growth using annual deviations, tagging data, compound age- and length-based selectivity, environmental variable data | 0 hours, 2 minutes, 49 seconds |
 | three_area_nomove | Spatial model with areas, no movement | 0 hours, 3 minutes, 32 seconds |
 | two_morph_seas_areas  | 2 area model with movement, 2 growth patterns, 2 seasons, uses generalized size comp | 0 hours, 3 minutes, 35 seconds |
 | vermillion_snapper | Uses F method 2 (estimated parameters) | 0 hours, 3 minutes, 42 seconds |
