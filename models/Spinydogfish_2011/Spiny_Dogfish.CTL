@@ -1,8 +1,8 @@
-#V3.30.23.1;_safe;_compile_date:_Dec  5 2024;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.23.2;_safe;_compile_date:_Apr 17 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
-#_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
-#_User_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
+#_User_support_available_at:_https://groups.google.com/g/ss3-forum_and_NMFS.Stock.Synthesis@noaa.gov
+#_User_info_available_at:_https://nmfs-ost.github.io/ss3-website/
 #_Source_code_at:_https://github.com/nmfs-ost/ss3-source-code
 
 #_data_and_control_files: Spiny_Dogfish.DAT // Spiny_Dogfish.CTL
@@ -174,7 +174,7 @@
 # HKL 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 # Hkl_Discard 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 # OTHERS 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-# RECREATIONAL 5.03547e-06 0.00149885 0.00213509 0.000805567 0.000755822 0.00246249 0.00298386 0.000410032 0.00237346 0.00119553 0.00126644 0.00126661 0.00128397 0.00126659 0.000571626 0.0010108 0.000957916 0.000240199 4.45867e-05 0.000597497 0.000542064 0.000507981 0.000800058 0.00063383 0.000142054 0.000245183 0.00020118 0.000321126 0.000160739 0.000244549 0.000125766 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195
+# RECREATIONAL 5.03548e-06 0.00149885 0.00213509 0.000805567 0.000755822 0.00246249 0.00298386 0.000410032 0.00237346 0.00119553 0.00126644 0.00126661 0.00128397 0.00126659 0.000571626 0.0010108 0.000957916 0.000240199 4.45867e-05 0.000597497 0.000542064 0.000507981 0.000800058 0.00063383 0.000142054 0.000245183 0.00020118 0.000321126 0.000160739 0.000244549 0.000125766 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195 0.000722195
 #
 #_Q_setup for fleets with cpue or survey or deviation data
 #_1:  fleet number
@@ -198,9 +198,9 @@
            -10             2     -0.825117             0            99             0          1          0          1       1980       2004         -5          0          0  #  LnQ_base_AFSC_triennial(9)
              0             1      0.312772           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_AFSC_triennial(9)
            -15            15      0.243714             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_AFSC_slope(10)
-             0             1      0.470454           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_AFSC_slope(10)
-           -15            15      -0.40537             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_NWFSC_shelf_slope(11)
-             0             1      0.807998           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_NWFSC_shelf_slope(11)
+             0             1      0.470455           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_AFSC_slope(10)
+           -15            15     -0.405369             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_NWFSC_shelf_slope(11)
+             0             1      0.807995           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_NWFSC_shelf_slope(11)
            -15            15       -2.4676             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_NWFSC_slope(12)
              0             1      0.812206           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_NWFSC_slope(12)
            -15            15      -14.0174             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_IPHC(13)
@@ -331,7 +331,7 @@
             25           100       57.7788            60            99             6          1          0          0          0          0        0.5          0          0  #  Size_DblN_peak_AFSC_triennial(9)
             -9             3      -8.72472            -8            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_AFSC_triennial(9)
             -4            12       6.59314             6            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_AFSC_triennial(9)
-            -2            15       6.46195             6            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_AFSC_triennial(9)
+            -2            15       6.46194             6            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_AFSC_triennial(9)
             -5             9            -5            -5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_AFSC_triennial(9)
           -999          -999          -999             0            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_end_logit_AFSC_triennial(9)
 # 10   AFSC_slope LenSelex
