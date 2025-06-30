@@ -48,7 +48,7 @@
 0 # Forecast base recruitment:  0= spawn_recr; 1=mult*spawn_recr_fxn; 2=mult*VirginRecr; 3=deprecated; 4=mult*mean_over_yr_range
 # for option 4, set phase for fore_recr_devs to -1 in control to get constant mean in MCMC, else devs will be applied
 1 # Value multiplier is ignored
-2 # HCR_anchor: 0 or 2 uses unfished benchmark SSB (old hardwired approach); 1 = virgin SSB; 3 = BMSY
+0 # not used
 #
 2010  # FirstYear for caps and allocations (should be after years with fixed inputs) 
 0 # stddev of log(realized catch/target catch) in forecast (set value>0.0 to cause active impl_error)

@@ -41,5 +41,4 @@ control.ss
 0 # MCMC output detail: integer part (0=default; 1=adds obj func components; 2= +write_report_for_each_mceval); and decimal part (added to SR_LN(R0) on first call to mcmc)
 0 # ALK tolerance ***disabled in code
 -1 # random number seed for bootstrap data (-1 to use long(time) as seed): # 1744926353
-1 #_Compatibility:  flag for legacy (0) vs improved (1) impact of timevary biology on benchmark SRR calcs >=3.30.24
 3.30 # check value for end of file and for version control
