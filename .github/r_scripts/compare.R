@@ -467,19 +467,18 @@ compare_ss_runs <- function(
   )
   compare_df <- rbind(compare_df, tmp_df)
   compare_df$mod_name <- mod_name # add the model name
-  #print the msg
+  # print the msg
+  # only keep rows with ratio != 1 and !is.na for writing to fail_file
+  fail_rows <- !is.na(compare_df$ratio) & compare_df$ratio != 1
   compare_df_print <- format(
-    compare_df,
+    compare_df[fail_rows, , drop = FALSE],
     digits = 6,
     nsmall = 3,
     justify = "left"
   )
-  compare_df_print <- compare_df_print[
-    !is.na(compare_df_print$ratio) & compare_df_print$ratio != 1,
-  ]
 
   # message("values and their differences:")
-  if (write_fail == TRUE) {
+  if (write_fail == TRUE && any(fail_rows)) {
     if (file.exists(fail_file)) {
       hdr <- FALSE
     } else {
