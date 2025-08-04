@@ -1,7 +1,7 @@
-#V3.30.23.2;_safe;_compile_date:_Apr 17 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.24.00-prerel;_safe;_compile_date:_Jul  8 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 BSKT2019_data.ss #_DataFile 
 BSKT2019_control.ss #_Control 
-Run_Date: Thu Apr 17 21:27:41 2025
+Run_Date: Mon Aug  4 15:49:52 2025
 Final_phase: 5  N_iterations: 242
 #_LIKELIHOOD 
 Label logL*Lambda
@@ -739,7 +739,7 @@ Totbio_unfished 29359.2 8024.53
 SmryBio_unfished 27268.3 7354.47
 Recr_unfished 7366.45 2751.26
 SSB_Btgt 1009.82 297.221
-SPR_Btgt 0.625 1.79711e-17
+SPR_Btgt 0.625 4.95178e-17
 annF_Btgt 0.0483043 0.00332516
 Dead_Catch_Btgt 700.716 196.505
 SSB_SPR 504.909 148.61
@@ -751,6 +751,11 @@ annF_MSY 0.0509438 0.00318294
 Dead_Catch_MSY 702.689 197.05
 Ret_Catch_MSY 649.588 181.397
 B_MSY/SSB_unfished 0.374091 0.00391951
+Recr_MSY_bmarkbio 4526.43 1680.03
+Depletion_denom 2524.55 743.052
+HCR_inflect 1009.82 297.221
+R0_for_SRR_bench 7366.45 2751.26
+SSB_for_SRR_bench 2524.55 743.052
 ForeCatch_2019 336.296 1.54986
 ForeCatch_2020 336.279 1.55031
 ForeCatch_2021 1472.75 499.789
@@ -788,9 +793,9 @@ ForeCatchret_2028 1041.51 328.146
 ForeCatchret_2029 1011.73 316.861
 ForeCatchret_2030 983.655 306.156
 #_Extra_stdev
-ln(SPB)_1916 7.83382 0.294331
-ln(SPB)_1967 7.56394 0.367983
-ln(SPB)_2018 7.59482 0.367668
+ln(SSB)_1916 7.83382 0.294331
+ln(SSB)_1967 7.56394 0.367983
+ln(SSB)_2018 7.59482 0.367668
 SmryBio_Virgin 27268.3 0.0
 SmryBio_Initial 27268.3 0.0
 SmryBio_1916 27268.3 0.0

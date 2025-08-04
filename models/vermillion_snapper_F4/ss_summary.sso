@@ -1,8 +1,8 @@
-#V3.30.23.2;_safe;_compile_date:_Apr 17 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.24.00-prerel;_safe;_compile_date:_Jul  8 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 vermilion.dat #_DataFile 
 vermilion.ctl #_Control 
-Run_Date: Thu Apr 17 21:49:14 2025
-Final_phase: 5  N_iterations: 2105
+Run_Date: Mon Aug  4 16:11:52 2025
+Final_phase: 5  N_iterations: 2107
 #_LIKELIHOOD 
 Label logL*Lambda
 TOTAL_LogL 359.687
@@ -13,10 +13,10 @@ Length_comp 88.4498
 Age_comp 260.69
 Recruitment -12.9067
 InitEQ_regime 0
-Sum_recdevs 4.16334e-16
+Sum_recdevs -5.82867e-16
 Forecast_Recruitment 0
 Parm_priors 0
-Parm_softbounds 0.00753756
+Parm_softbounds 0.00753786
 Parm_devs 0
 F_Ballpark 0
 Crash_Pen 0
@@ -328,7 +328,7 @@ F_fleet_4_YR_1993_s_1 0.362349 0.0723 Act 0.120783
 F_fleet_4_YR_1994_s_1 0.554456 0.10197 Act 0.184819
 F_fleet_4_YR_1995_s_1 0.427143 0.099401 Act 0.142381
 F_fleet_4_YR_1996_s_1 0.402656 0.0844693 Act 0.134218
-F_fleet_4_YR_1997_s_1 0.414599 0.0863987 Act 0.1382
+F_fleet_4_YR_1997_s_1 0.414599 0.0863987 Act 0.138199
 F_fleet_4_YR_1998_s_1 0.503302 0.10249 Act 0.167767
 F_fleet_4_YR_1999_s_1 0.328667 0.0706641 Act 0.109556
 F_fleet_4_YR_2000_s_1 0.263139 0.0542107 Act 0.0877131
@@ -401,10 +401,10 @@ Age_95%width_CM_E(1) 0.916154 0.128482 Act 0.0308262
 Age_inflection_CM_W(2) 3.68075 0.134813 Act 0.235611
 Age_95%width_CM_W(2) 2.09661 0.185826 Act 0.118267
 Age_DblN_peak_REC(3) 3.33276 0.184741 Act 0.259195
-Age_DblN_top_logit_REC(3) -9.16484 19.7747 Act 0.0642434
+Age_DblN_top_logit_REC(3) -9.16508 19.7739 Act 0.0642247
 Age_DblN_ascend_se_REC(3) 0.549862 0.24526 Act 0.363881
 Age_DblN_descend_se_REC(3) 2.95273 0.336669 Act 0.695273
-Age_DblN_start_logit_REC(3) -12.1033 49.4199 Act 0.144833
+Age_DblN_start_logit_REC(3) -12.1035 49.4218 Act 0.144827
 Age_DblN_end_logit_REC(3) -1.82948 0.621038 Act 0.474655
 AgeSel_P1_SMP_BYC(4) 0.5 0 Fix 0.25
 AgeSel_P2_SMP_BYC(4) 100 0 Fix 9.95e-06
@@ -513,7 +513,7 @@ SSB_2020 3.83453e+11 3.24573e+10
 SSB_2021 3.73114e+11 3.54983e+10
 SSB_2022 3.10954e+11 3.31722e+10
 SSB_2023 2.70714e+11 3.35287e+10
-SSB_2024 2.4561e+11 3.46427e+10
+SSB_2024 2.4561e+11 3.46428e+10
 SSB_2025 2.30004e+11 3.57182e+10
 SSB_2026 2.20157e+11 3.65668e+10
 SSB_2027 2.13812e+11 3.71929e+10
@@ -636,7 +636,7 @@ SPRratio_1983 0.361346 0.0459358
 SPRratio_1984 0.452288 0.0431105
 SPRratio_1985 0.476424 0.040597
 SPRratio_1986 0.527086 0.0394767
-SPRratio_1987 0.512306 0.0348149
+SPRratio_1987 0.512306 0.0348148
 SPRratio_1988 0.540425 0.0329074
 SPRratio_1989 0.506534 0.0342492
 SPRratio_1990 0.528867 0.0293565
@@ -852,6 +852,11 @@ annF_MSY 0.164865 0.0194553
 Dead_Catch_MSY 2990.9 185.506
 Ret_Catch_MSY 2678.56 168.504
 B_MSY/SSB_unfished 0.242771 0.0202227
+Recr_MSY_bmarkbio 21104.1 795.163
+Depletion_denom 6.69703e+11 3.77547e+10
+HCR_inflect 6.69703e+09 3.77547e+08
+R0_for_SRR_bench 27197.5 1533.27
+SSB_for_SRR_bench 6.69703e+11 3.77547e+10
 ForeCatch_2018 2549.96 59.3533
 ForeCatch_2019 2315.4 39.1424
 ForeCatch_2020 2361.59 37.4677
@@ -883,9 +888,9 @@ ForeCatchret_2025 2845.88 136.53
 ForeCatchret_2026 2726.5 124.751
 ForeCatchret_2027 2656.99 118.833
 #_Extra_stdev
-ln(SPB)_1950 27.2301 0.0563754
-ln(SPB)_1983 26.7705 0.0471817
-ln(SPB)_2017 26.5891 0.0622721
+ln(SSB)_1950 27.2301 0.0563754
+ln(SSB)_1983 26.7705 0.0471817
+ln(SSB)_2017 26.5891 0.0622721
 SmryBio_Virgin 34342.5 0.0
 SmryBio_Initial 34342.5 0.0
 SmryBio_1950 34342.5 0.0
@@ -1068,7 +1073,7 @@ TotCatch_1964 643.491 0.0
 TotCatch_1965 700.119 0.0
 TotCatch_1966 678.506 0.0
 TotCatch_1967 743.686 0.0
-TotCatch_1968 785.749 0.0
+TotCatch_1968 785.748 0.0
 TotCatch_1969 867.025 0.0
 TotCatch_1970 832.704 0.0
 TotCatch_1971 815.555 0.0

@@ -1,4 +1,4 @@
-#V3.30.23.2;_safe;_compile_date:_Apr 17 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.24.00-prerel;_safe;_compile_date:_Jul  8 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:_https://groups.google.com/g/ss3-forum_and_NMFS.Stock.Synthesis@noaa.gov
@@ -114,9 +114,9 @@
 #_ LO HI INIT PRIOR PR_SD PR_type PHASE
 #_Cond -2 2 0 0 -1 99 -2 #_placeholder when no seasonal MG parameters
 #
-7 #_Spawner-Recruitment; Options: 1=NA; 2=Ricker; 3=std_B-H; 4=SCAA; 5=Hockey; 6=B-H_flattop; 7=survival_3Parm; 8=Shepherd_3Parm; 9=RickerPower_3parm
+7 #_Spawner-Recruitment; Options: 1=NA; 2=Ricker; 3=std_B-H; 4=SCAA; 5=Hockey; 6=B-H_flattop; 7=survival_3Parm; 8=Shepherd_3Parm; 9=RickerPower_3parm; 10=B-H_ab
 0  # 0/1 to use steepness in initial equ recruitment calculation
-0  #  future feature:  0/1 to make realized sigmaR a function of SR curvature
+ 0 #  not_used
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn #  parm_name
              8            18       9.05275          10.5            99             0          1          0          0          0          0          0          0          0 # SR_LN(R0)
              0             1           0.4           0.4            99             0         -5          0          0          0          0          0          0          0 # SR_surv_zfrac
@@ -198,9 +198,9 @@
            -10             2     -0.825117             0            99             0          1          0          1       1980       2004         -5          0          0  #  LnQ_base_AFSC_triennial(9)
              0             1      0.312772           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_AFSC_triennial(9)
            -15            15      0.243714             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_AFSC_slope(10)
-             0             1      0.470455           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_AFSC_slope(10)
-           -15            15     -0.405369             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_NWFSC_shelf_slope(11)
-             0             1      0.807995           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_NWFSC_shelf_slope(11)
+             0             1      0.470453           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_AFSC_slope(10)
+           -15            15      -0.40537             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_NWFSC_shelf_slope(11)
+             0             1      0.807997           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_NWFSC_shelf_slope(11)
            -15            15       -2.4676             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_NWFSC_slope(12)
              0             1      0.812206           0.1            99             0          3          0          0          0          0          0          0          0  #  Q_extraSD_NWFSC_slope(12)
            -15            15      -14.0174             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_IPHC(13)
@@ -331,7 +331,7 @@
             25           100       57.7788            60            99             6          1          0          0          0          0        0.5          0          0  #  Size_DblN_peak_AFSC_triennial(9)
             -9             3      -8.72472            -8            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_top_logit_AFSC_triennial(9)
             -4            12       6.59314             6            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_ascend_se_AFSC_triennial(9)
-            -2            15       6.46194             6            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_AFSC_triennial(9)
+            -2            15       6.46195             6            99             6          3          0          0          0          0        0.5          0          0  #  Size_DblN_descend_se_AFSC_triennial(9)
             -5             9            -5            -5            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_start_logit_AFSC_triennial(9)
           -999          -999          -999             0            99             6         -3          0          0          0          0        0.5          0          0  #  Size_DblN_end_logit_AFSC_triennial(9)
 # 10   AFSC_slope LenSelex

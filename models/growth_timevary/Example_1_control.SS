@@ -1,4 +1,4 @@
-#V3.30.23.2;_safe;_compile_date:_Apr 17 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.24.00-prerel;_safe;_compile_date:_Jul  8 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:_https://groups.google.com/g/ss3-forum_and_NMFS.Stock.Synthesis@noaa.gov
@@ -106,8 +106,8 @@
 # timevary MG parameters 
 #_ LO HI INIT PRIOR PR_SD PR_type  PHASE
  -0.28528 0.200227 -0.0764034 0 0.100114 6 4 # L_at_Amax_Fem_GP_1_BLK1mult_1984
- -1.10064 0.508798 0.00771213 0 0.254399 6 4 # VonBert_K_Fem_GP_1_BLK2mult_1980
- -1.10064 0.508798 0.0606008 0 0.254399 6 4 # VonBert_K_Fem_GP_1_BLK2mult_1999
+ -1.10064 0.508798 0.00771174 0 0.254399 6 4 # VonBert_K_Fem_GP_1_BLK2mult_1980
+ -1.10064 0.508798 0.0606025 0 0.254399 6 4 # VonBert_K_Fem_GP_1_BLK2mult_1999
 # info on dev vectors created for MGparms are reported with other devs after tag parameter section 
 #
 #_seasonal_effects_on_biology_parms
@@ -115,9 +115,9 @@
 #_ LO HI INIT PRIOR PR_SD PR_type PHASE
 #_Cond -2 2 0 0 -1 99 -2 #_placeholder when no seasonal MG parameters
 #
-3 #_Spawner-Recruitment; Options: 1=NA; 2=Ricker; 3=std_B-H; 4=SCAA; 5=Hockey; 6=B-H_flattop; 7=survival_3Parm; 8=Shepherd_3Parm; 9=RickerPower_3parm
+3 #_Spawner-Recruitment; Options: 1=NA; 2=Ricker; 3=std_B-H; 4=SCAA; 5=Hockey; 6=B-H_flattop; 7=survival_3Parm; 8=Shepherd_3Parm; 9=RickerPower_3parm; 10=B-H_ab
 0  # 0/1 to use steepness in initial equ recruitment calculation
-2  #  future feature:  0/1 to make realized sigmaR a function of SR curvature
+ 0 #  not_used
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn #  parm_name
             12            18       14.8716            15            99             0          4          0          0          0          0          0          0          0 # SR_LN(R0)
            0.2             1      0.788539         0.777         0.113             2          4          0          0          0          0          0          0          0 # SR_BH_steep
@@ -151,7 +151,7 @@
 #
 # all recruitment deviations
 #  1962R 1963R 1964R 1965R 1966R 1967R 1968R 1969R 1970R 1971R 1972R 1973R 1974R 1975R 1976R 1977R 1978R 1979R 1980R 1981R 1982R 1983R 1984R 1985R 1986R 1987R 1988R 1989R 1990R 1991R 1992R 1993R 1994R 1995R 1996R 1997R 1998R 1999R 2000R 2001R 2002R 2003R 2004R 2005R 2006R 2007R 2008R 2009F 2010F 2011F 2012F
-#  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4.46795e-09 0 0 0
+#  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4.13891e-12 0 0 0
 # implementation error by year in forecast:  0 0 0
 #
 #Fishing Mortality info 
@@ -168,8 +168,8 @@
 # F rates by fleet x season
 #_year:  1960 1961 1962 1963 1964 1965 1966 1967 1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012
 # seas:  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-# Fish1 0 0 0 0 0 0 0.0367937 0.0491474 0.0175708 0.0253415 0.0480891 0.0399225 0.023402 0.0465334 0.0618612 0.066973 0.0770979 0.0434938 0.0333028 0.041556 0.0239812 0.0417809 0.027434 0.0262615 0.0357418 0.0295122 0.0552499 0.0602008 0.0633239 0.0901259 0.0833179 0.102197 0.102867 0.0694346 0.123624 0.0923164 0.11167 0.127402 0.13207 0.131247 0.124321 0.110843 0.0791372 0.0828458 0.118958 0.155322 0.168203 0.148463 0.165832 0.0829781 0.138075 0.138075 0.138075
-# Fish2 0 0 0 0 0 0 0.000234536 0.0126835 0.0222498 0.0348673 0.0288796 0.0107522 0.0178136 0.00624535 0.00718657 0.00675681 0.00264143 0.00236611 0.00239459 0.00558263 0.00786461 0.0123882 0.0163306 0.0204892 0.0215182 0.00960296 0.0220969 0.0309322 0.039119 0.045182 0.0388038 0.0479911 0.0501644 0.0348458 0.0652582 0.0466111 0.0612556 0.0629657 0.0633214 0.0657208 0.0174065 0.0345333 0.0322625 0.0379651 0.0742802 0.0698991 0.0691741 0.0567385 0.0586104 0.0454252 0.0567192 0.0567192 0.0567192
+# Fish1 0 0 0 0 0 0 0.0367937 0.0491474 0.0175708 0.0253415 0.0480891 0.0399225 0.023402 0.0465334 0.0618612 0.066973 0.0770979 0.0434938 0.0333028 0.041556 0.0239812 0.0417809 0.027434 0.0262616 0.0357418 0.0295122 0.0552499 0.0602008 0.0633239 0.090126 0.0833179 0.102197 0.102867 0.0694346 0.123624 0.0923164 0.11167 0.127402 0.13207 0.131248 0.124322 0.110843 0.0791373 0.0828458 0.118958 0.155322 0.168203 0.148463 0.165832 0.0829781 0.138075 0.138075 0.138075
+# Fish2 0 0 0 0 0 0 0.000234536 0.0126835 0.0222498 0.0348673 0.0288797 0.0107522 0.0178136 0.00624535 0.00718657 0.00675681 0.00264144 0.00236611 0.00239459 0.00558263 0.00786461 0.0123882 0.0163306 0.0204892 0.0215182 0.00960296 0.0220969 0.0309322 0.039119 0.045182 0.0388038 0.0479911 0.0501644 0.0348459 0.0652582 0.0466111 0.0612557 0.0629657 0.0633214 0.0657208 0.0174065 0.0345333 0.0322625 0.0379651 0.0742801 0.0698991 0.0691741 0.0567385 0.0586104 0.0454251 0.0567192 0.0567192 0.0567192
 #
 #_Q_setup for fleets with cpue or survey or deviation data
 #_1:  fleet number
@@ -267,12 +267,12 @@
 # 8   Surv6 LenSelex
 # 9   Surv7 LenSelex
 # 1   Fish1 AgeSelex
-             2            15       6.19132             8            99             0          2          0          0          0          0          0          3          1  #  Age_DblN_peak_Fish1(1)
+             2            15       6.19131             8            99             0          2          0          0          0          0          0          3          1  #  Age_DblN_peak_Fish1(1)
             -9             3            -2          -1.5            99             0         -5          0          0          0          0          0          0          0  #  Age_DblN_top_logit_Fish1(1)
             -4            10       3.08033             3            99             0          2          0          0          0          0          0          4          1  #  Age_DblN_ascend_se_Fish1(1)
             -9            15             8             2            99             0         -2          0          0          0          0          0          0          1  #  Age_DblN_descend_se_Fish1(1)
          -2000             5         -1002            -1            99             0        -50          0          0          0          0          0          0          0  #  Age_DblN_start_logit_Fish1(1)
-            -5            10     -0.151865          0.45            99             0          2          0          0          0          0          0          5          1  #  Age_DblN_end_logit_Fish1(1)
+            -5            10     -0.151864          0.45            99             0          2          0          0          0          0          0          5          1  #  Age_DblN_end_logit_Fish1(1)
 # 2   Fish2 AgeSelex
              2            15       10.2149             8            99             0          2          0          0          0          0          0          6          1  #  Age_DblN_peak_Fish2(2)
             -9             3            -2          -1.5            99             0         -5          0          0          0          0          0          0          0  #  Age_DblN_top_logit_Fish2(2)
@@ -300,31 +300,31 @@
 #_No_Dirichlet parameters
 # timevary selex parameters 
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type    PHASE  #  parm_name
-           -10            10        2.3588             0            99             0      3  # Age_DblN_peak_Fish1(1)_BLK3add_1981
-           -10            10     -0.439887             0            99             0      3  # Age_DblN_peak_Fish1(1)_BLK3add_1985
-           -10            10     0.0528754             0            99             0      3  # Age_DblN_peak_Fish1(1)_BLK3add_1989
-           -10            10      -1.20464             0            99             0      3  # Age_DblN_peak_Fish1(1)_BLK3add_1993
-           -10            10       -1.4185             0            99             0      3  # Age_DblN_peak_Fish1(1)_BLK3add_1997
-           -10            10       0.30171             0            99             0      3  # Age_DblN_peak_Fish1(1)_BLK3add_2001
-           -10            10       1.66588             0            99             0      3  # Age_DblN_peak_Fish1(1)_BLK3add_2005
-           -10            10     0.0823913             0            99             0      3  # Age_DblN_ascend_se_Fish1(1)_BLK4add_1960
-           -10            10      0.726316             0            99             0      3  # Age_DblN_ascend_se_Fish1(1)_BLK4add_1981
-           -10            10    -0.0889116             0            99             0      3  # Age_DblN_ascend_se_Fish1(1)_BLK4add_1985
+           -10            10       2.35881             0            99             0      3  # Age_DblN_peak_Fish1(1)_BLK3add_1981
+           -10            10     -0.439873             0            99             0      3  # Age_DblN_peak_Fish1(1)_BLK3add_1985
+           -10            10     0.0528883             0            99             0      3  # Age_DblN_peak_Fish1(1)_BLK3add_1989
+           -10            10      -1.20463             0            99             0      3  # Age_DblN_peak_Fish1(1)_BLK3add_1993
+           -10            10      -1.41849             0            99             0      3  # Age_DblN_peak_Fish1(1)_BLK3add_1997
+           -10            10      0.301742             0            99             0      3  # Age_DblN_peak_Fish1(1)_BLK3add_2001
+           -10            10        1.6659             0            99             0      3  # Age_DblN_peak_Fish1(1)_BLK3add_2005
+           -10            10     0.0823851             0            99             0      3  # Age_DblN_ascend_se_Fish1(1)_BLK4add_1960
+           -10            10      0.726315             0            99             0      3  # Age_DblN_ascend_se_Fish1(1)_BLK4add_1981
+           -10            10    -0.0889111             0            99             0      3  # Age_DblN_ascend_se_Fish1(1)_BLK4add_1985
            -10            10     -0.704099             0            99             0      3  # Age_DblN_ascend_se_Fish1(1)_BLK4add_1993
-           -10            10     -0.962936             0            99             0      3  # Age_DblN_ascend_se_Fish1(1)_BLK4add_1997
-           -10            10      0.176492             0            99             0      3  # Age_DblN_ascend_se_Fish1(1)_BLK4add_2001
-           -10            10      0.825206             0            99             0      3  # Age_DblN_ascend_se_Fish1(1)_BLK4add_2005
-           -10            10     -0.432931             0            99             0      3  # Age_DblN_end_logit_Fish1(1)_BLK5add_1984
+           -10            10     -0.962933             0            99             0      3  # Age_DblN_ascend_se_Fish1(1)_BLK4add_1997
+           -10            10        0.1765             0            99             0      3  # Age_DblN_ascend_se_Fish1(1)_BLK4add_2001
+           -10            10      0.825208             0            99             0      3  # Age_DblN_ascend_se_Fish1(1)_BLK4add_2005
+           -10            10     -0.432932             0            99             0      3  # Age_DblN_end_logit_Fish1(1)_BLK5add_1984
            -10            10       0.93361             0            99             0      3  # Age_DblN_peak_Fish2(2)_BLK6add_1981
            -10            10      -3.87014             0            99             0      3  # Age_DblN_peak_Fish2(2)_BLK6add_1985
            -10            10      -3.23802             0            99             0      3  # Age_DblN_peak_Fish2(2)_BLK6add_1989
-           -10            10      -3.22972             0            99             0      3  # Age_DblN_peak_Fish2(2)_BLK6add_1993
-           -10            10      -4.54188             0            99             0      3  # Age_DblN_peak_Fish2(2)_BLK6add_2001
-           -10            10      -3.62094             0            99             0      3  # Age_DblN_peak_Fish2(2)_BLK6add_2005
+           -10            10      -3.22973             0            99             0      3  # Age_DblN_peak_Fish2(2)_BLK6add_1993
+           -10            10      -4.54189             0            99             0      3  # Age_DblN_peak_Fish2(2)_BLK6add_2001
+           -10            10      -3.62095             0            99             0      3  # Age_DblN_peak_Fish2(2)_BLK6add_2005
            -10            10       1.45034             0            99             0      3  # Age_DblN_ascend_se_Fish2(2)_BLK7add_1960
-           -10            10      0.390567             0            99             0      3  # Age_DblN_ascend_se_Fish2(2)_BLK7add_1989
-           -10            10     0.0106363             0            99             0      3  # Age_DblN_ascend_se_Fish2(2)_BLK7add_2001
-           -10            10      0.307062             0            99             0      3  # Age_DblN_ascend_se_Fish2(2)_BLK7add_2005
+           -10            10      0.390568             0            99             0      3  # Age_DblN_ascend_se_Fish2(2)_BLK7add_1989
+           -10            10     0.0106356             0            99             0      3  # Age_DblN_ascend_se_Fish2(2)_BLK7add_2001
+           -10            10      0.307063             0            99             0      3  # Age_DblN_ascend_se_Fish2(2)_BLK7add_2005
 # info on dev vectors created for selex parms are reported with other devs after tag parameter section 
 #
 0   #  use 2D_AR1 selectivity? (0/1)

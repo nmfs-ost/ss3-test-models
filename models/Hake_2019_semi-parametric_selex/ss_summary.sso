@@ -1,7 +1,7 @@
-#V3.30.23.2;_safe;_compile_date:_Apr 17 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.24.00-prerel;_safe;_compile_date:_Jul  8 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 hake_data.ss #_DataFile 
 hake_control.ss #_Control 
-Run_Date: Thu Apr 17 21:29:38 2025
+Run_Date: Mon Aug  4 15:51:52 2025
 Final_phase: 5  N_iterations: 1572
 #_LIKELIHOOD 
 Label logL*Lambda
@@ -611,6 +611,11 @@ annF_MSY 0.280332 0.0635082
 Dead_Catch_MSY 339711 56935.9
 Ret_Catch_MSY 339711 56935.9
 B_MSY/SSB_unfished 0.234079 0.0385204
+Recr_MSY_bmarkbio 2.0845e+06 457335
+Depletion_denom 3.7435e+06 342207
+HCR_inflect 1.4974e+06 136883
+R0_for_SRR_bench 2.34098e+06 520166
+SSB_for_SRR_bench 3.7435e+06 342207
 ForeCatch_2019 818803 378900
 ForeCatch_2020 903922 408016
 ForeCatch_2021 817232 354893
@@ -618,9 +623,9 @@ OFLCatch_2019 818803 378900
 OFLCatch_2020 903922 408016
 OFLCatch_2021 817232 354695
 #_Extra_stdev
-ln(SPB)_1966 14.2872 0.224744
-ln(SPB)_1992 14.8423 0.11207
-ln(SPB)_2018 14.5746 0.349011
+ln(SSB)_1966 14.2872 0.224744
+ln(SSB)_1992 14.8423 0.11207
+ln(SSB)_2018 14.5746 0.349011
 SmryBio_Virgin 4.29978e+06 0.0
 SmryBio_Initial 4.29978e+06 0.0
 SmryBio_1966 1.87733e+06 0.0

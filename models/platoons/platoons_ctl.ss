@@ -1,4 +1,4 @@
-#V3.30.23.2;_safe;_compile_date:_Apr 17 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.24.00-prerel;_safe;_compile_date:_Jul  8 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:_https://groups.google.com/g/ss3-forum_and_NMFS.Stock.Synthesis@noaa.gov
@@ -124,9 +124,9 @@
 #_ LO HI INIT PRIOR PR_SD PR_type PHASE
 #_Cond -2 2 0 0 -1 99 -2 #_placeholder when no seasonal MG parameters
 #
-3 #_Spawner-Recruitment; Options: 1=NA; 2=Ricker; 3=std_B-H; 4=SCAA; 5=Hockey; 6=B-H_flattop; 7=survival_3Parm; 8=Shepherd_3Parm; 9=RickerPower_3parm
+3 #_Spawner-Recruitment; Options: 1=NA; 2=Ricker; 3=std_B-H; 4=SCAA; 5=Hockey; 6=B-H_flattop; 7=survival_3Parm; 8=Shepherd_3Parm; 9=RickerPower_3parm; 10=B-H_ab
 0  # 0/1 to use steepness in initial equ recruitment calculation
-0  #  future feature:  0/1 to make realized sigmaR a function of SR curvature
+ 0 #  not_used
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn #  parm_name
              3            31       10.5907         10.55            10             6          1          0          0          0          0          0          0          0 # SR_LN(R0)
            0.2             1      0.785574           0.6          0.01             1          5          0          0          0          0          0          0          0 # SR_BH_steep
@@ -160,7 +160,7 @@
 #
 # all recruitment deviations
 #  1951R 1952R 1953R 1954R 1955R 1956R 1957R 1958R 1959R 1960R 1961R 1962R 1963R 1964R 1965R 1966R 1967R 1968R 1969R 1970R 1971R 1972R 1973R 1974R 1975R 1976R 1977R 1978R 1979R 1980R 1981R 1982R 1983R 1984R 1985R 1986R 1987R 1988R 1989R 1990R 1991R 1992R 1993R 1994R 1995R 1996R 1997R 1998R 1999R 2000R 2001R 2002F 2003F 2004F
-#  -0.0493471 -0.0586763 -0.0719331 -0.0894075 -0.10982 -0.127964 -0.130455 -0.0967418 -0.0152184 0.0790122 0.100975 0.0571774 0.0305505 0.00170176 -0.0791042 -0.101023 0.0181196 0.1507 0.100273 0.0405901 0.0567911 0.314418 0.765315 0.639901 -0.0903336 0.190983 0.11921 -0.0600447 -0.289084 -0.510002 -0.655372 -0.326725 -0.323988 0.696262 0.556622 -0.162109 -0.231771 -0.215718 -0.367289 -0.512448 -0.311012 -0.319364 0.305383 0.291592 0.42951 0.0683042 -0.14088 0.329101 0.0981115 0.0130482 -0.00782038 0 0 0
+#  -0.0493471 -0.0586763 -0.0719331 -0.0894075 -0.10982 -0.127964 -0.130455 -0.0967418 -0.0152184 0.0790122 0.100975 0.0571774 0.0305505 0.00170177 -0.0791042 -0.101023 0.0181196 0.1507 0.100273 0.0405901 0.056791 0.314418 0.765315 0.639901 -0.0903336 0.190983 0.11921 -0.0600447 -0.289084 -0.510002 -0.655372 -0.326725 -0.323988 0.696262 0.556622 -0.162109 -0.231772 -0.215718 -0.367289 -0.512448 -0.311012 -0.319364 0.305383 0.291592 0.42951 0.0683042 -0.14088 0.329101 0.0981115 0.0130482 -0.00782038 0 0 0
 # implementation error by year in forecast:  0 0 0
 #
 #Fishing Mortality info 
