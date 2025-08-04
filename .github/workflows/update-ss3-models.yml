@@ -1,7 +1,6 @@
 name: update-ss3-test-models
 on: 
   workflow_dispatch:
-  push:
 
 jobs:
   update-ss3-test-models:
