@@ -469,8 +469,8 @@ compare_ss_runs <- function(
   compare_df$mod_name <- mod_name # add the model name
   # only keep rows with ratio != 1 and !is.na for writing to fail_file
   fail_rows <- compare_df$ratio != 1
-  compare_df <- compare_df[!is.na(compare_df$ref_value),] 
-  compare_df <- compare_df[compare_df$ref_value != "NA",]
+  compare_df <- compare_df[!is.na(compare_df$quantity),] 
+  compare_df <- compare_df[compare_df$quantity != "NA",]
   compare_df <- compare_df[compare_df$ratio != 1,]
 
   # print the msg
@@ -488,6 +488,11 @@ compare_ss_runs <- function(
     } else {
       hdr <- TRUE
     }
+
+    compare_df_print <- compare_df_print[!is.na(compare_df_print$quantity),] 
+    compare_df_print <- compare_df_print[compare_df_print$quantity != "NA",]
+    compare_df_print <- compare_df_print[compare_df_print$ratio != 1,]
+    
     write.table(
       compare_df_print,
       fail_file,
