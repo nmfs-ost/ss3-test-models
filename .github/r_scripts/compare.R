@@ -480,6 +480,9 @@ compare_ss_runs <- function(
     nsmall = 3,
     justify = "left"
   )
+  
+  print(compare_df)
+  print(compare_df[is.na(compare_df$quantity)])
 
   # message("values and their differences:")
   if (write_fail == TRUE && any(fail_rows)) {
@@ -489,10 +492,6 @@ compare_ss_runs <- function(
       hdr <- TRUE
     }
 
-    compare_df_print <- compare_df_print[!is.na(compare_df_print$quantity),] 
-    compare_df_print <- compare_df_print[compare_df_print$quantity != "NA",]
-    compare_df_print <- compare_df_print[compare_df_print$ratio != 1,]
-    
     write.table(
       compare_df_print,
       fail_file,
