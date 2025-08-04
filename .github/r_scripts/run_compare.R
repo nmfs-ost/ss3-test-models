@@ -35,12 +35,11 @@ for(i in mod_names) {
 }
 # write out all model results
 compare_df <- do.call("rbind", compare_list)
-compare_df <- compare_df[abs(compare_df$diff) != 0 & !is.na(compare_df$diff), ]
 compare_df_print <- format(compare_df, digits = 6, nsmall = 3,
                            justify = "left")
 message("see saved artifact all_results.csv for values and their differences.")
 write.csv(compare_df_print, "run_R/all_results.csv", row.names = FALSE)
-# next: create a filtered table
+filtered_df <- compare_df[abs(compare_df$diff) != 0 & !is.na(compare_df$diff), ]
 filtered_df <- format(filtered_df, digits = 6, nsmall = 3,
                                    justify = "left")
 write.csv(filtered_df, "run_R/all_changes.csv", row.names = FALSE)
