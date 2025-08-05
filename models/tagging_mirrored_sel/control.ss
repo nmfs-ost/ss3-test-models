@@ -74,7 +74,7 @@
 # Sex: 1  BioPattern: 1  NatMort
  0.15 0.3 0.15 0.2446 0.8 6 5 0 0 0 0 0.5 0 0 # NatM_uniform_Fem_GP_1
 # Sex: 1  BioPattern: 1  Growth
- 5 100 54.4 42 10 6 -3 0 0 1979 2006 0.5 0 0 # L_at_Amin_Fem_GP_1
+ 30 100 54.4 42 10 6 -3 0 0 1979 2006 0.5 0 0 # L_at_Amin_Fem_GP_1
  80 430 201.9 100 10 6 -2 0 0 1979 2006 0.5 0 0 # L_at_Amax_Fem_GP_1
  0.05 0.35 0.123 0.1596 0.8 6 -3 0 0 1979 2006 0.5 0 0 # VonBert_K_Fem_GP_1
  0.0005 0.25 0.0685947 0.01 0.8 6 5 0 0 0 0 0.5 0 0 # CV_young_Fem_GP_1
@@ -90,7 +90,7 @@
 # Sex: 2  BioPattern: 1  NatMort
  0.15 0.3 0.15 0.2446 0.8 6 5 0 0 0 0 0.5 0 0 # NatM_uniform_Mal_GP_1
 # Sex: 2  BioPattern: 1  Growth
- 5 100 52.9 42 10 6 -3 0 0 1979 2006 0.5 0 0 # L_at_Amin_Mal_GP_1
+ 30 100 52.9 42 10 6 -3 0 0 1979 2006 0.5 0 0 # L_at_Amin_Mal_GP_1
  80 430 138.7 100 10 6 -2 0 0 1979 2006 0.5 0 0 # L_at_Amax_Mal_GP_1
  0.05 0.35 0.253 0.1596 0.8 6 -3 0 0 1979 2006 0.5 0 0 # VonBert_K_Mal_GP_1
  0.0005 0.25 0.046062 0.01 0.8 6 5 0 0 0 0 0.5 0 0 # CV_young_Mal_GP_1
