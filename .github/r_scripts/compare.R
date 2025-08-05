@@ -470,6 +470,8 @@ compare_ss_runs <- function(
   # only keep rows with ratio != 1 and !is.na for writing to fail_file
   fail_rows <- compare_df$ratio != 1
 
+  compare_df <- compare_df[round(compare_df$ratio, 6) != 1, ]
+  compare_df <- compare_df[!(compare_df$value == 0 & compare_df$ref_value == 0), ]
   compare_df <- compare_df[complete.cases(compare_df[, c("quantity", "ref_value")]), ]
 
   # print the msg
@@ -479,6 +481,8 @@ compare_ss_runs <- function(
     nsmall = 3,
     justify = "left"
   )
+
+  print(compare_df_print)
 
   # message("values and their differences:")
   if (write_fail == TRUE && any(fail_rows)) {
