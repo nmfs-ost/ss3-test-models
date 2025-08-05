@@ -481,8 +481,10 @@ compare_ss_runs <- function(
     justify = "left"
   )
   
-  print(compare_df)
-  print(compare_df[is.na(compare_df$quantity)])
+  print(compare_df[is.na(compare_df$quantity),])
+  print(compare_df_print[is.na(compare_df_print$quantity),])
+  compare_df_print <- compare_df_print[!is.na(compare_df_print$quantity),]
+  print(compare_df_print[is.na(compare_df_print$quantity),])
 
   # message("values and their differences:")
   if (write_fail == TRUE && any(fail_rows)) {
