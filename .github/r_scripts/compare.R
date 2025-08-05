@@ -471,6 +471,7 @@ compare_ss_runs <- function(
   fail_rows <- compare_df$ratio != 1
 
   compare_df <- compare_df[complete.cases(compare_df[, c("quantity", "ref_value")]), ]
+  compare_df <- compare_df[round(compare_df$ratio, 6) != 1, ]
 
   # print the msg
   compare_df_print <- format(
@@ -480,7 +481,6 @@ compare_ss_runs <- function(
     justify = "left"
   )
 
-  compare_df_print <- compare_df_print[round(compare_df_print$ratio, 6) != 1, ]
   print(compare_df_print)
 
   # message("values and their differences:")
