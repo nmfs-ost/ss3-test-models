@@ -1,4 +1,6 @@
 Note 1 Information: Max data length bin: 200  < max pop len bins: 250; so will accumulate larger pop len bins
-Warning 1 : Block:2 13 ends in: 2030 after retroyr+1:  2019
+Warning 1 Adjustment: basis for HCR anchor was not set; setting to 2 to match default before 3.30.24
+Warning 2 : depletion_basis is using virgin but HCR anchor is using SSB_unf from benchmark. Are you sure?
+Warning 3 : Block:2 13 ends in: 2030 after retroyr+1:  2019
 Note 2 Information: A revised protocol for the Fcast_yr specification is available and recommended.
- 1 warning  and 2 notes 
+ 3 warnings  and 2 notes 

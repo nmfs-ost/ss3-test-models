@@ -1,7 +1,8 @@
 Note 1 Information: Max data length bin: 180  < max pop len bins: 245; so will accumulate larger pop len bins
-Warning 1 Adjustment: Fleet: 2  agecomp has N obs with partition==2 (retained); changed to partition=0 because retention not defined; N= 12
-Warning 2 : Final gradient: 0.00388806 is larger than final_conv: 0.0001
+Warning 1 Adjustment: basis for HCR anchor was not set; setting to 2 to match default before 3.30.24
+Warning 2 : depletion_basis is using virgin but HCR anchor is using SSB_unf from benchmark. Are you sure?
+Warning 3 Adjustment: Fleet: 2  agecomp has N obs with partition==2 (retained); changed to partition=0 because retention not defined; N= 12
 Note 2 Information: A revised protocol for the Fcast_yr specification is available and recommended.
-Warning 3 : Reminder: Number of lambdas !=0.0 and !=1.0:  38
+Warning 4 : Reminder: Number of lambdas !=0.0 and !=1.0:  38
 Note 3 Information:  N parameters that are on or within 1% of min-max bound: 2; check results, variance may be suspect
- 3 warnings  and 3 notes 
+ 4 warnings  and 3 notes 

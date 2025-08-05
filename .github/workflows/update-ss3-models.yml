@@ -20,8 +20,7 @@ jobs:
           sudo add-apt-repository ppa:ubuntu-toolchain-r/test
           sudo apt-get update
           sudo apt-get install --only-upgrade libstdc++6
-          sudo apt-get install -y libcurl4-openssl-dev
-          sudo apt-get install -y libfontconfig1-dev
+          sudo apt-get install -y libcurl4-openssl-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev libfreetype6-dev
 
       - name: setup R  
         uses: r-lib/actions/setup-r@v2
@@ -37,7 +36,7 @@ jobs:
         
       - name: Get the latest SS3 executable
         run: |
-          wget -O ss3 https://github.com/nmfs-ost/ss3-source-code/releases/latest/download/ss3_linux
+          wget -O ss3 https://github.com/nmfs-ost/ss3-source-code/releases/download/v3.30.24-prerel/ss3_linux
           sudo chmod a+x ss3
           mv ss3 /usr/local/bin/ss3
           export PATH=/usr/local/bin/ss3:$PATH

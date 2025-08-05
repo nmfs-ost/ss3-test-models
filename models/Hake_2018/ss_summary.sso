@@ -1,7 +1,7 @@
-#V3.30.23.2;_safe;_compile_date:_Apr 17 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.24.00-prerel;_safe;_compile_date:_Jul  8 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 2018hake_data.SS #_DataFile 
 2018hake_control.SS #_Control 
-Run_Date: Thu Apr 17 21:29:22 2025
+Run_Date: Mon Aug  4 15:51:36 2025
 Final_phase: 5  N_iterations: 1573
 #_LIKELIHOOD 
 Label logL*Lambda
@@ -482,7 +482,7 @@ SPRratio_2016 0.852589 0.143161
 SPRratio_2017 0.958261 0.138783
 SPRratio_2018 1.05077 0.0433723
 SPRratio_2019 1.05077 0.0434219
-SPRratio_2020 1.05077 0.0586464
+SPRratio_2020 1.05077 0.0586467
 #_F Basis= _abs_F;_with_F=Exploit(bio)
 F_1966 0.0768729 0.0164222
 F_1967 0.119839 0.0252391
@@ -538,7 +538,7 @@ F_2016 0.12861 0.0333503
 F_2017 0.182143 0.0548313
 F_2018 0.224533 0.0498114
 F_2019 0.203962 0.0435711
-F_2020 0.208226 0.0611459
+F_2020 0.208226 0.061146
 #_Depletion Basis=  100%*Virgin_Biomass
 Bratio_1967 0.419576 0.0855564
 Bratio_1968 0.405135 0.0849849
@@ -612,6 +612,11 @@ annF_MSY 0.269569 0.0642879
 Dead_Catch_MSY 307007 51160.3
 Ret_Catch_MSY 307007 51160.3
 B_MSY/SSB_unfished 0.238448 0.0405926
+Recr_MSY_bmarkbio 1.86915e+06 399987
+Depletion_denom 3.50035e+06 314149
+HCR_inflect 1.40014e+06 125660
+R0_for_SRR_bench 2.10825e+06 455026
+SSB_for_SRR_bench 3.50035e+06 314149
 ForeCatch_2018 488103 206495
 ForeCatch_2019 414792 166694
 ForeCatch_2020 389952 157211
@@ -624,9 +629,9 @@ AgeSelex_std_2_Fem_A_3 0.629429 0.0990904
 AgeSelex_std_2_Fem_A_4 0.507066 0.0786431
 AgeSelex_std_2_Fem_A_5 0.688095 0.111003
 NatAge_std_1_Fem_A_20 1305.68 605.423
-ln(SPB)_1966 14.242 0.215501
-ln(SPB)_1991 15.0516 0.113697
-ln(SPB)_2017 14.6426 0.29404
+ln(SSB)_1966 14.242 0.215501
+ln(SSB)_1991 15.0516 0.113697
+ln(SSB)_2017 14.6426 0.29404
 SmryBio_Virgin 4.00961e+06 0.0
 SmryBio_Initial 4.00961e+06 0.0
 SmryBio_1966 1.79127e+06 0.0
