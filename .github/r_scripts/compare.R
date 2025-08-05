@@ -480,7 +480,7 @@ compare_ss_runs <- function(
     justify = "left"
   )
 
-  compare_df_print <- compare_df_print[compare_df_print$ratio != 1,]
+  compare_df_print <- compare_df_print[round(compare_df_print$ratio, 6) != 1, ]
   print(compare_df_print)
 
   # message("values and their differences:")
