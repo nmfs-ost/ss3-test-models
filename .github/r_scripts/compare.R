@@ -350,7 +350,7 @@ compare_ss_runs <- function(
     )
     write_fail <- TRUE
   }
-  if (abs(compare_df[compare_df$quantity == "maxgrad", "diff"]) > 0.001) {
+  if (hessian & abs(compare_df[compare_df$quantity == "maxgrad", "diff"]) > 0.001) {
     tmp_old_val <- compare_df[compare_df$quantity == "maxgrad", "ref_value"]
     tmp_new_val <- compare_df[compare_df$quantity == "maxgrad", "value"]
     # don't write to fail, but just print message to inform.
@@ -388,6 +388,7 @@ compare_ss_runs <- function(
   if (abs(tmp_df[tmp_df$quantity == "SR_LN(R0)_val", "diff"]) > 0.01) {
     write_fail <- TRUE
   }
+
   if (hessian) {
     if (
       tmp_df[tmp_df$quantity == "SR_LN(R0)_se", "ratio"] > 1.01 |
@@ -402,6 +403,7 @@ compare_ss_runs <- function(
       write_fail <- TRUE
     }
   }
+  
   if (
     !is.na(lyr_fcast) &&
       !is.na(tmp_df[
@@ -467,10 +469,9 @@ compare_ss_runs <- function(
   )
   compare_df <- rbind(compare_df, tmp_df)
   compare_df$mod_name <- mod_name # add the model name
-  # only keep rows with !is.na for writing to fail_file
-  fail_rows <- compare_df$ratio != 1
 
   compare_df <- compare_df[complete.cases(compare_df[, c("quantity", "ref_value")]), ]
+  compare_df <- compare_df[abs(compare_df$diff) != 0, ]
 
   # print the msg
   compare_df_print <- format(
@@ -481,7 +482,7 @@ compare_ss_runs <- function(
   )
 
   # message("values and their differences:")
-  if (write_fail == TRUE && any(fail_rows)) {
+  if (write_fail == TRUE) {
     if (file.exists(fail_file)) {
       hdr <- FALSE
     } else {

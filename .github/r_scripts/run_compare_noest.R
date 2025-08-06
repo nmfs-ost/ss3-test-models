@@ -34,7 +34,7 @@ message("see saved artifact all_results.csv for values and their differences.")
 write.csv(compare_df_print, "run_R/all_results.csv", row.names = FALSE)
 # next: create a filtered table with only values that changed.
 # remove values that we would expect to change for a run with no estimation
-compare_df <- compare_df[abs(compare_df$diff) != 0 & !is.na(compare_df$diff), ]
+compare_df <- compare_df[!is.na(compare_df$diff), ]
 expect_change <- unique(grep("_se", compare_df[["quantity"]], value = TRUE))
 expect_change <- c(expect_change, "maxgrad")
 message("expect change values = ", paste0(expect_change, collapse = ", "))
