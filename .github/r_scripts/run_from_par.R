@@ -22,7 +22,7 @@ run_ss_noest <- function(dir) {
 	file.copy(file.path(dir, "ss3.par"), file.path(dir, "ss3_ref.par"))
   # change models to read from the .par file of the reference run
   start <- readLines(file.path(dir, "starter.ss"))
-  first_val_line <- grep("0=use init values in control file", start, fixed = TRUE)
+  first_val_line <- grep("use init values in control file", start, fixed = TRUE)
     if(!identical(first_val_line, integer(0)) == TRUE){
       start[first_val_line] <- "1 # read from .par file"
       print(start[first_val_line])
