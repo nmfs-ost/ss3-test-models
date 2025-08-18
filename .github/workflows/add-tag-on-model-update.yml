@@ -20,7 +20,7 @@ jobs:
     steps:
 
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # grep -o 'v[0-9]\+\(\.[0-9]\+\)*\(-[A-Za-z0-9._-]\+\)*$' matches v1.1.1, v1.1.1.1, and v1.1.1-prerel
       - name: Get the ss3 last tag on unix
