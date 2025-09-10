@@ -1,8 +1,8 @@
 #V3.30.24.00-prerel;_safe;_compile_date:_Jul  8 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 data.ss #_DataFile 
 control.ss #_Control 
-Run_Date: Mon Aug  4 16:01:59 2025
-Final_phase: 5  N_iterations: 477
+Run_Date: Wed Sep 10 20:15:18 2025
+Final_phase: 5  N_iterations: 419
 #_LIKELIHOOD 
 Label logL*Lambda
 TOTAL_LogL 794.96
@@ -12,8 +12,8 @@ Length_comp 191.11
 Age_comp 610.19
 Size_at_age 0
 Recruitment -4.32975
-InitEQ_regime 2.77366e-30
-Sum_recdevs 2.66454e-15
+InitEQ_regime 0
+Sum_recdevs 0
 Forecast_Recruitment 0
 Parm_priors 1.58929
 Parm_softbounds 0.00240256
@@ -24,7 +24,7 @@ Crash_Pen 0
 #label value se active? range
 #_BIOLOGY
 NatM_Lorenzen_Fem_GP_1 0.1 0 Fix 0.499995
-L_at_Amin_Fem_GP_1 18.6195 1.41597 Act 0.520355
+L_at_Amin_Fem_GP_1 18.6195 1.41597 Act 0.246272
 L_at_Amax_Fem_GP_1 69.6313 0.702192 Act 0.592625
 VonBert_K_Fem_GP_1 0.174697 0.0106254 Act 0.623482
 CV_young_Fem_GP_1 0.1 0 Fix 0.249999
@@ -62,7 +62,7 @@ Main_RecrDev_1978 0.178576 0.461119 Act 0.517858
 Main_RecrDev_1979 0.585213 0.364567 Act 0.558521
 Main_RecrDev_1980 0.328712 0.436198 Act 0.532871
 Main_RecrDev_1981 0.264043 0.381247 Act 0.526404
-Main_RecrDev_1982 0.00211146 0.387197 Act 0.500211
+Main_RecrDev_1982 0.00211147 0.387197 Act 0.500211
 Main_RecrDev_1983 -0.317762 0.405195 Act 0.468224
 Main_RecrDev_1984 -0.275358 0.416683 Act 0.472464
 Main_RecrDev_1985 0.5387 0.277305 Act 0.55387
@@ -110,11 +110,11 @@ maxage@sel=1_SURVEY2(3) 0 0 Fix 0
 Size_inflection_FISHERY(1)_TrendFinal_LogstOffset 0.0497443 0.0486104 Act 0.506218
 Size_inflection_FISHERY(1)_TrendInfl_LogstOffset -0.262747 0.15082 Act 0.467157
 Size_inflection_FISHERY(1)_TrendWidth_yrs_ 1.002 0 Fix 0.000105263
-Size_inflection_SURVEY1(2)_TrendFinal_direct_ 36.5523 0.981578 Act 0.344163
+Size_inflection_SURVEY1(2)_TrendFinal_direct_ 36.5523 0.981577 Act 0.344163
 Size_inflection_SURVEY1(2)_TrendInfl_yr_ 1983 0 Fix 0.4
-Size_inflection_SURVEY1(2)_TrendWidth_yr_ 10.6023 32.5273 Act 0.505383
+Size_inflection_SURVEY1(2)_TrendWidth_yr_ 10.6022 32.5269 Act 0.505381
 Size_95%width_SURVEY1(2)_TrendFinal_frac_ 0.114366 0.0225799 Act 0.114392
-Size_95%width_SURVEY1(2)_TrendInfl_frac_ 0.542378 0.0976988 Act 0.542874
+Size_95%width_SURVEY1(2)_TrendInfl_frac_ 0.542378 0.0976987 Act 0.542874
 Size_95%width_SURVEY1(2)_TrendWidth_yr_ 1.009 0 Fix 0.000473684
 #_Derived_Quantities
 #_Spawn_Bio
@@ -236,8 +236,8 @@ SPRratio_1998 0.867919 0.0248606
 SPRratio_1999 0.874359 0.0288036
 SPRratio_2000 0.876234 0.0339576
 SPRratio_2001 0.874704 0.0403182
-SPRratio_2002 7.8059e-05 2.1968e-05
-SPRratio_2003 0.00326921 0.341208
+SPRratio_2002 7.80591e-05 2.1968e-05
+SPRratio_2003 0.00326923 0.341208
 SPRratio_2004 0.206059 0.170746
 SPRratio_2005 0.316513 0.102083
 SPRratio_2006 0.373468 0.0731321
@@ -278,7 +278,7 @@ F_1999 0.288437 0.0551045
 F_2000 0.291832 0.0648248
 F_2001 0.289056 0.0742995
 F_2002 5.4243e-06 1.59088e-06
-F_2003 0.000227801 0.0238433
+F_2003 0.000227802 0.0238433
 F_2004 0.017411 0.0177057
 F_2005 0.0302829 0.0138844
 F_2006 0.038368 0.0118085
@@ -351,7 +351,7 @@ HCR_inflect 18332.7 679.796
 R0_for_SRR_bench 6028.33 238.681
 SSB_for_SRR_bench 45831.8 1699.49
 ForeCatch_2002 0.061816 0.0336132
-ForeCatch_2003 3.03568 318.488
+ForeCatch_2003 3.0357 318.488
 ForeCatch_2004 263.551 328.758
 ForeCatch_2005 507.764 342.904
 ForeCatch_2006 702.306 360.172
@@ -368,7 +368,7 @@ OFLCatch_2006 1582.25 364.885
 OFLCatch_2007 1717.52 385.239
 OFLCatch_2008 1856.29 404.273
 OFLCatch_2009 1999.06 420.24
-OFLCatch_2010 2143.61 431.722
+OFLCatch_2010 2143.61 431.723
 OFLCatch_2011 2286.48 438.077
 #_Extra_stdev
 NatM_std_GP:_1_Fem_A_1 0.154663 0.00295526
@@ -531,7 +531,7 @@ TotCatch_1999 3000 0.0
 TotCatch_2000 3000 0.0
 TotCatch_2001 3000 0.0
 TotCatch_2002 0.061816 0.0
-TotCatch_2003 3.03568 0.0
+TotCatch_2003 3.0357 0.0
 TotCatch_2004 263.551 0.0
 TotCatch_2005 507.764 0.0
 TotCatch_2006 702.306 0.0

@@ -1,9 +1,7 @@
-Warning 1 Adjustment: basis for HCR anchor was not set; setting to 2 to match default before 3.30.24
-Warning 2 : depletion_basis is using virgin but HCR anchor is using SSB_unf from benchmark. Are you sure?
-Warning 3 : There is timevary biology and the legacy approach to benchmark calculations is being used; user should be aware of possible impacts to benchmark results
-Warning 4 : There is timevary biology, so the flag for timevary_bio_4SRR must be set to 0 (old default) or 1 (new improved) in starter.ss
-Warning 5 : 2DAR rho is incompletely implemented; it should only be used experimentally and never estimated
-Warning 6 : Minimum pop size bin:_10; is > L at Amin for sex: 1; Gpat: 1; L= 5
-Warning 7 : 1st iteration warning: catch logL > 50% total logL; check configuration; suggest start with larger R0
+Warning 1 : depletion_basis is using virgin but HCR anchor is using SSB_unf from benchmark. Are you sure?
+Warning 2 : There is timevary biology and the legacy approach to benchmark calculations is being used; user should be aware of possible impacts to benchmark results
+Warning 3 : 2DAR rho is incompletely implemented; it should only be used experimentally and never estimated
+Warning 4 : Minimum pop size bin:_10; is > L at Amin for sex: 1; Gpat: 1; L= 5
+Warning 5 : 1st iteration warning: catch logL > 50% total logL; check configuration; suggest start with larger R0
 Note 1 Information: A revised protocol for the Fcast_yr specification is available and recommended.
- 7 warnings  and 1 note 
+ 5 warnings  and 1 note 

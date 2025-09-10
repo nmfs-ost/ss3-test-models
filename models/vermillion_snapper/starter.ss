@@ -41,6 +41,6 @@ vermilion.ctl #_ctlfile
 0 # F_std_basis: 0=no scaling; 1 (F/Fspr); 2 (F/Fmsy); 3 (F/Fbtgt); where F means annual F_std, Fmsy means F_std@msy; values >=11 invoke N multiyr using 10s and 100s digit; append .1 to invoke log(ratio)
 0 #_MCMC_output_detail: integer part (0=default; 1=adds obj func components; 2= +write_report_for_each_mceval); and decimal part (added to SR_LN(R0) on first call to mcmc)
 0 #_deprecated:  ALK tolerance ***disabled in code
--1 #_seed:  random number seed for bootstrap data (-1 to use long(time) as seed): # 1754323912
+-1 #_seed:  random number seed for bootstrap data (-1 to use long(time) as seed): # 1757535876
 0 #_Compatibility:  flag for legacy (0) vs improved (1) impact of timevary biology on benchmark SRR calcs >=3.30.24
 3.30 #_final:  check value for end of file and for version control
