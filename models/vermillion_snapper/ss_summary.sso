@@ -1,7 +1,7 @@
 #V3.30.24.00-prerel;_safe;_compile_date:_Jul  8 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 vermilion.dat #_DataFile 
 vermilion.ctl #_Control 
-Run_Date: Mon Aug  4 16:10:59 2025
+Run_Date: Wed Sep 10 20:23:44 2025
 Final_phase: 5  N_iterations: 2330
 #_LIKELIHOOD 
 Label logL*Lambda
@@ -23,7 +23,7 @@ Crash_Pen 0
 #_PARAMETERS
 #label value se active? range
 #_BIOLOGY
-L_at_Amin_Fem_GP_1 11.83 0 Fix 1.18299e-05
+L_at_Amin_Fem_GP_1 11.83 0 Fix 1.083e-05
 L_at_Amax_Fem_GP_1 34.4 0 Fix 3.43999e-05
 VonBert_K_Fem_GP_1 0.3254 0 Fix 3.254e-07
 CV_young_Fem_GP_1 0.2535 0 Fix 2.535e-07
