@@ -26,12 +26,13 @@ jobs:
       - name: Get the ss3 last tag on unix
         id: get-latest-tag-unix
         run: |
-          latest_tag=$(git ls-remote --tags https://github.com/nmfs-ost/ss3-source-code.git \
-            | awk '{print $2}' \
-            | grep -o 'v[0-9]\+\(\.[0-9]\+\)*\(-[A-Za-z0-9._-]\+\)*$' \
-            | sed 's/^v//' \
-            | sort -V \
-            | tail -1)
+          latest_tag=$(git ls-remote --tags https://github.com/nmfs-ost/ss3-source-code.git | cut -d'/' -f3 | sort -V | tail -1)
+          if [[ "$latest_tag" == *"-prerel"* ]]; then
+            latest_tag=$(git ls-remote --tags https://github.com/nmfs-ost/ss3-source-code.git | cut -d'/' -f3 | sort -V | tail -2 | head -1)
+            echo "$latest_tag"
+          else
+            echo "$latest_tag"
+          fi
           echo "tag=${latest_tag}" >> $GITHUB_OUTPUT
           
       - name: Get the ss3 last tag repo on unix
@@ -43,6 +44,7 @@ jobs:
             | sed 's/^v//' \
             | sort -V \
             | tail -1)
+          echo "$latest-tag-repo"
           echo "tag=${latest_tag_repo}" >> $GITHUB_OUTPUT
           
       - name: create tag
