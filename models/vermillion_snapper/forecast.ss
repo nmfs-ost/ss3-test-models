@@ -1,10 +1,10 @@
-#V3.30.24.00-prerel;_safe;_compile_date:_Jul  8 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.24.00;_safe;_compile_date:_Sep 10 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 # for all year entries except rebuilder; enter either: actual year, -999 for styr, 0 for endyr, neg number for rel. endyr
 1 # Benchmarks: 0=skip; 1=calc F_spr,F_Btgt,F_msy; 2=calc F_spr,F0.1,F_msy; 3=add F_Blimit; 
 2 # Do_MSY: 1= set to F(SPR); 2=calc F(MSY); 3=set to F(Btgt) or F0.1; 4=set to F(endyr); 5=calc F(MEY) with MSY_unit options
 # if Do_MSY=5, enter MSY_Units; then list fleet_ID, cost/F, price/mt, include_in_Fmey_scaling; # -fleet_ID to fill; -9999 to terminate
 0.373 # SPR target (e.g. 0.40)
-0.3 # Biomass target (e.g. 0.40) as fraction of SSB_virgin if depletion basis = 1, else as fraction of SSB_unfished in benchmark
+0.3 # Biomass target (e.g. 0.40) as fraction of SSB_virgin if depletion basis = 1 or time_vary compatibility = 0, else as fraction of SSB_unfished in benchmark
 #0.5 # COND: Do_Benchmark==3;  Blimit as fraction of Bmsy (neg value to use as frac of SSB_virgin or SSB_unfished) (e.g. 0.50)#
 # Bmark_years: beg_bio, end_bio, beg_selex, end_selex, beg_relF, end_relF, beg_recr_dist, end_recr_dist, beg_SRparm, end_SRparm (enter actual year, or values of 0 or -integer to be rel. endyr)
  0 0 0 0 -3 0 2005 2014 0 0
