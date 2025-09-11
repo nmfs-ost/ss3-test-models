@@ -6,6 +6,7 @@ on:
     paths:
       - 'models/**/**'
     types: [closed]
+  workflow_dispatch:
 
 jobs:
    
