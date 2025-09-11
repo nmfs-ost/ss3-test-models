@@ -47,9 +47,16 @@ jobs:
           echo "$latest-tag-repo"
           echo "tag=${latest_tag_repo}" >> $GITHUB_OUTPUT
           
+      - name: Remove leading v from upstream tag
+        id: strip-v
+        run: |
+          tag_without_v="${{ steps.get-latest-tag-unix.outputs.tag }}"
+          tag_without_v="${tag_without_v#v}"
+          echo "tag=${tag_without_v}" >> $GITHUB_OUTPUT
+
       - name: create tag
         uses: mathieudutour/github-tag-action@v6.2
-        if: ${{ steps.get-latest-tag-unix.outputs.tag != steps.get-latest-tag-repo-unix.outputs.tag}}
+        if: ${{ steps.strip-v.outputs.tag != steps.get-latest-tag-repo-unix.outputs.tag}}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          custom_tag: ${{ steps.get-latest-tag-unix.outputs.tag }}
+          custom_tag: ${{ steps.strip-v.outputs.tag }}
