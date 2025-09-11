@@ -11,7 +11,8 @@ on:
 jobs:
    
   add-tag-on-model-update:
-    if: ${{ github.event.pull_request.merged }}
+    if: |
+      github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
