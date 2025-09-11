@@ -1,4 +1,4 @@
-#V3.30.24.00-prerel;_safe;_compile_date:_Jul  8 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.24.00;_safe;_compile_date:_Sep 10 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:_https://groups.google.com/g/ss3-forum_and_NMFS.Stock.Synthesis@noaa.gov
@@ -152,7 +152,7 @@
 #
 # all recruitment deviations
 #  1971R 1972R 1973R 1974R 1975R 1976R 1977R 1978R 1979R 1980R 1981R 1982R 1983R 1984R 1985R 1986R 1987R 1988R 1989R 1990R 1991R 1992R 1993R 1994R 1995R 1996R 1997R 1998R 1999R 2000R 2001R 2002F 2003F 2004F 2005F 2006F 2007F 2008F 2009F 2010F 2011F
-#  0.557639 -0.0578554 0.362366 -0.0151946 -0.084857 1.0347 0.099896 0.178576 0.585213 0.328712 0.264043 0.00211147 -0.317762 -0.275358 0.5387 0.616048 0.167451 0.126508 -0.38388 0.477042 -0.799698 -0.482284 -1.08797 0.120857 -0.744913 0.227023 0.846245 -0.719482 -0.811161 -0.175045 -0.577672 0 0 0 0 0 0 0 0 0 0
+#  0.557639 -0.0578554 0.362366 -0.0151946 -0.084857 1.0347 0.099896 0.178576 0.585213 0.328712 0.264043 0.00211146 -0.317762 -0.275358 0.5387 0.616048 0.167451 0.126508 -0.38388 0.477042 -0.799698 -0.482284 -1.08797 0.120857 -0.744913 0.227023 0.846245 -0.719482 -0.811161 -0.175045 -0.577672 0 0 0 0 0 0 0 0 0 0
 #
 #Fishing Mortality info 
 0.3 # F ballpark value in units of annual_F

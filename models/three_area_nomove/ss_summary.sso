@@ -1,7 +1,7 @@
-#V3.30.24.00-prerel;_safe;_compile_date:_Jul  8 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.24.00;_safe;_compile_date:_Sep 10 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 three_area_nomove_dat.ss #_DataFile 
 three_area_nomove_ctl.ss #_Control 
-Run_Date: Wed Sep 10 20:21:13 2025
+Run_Date: Thu Sep 11 14:46:12 2025
 Final_phase: 5  N_iterations: 426
 #_LIKELIHOOD 
 Label logL*Lambda
