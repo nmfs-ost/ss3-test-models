@@ -1,6 +1,18 @@
 Note 1 Information: Max data length bin: 200  < max pop len bins: 250; so will accumulate larger pop len bins
 Warning 1 : depletion_basis is using virgin but HCR anchor is using SSB_unf from benchmark. Are you sure?
 Warning 2 : Block:2 13 ends in: 2030 after retroyr+1:  2019
+Warning 3 : Decreasing Len@age calculated for sex: 1; Gpat: 1 settle: 1 at age: 20 Len@age = 175.663 < 175.663
+Warning 4 : Decreasing Len@age calculated for sex: 2; Gpat: 1 settle: 1 at age: 15 Len@age = 120.964 < 120.964
+Warning 5 : Decreasing Len@age calculated for sex: 2; Gpat: 1 settle: 1 at age: 18 Len@age = 120.964 < 120.964
+Warning 6 : Decreasing Len@age calculated for sex: 2; Gpat: 1 settle: 1 at age: 20 Len@age = 120.964 < 120.964
+Warning 7 : Decreasing Len@age calculated for sex: 1; Gpat: 1 settle: 1 at age: 20 Len@age = 175.663 < 175.663
+Warning 8 : Decreasing Len@age calculated for sex: 2; Gpat: 1 settle: 1 at age: 17 Len@age = 120.964 < 120.964
+Warning 9 : Decreasing Len@age calculated for sex: 2; Gpat: 1 settle: 1 at age: 19 Len@age = 120.964 < 120.964
+Warning 10 : Decreasing Len@age calculated for sex: 2; Gpat: 1 settle: 1 at age: 20 Len@age = 120.964 < 120.964
+Warning 11 : Decreasing Len@age calculated for sex: 1; Gpat: 1 settle: 1 at age: 20 Len@age = 175.663 < 175.663
+Warning 12 : Decreasing Len@age calculated for sex: 2; Gpat: 1 settle: 1 at age: 17 Len@age = 120.964 < 120.964
+Warning 13 : Decreasing Len@age calculated for sex: 2; Gpat: 1 settle: 1 at age: 19 Len@age = 120.964 < 120.964
+Warning 14 : Decreasing Len@age calculated for sex: 2; Gpat: 1 settle: 1 at age: 20 Len@age = 120.964 < 120.964
 Note 2 Information: A revised protocol for the Fcast_yr specification is available and recommended.
 Note 3 Information:  N parameters that are on or within 1% of min-max bound: 1; check results, variance may be suspect
- 2 warnings  and 3 notes 
+ 14 warnings  and 3 notes 

@@ -1,5 +1,5 @@
 Warning 1 : depletion_basis is using virgin but HCR anchor is using SSB_unf from benchmark. Are you sure?
-Warning 2 : Final gradient: 0.00946413 is larger than final_conv: 1e-05
+Warning 2 : Final gradient: 0.00105576 is larger than final_conv: 1e-05
 Note 1 Information: A revised protocol for the Fcast_yr specification is available and recommended.
 Note 2 Information:  N parameters that are on or within 1% of min-max bound: 5; check results, variance may be suspect
  2 warnings  and 2 notes 

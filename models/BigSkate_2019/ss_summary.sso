@@ -1,7 +1,7 @@
-#V3.30.24.00;_safe;_compile_date:_Sep 10 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.24.1;_safe;_compile_date:_Sep 18 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 BSKT2019_data.ss #_DataFile 
 BSKT2019_control.ss #_Control 
-Run_Date: Thu Sep 11 14:28:45 2025
+Run_Date: Mon Sep 22 14:31:41 2025
 Final_phase: 5  N_iterations: 241
 #_LIKELIHOOD 
 Label logL*Lambda
