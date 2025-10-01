@@ -1,6 +1,8 @@
 Warning 1 : depletion_basis is using virgin but HCR anchor is using SSB_unf from benchmark. Are you sure?
 Warning 2 : There is timevary biology and the legacy approach to benchmark calculations is being used; user should be aware of possible impacts to benchmark results
-Warning 3 : Minimum pop size bin:_10; is > L at Amin for sex: 1; Gpat: 1; L= 5
+Warning 3 : Decreasing Len@age calculated for sex: 1; Gpat: 1 settle: 1 at age: 1 Len@age = 5 < 10
 Warning 4 : 1st iteration warning: catch logL > 50% total logL; check configuration; suggest start with larger R0
+Warning 5 : Decreasing Len@age calculated for sex: 1; Gpat: 1 settle: 1 at age: 1 Len@age = 5 < 10
+Warning 6 : Decreasing Len@age calculated for sex: 1; Gpat: 1 settle: 1 at age: 1 Len@age = 5 < 10
 Note 1 Information: A revised protocol for the Fcast_yr specification is available and recommended.
- 4 warnings  and 1 note 
+ 6 warnings  and 1 note 
