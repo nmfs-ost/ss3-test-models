@@ -1,7 +1,7 @@
-#V3.30.24.1;_safe;_compile_date:_Sep 18 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.24.2;_safe;_compile_date:_Mar  9 2026;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 platoons_dat.ss #_DataFile 
 platoons_ctl.ss #_Control 
-Run_Date: Mon Sep 22 14:33:56 2025
+Run_Date: Wed Mar 11 13:56:16 2026
 Final_phase: 6  N_iterations: 489
 #_LIKELIHOOD 
 Label logL*Lambda

@@ -1,7 +1,7 @@
-#V3.30.24.1;_safe;_compile_date:_Sep 18 2025;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.24.2;_safe;_compile_date:_Mar  9 2026;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 Spiny_Dogfish.DAT #_DataFile 
 Spiny_Dogfish.CTL #_Control 
-Run_Date: Mon Sep 22 14:46:51 2025
+Run_Date: Wed Mar 11 14:08:59 2026
 Final_phase: 3  N_iterations: 179
 #_LIKELIHOOD 
 Label logL*Lambda
@@ -452,12 +452,12 @@ Totbio_unfished 110486 39171
 SmryBio_unfished 109913 38968
 Recr_unfished 8542.01 3028.44
 SSB_Btgt 10224.7 3625.01
-SPR_Btgt 0.768692 2.93229e-18
+SPR_Btgt 0.768692 1.21514e-16
 annF_Btgt 0.00605316 2.61074e-05
 Dead_Catch_Btgt 304.062 106.962
-SSB_SPR -20992.5 7442.56
+SSB_SPR 1e-06 0
 annF_SPR 0.0186078 5.37151e-05
-Dead_Catch_SPR -2575.69 905.705
+Dead_Catch_SPR 1.65224e-07 9.40183e-10
 SSB_MSY 12014.3 4259.75
 SPR_MSY 0.792654 1.9399e-05
 annF_MSY 0.00534177 2.38835e-05
