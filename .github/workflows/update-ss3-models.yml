@@ -37,12 +37,14 @@ jobs:
         
       - name: Get the latest SS3 executable
         run: |
-          wget -O ss3 https://github.com/nmfs-ost/ss3-source-code/releases/tag/v3.30.25-prerel/download/ss3_linux
+          wget -L -O ss3 https://github.com/nmfs-ost/ss3-source-code/releases/download/v3.30.25-prerel/ss3_linux
+          ls -lh ss3
           sudo chmod a+x ss3
           sudo mv ss3 /usr/local/bin/ss3
+          ls -lh /usr/local/bin/ss3
           export PATH=/usr/local/bin:$PATH
           echo "/usr/local/bin" >> $GITHUB_PATH
-     
+          
       - name: run models
         run: |
           dirs_test <- list.dirs(recursive = FALSE)
