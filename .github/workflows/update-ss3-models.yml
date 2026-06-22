@@ -39,9 +39,9 @@ jobs:
         run: |
           wget -O ss3 https://github.com/nmfs-ost/ss3-source-code/releases/tag/v3.30.25-prerel/download/ss3_linux
           sudo chmod a+x ss3
-          mv ss3 /usr/local/bin/ss3
-          export PATH=/usr/local/bin/ss3:$PATH
-          echo "/usr/local/bin/ss3" >> $GITHUB_PATH
+          sudo mv ss3 /usr/local/bin/ss3
+          export PATH=/usr/local/bin:$PATH
+          echo "/usr/local/bin" >> $GITHUB_PATH
      
       - name: run models
         run: |
