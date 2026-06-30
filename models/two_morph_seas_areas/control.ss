@@ -1,4 +1,4 @@
-#V3.30.24.2;_safe;_compile_date:_Mar  9 2026;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.25.00;_safe;_compile_date:_Jun 30 2026;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:_https://groups.google.com/g/ss3-forum_and_NMFS.Stock.Synthesis@noaa.gov
@@ -60,7 +60,12 @@
 1 # GrowthModel: 1=vonBert with L1&L2; 2=Richards with L1&L2; 3=age_specific_K_incr; 4=age_specific_K_decr; 5=age_specific_K_each; 6=NA; 7=NA; 8=growth cessation
 0 #_Age(post-settlement) for L1 (aka Amin); first growth parameter is size at this age; linear growth below this
 25 #_Age(post-settlement) for L2 (aka Amax); 999 to treat as Linf
--999 #_exponential decay of numbers for calc of size in plus group in the initial year (value should approx initial Z; -999 replicates 3.24; -998 to not calc growth above maxage)
+-999 #_exponential decay for growth within plus group and control for time-varying plus group size 
+#_only important when growth does not get near Linf by maxage
+#_value should approx initial Z; or use a code:  -999 replicates 3.24 (with Z=0.2 and numbers weighted updating in years with time-varying growth)
+#_-998 ignores growth within plus group in initial year and disables time-varying changes in plus group mean size
+#_-997 ignores growth within plus group in initial year and enables updating time-varying plus group
+#
 0  #_placeholder for future growth feature
 #
 0 #_SD_add_to_LAA (set to 0.1 for SS2 V1.x compatibility)
@@ -199,7 +204,7 @@
 #
 # all recruitment deviations
 #  1971R 1972R 1973R 1974R 1975R 1976R 1977R 1978R 1979R 1980R 1981R 1982R 1983R 1984R 1985R 1986R 1987R 1988R 1989R 1990R 1991R 1992R 1993R 1994R 1995R 1996R 1997R 1998R 1999R 2000R 2001R
-#  0.0618202 -0.0109004 0.0906262 -0.220163 0.124909 0.68784 -0.0754577 0.0186112 0.324604 0.123436 0.0546181 -0.203232 -0.478855 -0.39098 0.507898 0.362641 0.348551 0.0318673 -0.375788 0.545755 -0.518636 -0.686157 -0.410671 0.117448 -0.485283 0.583759 0.855842 -0.486369 -0.301148 -0.131941 -0.0646449#
+#  0.0618203 -0.0109004 0.0906262 -0.220163 0.124909 0.68784 -0.075458 0.0186115 0.324604 0.123436 0.0546183 -0.203232 -0.478855 -0.390979 0.507898 0.362641 0.348551 0.0318675 -0.375789 0.545755 -0.518636 -0.686157 -0.410671 0.117448 -0.485283 0.583759 0.855843 -0.48637 -0.301148 -0.131942 -0.0646451#
 #Fishing Mortality info 
 0.3 # F ballpark value in units of annual_F
 -2001 # F ballpark year (neg value to disable)
@@ -242,7 +247,7 @@
              0           0.5    0.00496268          0.05             1             0          4          0          0          0          0          0          0          0  #  Q_extraSD_SURV_A1(2)
            -11             5      -8.65326             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_RECRSVY_A1(3)
             -7             5      0.531522             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_SURV_A2(5)
-             0           0.5    0.00309005          0.05             1             0          4          0          0          0          0          0          0          0  #  Q_extraSD_SURV_A2(5)
+             0           0.5    0.00309004          0.05             1             0          4          0          0          0          0          0          0          0  #  Q_extraSD_SURV_A2(5)
            -11             5      -8.64901             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_RECRSVY_A2(6)
             -7             5             0             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_Depletion(7)
 #_no timevary Q parameters
@@ -342,7 +347,7 @@
 # deviation vectors for timevary parameters
 #  base   base first block   block  env  env   dev   dev   dev   dev   dev
 #  type  index  parm trend pattern link  var  vectr link _mnyr  mxyr phase  dev_vector
-#      1    42     1     0     0     0     0     1     2  1971  2001     5 0.178304 0.0133829 0.00571893 0.0198008 0.0600343 -0.00272309 -0.00421091 0.036206 0.0628878 -0.0288138 -0.0273586 -0.0137849 -0.0117403 0.0188111 0.0276903 0.0217087 0.0218138 0.00080162 0.0109025 0.00332407 -0.0467689 -0.0373698 -0.0201197 -0.00196191 0.00180114 0.033558 0.0220815 -0.00658552 0.00868681 -0.0285816      0
+#      1    42     1     0     0     0     0     1     2  1971  2001     5 0.178304 0.0133848 0.00571692 0.0198008 0.0600333 -0.00271982 -0.00421238 0.0362055 0.0628835 -0.0288135 -0.0273575 -0.013788 -0.0117406 0.0188165 0.027695 0.021705 0.0218129 0.000799271 0.0109031 0.0033284 -0.0467699 -0.0373722 -0.0201201 -0.00196189 0.00180042 0.0335571 0.0220848 -0.00658166 0.00868551 -0.0285824      0
      #
 # Input variance adjustments factors: 
  #_1=add_to_survey_CV

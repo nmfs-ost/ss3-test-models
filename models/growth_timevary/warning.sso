@@ -1,4 +1,5 @@
 Warning 1 : depletion_basis is using virgin but HCR anchor is using SSB_unf from benchmark. Are you sure?
 Warning 2 : At least one block pattern ends in endyr. Check the output parameter value time series to see if the values in forecast years are as intended.
-Note 1 Information: A revised protocol for the Fcast_yr specification is available and recommended.
- 2 warnings  and 1 note 
+Note 1 Information: plus group mean size is updated in years with time-vary growth beginning in: 1980; can turn this off with Linf_decay = -998
+Note 2 Information: A revised protocol for the Fcast_yr specification is available and recommended.
+ 2 warnings  and 2 notes 

@@ -1,7 +1,7 @@
-#V3.30.24.2;_safe;_compile_date:_Mar  9 2026;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.25.00;_safe;_compile_date:_Jun 30 2026;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 Spiny_Dogfish.DAT #_DataFile 
 Spiny_Dogfish.CTL #_Control 
-Run_Date: Wed Mar 11 14:08:59 2026
+Run_Date: Tue Jun 30 17:15:47 2026
 Final_phase: 3  N_iterations: 179
 #_LIKELIHOOD 
 Label logL*Lambda
@@ -116,15 +116,15 @@ Size_DblN_start_logit_TRAWL(1) -5 0 Fix 0
 Size_DblN_end_logit_TRAWL(1) 9 0 Fix 1
 Size_DblN_peak_Trawl_Discard(2) 73.3797 2.92779 Act 0.533797
 Size_DblN_top_logit_Trawl_Discard(2) -1 0 Fix 0.5
-Size_DblN_ascend_se_Trawl_Discard(2) 6.09326 0.218649 Act 0.709326
+Size_DblN_ascend_se_Trawl_Discard(2) 6.09326 0.218648 Act 0.709326
 Size_DblN_descend_se_Trawl_Discard(2) 5 0 Fix 0.6
 Size_DblN_start_logit_Trawl_Discard(2) -3.16735 0.278515 Act 0.130903
 Size_DblN_end_logit_Trawl_Discard(2) 9 0 Fix 1
 Size_DblN_peak_MIDWATER(3) 57.2886 1.4042 Act 0.372886
 Size_DblN_top_logit_MIDWATER(3) 0.556101 0.363368 Act 0.65561
-Size_DblN_ascend_se_MIDWATER(3) 4.9519 0.194077 Act 0.595189
+Size_DblN_ascend_se_MIDWATER(3) 4.9519 0.194077 Act 0.59519
 Size_DblN_descend_se_MIDWATER(3) 4.49235 1.53579 Act 0.549235
-Size_DblN_start_logit_MIDWATER(3) -5.4983 1.242 Act 0.194539
+Size_DblN_start_logit_MIDWATER(3) -5.4983 1.24201 Act 0.194539
 Size_DblN_end_logit_MIDWATER(3) -999 0 Fix 0
 SizeSel_P1_A-SHOP(4) 1 0 Fix 0.5
 SizeSel_P2_A-SHOP(4) -1 0 Fix 0.5
@@ -452,7 +452,7 @@ Totbio_unfished 110486 39171
 SmryBio_unfished 109913 38968
 Recr_unfished 8542.01 3028.44
 SSB_Btgt 10224.7 3625.01
-SPR_Btgt 0.768692 1.21514e-16
+SPR_Btgt 0.768692 4.0646e-17
 annF_Btgt 0.00605316 2.61074e-05
 Dead_Catch_Btgt 304.062 106.962
 SSB_SPR 1e-06 0

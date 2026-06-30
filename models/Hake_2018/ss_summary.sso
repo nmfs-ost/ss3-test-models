@@ -1,7 +1,7 @@
-#V3.30.24.2;_safe;_compile_date:_Mar  9 2026;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.25.00;_safe;_compile_date:_Jun 30 2026;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 2018hake_data.SS #_DataFile 
 2018hake_control.SS #_Control 
-Run_Date: Wed Mar 11 13:55:46 2026
+Run_Date: Tue Jun 30 17:02:28 2026
 Final_phase: 5  N_iterations: 1573
 #_LIKELIHOOD 
 Label logL*Lambda

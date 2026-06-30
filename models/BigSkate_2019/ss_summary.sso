@@ -1,7 +1,7 @@
-#V3.30.24.2;_safe;_compile_date:_Mar  9 2026;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.25.00;_safe;_compile_date:_Jun 30 2026;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 BSKT2019_data.ss #_DataFile 
 BSKT2019_control.ss #_Control 
-Run_Date: Wed Mar 11 13:54:04 2026
+Run_Date: Tue Jun 30 17:00:48 2026
 Final_phase: 5  N_iterations: 241
 #_LIKELIHOOD 
 Label logL*Lambda
@@ -26,9 +26,9 @@ Crash_Pen 0
 #label value se active? range
 #_BIOLOGY
 NatM_uniform_Fem_GP_1 0.449208 0.030551 Act 0.698415
-L_at_Amin_Fem_GP_1 20.0821 1.0314 Act 0.0041046
+L_at_Age0_Fem_GP_1 20.0821 1.0314 Act 0.0041046
 Linf_Fem_GP_1 175.663 4.00449 Act 0.378314
-VonBert_K_Fem_GP_1 12.1407 0.358036 Act 0.40459
+rmax_Fem_GP_1 12.1407 0.358036 Act 0.40459
 Cessation_Fem_GP_1 5.61009 11.8509 Act 0.556575
 SD_young_Fem_GP_1 5.70274 0.901141 Act 0.247513
 SD_old_Fem_GP_1 7.08412 0.920452 Act 0.320217
@@ -39,9 +39,9 @@ Mat_slope_Fem_GP_1 -0.13155 0 Fix 0.184498
 Eggs/kg_inter_Fem_GP_1 1 0 Fix 0.666667
 Eggs/kg_slope_wt_Fem_GP_1 0 0 Fix 0.5
 NatM_uniform_Mal_GP_1 0 0 Fix 0.5
-L_at_Amin_Mal_GP_1 0 0 Fix 0.5
+L_at_Age0_Mal_GP_1 0 0 Fix 0.5
 Linf_Mal_GP_1 -0.373076 0.0251082 Act 0.313462
-VonBert_K_Mal_GP_1 0.100981 0.033979 Act 0.336699
+rmax_Mal_GP_1 0.100981 0.033979 Act 0.336699
 Cessation_Mal_GP_1 0.2 0 Fix 0.533333
 SD_young_Mal_GP_1 0 0 Fix 0.5
 SD_old_Mal_GP_1 0 0 Fix 0.5
@@ -96,7 +96,7 @@ LnQ_base_WCGBTS(5) -0.403308 0.315405 Act 0.399173
 Q_extraSD_WCGBTS(5) 0.163264 0.0573576 Act 0.0816318
 LnQ_base_Triennial(6) -1.2524 0.743118 Act 0.728966
 Q_extraSD_Triennial(6) 0.365954 0.146404 Act 0.182977
-LnQ_base_Triennial(6)_BLK1repl_1995 -0.934511 0.741207 Act 0.866498
+LnQ_base_Triennial(6)_BLK1repl_1995 -0.934511 0.741206 Act 0.866498
 #_Selectivity
 Size_DblN_peak_Fishery_current(1) 94.1114 4.8992 Act 0.201591
 Size_DblN_top_logit_Fishery_current(1) -15 0 Fix 0
@@ -130,7 +130,7 @@ SzSel_Fem_Final_WCGBTS(5) 0 0 Fix 0.5
 SzSel_Fem_Scale_WCGBTS(5) 0.698111 0.125697 Act 0.198111
 Size_DblN_peak_Triennial(6) 187.543 34.6112 Act 0.916952
 Size_DblN_top_logit_Triennial(6) -15 0 Fix 0
-Size_DblN_ascend_se_Triennial(6) 8.47236 0.420334 Act 0.947235
+Size_DblN_ascend_se_Triennial(6) 8.47236 0.420333 Act 0.947235
 Size_DblN_descend_se_Triennial(6) 20 0 Fix 1
 Size_DblN_start_logit_Triennial(6) -4.79417 0.784064 Act 0.425243
 Size_DblN_end_logit_Triennial(6) -999 0 Fix 0
@@ -739,7 +739,7 @@ Totbio_unfished 29359.2 8024.53
 SmryBio_unfished 27268.3 7354.47
 Recr_unfished 7366.45 2751.26
 SSB_Btgt 1009.82 297.221
-SPR_Btgt 0.625 5.32202e-17
+SPR_Btgt 0.625 3.27393e-17
 annF_Btgt 0.0483043 0.00332516
 Dead_Catch_Btgt 700.716 196.505
 SSB_SPR 504.909 148.61
@@ -780,8 +780,8 @@ OFLCatch_2027 1391.41 441.9
 OFLCatch_2028 1364.51 430.814
 OFLCatch_2029 1337.96 419.89
 OFLCatch_2030 1311.74 409.105
-ForeCatchret_2019 313.16 4.49134e-09
-ForeCatchret_2020 313.16 4.48822e-09
+ForeCatchret_2019 313.16 4.49138e-09
+ForeCatchret_2020 313.16 4.48824e-09
 ForeCatchret_2021 1370.72 464.967
 ForeCatchret_2022 1288.64 428.692
 ForeCatchret_2023 1224.51 401.008
