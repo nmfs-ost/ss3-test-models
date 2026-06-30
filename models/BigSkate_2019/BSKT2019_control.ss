@@ -1,4 +1,4 @@
-#V3.30.24.2;_safe;_compile_date:_Mar  9 2026;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.25.00;_safe;_compile_date:_Jun 30 2026;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:_https://groups.google.com/g/ss3-forum_and_NMFS.Stock.Synthesis@noaa.gov
@@ -55,7 +55,12 @@
 8 # GrowthModel: 1=vonBert with L1&L2; 2=Richards with L1&L2; 3=age_specific_K_incr; 4=age_specific_K_decr; 5=age_specific_K_each; 6=NA; 7=NA; 8=growth cessation
 0 #_Age(post-settlement) for L1 (aka Amin); first growth parameter is size at this age; linear growth below this
 999 #_Age(post-settlement) for L2 (aka Amax); 999 to treat as Linf
--999 #_exponential decay of numbers for calc of size in plus group in the initial year (value should approx initial Z; -999 replicates 3.24; -998 to not calc growth above maxage)
+-999 #_exponential decay for growth within plus group and control for time-varying plus group size 
+#_only important when growth does not get near Linf by maxage
+#_value should approx initial Z; or use a code:  -999 replicates 3.24 (with Z=0.2 and numbers weighted updating in years with time-varying growth)
+#_-998 ignores growth within plus group in initial year and disables time-varying changes in plus group mean size
+#_-997 ignores growth within plus group in initial year and enables updating time-varying plus group
+#
 0  #_placeholder for future growth feature
 #
 0 #_SD_add_to_LAA (set to 0.1 for SS2 V1.x compatibility)
@@ -73,9 +78,9 @@
 # Sex: 1  BioPattern: 1  NatMort
  0.1 0.6 0.449208 -1.02165 0.438 3 3 0 0 0 0 0.5 0 0 # NatM_uniform_Fem_GP_1
 # Sex: 1  BioPattern: 1  Growth
- 20 40 20.0821 20 99 0 2 0 0 0 0 0.5 0 0 # L_at_Amin_Fem_GP_1
+ 20 40 20.0821 20 99 0 2 0 0 0 0 0.5 0 0 # L_at_Age0_Fem_GP_1
  100 300 175.663 200 99 0 2 0 0 0 0 0.5 0 0 # Linf_Fem_GP_1
- 0.005 30 12.1407 0.15 99 0 1 0 0 0 0 0.5 0 0 # VonBert_K_Fem_GP_1
+ 0.005 30 12.1407 0.15 99 0 1 0 0 0 0 0.5 0 0 # rmax_Fem_GP_1
  0.1 10 5.61009 1 99 0 3 0 0 0 0 0.5 0 0 # Cessation_Fem_GP_1
  1 20 5.70274 0.1 99 0 5 0 0 0 0 0.5 0 0 # SD_young_Fem_GP_1
  1 20 7.08412 0.1 99 0 5 0 0 0 0 0.5 0 0 # SD_old_Fem_GP_1
@@ -90,9 +95,9 @@
 # Sex: 2  BioPattern: 1  NatMort
  -3 3 0 0 99 0 -2 0 0 0 0 0 0 0 # NatM_uniform_Mal_GP_1
 # Sex: 2  BioPattern: 1  Growth
- -1 1 0 0 99 0 -2 0 0 0 0 0 0 0 # L_at_Amin_Mal_GP_1
+ -1 1 0 0 99 0 -2 0 0 0 0 0 0 0 # L_at_Age0_Mal_GP_1
  -1 1 -0.373076 0 99 0 2 0 0 0 0 0 0 0 # Linf_Mal_GP_1
- -10 20 0.100981 0 99 0 3 0 0 0 0 0 0 0 # VonBert_K_Mal_GP_1
+ -10 20 0.100981 0 99 0 3 0 0 0 0 0 0 0 # rmax_Mal_GP_1
  -3 3 0.2 0 99 0 -3 0 0 0 0 0 0 0 # Cessation_Mal_GP_1
  -1 1 0 0 99 0 -5 0 0 0 0 0 0 0 # SD_young_Mal_GP_1
  -1 1 0 0 99 0 -5 0 0 0 0 0 0 0 # SD_old_Mal_GP_1
