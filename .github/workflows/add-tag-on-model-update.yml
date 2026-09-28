@@ -57,7 +57,7 @@ jobs:
           echo "tag=${tag_without_v}" >> $GITHUB_OUTPUT
 
       - name: create tag
-        uses: mathieudutour/github-tag-action@v6.2
+        uses: mathieudutour/github-tag-action@v7
         if: ${{ steps.strip-v.outputs.tag != steps.get-latest-tag-repo-unix.outputs.tag}}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
