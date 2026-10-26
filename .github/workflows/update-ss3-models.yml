@@ -116,7 +116,7 @@ jobs:
       - name: Create Pull Request 
         uses: peter-evans/create-pull-request@v8
         with:
-          commit_message: Regenerate strict-cutoff references with Linux build 39847153824
+          commit-message: Regenerate strict-cutoff references with Linux build 39847153824
           branch: update-test-models-strict-cutoff-linux
           title: 'Regenerate strict-cutoff reference outputs with Linux SS3'
           body: |
