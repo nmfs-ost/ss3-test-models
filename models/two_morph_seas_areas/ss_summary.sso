@@ -1,8 +1,8 @@
-#V3.30.xx.yy;_safe;_compile_date:_Oct 22 2026;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.25.beta: not an official version of SS;_safe;_compile_date:_Oct 22 2026;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 data.ss #_DataFile 
 control.ss #_Control 
-Run_Date: Thu Oct 22 16:04:10 2026
-Final_phase: 6  N_iterations: 687
+Run_Date: Mon Oct 26 15:45:58 2026
+Final_phase: 6  N_iterations: 718
 #_LIKELIHOOD 
 Label logL*Lambda
 TOTAL_LogL 3007.23
@@ -13,8 +13,8 @@ Age_comp 1170.44
 Size_at_age 172.803
 Gen_Size_Comp 1009.66
 Recruitment -18.7997
-InitEQ_regime 1.54502e-30
-Sum_recdevs 5.55112e-17
+InitEQ_regime 0
+Sum_recdevs -1.80411e-16
 Forecast_Recruitment 0
 Parm_priors 5.05902
 Parm_softbounds 0.00264028
@@ -87,7 +87,7 @@ SR_regime 0 0 Fix 0.5
 SR_autocorr 0 0 Fix 0
 Main_RecrDev_1971 0.0620213 0.219643 Act 0.506202
 Main_RecrDev_1972 -0.0108088 0.292734 Act 0.498919
-Main_RecrDev_1973 0.0906631 0.249147 Act 0.509066
+Main_RecrDev_1973 0.0906632 0.249147 Act 0.509066
 Main_RecrDev_1974 -0.220256 0.297408 Act 0.477974
 Main_RecrDev_1975 0.125322 0.252567 Act 0.512532
 Main_RecrDev_1976 0.687786 0.169225 Act 0.568779
@@ -135,35 +135,35 @@ Size_inflection_SURV_A2(5) 36.2151 0.418859 Act 0.337552
 Size_95%width_SURV_A2(5) 4.99593 0.633361 Act 0.0831126
 #_Parm_Dev
 RecrDist_GP_2_area_2_month_1_DEVadd_1971 0.175724 0.589276 ACT 0.508786
-RecrDist_GP_2_area_2_month_1_DEVadd_1972 0.0133276 0.987646 ACT 0.500666
-RecrDist_GP_2_area_2_month_1_DEVadd_1973 0.00557227 0.982071 ACT 0.500279
-RecrDist_GP_2_area_2_month_1_DEVadd_1974 0.0196909 0.989849 ACT 0.500985
-RecrDist_GP_2_area_2_month_1_DEVadd_1975 0.0600028 0.980525 ACT 0.503
-RecrDist_GP_2_area_2_month_1_DEVadd_1976 -0.00303233 0.945498 ACT 0.499848
-RecrDist_GP_2_area_2_month_1_DEVadd_1977 -0.00435329 0.986737 ACT 0.499782
-RecrDist_GP_2_area_2_month_1_DEVadd_1978 0.0360639 0.981797 ACT 0.501803
-RecrDist_GP_2_area_2_month_1_DEVadd_1979 0.0628516 0.966248 ACT 0.503143
-RecrDist_GP_2_area_2_month_1_DEVadd_1980 -0.0290693 0.975337 ACT 0.498547
-RecrDist_GP_2_area_2_month_1_DEVadd_1981 -0.0274449 0.974486 ACT 0.498628
-RecrDist_GP_2_area_2_month_1_DEVadd_1982 -0.013861 0.982507 ACT 0.499307
-RecrDist_GP_2_area_2_month_1_DEVadd_1983 -0.0116933 0.988836 ACT 0.499415
+RecrDist_GP_2_area_2_month_1_DEVadd_1972 0.0133269 0.987646 ACT 0.500666
+RecrDist_GP_2_area_2_month_1_DEVadd_1973 0.00557177 0.982071 ACT 0.500279
+RecrDist_GP_2_area_2_month_1_DEVadd_1974 0.019689 0.989849 ACT 0.500984
+RecrDist_GP_2_area_2_month_1_DEVadd_1975 0.0600027 0.980525 ACT 0.503
+RecrDist_GP_2_area_2_month_1_DEVadd_1976 -0.00303153 0.945498 ACT 0.499848
+RecrDist_GP_2_area_2_month_1_DEVadd_1977 -0.0043537 0.986737 ACT 0.499782
+RecrDist_GP_2_area_2_month_1_DEVadd_1978 0.0360637 0.981797 ACT 0.501803
+RecrDist_GP_2_area_2_month_1_DEVadd_1979 0.0628525 0.966248 ACT 0.503143
+RecrDist_GP_2_area_2_month_1_DEVadd_1980 -0.0290698 0.975337 ACT 0.498546
+RecrDist_GP_2_area_2_month_1_DEVadd_1981 -0.0274458 0.974486 ACT 0.498628
+RecrDist_GP_2_area_2_month_1_DEVadd_1982 -0.0138606 0.982507 ACT 0.499307
+RecrDist_GP_2_area_2_month_1_DEVadd_1983 -0.011692 0.988836 ACT 0.499415
 RecrDist_GP_2_area_2_month_1_DEVadd_1984 0.0189668 0.987824 ACT 0.500948
-RecrDist_GP_2_area_2_month_1_DEVadd_1985 0.0278633 0.943986 ACT 0.501393
-RecrDist_GP_2_area_2_month_1_DEVadd_1986 0.0216011 0.961482 ACT 0.50108
-RecrDist_GP_2_area_2_month_1_DEVadd_1987 0.0217734 0.959271 ACT 0.501089
-RecrDist_GP_2_area_2_month_1_DEVadd_1988 0.0008376 0.976732 ACT 0.500042
-RecrDist_GP_2_area_2_month_1_DEVadd_1989 0.0110048 0.990296 ACT 0.50055
-RecrDist_GP_2_area_2_month_1_DEVadd_1990 0.00325895 0.940068 ACT 0.500163
-RecrDist_GP_2_area_2_month_1_DEVadd_1991 -0.0466726 0.992388 ACT 0.497666
-RecrDist_GP_2_area_2_month_1_DEVadd_1992 -0.037271 0.993479 ACT 0.498136
-RecrDist_GP_2_area_2_month_1_DEVadd_1993 -0.0200078 0.98894 ACT 0.499
-RecrDist_GP_2_area_2_month_1_DEVadd_1994 -0.00159069 0.976903 ACT 0.49992
-RecrDist_GP_2_area_2_month_1_DEVadd_1995 0.00169906 0.995421 ACT 0.500085
-RecrDist_GP_2_area_2_month_1_DEVadd_1996 0.0335384 0.977512 ACT 0.501677
-RecrDist_GP_2_area_2_month_1_DEVadd_1997 0.021706 0.976888 ACT 0.501085
-RecrDist_GP_2_area_2_month_1_DEVadd_1998 -0.00669431 0.997991 ACT 0.499665
-RecrDist_GP_2_area_2_month_1_DEVadd_1999 0.00875958 0.996886 ACT 0.500438
-RecrDist_GP_2_area_2_month_1_DEVadd_2000 -0.0283137 0.998268 ACT 0.498584
+RecrDist_GP_2_area_2_month_1_DEVadd_1985 0.0278624 0.943987 ACT 0.501393
+RecrDist_GP_2_area_2_month_1_DEVadd_1986 0.021602 0.961482 ACT 0.50108
+RecrDist_GP_2_area_2_month_1_DEVadd_1987 0.0217729 0.959271 ACT 0.501089
+RecrDist_GP_2_area_2_month_1_DEVadd_1988 0.000838473 0.976732 ACT 0.500042
+RecrDist_GP_2_area_2_month_1_DEVadd_1989 0.0110057 0.990296 ACT 0.50055
+RecrDist_GP_2_area_2_month_1_DEVadd_1990 0.00325851 0.940068 ACT 0.500163
+RecrDist_GP_2_area_2_month_1_DEVadd_1991 -0.0466728 0.992388 ACT 0.497666
+RecrDist_GP_2_area_2_month_1_DEVadd_1992 -0.0372701 0.993479 ACT 0.498136
+RecrDist_GP_2_area_2_month_1_DEVadd_1993 -0.0200079 0.98894 ACT 0.499
+RecrDist_GP_2_area_2_month_1_DEVadd_1994 -0.00159103 0.976903 ACT 0.49992
+RecrDist_GP_2_area_2_month_1_DEVadd_1995 0.00169943 0.995421 ACT 0.500085
+RecrDist_GP_2_area_2_month_1_DEVadd_1996 0.0335393 0.977512 ACT 0.501677
+RecrDist_GP_2_area_2_month_1_DEVadd_1997 0.0217045 0.976888 ACT 0.501085
+RecrDist_GP_2_area_2_month_1_DEVadd_1998 -0.00669395 0.997991 ACT 0.499665
+RecrDist_GP_2_area_2_month_1_DEVadd_1999 0.00875964 0.996886 ACT 0.500438
+RecrDist_GP_2_area_2_month_1_DEVadd_2000 -0.0283138 0.998268 ACT 0.498584
 RecrDist_GP_2_area_2_month_1_DEVadd_2001 0 1 ACT 0.5
 #_Derived_Quantities
 #_Spawn_Bio
@@ -231,7 +231,7 @@ Recr_1995 3916.29 1164.13
 Recr_1996 11114.5 2086.53
 Recr_1997 13951.8 2744.73
 Recr_1998 3538.75 1183.09
-Recr_1999 4115.85 1313.83
+Recr_1999 4115.86 1313.83
 Recr_2000 4740.78 1729.8
 Recr_2001 5007.95 2432.06
 #_SPR Basis=  1-SPR
