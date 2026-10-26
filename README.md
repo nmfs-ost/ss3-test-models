@@ -21,8 +21,9 @@ Regression tests are the primary way that Stock Synthesis is tested. Regression 
 On the strict-cutoff reference branch, manually dispatch `.github/workflows/update-ss3-models.yml`
 to regenerate `ss3.par`, `ss_summary.sso`, `Report.sso`, and `warning.sso` for
 `Simple_with_DM_sizefreq` and `two_morph_seas_areas` on Linux. The workflow pins
-the `ss3-ubuntu-latest` artifact from source build run `39847153824` on
-`small-test-rebin` (commit `62d4a02b03b8e8d1e8e26fab43f0a6ffe7866c17`).
+the `ss3-ubuntu-latest` artifact from the latest successful source build run
+`40034993275` on `new_general_sizebin_method` as of 2026-10-26
+(commit `6f7eaf0dddf4e3d0de50947c8e438c37014033ef`).
 It runs estimation with `-nox` and the Hessian enabled, leaves all inputs and
 other models unchanged, archives run diagnostics, and opens a reference-update
 pull request against the branch selected for the dispatch.

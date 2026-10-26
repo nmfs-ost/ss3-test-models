@@ -36,16 +36,16 @@ jobs:
       - name: install r4ss
         run: Rscript -e 'remotes::install_github("r4ss/r4ss")'
 
-      - name: Get the strict-cutoff Linux SS3 build
+      - name: Get the general-sizebin Linux SS3 build
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # Latest successful build-ss3 run on small-test-rebin as of 2026-10-26.
-          run_id=39847153824
+          # Latest successful build-ss3 run on new_general_sizebin_method as of 2026-10-26.
+          run_id=40034993275
           gh api "repos/nmfs-ost/ss3-source-code/actions/runs/$run_id" \
             --jq '{head_branch, head_sha, conclusion, path}' | tee "$RUNNER_TEMP/ss3-build.json"
-          jq -e '.head_branch == "small-test-rebin" and
-                 .head_sha == "62d4a02b03b8e8d1e8e26fab43f0a6ffe7866c17" and
+          jq -e '.head_branch == "new_general_sizebin_method" and
+                 .head_sha == "6f7eaf0dddf4e3d0de50947c8e438c37014033ef" and
                  .conclusion == "success" and
                  .path == ".github/workflows/build-ss3.yml"' "$RUNNER_TEMP/ss3-build.json"
           gh run download "$run_id" --repo nmfs-ost/ss3-source-code \
@@ -60,7 +60,7 @@ jobs:
           models <- c("Simple_with_DM_sizefreq", "two_morph_seas_areas")
           files <- c("ss3.par", "ss_summary.sso", "Report.sso", "warning.sso")
           repo_dir <- getwd()
-          run_dir <- file.path(Sys.getenv("RUNNER_TEMP"), "strict-cutoff-models")
+          run_dir <- file.path(Sys.getenv("RUNNER_TEMP"), "general-sizebin-models")
           for (model in models) {
             model_dir <- file.path(run_dir, model)
             copied <- r4ss::copy_SS_inputs(
@@ -98,8 +98,8 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: strict-cutoff-linux-model-runs
-          path: ${{ runner.temp }}/strict-cutoff-models/
+          name: general-sizebin-linux-model-runs
+          path: ${{ runner.temp }}/general-sizebin-models/
         
       - name: Setup git user
         uses: fregante/setup-git-user@v2
@@ -109,18 +109,18 @@ jobs:
           git add -- models/Simple_with_DM_sizefreq/{ss3.par,ss_summary.sso,Report.sso,warning.sso} \
                      models/two_morph_seas_areas/{ss3.par,ss_summary.sso,Report.sso,warning.sso}
           if ! git diff --cached --quiet; then
-            git commit -m "Regenerate strict-cutoff references with Linux build 39847153824" \
+            git commit -m "Regenerate general-sizebin references with Linux build 40034993275" \
               -m "Co-authored-by: Copilot App <223556219+Copilot@users.noreply.github.com>"
           fi
         
       - name: Create Pull Request 
         uses: peter-evans/create-pull-request@v8
         with:
-          commit-message: Regenerate strict-cutoff references with Linux build 39847153824
-          branch: update-test-models-strict-cutoff-linux
-          title: 'Regenerate strict-cutoff reference outputs with Linux SS3'
+          commit-message: Regenerate general-sizebin references with Linux build 40034993275
+          branch: update-test-models-general-sizebin-linux
+          title: 'Regenerate general-sizebin reference outputs with Linux SS3'
           body: |
             Regenerates only the four reference outputs for Simple_with_DM_sizefreq
             and two_morph_seas_areas. Model inputs are unchanged.
-            Uses ss3_linux from nmfs-ost/ss3-source-code build-ss3 run 39847153824,
-            built from small-test-rebin commit 62d4a02b03b8e8d1e8e26fab43f0a6ffe7866c17.
+            Uses ss3_linux from nmfs-ost/ss3-source-code build-ss3 run 40034993275,
+            built from new_general_sizebin_method commit 6f7eaf0dddf4e3d0de50947c8e438c37014033ef.
