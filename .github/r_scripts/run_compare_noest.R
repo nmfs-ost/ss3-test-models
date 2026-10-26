@@ -44,7 +44,7 @@ for (i in mod_names) {
     warn_file = warn_file, ref_warn_file = ref_warn_file,
     hessian = FALSE,
     new_file = NULL,
-    fail_file = NULL
+    fail_file = file.path("run_R", "test_failed.csv")
   )
 }
 
