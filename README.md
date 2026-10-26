@@ -18,6 +18,15 @@ This repository houses models used for testing Stock Synthesis. These are often 
 
 Regression tests are the primary way that Stock Synthesis is tested. Regression tests are conducted automatically using Github actions. Each time, the set of models in ss3-test-models are run and then key model quantities are checked to determine if they have changed or remained the same relative to a reference run.
 
+On the strict-cutoff reference branch, manually dispatch `.github/workflows/update-ss3-models.yml`
+to regenerate `ss3.par`, `ss_summary.sso`, `Report.sso`, and `warning.sso` for
+`Simple_with_DM_sizefreq` and `two_morph_seas_areas` on Linux. The workflow pins
+the `ss3-ubuntu-latest` artifact from source build run `39847153824` on
+`small-test-rebin` (commit `62d4a02b03b8e8d1e8e26fab43f0a6ffe7866c17`).
+It runs estimation with `-nox` and the Hessian enabled, leaves all inputs and
+other models unchanged, archives run diagnostics, and opens a reference-update
+pull request against the branch selected for the dispatch.
+
 ## What features do these models have?
 
 Most of these models have at least 1 unique feature. The table below includes some key ones, as well as the approximate time it takes to run the model with estimation.
