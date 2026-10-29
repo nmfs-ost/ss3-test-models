@@ -1,13 +1,13 @@
-#V3.30.25.1;_safe;_compile_date:_Jul 30 2026;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.26.00;_safe;_compile_date:_Oct 29 2026;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:_https://groups.google.com/g/ss3-forum_and_NMFS.Stock.Synthesis@noaa.gov
 #_User_info_available_at:_https://nmfs-ost.github.io/ss3-website/
 #_Source_code_at:_https://github.com/nmfs-ost/ss3-source-code
 
-StartTime: Tue Sep  8 20:44:51 2026
-EndTime: Tue Sep  8 20:45:08 2026
-This run took: 0 hours, 0 minutes, 17 seconds.
+StartTime: Thu Oct 29 14:11:07 2026
+EndTime: Thu Oct 29 14:11:28 2026
+This run took: 0 hours, 0 minutes, 21 seconds.
 Data_File: simple.dat
 Control_File: simple.ctl
 Start_parm_values_from_control_file
@@ -94,7 +94,7 @@ N MOVEMENT report:13
 Y Natural_Mortality report:43
 Y RECRUITMENT_DIST report:10
 N Seas_Effects report:46
-N SIZEFREQ_TRANSLATION report:12
+Y SIZEFREQ_TRANSLATION deprecated report:12
 
 # List_Tables_related_to_equilibrium_reference_points;_also_see_forecast_report.sso
 Y Dynamic_Bzero report:59
@@ -109,7 +109,7 @@ Y SIStable.sso report:58
 Y wtatage.ss_new report:60
 
 # vector_with_report_usage
- Y Y Y N Y Y Y Y Y Y Y N N Y Y Y Y Y Y Y N N N N N N Y Y N Y Y Y N N Y Y Y Y Y Y Y Y Y N Y N Y Y Y Y Y Y Y Y N Y Y Y Y Y Y
+ Y Y Y N Y Y Y Y Y Y Y Y N Y Y Y Y Y Y Y N N N N N N Y Y N Y Y Y N N Y Y Y Y Y Y Y Y Y N Y N Y Y Y Y Y Y Y Y N Y Y Y Y Y Y
 
 
 DEFINITIONS report:1

@@ -1,4 +1,4 @@
-#V3.30.25.1;_safe;_compile_date:_Jul 30 2026;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
+#V3.30.26.00;_safe;_compile_date:_Oct 29 2026;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_13.2
 #_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
 #_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
 #_User_support_available_at:_https://groups.google.com/g/ss3-forum_and_NMFS.Stock.Synthesis@noaa.gov
@@ -83,9 +83,9 @@
 # Sex: 1  BioPattern: 1  NatMort
  0.05 0.15 0.1 0.1 0.8 0 -3 0 0 0 0 0 0 0 # NatM_uniform_Fem_GP_1
 # Sex: 1  BioPattern: 1  Growth
- 10 45 19.1169 36 10 6 2 0 0 0 0 0 0 0 # L_at_Amin_Fem_GP_1
- 40 90 70.3703 70 10 6 4 0 0 0 0 0 0 0 # L_at_Amax_Fem_GP_1
- 0.05 0.25 0.168059 0.15 0.8 6 4 0 0 0 0 0 0 0 # VonBert_K_Fem_GP_1
+ 10 45 19.0968 36 10 6 2 0 0 0 0 0 0 0 # L_at_Amin_Fem_GP_1
+ 40 90 70.3669 70 10 6 4 0 0 0 0 0 0 0 # L_at_Amax_Fem_GP_1
+ 0.05 0.25 0.16816 0.15 0.8 6 4 0 0 0 0 0 0 0 # VonBert_K_Fem_GP_1
  0.05 0.25 0.1 0.1 0.8 0 -3 0 0 0 0 0 0 0 # CV_young_Fem_GP_1
  0.05 0.25 0.1 0.1 0.8 0 -3 0 0 0 0 0 0 0 # CV_old_Fem_GP_1
 # Sex: 1  BioPattern: 1  WtLen
@@ -99,9 +99,9 @@
 # Sex: 1  BioPattern: 2  NatMort
  0.05 0.15 0.1 0.1 0.8 0 -3 0 0 0 0 0 0 0 # NatM_uniform_Fem_GP_2
 # Sex: 1  BioPattern: 2  Growth
- 10 45 19.2476 36 10 6 2 0 0 0 0 0 0 0 # L_at_Amin_Fem_GP_2
- 40 90 70.3464 70 10 6 4 0 0 0 0 0 0 0 # L_at_Amax_Fem_GP_2
- 0.05 0.25 0.166712 0.15 0.8 6 4 0 0 0 0 0 0 0 # VonBert_K_Fem_GP_2
+ 10 45 19.2277 36 10 6 2 0 0 0 0 0 0 0 # L_at_Amin_Fem_GP_2
+ 40 90 70.343 70 10 6 4 0 0 0 0 0 0 0 # L_at_Amax_Fem_GP_2
+ 0.05 0.25 0.166813 0.15 0.8 6 4 0 0 0 0 0 0 0 # VonBert_K_Fem_GP_2
  0.05 0.25 0.1 0.1 0.8 0 -3 0 0 0 0 0 0 0 # CV_young_Fem_GP_2
  0.05 0.25 0.1 0.1 0.8 0 -3 0 0 0 0 0 0 0 # CV_old_Fem_GP_2
 # Sex: 1  BioPattern: 2  WtLen
@@ -115,9 +115,9 @@
 # Sex: 2  BioPattern: 1  NatMort
  0.05 0.15 0.1 0.1 0.8 0 -3 0 0 0 0 0 0 0 # NatM_uniform_Mal_GP_1
 # Sex: 2  BioPattern: 1  Growth
- 10 45 21.9255 36 10 6 2 0 0 0 0 0 0 0 # L_at_Amin_Mal_GP_1
- 40 90 69.0505 70 10 6 4 0 0 0 0 0 0 0 # L_at_Amax_Mal_GP_1
- 0.05 0.25 0.166221 0.15 0.8 6 4 0 0 0 0 0 0 0 # VonBert_K_Mal_GP_1
+ 10 45 21.9151 36 10 6 2 0 0 0 0 0 0 0 # L_at_Amin_Mal_GP_1
+ 40 90 69.0479 70 10 6 4 0 0 0 0 0 0 0 # L_at_Amax_Mal_GP_1
+ 0.05 0.25 0.166288 0.15 0.8 6 4 0 0 0 0 0 0 0 # VonBert_K_Mal_GP_1
  0.05 0.25 0.1 0.1 0.8 0 -3 0 0 0 0 0 0 0 # CV_young_Mal_GP_1
  0.05 0.25 0.1 0.1 0.8 0 -3 0 0 0 0 0 0 0 # CV_old_Mal_GP_1
 # Sex: 2  BioPattern: 1  WtLen
@@ -126,9 +126,9 @@
 # Sex: 2  BioPattern: 2  NatMort
  0.05 0.15 0.1 0.1 0.8 0 -3 0 0 0 0 0 0 0 # NatM_uniform_Mal_GP_2
 # Sex: 2  BioPattern: 2  Growth
- 10 45 21.9686 36 10 6 2 0 0 0 0 0 0 0 # L_at_Amin_Mal_GP_2
- 40 90 69.0394 70 10 6 4 0 0 0 0 0 0 0 # L_at_Amax_Mal_GP_2
- 0.05 0.25 0.165712 0.15 0.8 6 4 0 0 0 0 0 0 0 # VonBert_K_Mal_GP_2
+ 10 45 21.958 36 10 6 2 0 0 0 0 0 0 0 # L_at_Amin_Mal_GP_2
+ 40 90 69.0368 70 10 6 4 0 0 0 0 0 0 0 # L_at_Amax_Mal_GP_2
+ 0.05 0.25 0.16578 0.15 0.8 6 4 0 0 0 0 0 0 0 # VonBert_K_Mal_GP_2
  0.05 0.25 0.1 0.1 0.8 0 -3 0 0 0 0 0 0 0 # CV_young_Mal_GP_2
  0.05 0.25 0.1 0.1 0.8 0 -3 0 0 0 0 0 0 0 # CV_old_Mal_GP_2
 # Sex: 2  BioPattern: 2  WtLen
@@ -172,8 +172,8 @@
 0  # 0/1 to use steepness in initial equ recruitment calculation
  0 #  not_used
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn #  parm_name
-             3            31       9.54739          10.3            10             0          1          0          0          0          0          0          0          0 # SR_LN(R0)
-           0.2             1      0.997192           0.7          0.05             1          4          0          0          0          0          0          0          0 # SR_BH_steep
+             3            31       9.54721          10.3            10             0          1          0          0          0          0          0          0          0 # SR_LN(R0)
+           0.2             1      0.997195           0.7          0.05             1          4          0          0          0          0          0          0          0 # SR_BH_steep
              0             2           0.6           0.8           0.8             0         -4          0          0          0          0          0          0          0 # SR_sigmaR
             -5             5             0             0             1             0         -4          0          0          0          0          0          0          0 # SR_regime
              0             0             0             0             0             0        -99          0          0          0          0          0          0          0 # SR_autocorr
@@ -204,7 +204,7 @@
 #
 # all recruitment deviations
 #  1971R 1972R 1973R 1974R 1975R 1976R 1977R 1978R 1979R 1980R 1981R 1982R 1983R 1984R 1985R 1986R 1987R 1988R 1989R 1990R 1991R 1992R 1993R 1994R 1995R 1996R 1997R 1998R 1999R 2000R 2001R
-#  -0.140069 0.179602 0.0166195 -0.367641 0.3947 0.589831 -0.0825248 -0.0426247 0.568616 -0.370119 0.301663 -0.325918 -0.530637 -0.358777 0.639822 0.221415 0.586102 0.0800803 -0.628479 0.733502 -1.02689 -0.432216 -0.691229 0.610031 -0.560289 0.845321 1.37123 -0.822159 0.505072 -0.661007 -0.603033#
+#  -0.139563 0.17962 0.0168544 -0.368388 0.395808 0.588923 -0.0808441 -0.0437828 0.569606 -0.372111 0.302634 -0.327055 -0.530006 -0.35809 0.639736 0.221559 0.586076 0.0799589 -0.627202 0.733193 -1.02645 -0.431709 -0.692478 0.610949 -0.562979 0.846035 1.37109 -0.822186 0.50485 -0.660498 -0.603552#
 #Fishing Mortality info 
 0.3 # F ballpark value in units of annual_F
 -2001 # F ballpark year (neg value to disable)
@@ -219,8 +219,8 @@
 # F rates by fleet x season
 #_year:  1971 1971 1972 1972 1973 1973 1974 1974 1975 1975 1976 1976 1977 1977 1978 1978 1979 1979 1980 1980 1981 1981 1982 1982 1983 1983 1984 1984 1985 1985 1986 1986 1987 1987 1988 1988 1989 1989 1990 1990 1991 1991 1992 1992 1993 1993 1994 1994 1995 1995 1996 1996 1997 1997 1998 1998 1999 1999 2000 2000 2001 2001
 # seas:  1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2
-# FISH_A1 0 0 0.00212946 0 0.0107042 0 0.0108041 0 0.0219241 0 0.0336856 0 0.0464422 0 0.0605535 0 0.076357 0 0.1083 0 0.146952 0 0.161538 0 0.178238 0 0.197836 0 0.221746 0 0.252063 0 0.29142 0 0.303258 0 0.303502 0 0.287036 0 0.254474 0 0.167212 0 0.160354 0 0.154702 0 0.150911 0 0.14914 0 0.10971 0 0.105415 0 0.0994042 0 0.0913171 0 0.0826169 0
-# FISH_A2 0 0 0.00215806 0 0.0108484 0 0.0109499 0 0.0222206 0 0.0341429 0 0.0470759 0 0.0613882 0 0.0774292 0 0.109865 0 0.149168 0 0.164097 0 0.181212 0 0.201322 0 0.225888 0 0.257081 0 0.29769 0 0.310435 0 0.311462 0 0.29529 0 0.262277 0 0.17247 0 0.165414 0 0.159599 0 0.155691 0 0.153868 0 0.113171 0 0.108696 0 0.102457 0 0.0940722 0 0.0850371 0
+# FISH_A1 0 0 0.00213071 0 0.0107105 0 0.0108104 0 0.0219369 0 0.0337053 0 0.0464692 0 0.0605887 0 0.0764015 0 0.108363 0 0.14704 0 0.161636 0 0.178348 0 0.19796 0 0.221888 0 0.252229 0 0.291616 0 0.303469 0 0.303723 0 0.287253 0 0.254673 0 0.167344 0 0.16048 0 0.154823 0 0.151028 0 0.149254 0 0.109792 0 0.105492 0 0.0994751 0 0.0913811 0 0.082674 0
+# FISH_A2 0 0 0.00215933 0 0.0108547 0 0.0109563 0 0.0222336 0 0.0341628 0 0.0471033 0 0.0614239 0 0.0774744 0 0.10993 0 0.149257 0 0.164197 0 0.181323 0 0.201448 0 0.226033 0 0.25725 0 0.297891 0 0.310652 0 0.311688 0 0.295513 0 0.262482 0 0.172606 0 0.165544 0 0.159724 0 0.155812 0 0.153987 0 0.113257 0 0.108776 0 0.102531 0 0.0941387 0 0.0850964 0
 #
 #_Q_setup for fleets with cpue or survey or deviation data
 #_1:  fleet number
@@ -243,12 +243,12 @@
 #
 #_Q_parameters
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn  #  parm_name
-            -7             5      0.141713             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_SURV_A1(2)
-             0           0.5      0.243043          0.05             1             0          4          0          0          0          0          0          0          0  #  Q_extraSD_SURV_A1(2)
-           -11             5      -9.37057             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_RECRSVY_A1(3)
-            -7             5       0.15639             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_SURV_A2(5)
-             0           0.5      0.239072          0.05             1             0          4          0          0          0          0          0          0          0  #  Q_extraSD_SURV_A2(5)
-           -11             5      -9.36089             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_RECRSVY_A2(6)
+            -7             5      0.141971             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_SURV_A1(2)
+             0           0.5      0.243014          0.05             1             0          4          0          0          0          0          0          0          0  #  Q_extraSD_SURV_A1(2)
+           -11             5      -9.37037             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_RECRSVY_A1(3)
+            -7             5      0.156645             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_SURV_A2(5)
+             0           0.5      0.239044          0.05             1             0          4          0          0          0          0          0          0          0  #  Q_extraSD_SURV_A2(5)
+           -11             5       -9.3607             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_RECRSVY_A2(6)
             -7             5             0             0             1             0         -1          0          0          0          0          0          0          0  #  LnQ_base_Depletion(7)
 #_no timevary Q parameters
 #
@@ -309,18 +309,18 @@
 #
 #_          LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn  #  parm_name
 # 1   FISH_A1 LenSelex
-            19            80       53.3675            50          0.01             1          2          0          0          0          0          0          0          0  #  Size_inflection_FISH_A1(1)
-          0.01            60        17.758            15          0.01             1          3          0          0          0          0          0          0          0  #  Size_95%width_FISH_A1(1)
+            19            80       53.3769            50          0.01             1          2          0          0          0          0          0          0          0  #  Size_inflection_FISH_A1(1)
+          0.01            60       17.7773            15          0.01             1          3          0          0          0          0          0          0          0  #  Size_95%width_FISH_A1(1)
 # 2   SURV_A1 LenSelex
-            19            70       36.5701            30          0.01             1          2          0          0          0          0          0          0          0  #  Size_inflection_SURV_A1(2)
-          0.01            60       4.89021            10          0.01             1          3          0          0          0          0          0          0          0  #  Size_95%width_SURV_A1(2)
+            19            70       36.5674            30          0.01             1          2          0          0          0          0          0          0          0  #  Size_inflection_SURV_A1(2)
+          0.01            60       4.88388            10          0.01             1          3          0          0          0          0          0          0          0  #  Size_95%width_SURV_A1(2)
 # 3   RECRSVY_A1 LenSelex
 # 4   FISH_A2 LenSelex
-            19            80       53.5237            50          0.01             1          2          0          0          0          0          0          0          0  #  Size_inflection_FISH_A2(4)
-          0.01            60       17.8214            15          0.01             1          3          0          0          0          0          0          0          0  #  Size_95%width_FISH_A2(4)
+            19            80       53.5331            50          0.01             1          2          0          0          0          0          0          0          0  #  Size_inflection_FISH_A2(4)
+          0.01            60       17.8406            15          0.01             1          3          0          0          0          0          0          0          0  #  Size_95%width_FISH_A2(4)
 # 5   SURV_A2 LenSelex
-            19            70       36.6344            30          0.01             1          2          0          0          0          0          0          0          0  #  Size_inflection_SURV_A2(5)
-          0.01            60        4.9607            10          0.01             1          3          0          0          0          0          0          0          0  #  Size_95%width_SURV_A2(5)
+            19            70       36.6316            30          0.01             1          2          0          0          0          0          0          0          0  #  Size_inflection_SURV_A2(5)
+          0.01            60       4.95425            10          0.01             1          3          0          0          0          0          0          0          0  #  Size_95%width_SURV_A2(5)
 # 6   RECRSVY_A2 LenSelex
 # 7   Depletion LenSelex
 # 1   FISH_A1 AgeSelex
@@ -332,7 +332,7 @@
 # 7   Depletion AgeSelex
 #_Dirichlet and/or MV Tweedie parameters for composition error
 #_multiple_fleets_can_refer_to_same_parm;_but_list_cannot_have_gaps
-           0.1            20       1.31734            10          0.01             1          6          0          0          0          0          0          0          0  #  ln(DM_theta)_Len_P1
+           0.1            20       1.31808            10          0.01             1          6          0          0          0          0          0          0          0  #  ln(DM_theta)_Len_P1
 #_no timevary selex parameters
 #
 0   #  use 2D_AR1 selectivity? (0/1)
@@ -349,7 +349,7 @@
 # deviation vectors for timevary parameters
 #  base   base first block   block  env  env   dev   dev   dev   dev   dev
 #  type  index  parm trend pattern link  var  vectr link _mnyr  mxyr phase  dev_vector
-#      1    42     1     0     0     0     0     1     2  1971  2001     5 -0.120867 -0.0160819 -0.017628 -0.0131961 -0.0282769 -0.0425319 -0.0252785 -0.0294918 -0.0628207 -0.0284937 -0.0626838 -0.0388348 -0.0361677 -0.044463 -0.130786 -0.10004 -0.168564 -0.11711 -0.0608324 -0.241896 -0.0447882 -0.0820351 -0.0561982 -0.170561 -0.0402507 -0.0946345 -0.0849762 -0.00494961 -0.00704019 -0.000382423      0
+#      1    42     1     0     0     0     0     1     2  1971  2001     5 -0.120789 -0.016068 -0.0176139 -0.0131699 -0.0282722 -0.0424554 -0.0253013 -0.0294348 -0.0628369 -0.0284191 -0.0627073 -0.0387774 -0.0361825 -0.0444854 -0.130766 -0.100045 -0.168547 -0.117098 -0.0609114 -0.241867 -0.0448201 -0.0820964 -0.0561447 -0.170743 -0.0401537 -0.0946928 -0.0849507 -0.00494724 -0.0070271 -0.000381386      0
      #
 # Input variance adjustments factors: 
  #_1=add_to_survey_CV
