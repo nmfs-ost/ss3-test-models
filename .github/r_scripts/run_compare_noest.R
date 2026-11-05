@@ -88,10 +88,13 @@ write.csv(filtered_df_print, "run_R/all_changes.csv", row.names = FALSE)
 # write failure file used by workflow gating
 # if empty, write header-only CSV
 fail_file <- file.path("run_R", "test_failed.csv")
+
 if (nrow(fail_df) > 0) {
   write.csv(fail_df, fail_file, row.names = FALSE)
   message("Wrote ", nrow(fail_df), " failing row(s) to ", fail_file)
 } else {
-  write.csv(fail_df, fail_file, row.names = FALSE)
-  message("No failing rows after exclusions/tolerance. Wrote empty ", fail_file)
+  if (file.exists(fail_file) && !file.remove(fail_file)) {
+    stop("Could not remove stale failure file: ", fail_file)
+  }
+  message("No failing rows after exclusions/tolerance.")
 }
